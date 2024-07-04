@@ -1,0 +1,1 @@
+{"mappings":"AAEA","sources":["src/index.scss"],"sourcesContent":["$color: steelblue;\n\n.popcorn-pal {\n  color: $color;\n}\n"],"names":[],"version":3,"file":"index.2212206d.css.map","sourceRoot":"/__parcel_source_root/"}
