@@ -28,6 +28,12 @@ export const MainView = () => {
     }
   ]);
 
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  if (selectedMovie) {
+    return <MovieView movieprop={selectedMovie} />;
+  }
+
   if (movies.length === 0) {
     return <div>The list is empty!</div>;
   }
@@ -35,7 +41,13 @@ export const MainView = () => {
   return (
     <div>
       {movies.map((movieprop) => {
-        <MovieCard movieprop={movies} />;
+        <MovieCard
+          key={movieprop.id}
+          movieprop={movies}
+          onMovieClick={(newSelectedMovie) => {
+            setSelectedMovie(newSelectedMovie);
+          }}
+        />;
       })}
     </div>
   );
