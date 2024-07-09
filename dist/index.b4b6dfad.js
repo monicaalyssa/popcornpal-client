@@ -27517,6 +27517,7 @@ const MovieView = ({ movieprop, onBackClick })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    className: "poster",
                     src: movieprop.image
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
