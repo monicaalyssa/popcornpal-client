@@ -27375,6 +27375,7 @@ var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _navBar = require("../navigation/nav-bar");
 var _hero = require("../hero/hero");
+var _movieGrid = require("../movie-grid/movie-grid");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
@@ -27404,26 +27405,31 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 36,
+        lineNumber: 37,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 44,
+        lineNumber: 45,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _hero.Hero), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 50,
+                lineNumber: 51,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieGrid.MovieGrid), {}, void 0, false, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 52,
                 columnNumber: 7
             }, undefined),
             movies.map((movieprop)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
@@ -27433,13 +27439,13 @@ const MainView = ()=>{
                     }
                 }, movieprop.id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 52,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 48,
+        lineNumber: 49,
         columnNumber: 5
     }, undefined);
 };
@@ -27453,7 +27459,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","react/jsx-dev-runtime":"iTorj","../navigation/nav-bar":"OhlYY","../hero/hero":"emPqA"}],"bwuIu":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","react/jsx-dev-runtime":"iTorj","../navigation/nav-bar":"OhlYY","../hero/hero":"emPqA","../movie-grid/movie-grid":"2Vpqn"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27544,7 +27550,7 @@ const MovieView = ({ movieprop, onBackClick })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                     className: "heading",
                     children: movieprop.title
                 }, void 0, false, {
@@ -27559,24 +27565,18 @@ const MovieView = ({ movieprop, onBackClick })=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        className: "subtitle",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         children: "Director"
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 11,
                         columnNumber: 9
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 12,
-                        columnNumber: 9
-                    }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movieprop.director
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 13,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, undefined)
                 ]
@@ -27586,12 +27586,11 @@ const MovieView = ({ movieprop, onBackClick })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "go-back-btn",
                 onClick: onBackClick,
                 children: "Go Back"
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 15,
+                lineNumber: 14,
                 columnNumber: 7
             }, undefined)
         ]
@@ -27637,8 +27636,15 @@ const NavBar = ()=>{
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "menu-bar",
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: "Movies"
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                            href: "#movies-section",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: "Movies"
+                            }, void 0, false, {
+                                fileName: "src/components/navigation/nav-bar.jsx",
+                                lineNumber: 8,
+                                columnNumber: 11
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
                             lineNumber: 7,
@@ -27648,14 +27654,14 @@ const NavBar = ()=>{
                             children: "Genres"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 8,
+                            lineNumber: 9,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "My List"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 9,
+                            lineNumber: 10,
                             columnNumber: 11
                         }, undefined)
                     ]
@@ -27672,7 +27678,7 @@ const NavBar = ()=>{
                             src: require("b9710e7656528221")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 12,
+                            lineNumber: 13,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27680,13 +27686,13 @@ const NavBar = ()=>{
                             src: require("3de8cf43c7f5ba07")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 16,
+                            lineNumber: 17,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 11,
+                    lineNumber: 12,
                     columnNumber: 9
                 }, undefined)
             ]
@@ -27805,16 +27811,19 @@ const Hero = ()=>{
                                         children: "..."
                                     }, void 0, false, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 9,
-                                        columnNumber: 129
+                                        lineNumber: 11,
+                                        columnNumber: 37
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "hero-more-desc",
-                                        children: " evolved. Because the planet's environment is poisonous, human/Na'vi hybrids, called Avatars, must link..."
-                                    }, void 0, false, {
+                                        children: [
+                                            " ",
+                                            "evolved. Because the planet's environment is poisonous, human/Na'vi hybrids, called Avatars, must link..."
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 9,
-                                        columnNumber: 162
+                                        lineNumber: 12,
+                                        columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
@@ -27822,11 +27831,28 @@ const Hero = ()=>{
                                 lineNumber: 9,
                                 columnNumber: 11
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                children: "Read More"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "hero-btns",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        children: "Read More"
+                                    }, void 0, false, {
+                                        fileName: "src/components/hero/hero.jsx",
+                                        lineNumber: 19,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        className: "white-heart",
+                                        src: require("e72d4ece8a7d5e35")
+                                    }, void 0, false, {
+                                        fileName: "src/components/hero/hero.jsx",
+                                        lineNumber: 20,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 10,
+                                lineNumber: 18,
                                 columnNumber: 11
                             }, undefined)
                         ]
@@ -27843,20 +27869,20 @@ const Hero = ()=>{
                                 src: require("aac761b4f4a25e61")
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 13,
-                                columnNumber: 9
+                                lineNumber: 27,
+                                columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: "featured"
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 17,
+                                lineNumber: 31,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/hero/hero.jsx",
-                        lineNumber: 12,
+                        lineNumber: 26,
                         columnNumber: 9
                     }, undefined)
                 ]
@@ -27881,12 +27907,61 @@ $RefreshReg$(_c, "Hero");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","9472117a191cca85":"5CB4l","aac761b4f4a25e61":"2SwY8"}],"5CB4l":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","9472117a191cca85":"5CB4l","aac761b4f4a25e61":"2SwY8","e72d4ece8a7d5e35":"6J7u4"}],"5CB4l":[function(require,module,exports) {
 module.exports = require("1569dc95ab2e052e").getBundleURL("byUka") + "avatar-bkg.4191252d.jpg" + "?" + Date.now();
 
 },{"1569dc95ab2e052e":"kPWUg"}],"2SwY8":[function(require,module,exports) {
 module.exports = require("a16688772f530b67").getBundleURL("byUka") + "Star.00b9023a.svg" + "?" + Date.now();
 
-},{"a16688772f530b67":"kPWUg"}]},["itlOw","fuyGC","d8Dch"], "d8Dch", "parcelRequire1961")
+},{"a16688772f530b67":"kPWUg"}],"6J7u4":[function(require,module,exports) {
+module.exports = require("a1edcfd7d2fb8636").getBundleURL("byUka") + "Heart.d0f25e86.svg" + "?" + Date.now();
+
+},{"a1edcfd7d2fb8636":"kPWUg"}],"2Vpqn":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d750 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d750.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieGrid", ()=>MovieGrid);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const MovieGrid = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        class: "movie-heading-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                id: "movies-section",
+                children: "Movies"
+            }, void 0, false, {
+                fileName: "src/components/movie-grid/movie-grid.jsx",
+                lineNumber: 4,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "line"
+            }, void 0, false, {
+                fileName: "src/components/movie-grid/movie-grid.jsx",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/movie-grid/movie-grid.jsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = MovieGrid;
+var _c;
+$RefreshReg$(_c, "MovieGrid");
+
+  $parcel$ReactRefreshHelpers$d750.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}]},["itlOw","fuyGC","d8Dch"], "d8Dch", "parcelRequire1961")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

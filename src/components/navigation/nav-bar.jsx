@@ -4,7 +4,8 @@ export const NavBar = () => {
       <div className="nav-bar">
         <div className="logo">PopcornPal</div>
         <div className="menu-bar">
-          <p>Movies</p>
+          <a href="#movies-section">
+          <p>Movies</p></a>
           <p>Genres</p>
           <p>My List</p>
         </div>

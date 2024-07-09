@@ -6,11 +6,25 @@ export const Hero = () => {
         <div className="left-hero">
           <p className="hero-duration">Duration: 3h12m • Action</p>
           <h1 className="hero-title">Avatar: The Way of Water</h1>
-          <p className="hero-desc">On the lush alien world of Pandora live the Na'vi, beings who appear primitive but are highly<span className="dots">...</span><span className="hero-more-desc"> evolved. Because the planet's environment is poisonous, human/Na'vi hybrids, called Avatars, must link...</span></p>
-          <button>Read More</button>
+          <p className="hero-desc">
+            On the lush alien world of Pandora live the Na'vi, beings who appear
+            primitive but are highly<span className="dots">...</span>
+            <span className="hero-more-desc">
+              {" "}
+              evolved. Because the planet's environment is poisonous,
+              human/Na'vi hybrids, called Avatars, must link...
+            </span>
+          </p>
+          <div className="hero-btns">
+            <button>Read More</button>
+            <img
+              className="white-heart"
+              src={require("../../images/Heart.svg")}
+            />
+          </div>
         </div>
         <div className="right-hero">
-        <img
+          <img
             className="featured-star"
             src={require("../../images/Star.svg")}
           />

@@ -18,16 +18,6 @@ p {
   margin: 0;
 }
 
-.heading {
-  font-size: 50px;
-  font-weight: 600;
-}
-
-.subtitle {
-  font-size: 30px;
-  font-weight: 600;
-}
-
 .logo {
   font-size: 25px;
 }
@@ -53,6 +43,15 @@ p {
   cursor: pointer;
 }
 
+.menu-bar p:hover {
+  color: $main-red;
+}
+
+a {
+  color: $main-white;
+  text-decoration: none;
+}
+
 .right-logos img {
   width: 32px;
   cursor: pointer;
@@ -75,8 +74,9 @@ button {
   font-size: 16px;
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  padding: 24px 74px;
+  padding: 22px 70px;
   cursor: pointer;
+  transition: background-color 1s ease;
 }
 
 button:hover {
@@ -123,6 +123,17 @@ button:hover {
   flex-grow: 2;
 }
 
+.hero-btns {
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
+  gap: 15px;
+}
+
+.white-heart {
+  cursor: pointer;
+}
+
 .right-hero {
   display: flex;
   justify-content: end;
@@ -135,12 +146,7 @@ button:hover {
 }
 
 .hero-title {
-  width: 45%;
-}
-
-.left-hero button {
-  align-self: baseline;
-  margin-top: 55px;
+  width: 36%;
 }
 
 .featured-star {
@@ -150,13 +156,29 @@ button:hover {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 40px;
   margin: 20px 0;
 }
 
 .hero-desc {
   width: 70%;
   color: $subtle-gray;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.movie-heading-container {
+  padding: 55px 5%;
+}
+
+.line {
+  margin: 20px 0;
+  border-top: $subtle-gray 1px solid;
 }
 
 // break for mobile, but not smallest devices
@@ -172,10 +194,6 @@ h1 {
   .user-btn,
   .menu-bar {
     display: none;
-  }
-
-  .right-logos img {
-    width: 24px;
   }
 
   .hero-container {
@@ -203,6 +221,10 @@ h1 {
 
   .hero-desc {
     width: 100%;
+  }
+
+  .movie-heading-container {
+    padding: 55px 2%;
   }
 }
 
@@ -237,20 +259,18 @@ h1 {
     top: 31%;
   }
 
-  .left-hero button {
-    margin-top: 35px;
+  .right-logos img {
+    width: 28px;
   }
 
-  .right-logos img {
+  .white-heart {
     width: 28px;
   }
 
   .logo {
     font-size: 23px;
   }
-}
 
-@media (max-width: 1080px) {
   .menu-bar {
     width: 30%;
   }
@@ -267,14 +287,14 @@ h1 {
     padding: 18px 45px;
     font-size: 14px;
   }
+
+  h2 {
+    font-size: 26px;
+  }
 }
 
 // big break point here
 @media (min-width: 1080px) and (max-width: 1330px) {
-  h1 {
-    font-size: 40px;
-  }
-
   * {
     font-size: 15px;
   }
@@ -283,17 +303,23 @@ h1 {
     width: 16.5px;
   }
 
-  .left-hero button {
-    margin-top: 35px;
-  }
-
-  button {
-    padding: 22px 72px;
-    font-size: 15px;
+  .hero-title {
+    width: 50%;
   }
 
   .hero-text {
     top: 28%;
+  }
+
+  button {
+    padding: 22px 68px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 3000px) {
+  .hero-btns {
+    margin-top: 55px;
   }
 }
 
