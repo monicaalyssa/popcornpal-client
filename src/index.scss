@@ -7,19 +7,51 @@ body {
   background-color: $background;
   color: $main-white;
   font-family: "Inter", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   margin: 0;
 }
 
 .heading {
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 600;
 }
 
 .subtitle {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 600;
+}
+
+.logo {
+  font-size: 25px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 35px 5%;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.menu-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-bar p {
+  margin: 10px 50px;
+  cursor: pointer;
+}
+
+.right-logos img {
+  width: 32px;
+  cursor: pointer;
+}
+
+.user-btn {
+  margin-left: 100px;
 }
 
 .poster {
@@ -32,7 +64,7 @@ body {
   color: $main-white;
   border: none;
   border-radius: 100;
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   padding: 10px 24px;
@@ -43,4 +75,16 @@ body {
 
 .go-back-btn:hover {
   background-color: #c71919;
+}
+
+@media (max-width: 1080px) {
+  .menu-bar {
+    width: 30%;
+  }
+  .menu-bar p {
+    margin: 10px 5px;
+  }
+  .user-btn {
+    margin-left: 20px;
+  }
 }

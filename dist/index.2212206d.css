@@ -4,18 +4,50 @@ body {
   background-color: #1a1a1a;
   margin: 0;
   font-family: Inter, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .heading {
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 600;
 }
 
 .subtitle {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 600;
+}
+
+.logo {
+  font-size: 25px;
+}
+
+.nav-bar {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 5%;
+  font-weight: 600;
+  display: flex;
+}
+
+.menu-bar {
+  justify-content: space-between;
+  display: flex;
+}
+
+.menu-bar p {
+  cursor: pointer;
+  margin: 10px 50px;
+}
+
+.right-logos img {
+  cursor: pointer;
+  width: 32px;
+}
+
+.user-btn {
+  margin-left: 100px;
 }
 
 .poster {
@@ -33,11 +65,25 @@ body {
   height: 74px;
   padding: 10px 24px;
   font-family: Inter, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .go-back-btn:hover {
   background-color: #c71919;
+}
+
+@media (width <= 1080px) {
+  .menu-bar {
+    width: 30%;
+  }
+
+  .menu-bar p {
+    margin: 10px 5px;
+  }
+
+  .user-btn {
+    margin-left: 20px;
+  }
 }
 /*# sourceMappingURL=index.2212206d.css.map */

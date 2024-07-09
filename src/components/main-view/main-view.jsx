@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import { NavBar } from "../navigation/nav-bar";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([
@@ -44,6 +45,7 @@ export const MainView = () => {
 
   return (
     <div>
+      <NavBar />
       {movies.map((movieprop) => (
         <MovieCard
           key={movieprop.id}
