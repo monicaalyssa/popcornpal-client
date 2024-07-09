@@ -1,5 +1,4 @@
 import { useState } from "react";
-import React from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
@@ -45,15 +44,15 @@ export const MainView = () => {
 
   return (
     <div>
-      {movies.map((movieprop) => {
+      {movies.map((movieprop) => (
         <MovieCard
           key={movieprop.id}
-          movieprop={movies}
+          movieprop={movieprop}
           onMovieClick={(newSelectedMovie) => {
             setSelectedMovie(newSelectedMovie);
           }}
-        />;
-      })}
+        />
+      ))}
     </div>
   );
 };
