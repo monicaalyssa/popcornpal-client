@@ -5,14 +5,16 @@ export const MovieView = ({ movieprop, onBackClick }) => {
         <img className="poster" src={movieprop.image} />
       </div>
       <div>
-        <span>Title: </span>
-        <span>{movieprop.title}</span>
+        <span className="heading">{movieprop.title}</span>
       </div>
       <div>
-        <span>Director: </span>
+        <span className="subtitle">Director</span>
+        <br></br>
         <span>{movieprop.director}</span>
       </div>
-      <button onClick={onBackClick}>Back</button>
+      <button className="go-back-btn" onClick={onBackClick}>
+        Go Back
+      </button>
     </div>
   );
 };

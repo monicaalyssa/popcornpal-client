@@ -1,5 +1,43 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap";
+body {
+  color: #f9f6f9;
+  background-color: #1a1a1a;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.heading {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 40px;
+  font-weight: 600;
+}
+
 .poster {
   width: 400px;
   height: 600px;
+}
+
+.go-back-btn {
+  color: #f9f6f9;
+  cursor: pointer;
+  background-color: #c20505;
+  border: none;
+  border-radius: 100px;
+  width: 228px;
+  height: 74px;
+  padding: 10px 24px;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.go-back-btn:hover {
+  background-color: #c71919;
 }
 /*# sourceMappingURL=index.2212206d.css.map */
