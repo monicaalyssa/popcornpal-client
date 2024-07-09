@@ -1,3 +1,7 @@
+import { useState } from "react";
+import React from "react";
+import { MovieCard } from "../movie-view";
+
 export const MainView = () => {
   const [movies, setMovies] = useState([
     { id: 1, title: "Avatar: The Way of Water" },
@@ -12,7 +16,7 @@ export const MainView = () => {
   return (
     <div>
       {movies.map((movieprop) => {
-        return <div>{movieprop.title}</div>;
+        <MovieCard movieprop={movies}/>
       })}
     </div>
   );
