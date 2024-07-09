@@ -27374,6 +27374,7 @@ var _react = require("react");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _navBar = require("../navigation/nav-bar");
+var _hero = require("../hero/hero");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
@@ -27403,21 +27404,26 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 35,
+        lineNumber: 36,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 43,
+        lineNumber: 44,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 48,
+                lineNumber: 49,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _hero.Hero), {}, void 0, false, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined),
             movies.map((movieprop)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
@@ -27427,13 +27433,13 @@ const MainView = ()=>{
                     }
                 }, movieprop.id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 50,
+                    lineNumber: 52,
                     columnNumber: 9
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 47,
+        lineNumber: 48,
         columnNumber: 5
     }, undefined);
 };
@@ -27447,7 +27453,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","react/jsx-dev-runtime":"iTorj","../navigation/nav-bar":"OhlYY"}],"bwuIu":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","react/jsx-dev-runtime":"iTorj","../navigation/nav-bar":"OhlYY","../hero/hero":"emPqA"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27745,6 +27751,142 @@ exports.getOrigin = getOrigin;
 },{}],"4Az2l":[function(require,module,exports) {
 module.exports = require("d1553abe5a7be242").getBundleURL("byUka") + "User.aae1e741.svg" + "?" + Date.now();
 
-},{"d1553abe5a7be242":"kPWUg"}]},["itlOw","fuyGC","d8Dch"], "d8Dch", "parcelRequire1961")
+},{"d1553abe5a7be242":"kPWUg"}],"emPqA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$831a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$831a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Hero", ()=>Hero);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Hero = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "hero-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "hero-img",
+                src: require("9472117a191cca85")
+            }, void 0, false, {
+                fileName: "src/components/hero/hero.jsx",
+                lineNumber: 4,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "hero-text",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "left-hero",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "hero-duration",
+                                children: "Duration: 3h12m \u2022 Action"
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 7,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                className: "hero-title",
+                                children: "Avatar: The Way of Water"
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 8,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "hero-desc",
+                                children: [
+                                    "On the lush alien world of Pandora live the Na'vi, beings who appear primitive but are highly",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "dots",
+                                        children: "..."
+                                    }, void 0, false, {
+                                        fileName: "src/components/hero/hero.jsx",
+                                        lineNumber: 9,
+                                        columnNumber: 129
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "hero-more-desc",
+                                        children: " evolved. Because the planet's environment is poisonous, human/Na'vi hybrids, called Avatars, must link..."
+                                    }, void 0, false, {
+                                        fileName: "src/components/hero/hero.jsx",
+                                        lineNumber: 9,
+                                        columnNumber: 162
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 9,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                children: "Read More"
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 10,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/hero/hero.jsx",
+                        lineNumber: 6,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "right-hero",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "featured-star",
+                                src: require("aac761b4f4a25e61")
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 13,
+                                columnNumber: 9
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: "featured"
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 17,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/hero/hero.jsx",
+                        lineNumber: 12,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/hero/hero.jsx",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/hero/hero.jsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Hero;
+var _c;
+$RefreshReg$(_c, "Hero");
+
+  $parcel$ReactRefreshHelpers$831a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","9472117a191cca85":"5CB4l","aac761b4f4a25e61":"2SwY8"}],"5CB4l":[function(require,module,exports) {
+module.exports = require("1569dc95ab2e052e").getBundleURL("byUka") + "avatar-bkg.4191252d.jpg" + "?" + Date.now();
+
+},{"1569dc95ab2e052e":"kPWUg"}],"2SwY8":[function(require,module,exports) {
+module.exports = require("a16688772f530b67").getBundleURL("byUka") + "Star.00b9023a.svg" + "?" + Date.now();
+
+},{"a16688772f530b67":"kPWUg"}]},["itlOw","fuyGC","d8Dch"], "d8Dch", "parcelRequire1961")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

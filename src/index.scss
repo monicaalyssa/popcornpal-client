@@ -1,6 +1,8 @@
 $background: #1a1a1a;
 $main-red: #c20505;
 $main-white: #f9f6f9;
+$main-yellow: #ffd600;
+$subtle-gray: #787b82;
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 body {
@@ -9,6 +11,10 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 500;
+  margin: 0;
+}
+
+p {
   margin: 0;
 }
 
@@ -33,6 +39,8 @@ body {
   padding: 35px 5%;
   justify-content: space-between;
   font-weight: 600;
+  position: relative;
+  z-index: 1000;
 }
 
 .menu-bar {
@@ -59,7 +67,7 @@ body {
   height: 600px;
 }
 
-.go-back-btn {
+button {
   background-color: $main-red;
   color: $main-white;
   border: none;
@@ -67,24 +75,230 @@ body {
   font-size: 16px;
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  padding: 10px 24px;
+  padding: 24px 74px;
   cursor: pointer;
-  width: 228px;
-  height: 74px;
 }
 
-.go-back-btn:hover {
+button:hover {
   background-color: #c71919;
+}
+
+.hero-container {
+  position: relative;
+  bottom: 109.5px;
+  margin-bottom: -109.5px;
+}
+
+.hero-img {
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  z-index: -1;
+  opacity: 0.4;
+  image-rendering: pixelated;
+}
+
+.hero-text {
+  display: flex;
+  position: absolute;
+  top: 25%;
+  padding: 0px 5%;
+  width: 90%;
+  max-width: 90%;
+}
+
+.left-hero,
+.right-hero {
+  flex: 1;
+}
+
+.dots {
+  display: none;
+}
+
+.left-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+
+.right-hero {
+  display: flex;
+  justify-content: end;
+}
+
+.hero-duration {
+  font-weight: 500;
+  color: $subtle-gray;
+  margin-bottom: 5px;
+}
+
+.hero-title {
+  width: 45%;
+}
+
+.left-hero button {
+  align-self: baseline;
+  margin-top: 55px;
+}
+
+.featured-star {
+  width: 18px;
+  align-self: baseline;
+  margin-right: 6px;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 20px 0;
+}
+
+.hero-desc {
+  width: 70%;
+  color: $subtle-gray;
+}
+
+// break for mobile, but not smallest devices
+@media (min-width: 0) and (max-width: 830px) {
+  .nav-bar {
+    padding: 10px 2%;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .user-btn,
+  .menu-bar {
+    display: none;
+  }
+
+  .right-logos img {
+    width: 24px;
+  }
+
+  .hero-container {
+    bottom: 0;
+    margin-bottom: 0px;
+  }
+
+  .hero-text {
+    display: flex;
+    position: static;
+    top: 0;
+    padding: 0px 2%;
+    width: 96%;
+    max-width: 96%;
+    padding-top: 20px;
+  }
+
+  .left-hero {
+    flex-grow: 4;
+  }
+
+  .hero-title {
+    margin: 0 0 10px 0;
+  }
+
+  .hero-desc {
+    width: 100%;
+  }
+}
+
+@media (min-width: 0) and (max-width: 920px) {
+  .dots {
+    display: inline-block;
+  }
+
+  .hero-more-desc {
+    display: none;
+  }
+}
+
+@media (min-width: 0) and (max-width: 1080px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  * {
+    font-size: 14px;
+  }
+
+  .featured-star {
+    width: 15.5px;
+  }
+
+  .hero-title {
+    width: 100%;
+  }
+
+  .hero-text {
+    top: 31%;
+  }
+
+  .left-hero button {
+    margin-top: 35px;
+  }
+
+  .right-logos img {
+    width: 28px;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
 }
 
 @media (max-width: 1080px) {
   .menu-bar {
     width: 30%;
   }
+
   .menu-bar p {
     margin: 10px 5px;
   }
+
   .user-btn {
     margin-left: 20px;
+  }
+
+  button {
+    padding: 18px 45px;
+    font-size: 14px;
+  }
+}
+
+// big break point here
+@media (min-width: 1080px) and (max-width: 1330px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  * {
+    font-size: 15px;
+  }
+
+  .featured-star {
+    width: 16.5px;
+  }
+
+  .left-hero button {
+    margin-top: 35px;
+  }
+
+  button {
+    padding: 22px 72px;
+    font-size: 15px;
+  }
+
+  .hero-text {
+    top: 28%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero-text {
+    top: 28%;
   }
 }
