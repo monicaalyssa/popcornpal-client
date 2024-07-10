@@ -41,6 +41,7 @@ p {
 .menu-bar p {
   margin: 10px 50px;
   cursor: pointer;
+  transition: color 0.4s ease;
 }
 
 .menu-bar p:hover {
@@ -76,7 +77,7 @@ button {
   font-weight: 600;
   padding: 22px 70px;
   cursor: pointer;
-  transition: background-color 1s ease;
+  transition: background-color 0.5s ease;
 }
 
 button:hover {
