@@ -27383,7 +27383,15 @@ const MainView = ()=>{
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
         fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
-            console.log("Movies:", data);
+            const moviesFromApi = data.map((movie)=>{
+                return {
+                    id: movie._id,
+                    title: movie.Title,
+                    image: movie.ImageURL,
+                    director: movie.Director.Name
+                };
+            });
+            setMovies(moviesFromApi);
         });
     });
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
@@ -27391,31 +27399,31 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 23,
+        lineNumber: 32,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 31,
+        lineNumber: 40,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 36,
+                lineNumber: 45,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _hero.Hero), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 37,
+                lineNumber: 46,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieGrid.MovieGrid), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 38,
+                lineNumber: 47,
                 columnNumber: 7
             }, undefined),
             movies.map((movieprop)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
@@ -27425,13 +27433,13 @@ const MainView = ()=>{
                     }
                 }, movieprop.id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 40,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 35,
+        lineNumber: 44,
         columnNumber: 5
     }, undefined);
 };

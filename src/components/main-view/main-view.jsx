@@ -14,7 +14,16 @@ export const MainView = () => {
     fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/movies")
     .then((response) => response.json())
     .then((data) => {
-      console.log("Movies:", data);
+      const moviesFromApi = data.map((movie) => {
+        return {
+          id: movie._id, 
+          title: movie.Title,
+          image: movie.ImageURL,
+          director: movie.Director.Name
+        };
+      });
+
+      setMovies(moviesFromApi);
     })
   });
 
