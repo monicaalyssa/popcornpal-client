@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { NavBar } from "../navigation/nav-bar";
@@ -6,31 +6,17 @@ import { Hero } from "../hero/hero";
 import { MovieGrid } from "../movie-grid/movie-grid";
 
 export const MainView = () => {
-  const [movies, setMovies] = useState([
-    {
-      id: 1,
-      title: "Avatar: The Way of Water",
-      image:
-        "https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_.jpg",
-      director: "James Cameron"
-    },
-    {
-      id: 2,
-      title: "The Maze Runner",
-      image:
-        "https://m.media-amazon.com/images/M/MV5BMjUyNTA3MTAyM15BMl5BanBnXkFtZTgwOTEyMTkyMjE@._V1_.jpg",
-      director: "Wes Ball"
-    },
-    {
-      id: 3,
-      title: "Divergent",
-      image:
-        "https://m.media-amazon.com/images/M/MV5BMTYxMzYwODE4OV5BMl5BanBnXkFtZTgwNDE5MzE2MDE@._V1_FMjpg_UY2048_.jpg",
-      director: "Neil Burger"
-    }
-  ]);
+  const [movies, setMovies] = useState([]);
 
   const [selectedMovie, setSelectedMovie] = useState(null);
+
+  useEffect(() => {
+    fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/movies")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Movies:", data);
+    })
+  });
 
   if (selectedMovie) {
     return (
