@@ -182,6 +182,49 @@ h2 {
   border-top: $subtle-gray 1px solid;
 }
 
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.grid-poster {
+  width: 300px;
+  aspect-ratio: 2 / 3;
+  transition: filter 0.2s ease;
+}
+
+.grid-poster:hover {
+  filter: blur(4px);
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.grid-overflow {
+  width: 300px;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.grid {
+  padding: 0 5%; // change the padding and columns for smaller screen sizes
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 50px;
+}
+
+.grid-genre-desc {
+  font-weight: 500;
+  color: $subtle-gray;
+  padding-top: 5px;
+}
+
+.grid-movie-info {
+  text-align: center;
+}
+
 // break for mobile, but not smallest devices
 @media (min-width: 0) and (max-width: 830px) {
   .nav-bar {

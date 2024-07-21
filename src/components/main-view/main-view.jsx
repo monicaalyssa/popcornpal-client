@@ -19,7 +19,8 @@ export const MainView = () => {
           id: movie._id, 
           title: movie.Title,
           image: movie.ImageURL,
-          director: movie.Director.Name
+          director: movie.Director.Name,
+          genre: movie.Genre.Name
         };
       });
 
@@ -45,6 +46,7 @@ export const MainView = () => {
       <NavBar />
       <Hero />
       <MovieGrid />
+      <div className="grid">
       {movies.map((movieprop) => (
         <MovieCard
           key={movieprop.id}
@@ -54,6 +56,7 @@ export const MainView = () => {
           }}
         />
       ))}
+      </div>
     </div>
   );
 };
