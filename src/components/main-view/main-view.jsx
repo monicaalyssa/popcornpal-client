@@ -4,10 +4,12 @@ import { MovieView } from "../movie-view/movie-view";
 import { NavBar } from "../navigation/nav-bar";
 import { Hero } from "../hero/hero";
 import { MovieGrid } from "../movie-grid/movie-grid";
+import { LoginNavBar } from "../login-nav-bar/login-nav-bar";
+import { LoginView } from "../login-view/login-view";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
-
+  const [user, setUser] = useState(null);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
@@ -27,6 +29,15 @@ export const MainView = () => {
       setMovies(moviesFromApi);
     })
   });
+
+  if (!user) {
+    return (
+      <div>
+        <LoginNavBar />
+        <LoginView />
+      </div>
+    );
+  }
 
   if (selectedMovie) {
     return (

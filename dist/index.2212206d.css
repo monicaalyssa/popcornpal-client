@@ -217,6 +217,56 @@ h2 {
   text-align: center;
 }
 
+.login-container {
+  padding: 0 5%;
+}
+
+.login-heading {
+  text-align: center;
+}
+
+.login-form-flexbox {
+  flex-direction: column;
+  align-content: center;
+  gap: 60px;
+  width: 500px;
+  margin: auto;
+  display: flex;
+}
+
+.form-labels-container {
+  flex-direction: column;
+  gap: 25px;
+  display: flex;
+}
+
+.input-box {
+  color: #787b82;
+  background-color: #242424;
+  border: 0;
+  border-radius: 5px;
+  padding: 15px 14px;
+  font-size: 16px;
+}
+
+.form-label-box {
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+}
+
+.input-box:focus, :focus {
+  border: 0;
+  outline: 1px solid #ffd600;
+  box-shadow: 0 0 5px #ffd600;
+}
+
+.password-input {
+  background-image: url("Lock.c763d64f.svg");
+  background-position: 97%;
+  background-repeat: no-repeat;
+}
+
 @media (width >= 0) and (width <= 830px) {
   .nav-bar {
     padding: 10px 2%;

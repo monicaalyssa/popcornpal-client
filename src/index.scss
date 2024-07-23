@@ -225,6 +225,63 @@ h2 {
   text-align: center;
 }
 
+.login-container {
+  padding: 0 5%;
+}
+
+.login-heading {
+  text-align: center;
+}
+
+.login-form-flexbox {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 60px;
+  width: 500px;
+  margin: auto;
+}
+
+.form-labels-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-box { // add respoiveness including font sizes
+  border-radius: 5px;
+  background-color: #242424;
+  border: 0px;
+  color: $subtle-gray;
+  padding: 15px 14px;
+  font-size: 16px;
+}
+
+.form-label-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-box:focus {
+  border: 0px;
+  outline: 1px solid $main-yellow;
+  box-shadow: 0px 0px 5px 0px $main-yellow;
+}
+
+*:focus { // might need to remove this, or need to add custom button focus
+  border: 0px;
+  outline: 1px solid $main-yellow;
+  box-shadow: 0px 0px 5px 0px $main-yellow;
+}
+
+.password-input {
+  background-image: url("./images/Lock.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-x: 97%;
+}
+
 // break for mobile, but not smallest devices
 @media (min-width: 0) and (max-width: 830px) {
   .nav-bar {
