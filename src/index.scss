@@ -232,8 +232,8 @@ h2 {
 .login-heading {
   text-align: center;
 }
-
-.login-form-flexbox {
+ 
+.login-form-flexbox { // add media query for page padding
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -245,10 +245,10 @@ h2 {
 .form-labels-container {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
-.input-box { // add respoiveness including font sizes
+.input-box { // check or add media query for font sizes
   border-radius: 5px;
   background-color: #242424;
   border: 0px;

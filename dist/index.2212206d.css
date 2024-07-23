@@ -236,7 +236,7 @@ h2 {
 
 .form-labels-container {
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   display: flex;
 }
 
