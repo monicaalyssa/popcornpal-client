@@ -68,6 +68,7 @@ export const MainView = () => {
         />
       ))}
       </div>
+      <button onClick={() => { setUser(null); }}>Logout</button>
     </div>
   );
 };
