@@ -9,19 +9,27 @@ export const LoginView = ({ onLoggedIn }) => {
     event.preventDefault();
 
     const data = {
-      access: username,
-      secret: password
+      Username: username,
+      Password: password
     };
 
-    fetch("https://openlibrary.org/account/login.json", {
+    fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/login", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(data)
-    }).then((response) => {
-      if (response.ok) {
-        onLoggedIn(username);
+    }).then((response) => response.json())
+    .then((data) => {
+      console.log("Login response: ", data);
+      if (data.user) {
+        onLoggedIn(data.user, data.token);
       } else {
-        alert("Login failed");
+        alert("No such user");
       }
+    })
+    .catch((e) => {
+        alert("Something went wrong");
     });
   };
 
