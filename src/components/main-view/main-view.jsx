@@ -34,7 +34,7 @@ export const MainView = () => {
     return (
       <div>
         <LoginNavBar />
-        <LoginView />
+        <LoginView onLoggedIn={(user) => setUser(user)}/>
       </div>
     );
   }
