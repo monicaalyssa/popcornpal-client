@@ -1,6 +1,9 @@
 import React from "react";
+import { useState } from "react";
 
 export const LoginView = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const handleSubmit = (event) => {
     // prevents the default behavior of the page reloading when the form is submitted
     event.preventDefault();
@@ -25,6 +28,8 @@ export const LoginView = () => {
             <p>Username</p>
             <input
               type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter your username"
               className="input-box"
             />
@@ -32,6 +37,8 @@ export const LoginView = () => {
           <label className="form-label-box">
             <p>Password</p>
             <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               className="input-box password-input"
               type="password"
