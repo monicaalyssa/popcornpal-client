@@ -28746,7 +28746,7 @@ parcelHelpers.export(exports, "MovieGrid", ()=>MovieGrid);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const MovieGrid = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        class: "movie-heading-container",
+        className: "movie-heading-container",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 id: "movies-section",
