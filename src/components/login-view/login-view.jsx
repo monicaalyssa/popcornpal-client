@@ -1,7 +1,24 @@
+import React from "react";
+
 export const LoginView = () => {
+  const handleSubmit = (event) => {
+    // prevents the default behavior of the page reloading when the form is submitted
+    event.preventDefault();
+
+    const data = {
+      access: username,
+      secret: password
+    };
+
+    fetch("https://openlibrary.org/account/login.json", {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+  };
+
   return (
     <div className="login-container">
-      <form className="login-form-flexbox">
+      <form onSubmit={handleSubmit} className="login-form-flexbox">
         <h2 className="login-heading">Log In</h2>
         <div className="form-labels-container">
           <label className="form-label-box">
