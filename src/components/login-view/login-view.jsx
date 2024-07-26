@@ -38,6 +38,7 @@ export const LoginView = ({ onLoggedIn }) => {
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter your username"
               className="input-box"
+              required
             />
           </label>
           <label className="form-label-box">
@@ -48,6 +49,7 @@ export const LoginView = ({ onLoggedIn }) => {
               placeholder="Enter your password"
               className="input-box password-input"
               type="password"
+              required
             />
           </label>
         </div>

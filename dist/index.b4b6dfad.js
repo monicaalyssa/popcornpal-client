@@ -28844,7 +28844,8 @@ const LoginView = ({ onLoggedIn })=>{
                                     value: username,
                                     onChange: (e)=>setUsername(e.target.value),
                                     placeholder: "Enter your username",
-                                    className: "input-box"
+                                    className: "input-box",
+                                    required: true
                                 }, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
                                     lineNumber: 35,
@@ -28863,7 +28864,7 @@ const LoginView = ({ onLoggedIn })=>{
                                     children: "Password"
                                 }, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 44,
+                                    lineNumber: 45,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -28871,16 +28872,17 @@ const LoginView = ({ onLoggedIn })=>{
                                     onChange: (e)=>setPassword(e.target.value),
                                     placeholder: "Enter your password",
                                     className: "input-box password-input",
-                                    type: "password"
+                                    type: "password",
+                                    required: true
                                 }, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 45,
+                                    lineNumber: 46,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 43,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, undefined)
                     ]
@@ -28895,7 +28897,7 @@ const LoginView = ({ onLoggedIn })=>{
                     children: "Login"
                 }, void 0, false, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 54,
+                    lineNumber: 56,
                     columnNumber: 9
                 }, undefined)
             ]
