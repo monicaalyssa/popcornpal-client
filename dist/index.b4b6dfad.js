@@ -27444,9 +27444,7 @@ const MainView = ()=>{
         lineNumber: 62,
         columnNumber: 7
     }, undefined);
-    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "The list is empty!"
-    }, void 0, false, {
+    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
         lineNumber: 70,
         columnNumber: 12
@@ -28586,13 +28584,13 @@ const NavBar = ()=>{
                     className: "menu-bar",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            href: "#movies-section",
+                            href: "/movies",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: "Movies"
                             }, void 0, false, {
                                 fileName: "src/components/navigation/nav-bar.jsx",
                                 lineNumber: 8,
-                                columnNumber: 11
+                                columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
@@ -28603,14 +28601,14 @@ const NavBar = ()=>{
                             children: "Genres"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 9,
+                            lineNumber: 10,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "My List"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 10,
+                            lineNumber: 11,
                             columnNumber: 11
                         }, undefined)
                     ]
@@ -28627,7 +28625,7 @@ const NavBar = ()=>{
                             src: require("b9710e7656528221")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 13,
+                            lineNumber: 14,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -28635,13 +28633,13 @@ const NavBar = ()=>{
                             src: require("3de8cf43c7f5ba07")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 17,
+                            lineNumber: 18,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 12,
+                    lineNumber: 13,
                     columnNumber: 9
                 }, undefined)
             ]
