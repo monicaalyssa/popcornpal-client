@@ -21,7 +21,7 @@ p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 35px 5%;
+  padding: 30px 5%;
   font-weight: 600;
   display: flex;
   position: relative;
@@ -54,11 +54,6 @@ a {
 
 .user-btn {
   margin-left: 100px;
-}
-
-.poster {
-  width: 400px;
-  height: 600px;
 }
 
 button {
@@ -271,7 +266,7 @@ input {
   display: flex;
 }
 
-.input-box:focus, :focus {
+.input-box:focus {
   border: 0;
   outline: 1px solid #ffd600;
   box-shadow: 0 0 5px #ffd600;
@@ -281,6 +276,90 @@ input {
   background-image: url("Lock.c763d64f.svg");
   background-position: 97%;
   background-repeat: no-repeat;
+}
+
+.banner-container {
+  opacity: .4;
+  background-position: right 50% top 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  margin-bottom: -110px;
+  position: relative;
+  bottom: 110px;
+  overflow: hidden;
+}
+
+.movie-heading-margin {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.movie-info {
+  padding: 40px 5% 120px;
+}
+
+.movie-heading-flex {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.favorite-button {
+  background-color: #0000;
+  border: 2px solid #f9f6f9;
+  align-items: center;
+  padding: 20px 52px;
+  font-weight: 400;
+  transition: all .3s;
+  display: flex;
+}
+
+.favorite-button:hover {
+  color: #000;
+  background-color: #f9f6f9;
+  box-shadow: 0 0 27px -7px #ffd600;
+}
+
+.favorite-button:active {
+  box-shadow: none;
+  opacity: .8;
+}
+
+.red-heart {
+  width: 26px;
+  position: relative;
+  right: 10px;
+}
+
+.favorite-button:hover > .red-heart {
+  content: url("Red-Heart-Filled.d4f79917.svg");
+}
+
+.movie-info-bubbles {
+  display: flex;
+}
+
+.bubble {
+  color: #ffd600;
+  background-color: #242424;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+.info-section {
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.movie-description {
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.back-btn-container {
+  padding-top: 40px;
 }
 
 @media (width >= 0) and (width <= 830px) {

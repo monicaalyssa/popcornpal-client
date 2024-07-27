@@ -1,4 +1,5 @@
 $background: #1a1a1a;
+$light-background: #242424;
 $main-red: #c20505;
 $main-white: #f9f6f9;
 $main-yellow: #ffd600;
@@ -26,7 +27,7 @@ p {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 35px 5%;
+  padding: 30px 5%;
   justify-content: space-between;
   font-weight: 600;
   position: relative;
@@ -60,11 +61,6 @@ a {
 
 .user-btn {
   margin-left: 100px;
-}
-
-.poster {
-  width: 400px;
-  height: 600px;
 }
 
 button {
@@ -266,7 +262,7 @@ input {
 
 .input-box { // check or add media query for font sizes
   border-radius: 5px;
-  background-color: #242424;
+  background-color: $light-background;
   border: 0px;
   color: $subtle-gray;
   padding: 15px 14px;
@@ -285,17 +281,95 @@ input {
   box-shadow: 0px 0px 5px 0px $main-yellow;
 }
 
-*:focus { // might need to remove this, or need to add custom button focus
-  border: 0px;
-  outline: 1px solid $main-yellow;
-  box-shadow: 0px 0px 5px 0px $main-yellow;
-}
-
 .password-input {
   background-image: url("./images/Lock.svg");
   background-repeat: no-repeat;
   background-position: right;
   background-position-x: 97%;
+}
+
+.banner-container { // add responsive height and position  for smaller & larger screens
+  height: 600px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: top 20% right 50%;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  position: relative;
+  bottom: 110px;
+  margin-bottom: -110px;
+}
+
+.movie-heading-margin {
+  margin-top: 15px;
+  margin-bottom: 15px;;
+}
+
+.movie-info { // add responive padding for smaller & larger screen sizes
+  padding: 40px 5% 120px 5%;
+}
+
+.movie-heading-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favorite-button { // change hover state, etc. and change responsive button size if necessary
+  background-color: transparent;
+  font-weight: 400;
+  border: 2px solid $main-white;
+  padding: 20px 52px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease; 
+}
+
+.favorite-button:hover {
+  background-color: $main-white;
+  color: black;
+  box-shadow: 0 0 27px -7px $main-yellow;
+}
+
+.favorite-button:active { // after button is favorited leave it background white with red filled heart using JS
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+.red-heart { // default heart is 32px on hero, make this width responsive for smaller & larger(if necessary) screens
+  width: 26px;
+  position: relative;
+  right: 10px;
+}
+
+.favorite-button:hover > .red-heart {
+  content: url("./images/Red-Heart-Filled.svg");
+}
+
+.movie-info-bubbles {
+  display: flex;
+}
+
+.bubble {
+  background-color: $light-background;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: $main-yellow
+}
+
+.info-section {
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.movie-description {
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.back-btn-container {
+  padding-top: 40px;
 }
 
 // break for mobile, but not smallest devices
