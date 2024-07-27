@@ -11,30 +11,41 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(null);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
-    fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/movies")
-    .then((response) => response.json())
-    .then((data) => {
-      const moviesFromApi = data.map((movie) => {
-        return {
-          id: movie._id, 
-          title: movie.Title,
-          image: movie.ImageURL,
-          director: movie.Director.Name,
-          genre: movie.Genre.Name
-        };
-      });
-
-      setMovies(moviesFromApi);
+    if (!token) {
+      return;
+    }
+    fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/movies", {
+      headers: { Authorization: `Bearer ${token}` }
     })
-  });
+      .then((response) => response.json())
+      .then((data) => {
+        const moviesFromApi = data.map((movie) => {
+          return {
+            id: movie._id,
+            title: movie.Title,
+            image: movie.ImageURL,
+            director: movie.Director.Name,
+            genre: movie.Genre.Name
+          };
+        });
+
+        setMovies(moviesFromApi);
+      });
+  }, [token]);
 
   if (!user) {
     return (
       <div>
         <LoginNavBar />
-        <LoginView onLoggedIn={(user) => setUser(user)}/>
+        <LoginView
+          onLoggedIn={(user, token) => {
+            setUser(user);
+            setToken(token);
+          }}
+        />
       </div>
     );
   }
