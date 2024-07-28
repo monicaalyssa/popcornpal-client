@@ -28574,6 +28574,16 @@ var _s = $RefreshSig$();
 const NavBar = ({ user, onLogout })=>{
     _s();
     const [open, setOpen] = (0, _react.useState)(false);
+    let menuRef = (0, _react.useRef)(null);
+    (0, _react.useEffect)(()=>{
+        const handleClickOutside = (event)=>{
+            if (menuRef.current && !menuRef.current.contains(event.target)) setOpen(false);
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return ()=>{
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    });
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "nav-bar",
@@ -28583,7 +28593,7 @@ const NavBar = ({ user, onLogout })=>{
                     children: "PopcornPal"
                 }, void 0, false, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 11,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28595,35 +28605,36 @@ const NavBar = ({ user, onLogout })=>{
                                 children: "Movies"
                             }, void 0, false, {
                                 fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 14,
+                                lineNumber: 29,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 13,
+                            lineNumber: 28,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "Genres"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 16,
+                            lineNumber: 31,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "My List"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 17,
+                            lineNumber: 32,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 12,
+                    lineNumber: 27,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    ref: menuRef,
                     className: "right-logos",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -28631,7 +28642,7 @@ const NavBar = ({ user, onLogout })=>{
                             src: require("b9710e7656528221")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 20,
+                            lineNumber: 35,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -28640,7 +28651,7 @@ const NavBar = ({ user, onLogout })=>{
                             src: require("3de8cf43c7f5ba07")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 24,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28650,33 +28661,33 @@ const NavBar = ({ user, onLogout })=>{
                                 onLogout: onLogout
                             }, void 0, false, {
                                 fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 30,
+                                lineNumber: 45,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 29,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 19,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/navigation/nav-bar.jsx",
-            lineNumber: 10,
+            lineNumber: 25,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/navigation/nav-bar.jsx",
-        lineNumber: 9,
+        lineNumber: 24,
         columnNumber: 5
     }, undefined);
 };
-_s(NavBar, "xG1TONbKtDWtdOTrXaTAsNhPg/Q=");
+_s(NavBar, "iuQeQ4sVg+lFcobs6EbZQm9Prm4=");
 _c = NavBar;
 var _c;
 $RefreshReg$(_c, "NavBar");

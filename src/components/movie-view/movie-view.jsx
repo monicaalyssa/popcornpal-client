@@ -1,10 +1,10 @@
 import { NavBar } from "../navigation/nav-bar";
 import { useEffect } from "react";
 
-export const MovieView = ({ movieprop, onBackClick, user, onLogout  }) => {
+export const MovieView = ({ movieprop, onBackClick, user, onLogout }) => {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

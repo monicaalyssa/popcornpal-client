@@ -373,6 +373,7 @@ input {
   position: absolute;
   top: 4rem;
   right: 5%;
+  box-shadow: 0 0 8px #00000051;
 }
 
 .my-account {
@@ -408,26 +409,23 @@ input {
   margin: 12px 0;
 }
 
+.open-profile {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s, transform .4s;
+  transform: translate3d(5%, -5rem, 0);
+}
+
 .open-profile.active {
+  opacity: 1;
   visibility: visible;
-  animation: .4s ease-in both fadeIn;
+  transform: translate3d(5%, -4rem, 0);
 }
 
 .open-profile.inactive {
   visibility: hidden;
   opacity: 0;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translate3d(5%, -5rem, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(5%, -4rem, 0);
-  }
+  transition: all .5s;
 }
 
 @media (width >= 0) and (width <= 830px) {

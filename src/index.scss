@@ -393,6 +393,7 @@ input {
   padding-inline-start: 0;
   padding: 28px 18px 22px 28px;
   font-weight: 500;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.318);
 }
 
 .my-account {
@@ -428,16 +429,26 @@ input {
   margin: 12px 0;
 }
 
+.open-profile {
+  opacity: 0;
+  transform: translate3d(5%, -5rem, 0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  visibility: hidden;
+}
+
 .open-profile.active {
-  animation: fadeIn 0.4s ease-in both;  visibility: visible;
+opacity: 1;
+transform: translate3d(5%, -4rem, 0);
+visibility: visible;
 }
 
 .open-profile.inactive {
   visibility: hidden;
   opacity: 0;
+  transition: all 0.5s ease;
 }
 
-@keyframes fadeIn {
+/* @keyframes fadeIn {
 	from {
 		opacity: 0;
 		transform: translate3d(5%, -5rem, 0);
@@ -446,7 +457,7 @@ input {
 		opacity: 1;
 		transform: translate3d(5%, -4rem, 0);
 	}
-}
+} */
 
 // break for mobile, but not smallest devices
 @media (min-width: 0) and (max-width: 830px) {

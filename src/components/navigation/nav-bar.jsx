@@ -1,9 +1,24 @@
 import { UserMenu } from "../user-menu/user-menu";
-import { useState} from "react";
+import { useState, useEffect, useRef } from "react";
 import { React } from "react";
 
 export const NavBar = ({ user, onLogout }) => {
   const [open, setOpen] = useState(false);
+
+  let menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
 
   return (
     <header>
@@ -16,7 +31,7 @@ export const NavBar = ({ user, onLogout }) => {
           <p>Genres</p>
           <p>My List</p>
         </div>
-        <div className="right-logos">
+        <div ref={menuRef} className="right-logos">
           <img
             className="search-btn"
             src={require("../../images/Search.svg")}
