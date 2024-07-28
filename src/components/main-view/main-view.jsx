@@ -57,10 +57,18 @@ export const MainView = () => {
     );
   }
 
+  const handleLogout = () => {
+    setUser(null); 
+    setToken(null); 
+    localStorage.clear();
+  }
+
   if (selectedMovie) {
     return (
       <MovieView
         movieprop={selectedMovie}
+        user={user.Username} 
+        onLogout={handleLogout}
         onBackClick={() => setSelectedMovie(null)}
       />
     );
@@ -86,7 +94,6 @@ export const MainView = () => {
         />
       ))}
       </div>
-      <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
     </div>
   );
 };

@@ -1,14 +1,14 @@
 import { NavBar } from "../navigation/nav-bar";
 import { useEffect } from "react";
 
-export const MovieView = ({ movieprop, onBackClick }) => {
+export const MovieView = ({ movieprop, onBackClick, user, onLogout  }) => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
   return (
     <div>
-      <NavBar />
+      <NavBar user={user} onLogout={onLogout} />
       <div
         className="banner-container"
         width="100%;"
@@ -43,13 +43,10 @@ export const MovieView = ({ movieprop, onBackClick }) => {
           <p className="movie-description">{movieprop.director}</p>
         </div>
 
-      <div className="back-btn-container">
-        <button onClick={onBackClick}>
-          Go Back
-        </button>
+        <div className="back-btn-container">
+          <button onClick={onBackClick}>Go Back</button>
+        </div>
       </div>
-      </div>
-
     </div>
   );
 };

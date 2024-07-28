@@ -27436,34 +27436,41 @@ const MainView = ()=>{
             }, undefined)
         ]
     }, void 0, true);
+    const handleLogout = ()=>{
+        setUser(null);
+        setToken(null);
+        localStorage.clear();
+    };
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movieprop: selectedMovie,
+        user: user.Username,
+        onLogout: handleLogout,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 62,
+        lineNumber: 68,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 70,
+        lineNumber: 78,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 75,
+                lineNumber: 83,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _hero.Hero), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 76,
+                lineNumber: 84,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieGrid.MovieGrid), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 77,
+                lineNumber: 85,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27475,30 +27482,18 @@ const MainView = ()=>{
                         }
                     }, movieprop.id, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 80,
+                        lineNumber: 88,
                         columnNumber: 9
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 78,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>{
-                    setUser(null);
-                    setToken(null);
-                    localStorage.clear();
-                },
-                children: "Logout"
-            }, void 0, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 89,
+                lineNumber: 86,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 74,
+        lineNumber: 82,
         columnNumber: 5
     }, undefined);
 };
@@ -28380,14 +28375,17 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _navBar = require("../navigation/nav-bar");
 var _react = require("react");
 var _s = $RefreshSig$();
-const MovieView = ({ movieprop, onBackClick })=>{
+const MovieView = ({ movieprop, onBackClick, user, onLogout })=>{
     _s();
     (0, _react.useEffect)(()=>{
         window.scrollTo(0, 0);
     }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {
+                user: user,
+                onLogout: onLogout
+            }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 11,
                 columnNumber: 7
@@ -28526,12 +28524,12 @@ const MovieView = ({ movieprop, onBackClick })=>{
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 47,
-                            columnNumber: 9
+                            columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 46,
-                        columnNumber: 7
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
@@ -28567,7 +28565,12 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "NavBar", ()=>NavBar);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const NavBar = ()=>{
+var _userMenu = require("../user-menu/user-menu");
+var _react = require("react");
+var _s = $RefreshSig$();
+const NavBar = ({ user, onLogout })=>{
+    _s();
+    const [openProfile, setOpenProfile] = (0, _react.useState)(false);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "nav-bar",
@@ -28577,7 +28580,7 @@ const NavBar = ()=>{
                     children: "PopcornPal"
                 }, void 0, false, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 5,
+                    lineNumber: 11,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28589,32 +28592,32 @@ const NavBar = ()=>{
                                 children: "Movies"
                             }, void 0, false, {
                                 fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 8,
+                                lineNumber: 14,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 7,
+                            lineNumber: 13,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "Genres"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 10,
+                            lineNumber: 16,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "My List"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 11,
+                            lineNumber: 17,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 6,
+                    lineNumber: 12,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -28625,35 +28628,45 @@ const NavBar = ()=>{
                             src: require("b9710e7656528221")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 14,
+                            lineNumber: 20,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            onClick: ()=>setOpenProfile((prev)=>!prev),
                             className: "user-btn",
                             src: require("3de8cf43c7f5ba07")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 18,
+                            lineNumber: 24,
                             columnNumber: 11
+                        }, undefined),
+                        openProfile && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userMenu.UserMenu), {
+                            user: user,
+                            onLogout: onLogout
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 29,
+                            columnNumber: 27
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 13,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/navigation/nav-bar.jsx",
-            lineNumber: 4,
+            lineNumber: 10,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/navigation/nav-bar.jsx",
-        lineNumber: 3,
+        lineNumber: 9,
         columnNumber: 5
     }, undefined);
 };
+_s(NavBar, "mqG0ZSRNFFnjkVa9eSa+lVJcmAI=");
 _c = NavBar;
 var _c;
 $RefreshReg$(_c, "NavBar");
@@ -28663,7 +28676,7 @@ $RefreshReg$(_c, "NavBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l"}],"jbnMx":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","../user-menu/user-menu":"gwWGx","react":"21dqq"}],"jbnMx":[function(require,module,exports) {
 module.exports = require("5578768f349e7056").getBundleURL("byUka") + "Search.f4d21c8a.svg" + "?" + Date.now();
 
 },{"5578768f349e7056":"kPWUg"}],"kPWUg":[function(require,module,exports) {
@@ -28704,7 +28717,152 @@ exports.getOrigin = getOrigin;
 },{}],"4Az2l":[function(require,module,exports) {
 module.exports = require("d1553abe5a7be242").getBundleURL("byUka") + "User.aae1e741.svg" + "?" + Date.now();
 
-},{"d1553abe5a7be242":"kPWUg"}],"8XQUt":[function(require,module,exports) {
+},{"d1553abe5a7be242":"kPWUg"}],"gwWGx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$99d0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$99d0.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "UserMenu", ()=>UserMenu);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const UserMenu = ({ user, onLogout })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "user-menu-dropdown",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+            className: "dropdown-list",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "my-account",
+                    children: "My Account"
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 7,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "hero-duration",
+                    children: user
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 8,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "line menu-line"
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "user-menu-item",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "menu-icon",
+                            src: require("77b00898d8739b3")
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 11,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            children: "Settings"
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 15,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "user-menu-item",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "menu-icon",
+                            src: require("d9100586bcdbc9d0")
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 18,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            children: "My Favorites"
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 19,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 17,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "user-menu-item",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "menu-icon sign-out-icon",
+                            src: require("7059d21f10f10ec")
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 22,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            onClick: onLogout,
+                            children: "Sign Out"
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 26,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 21,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/user-menu/user-menu.jsx",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/user-menu/user-menu.jsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = UserMenu;
+var _c;
+$RefreshReg$(_c, "UserMenu");
+
+  $parcel$ReactRefreshHelpers$99d0.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","77b00898d8739b3":"cu8AD","d9100586bcdbc9d0":"6J7u4","7059d21f10f10ec":"lg8jF"}],"cu8AD":[function(require,module,exports) {
+module.exports = require("b2cb95b33f7f782e").getBundleURL("byUka") + "Settings.cd3021b9.svg" + "?" + Date.now();
+
+},{"b2cb95b33f7f782e":"kPWUg"}],"6J7u4":[function(require,module,exports) {
+module.exports = require("a1edcfd7d2fb8636").getBundleURL("byUka") + "Heart.d0f25e86.svg" + "?" + Date.now();
+
+},{"a1edcfd7d2fb8636":"kPWUg"}],"lg8jF":[function(require,module,exports) {
+module.exports = require("57dcfe453f96b8f").getBundleURL("byUka") + "Sign-Out.042d0a32.svg" + "?" + Date.now();
+
+},{"57dcfe453f96b8f":"kPWUg"}],"8XQUt":[function(require,module,exports) {
 module.exports = require("e6f64ad6290e3fb5").getBundleURL("byUka") + "Red-Heart.8303c525.svg" + "?" + Date.now();
 
 },{"e6f64ad6290e3fb5":"kPWUg"}],"emPqA":[function(require,module,exports) {
@@ -28863,10 +29021,7 @@ module.exports = require("1569dc95ab2e052e").getBundleURL("byUka") + "avatar-bkg
 },{"1569dc95ab2e052e":"kPWUg"}],"2SwY8":[function(require,module,exports) {
 module.exports = require("a16688772f530b67").getBundleURL("byUka") + "Star.00b9023a.svg" + "?" + Date.now();
 
-},{"a16688772f530b67":"kPWUg"}],"6J7u4":[function(require,module,exports) {
-module.exports = require("a1edcfd7d2fb8636").getBundleURL("byUka") + "Heart.d0f25e86.svg" + "?" + Date.now();
-
-},{"a1edcfd7d2fb8636":"kPWUg"}],"2Vpqn":[function(require,module,exports) {
+},{"a16688772f530b67":"kPWUg"}],"2Vpqn":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d750 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
