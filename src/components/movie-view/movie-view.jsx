@@ -24,7 +24,7 @@ export const MovieView = ({ movieprop, onBackClick, user, onLogout }) => {
               className="red-heart"
               src={require("../../images/Red-Heart.svg")}
             />
-            Favorite
+            <p className="favorite-btn-text">Favorite</p>
           </button>
         </div>
 

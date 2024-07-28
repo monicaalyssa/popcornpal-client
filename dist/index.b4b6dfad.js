@@ -28447,7 +28447,14 @@ const MovieView = ({ movieprop, onBackClick, user, onLogout })=>{
                                         lineNumber: 23,
                                         columnNumber: 13
                                     }, undefined),
-                                    "Favorite"
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "favorite-btn-text",
+                                        children: "Favorite"
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 27,
+                                        columnNumber: 13
+                                    }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
@@ -28940,10 +28947,27 @@ const Hero = ()=>{
                                 lineNumber: 7,
                                 columnNumber: 11
                             }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                className: "hero-title",
-                                children: "Avatar: The Way of Water"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "hero-responsive-title",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                        className: "hero-title",
+                                        children: "Avatar: The Way of Water"
+                                    }, void 0, false, {
+                                        fileName: "src/components/hero/hero.jsx",
+                                        lineNumber: 9,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        className: "responsive-hero-heart",
+                                        src: require("e72d4ece8a7d5e35")
+                                    }, void 0, false, {
+                                        fileName: "src/components/hero/hero.jsx",
+                                        lineNumber: 10,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
                                 fileName: "src/components/hero/hero.jsx",
                                 lineNumber: 8,
                                 columnNumber: 11
@@ -28953,38 +28977,48 @@ const Hero = ()=>{
                                 children: [
                                     "On the lush alien world of Pandora live the Na'vi, beings who appear primitive but are highly",
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: "dots",
-                                        children: "..."
-                                    }, void 0, false, {
-                                        fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 11,
-                                        columnNumber: 37
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "hero-more-desc",
                                         children: [
                                             " ",
-                                            "evolved. Because the planet's environment is poisonous, human/Na'vi hybrids, called Avatars, must link..."
+                                            "evolved. Because the planet's environment is poisonous, human/Na'vi hybrids, called Avatars, must link",
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "dots",
+                                                children: "...\xa0"
+                                            }, void 0, false, {
+                                                fileName: "src/components/hero/hero.jsx",
+                                                lineNumber: 22,
+                                                columnNumber: 15
+                                            }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 12,
+                                        lineNumber: 18,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        class: "read-more-span",
+                                        href: "#",
+                                        children: "read more"
+                                    }, void 0, false, {
+                                        fileName: "src/components/hero/hero.jsx",
+                                        lineNumber: 24,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 9,
+                                lineNumber: 15,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "hero-btns",
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        className: "read-more-btn",
                                         children: "Read More"
                                     }, void 0, false, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 19,
+                                        lineNumber: 29,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -28992,13 +29026,13 @@ const Hero = ()=>{
                                         src: require("e72d4ece8a7d5e35")
                                     }, void 0, false, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 20,
+                                        lineNumber: 30,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 18,
+                                lineNumber: 28,
                                 columnNumber: 11
                             }, undefined)
                         ]
@@ -29015,20 +29049,20 @@ const Hero = ()=>{
                                 src: require("aac761b4f4a25e61")
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 27,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: "featured"
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 31,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/hero/hero.jsx",
-                        lineNumber: 26,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, undefined)
                 ]

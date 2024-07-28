@@ -88,6 +88,10 @@ button:hover {
   margin-bottom: -110px;
 }
 
+.responsive-hero-heart {
+  display: none;
+}
+
 .hero-img {
   width: 100vw;
   max-width: 100%;
@@ -112,6 +116,10 @@ button:hover {
 }
 
 .dots {
+  display: inline-block;
+}
+
+.read-more-span {
   display: none;
 }
 
@@ -172,7 +180,7 @@ h2 {
 }
 
 .movie-heading-container {
-  padding: 55px 5%;
+  padding: 4% 5% 3% 5%;
 }
 
 .line {
@@ -189,9 +197,10 @@ h2 {
 }
 
 .grid-poster {
-  width: 300px;
   aspect-ratio: 2 / 3;
   transition: filter 0.2s ease;
+  width: 100%;
+  height: 100%;
 }
 
 .grid-poster:hover {
@@ -209,7 +218,7 @@ h2 {
   z-index: 1000;
   display: none;
   bottom: 50%;
-  width: 300px;
+  width: 100%;
   justify-content: center;
   pointer-events: none;
 }
@@ -219,17 +228,18 @@ h2 {
 }
 
 .grid-overflow {
-  width: 300px;
   aspect-ratio: 2 / 3;
   overflow: hidden;
   border-radius: 6px;
+  width: 100%;
 }
 
 .grid {
-  padding: 0 5%; // change the padding and columns for smaller screen sizes
+  padding: 0 5%;
   display: grid;
+  column-gap: 2%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-row-gap: 50px;
+  row-gap: 1.7%;
 }
 
 .grid-genre-desc {
@@ -313,7 +323,6 @@ input {
 }
 
 .banner-container {
-  // add responsive height and position  for smaller & larger screens
   height: 600px;
   overflow: hidden;
   background-size: cover;
@@ -331,7 +340,6 @@ input {
 }
 
 .movie-info {
-  // add responive padding for smaller & larger screen sizes
   padding: 40px 5% 120px 5%;
 }
 
@@ -339,10 +347,10 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
 }
 
 .favorite-button {
-  // change hover state, etc. and change responsive button size if necessary
   background-color: transparent;
   font-weight: 400;
   border: 2px solid $main-white;
@@ -352,6 +360,10 @@ input {
   transition: all 0.3s ease;
 }
 
+.favorite-btn-text {
+  display: block;
+}
+
 .favorite-button:hover {
   background-color: $main-white;
   color: black;
@@ -359,13 +371,12 @@ input {
 }
 
 .favorite-button:active {
-  // after button is favorited leave it background white with red filled heart using JS
+// after button is favorited leave it background white with red filled heart using JS
   box-shadow: none;
   opacity: 0.8;
 }
 
 .red-heart {
-  // default heart is 32px on hero, make this width responsive for smaller & larger(if necessary) screens
   width: 26px;
   position: relative;
   right: 10px;
@@ -401,7 +412,8 @@ input {
   padding-top: 40px;
 }
 
-.dropdown-list { // add responsive padding for smaller and larger sizes
+.dropdown-list { 
+  // add responsive padding for smaller and larger sizes
   position: absolute;
   top: 4rem;
   right: 5%;
@@ -431,11 +443,11 @@ input {
   transition: background-color 0.3s ease;
 }
 
-.user-menu-item:hover {
+.user-menu-item:hover { 
   background-color: $light-background;
 }
 
-.menu-icon { // make icon responsive with responsive font sizes for media quries
+.menu-icon {
   width: 18px;
 }
 
@@ -456,9 +468,9 @@ input {
 }
 
 .open-profile.active {
-opacity: 1;
-transform: translate3d(5%, -4rem, 0);
-visibility: visible;
+  opacity: 1;
+  transform: translate3d(5%, -4rem, 0);
+  visibility: visible;
 }
 
 .open-profile.inactive {
@@ -467,8 +479,99 @@ visibility: visible;
   transition: all 0.5s ease;
 }
 
+@media (min-width: 0) and (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0.9%;
+  }
+
+  .movie-heading-container {
+    padding: 9% 2% 3% 2%;
+    display: flex;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .banner-container {
+    height: 400px;
+    background-position: top 80% right 50%;
+  }
+
+  .responsive-hero-heart {
+    display: block;
+    margin-bottom: 10px;
+    width: 22px;
+    cursor: pointer;
+  }
+
+  .banner-container {
+    bottom: 0;
+    margin-bottom: 0px;
+  }
+
+  .hero-img {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .back-btn-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .movie-info {
+    padding: 30px 5% 120px 5%;
+  }
+
+  .movie-heading-margin {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  .favorite-button {
+    padding: 0px;
+    border: 0px;
+    align-self: baseline;
+    position: relative;
+    top: 3px;
+  }
+
+  .favorite-button:hover {
+    background-color: transparent;
+    box-shadow: none;
+    color: $subtle-gray;
+  }
+
+  .red-heart {
+    width: 28px;
+    top: 0.5px;
+    right: 0;
+  }
+
+  .favorite-btn-text {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 920px) {
+  .responsive-hero-heart {
+    display: block;
+    margin-bottom: 9px;
+    width: 24px;
+    cursor: pointer;
+  }
+}
+
 // break for mobile, but not smallest devices
-@media (min-width: 0) and (max-width: 830px) {
+@media (min-width: 0) and (max-width: 920px) {
   .nav-bar {
     padding: 10px 2%;
   }
@@ -498,51 +601,107 @@ visibility: visible;
   }
 
   .left-hero {
-    flex-grow: 4;
+    flex-grow: 10;
   }
 
   .hero-title {
     margin: 0 0 10px 0;
+    width: auto;
   }
 
   .hero-desc {
     width: 100%;
   }
 
-  .movie-heading-container {
-    padding: 55px 2%;
+  .movie-heading-container > .line {
+    display: none;
   }
-}
 
-@media (min-width: 0) and (max-width: 920px) {
-  .dots {
+  .grid {
+    padding: 0 2%;
+  }
+
+  .read-more-btn {
+    display: none;
+  }
+
+  .read-more-span {
     display: inline-block;
+    color: $main-red;
   }
 
-  .hero-more-desc {
+  .hero-responsive-title {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .hero-btns > .white-heart {
     display: none;
   }
 }
 
-@media (min-width: 0) and (max-width: 1080px) {
+@media (min-width: 600px) and (max-width: 920px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .movie-heading-container {
+    padding: 7% 2% 3% 2%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1080px) {
   h1 {
     font-size: 30px;
   }
 
+  h2 {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 921px) and (max-width: 1080px) {
+  .hero-title {
+    width: 100%;
+  }
+}
+
+@media (min-width: 920px) and (max-width: 1080px) {
+  .left-hero > .hero-desc {
+    display: none;
+  }
+
+  .hero-btns {
+    margin-top: 10px;
+  }
+
+  .hero-text {
+    top: 40%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1080px) {
+  .favorite-button {
+    padding: 16px 42px;
+  }
+
+  .red-heart {
+    width: 20px;
+    right: 9px;
+    top: 0.5px;
+  }
+}
+
+@media (min-width: 0) and (max-width: 1080px) {
   * {
     font-size: 14px;
   }
 
   .featured-star {
     width: 15.5px;
-  }
-
-  .hero-title {
-    width: 100%;
-  }
-
-  .hero-text {
-    top: 31%;
   }
 
   .right-logos .search-btn,
@@ -575,8 +734,16 @@ visibility: visible;
     font-size: 14px;
   }
 
-  h2 {
-    font-size: 26px;
+  .user-menu-item {
+    gap: 8px;
+  }
+
+  .menu-icon {
+    width: 17px;
+  }
+
+  .sign-out-icon {
+    width: 13px;
   }
 }
 
@@ -602,9 +769,13 @@ visibility: visible;
     padding: 22px 68px;
     font-size: 15px;
   }
+
+  .favorite-button {
+    padding: 20px 50px;
+  }
 }
 
-@media (min-width: 1500px) and (max-width: 3000px) {
+@media (min-width: 1500px) and (max-width: 30000px) {
   .hero-btns {
     margin-top: 55px;
   }
@@ -613,5 +784,14 @@ visibility: visible;
 @media (min-width: 1600px) {
   .hero-text {
     top: 28%;
+  }
+
+  .hero-title {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 2.3%;
   }
 }
