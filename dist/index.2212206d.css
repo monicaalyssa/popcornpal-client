@@ -372,7 +372,7 @@ input {
   list-style-type: none;
   position: absolute;
   top: 4rem;
-  right: 4.7rem;
+  right: 5%;
 }
 
 .my-account {
@@ -406,6 +406,28 @@ input {
 
 .menu-line {
   margin: 12px 0;
+}
+
+.open-profile.active {
+  visibility: visible;
+  animation: .4s ease-in both fadeIn;
+}
+
+.open-profile.inactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(5%, -5rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(5%, -4rem, 0);
+  }
 }
 
 @media (width >= 0) and (width <= 830px) {

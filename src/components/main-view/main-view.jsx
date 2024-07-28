@@ -80,7 +80,7 @@ export const MainView = () => {
 
   return (
     <div>
-      <NavBar />
+      <NavBar user={user.Username} onLogout={handleLogout}/>
       <Hero />
       <MovieGrid />
       <div className="grid">

@@ -27458,7 +27458,10 @@ const MainView = ()=>{
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {
+                user: user.Username,
+                onLogout: handleLogout
+            }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 83,
                 columnNumber: 7
@@ -28570,7 +28573,7 @@ var _react = require("react");
 var _s = $RefreshSig$();
 const NavBar = ({ user, onLogout })=>{
     _s();
-    const [openProfile, setOpenProfile] = (0, _react.useState)(false);
+    const [open, setOpen] = (0, _react.useState)(false);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "nav-bar",
@@ -28632,7 +28635,7 @@ const NavBar = ({ user, onLogout })=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            onClick: ()=>setOpenProfile((prev)=>!prev),
+                            onClick: ()=>setOpen(!open),
                             className: "user-btn",
                             src: require("3de8cf43c7f5ba07")
                         }, void 0, false, {
@@ -28640,13 +28643,20 @@ const NavBar = ({ user, onLogout })=>{
                             lineNumber: 24,
                             columnNumber: 11
                         }, undefined),
-                        openProfile && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userMenu.UserMenu), {
-                            user: user,
-                            onLogout: onLogout
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: `open-profile ${open ? "active" : "inactive"}`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userMenu.UserMenu), {
+                                user: user,
+                                onLogout: onLogout
+                            }, void 0, false, {
+                                fileName: "src/components/navigation/nav-bar.jsx",
+                                lineNumber: 30,
+                                columnNumber: 13
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
                             lineNumber: 29,
-                            columnNumber: 27
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
@@ -28666,7 +28676,7 @@ const NavBar = ({ user, onLogout })=>{
         columnNumber: 5
     }, undefined);
 };
-_s(NavBar, "mqG0ZSRNFFnjkVa9eSa+lVJcmAI=");
+_s(NavBar, "xG1TONbKtDWtdOTrXaTAsNhPg/Q=");
 _c = NavBar;
 var _c;
 $RefreshReg$(_c, "NavBar");

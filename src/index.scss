@@ -382,10 +382,10 @@ input {
   padding-top: 40px;
 }
 
-.dropdown-list {
+.dropdown-list { // add responsive padding for smaller and larger sizes
   position: absolute;
   top: 4rem;
-  right: 4.7rem;
+  right: 5%;
   width: 240px;
   background-color: $background;
   border-radius: 15px;
@@ -426,6 +426,26 @@ input {
 
 .menu-line {
   margin: 12px 0;
+}
+
+.open-profile.active {
+  animation: fadeIn 0.4s ease-in both;  visibility: visible;
+}
+
+.open-profile.inactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translate3d(5%, -5rem, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(5%, -4rem, 0);
+	}
 }
 
 // break for mobile, but not smallest devices

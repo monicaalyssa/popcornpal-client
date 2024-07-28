@@ -1,9 +1,9 @@
 import { UserMenu } from "../user-menu/user-menu";
-import { useState } from "react";
+import { useState} from "react";
 import { React } from "react";
 
 export const NavBar = ({ user, onLogout }) => {
-  const [openProfile, setOpenProfile] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <header>
@@ -22,11 +22,13 @@ export const NavBar = ({ user, onLogout }) => {
             src={require("../../images/Search.svg")}
           />
           <img
-            onClick={() => setOpenProfile((prev) => !prev)}
+            onClick={() => setOpen(!open)}
             className="user-btn"
             src={require("../../images/User.svg")}
           />
-          {openProfile && <UserMenu user={user} onLogout={onLogout} />}
+          <div className={`open-profile ${open ? "active" : "inactive"}`}>
+            <UserMenu user={user} onLogout={onLogout} />
+          </div>
         </div>
       </div>
     </header>
