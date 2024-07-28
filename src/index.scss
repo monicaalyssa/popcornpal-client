@@ -185,6 +185,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  position: relative;
 }
 
 .grid-poster {
@@ -197,6 +198,24 @@ h2 {
   filter: blur(4px);
   cursor: pointer;
   transform: scale(1.02);
+}
+
+.grid-poster:hover + .hover-container {
+  display: flex;
+}
+
+.hover-container {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  bottom: 50%;
+  width: 300px;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hover-more-details {
+  z-index: 1010;
 }
 
 .grid-overflow {
@@ -447,17 +466,6 @@ visibility: visible;
   opacity: 0;
   transition: all 0.5s ease;
 }
-
-/* @keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translate3d(5%, -5rem, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate3d(5%, -4rem, 0);
-	}
-} */
 
 // break for mobile, but not smallest devices
 @media (min-width: 0) and (max-width: 830px) {

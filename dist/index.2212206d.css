@@ -174,6 +174,7 @@ h2 {
   align-items: center;
   gap: 20px;
   display: flex;
+  position: relative;
 }
 
 .grid-poster {
@@ -186,6 +187,24 @@ h2 {
   filter: blur(4px);
   cursor: pointer;
   transform: scale(1.02);
+}
+
+.grid-poster:hover + .hover-container {
+  display: flex;
+}
+
+.hover-container {
+  z-index: 1000;
+  pointer-events: none;
+  justify-content: center;
+  width: 300px;
+  display: none;
+  position: absolute;
+  bottom: 50%;
+}
+
+.hover-more-details {
+  z-index: 1010;
 }
 
 .grid-overflow {

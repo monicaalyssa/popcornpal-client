@@ -7,7 +7,12 @@ export const MovieCard = ({ movieprop, onMovieClick }) => {
         onMovieClick(movieprop);
       }}
     >
-      <div className="grid-overflow"><img className="grid-poster" src={movieprop.image} /></div>
+      <div className="grid-overflow">
+        <img className="grid-poster" src={movieprop.image} />
+        <div className="hover-container">
+          <button className="hover-more-details">More Details</button>
+        </div>
+      </div>
       <div className="grid-movie-info">
       {movieprop.title}
       <p className="grid-genre-desc">{movieprop.genre}</p>
