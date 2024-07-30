@@ -7,6 +7,7 @@ import { MovieGrid } from "../movie-grid/movie-grid";
 import { LoginNavBar } from "../login-nav-bar/login-nav-bar";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -42,58 +43,53 @@ export const MainView = () => {
       });
   }, [token]);
 
-  if (!user) {
-    return (
-      <>
-        <LoginNavBar />
-        <LoginView
-          onLoggedIn={(user, token) => {
-            setUser(user);
-            setToken(token);
-          }}
-        />
-        <SignupView />
-      </>
-    );
-  }
-
   const handleLogout = () => {
     setUser(null); 
     setToken(null); 
     localStorage.clear();
   }
 
-  if (selectedMovie) {
-    return (
-      <MovieView
-        movieprop={selectedMovie}
-        user={user.Username} 
-        onLogout={handleLogout}
-        onBackClick={() => setSelectedMovie(null)}
-      />
-    );
-  }
-
-  if (movies.length === 0) {
-    return <div></div>;
-  }
-
   return (
-    <div>
-      <NavBar user={user.Username} onLogout={handleLogout}/>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/signup" 
+      element={ user ? ( <Navigate to="/" /> ) : <> 
+      <LoginNavBar />
+      <SignupView />
+      </> }
+      />
+
+      <Route path="/login"
+      element={user ? ( <Navigate to="/" /> ) : <>
+      <LoginNavBar />
+      <LoginView onLoggedIn={(user, token) => {
+        setUser(user);
+        setToken(token);
+      }} />
+      </> }
+      />
+
+      <Route path="/movies/:Title"
+      element={user ? ( <Navigate to ="/login" replace /> ) : 
+        movies.length === 0 ? ( <div>Loading...</div> ) : 
+        ( <MovieView movieprop={selectedMovie} user={user?.username} onLogout={handleLogout} /> )}
+      />
+
+      <Route path="/" element={ <> {!user ? ( <Navigate to ="/login" replace /> ) :
+      movies.length === 0 ? ( <div>Loading...</div> ) :
+      ( <> 
+      <NavBar user={user?.Username} onLogout={handleLogout}/>
       <Hero />
       <MovieGrid />
       <div className="grid">
       {movies.map((movieprop) => (
-        <MovieCard
-          key={movieprop.id}
-          movieprop={movieprop}
-          onMovieClick={(newSelectedMovie) => {
-            setSelectedMovie(newSelectedMovie);
-          }}
-        />
-      ))}
-      </div>
-    </div>
+        <MovieCard key={movieprop.id} movieprop={movieprop} />
+      ))} 
+      </div> 
+      </> )} </> } 
+      />
+
+    </Routes>
+    </BrowserRouter>
   );
 };
