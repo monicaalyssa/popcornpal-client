@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const Hero = () => {
   return (
     <div className="hero-container">
@@ -16,7 +18,9 @@ export const Hero = () => {
             </span>
           </p>
           <div className="hero-btns">
-            <button className="read-more-btn">Read More</button>
+            <Link to={`/movies/66a99600da099ad62d373c3f`}>
+              <button className="read-more-btn">Read More</button>
+            </Link>
             <img
               className="white-heart"
               src={require("../../images/Heart.svg")}

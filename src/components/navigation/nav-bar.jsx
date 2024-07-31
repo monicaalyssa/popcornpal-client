@@ -1,11 +1,14 @@
 import { UserMenu } from "../user-menu/user-menu";
 import { useState, useEffect, useRef } from "react";
 import { React } from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom"
 
 export const NavBar = ({ user, onLogout }) => {
   const [open, setOpen] = useState(false);
-
   let menuRef = useRef(null);
+  const location = useLocation();
+  const lastHash = useRef('');
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -20,14 +23,31 @@ export const NavBar = ({ user, onLogout }) => {
     };
   });
 
+  useEffect(() => {
+    if (location.hash) {
+      lastHash.current = location.hash.slice(1);
+    }
+
+    if (lastHash.current && document.getElementById(lastHash.current)) {
+      setTimeout(() => {
+        document
+          .getElementById(lastHash.current)
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        lastHash.current = '';
+      }, 100);
+    }
+  }, [location]);
+
   return (
     <header>
       <div className="nav-bar">
-        <div className="logo">PopcornPal</div>
+        <Link to={`/`}>
+          <div className="logo">PopcornPal</div>
+        </Link>
         <div className="menu-bar">
-          <a href="/movies">
+        <Link to={`/#movies`}>
             <p>Movies</p>
-          </a>
+        </Link>
           <p>Genres</p>
           <p>My List</p>
         </div>

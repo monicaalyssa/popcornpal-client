@@ -35752,11 +35752,14 @@ parcelHelpers.export(exports, "NavBar", ()=>NavBar);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _userMenu = require("../user-menu/user-menu");
 var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const NavBar = ({ user, onLogout })=>{
     _s();
     const [open, setOpen] = (0, _react.useState)(false);
     let menuRef = (0, _react.useRef)(null);
+    const location = (0, _reactRouterDom.useLocation)();
+    const lastHash = (0, _react.useRef)("");
     (0, _react.useEffect)(()=>{
         const handleClickOutside = (event)=>{
             if (menuRef.current && !menuRef.current.contains(event.target)) setOpen(false);
@@ -35766,53 +35769,72 @@ const NavBar = ({ user, onLogout })=>{
             document.removeEventListener("mousedown", handleClickOutside);
         };
     });
+    (0, _react.useEffect)(()=>{
+        if (location.hash) lastHash.current = location.hash.slice(1);
+        if (lastHash.current && document.getElementById(lastHash.current)) setTimeout(()=>{
+            document.getElementById(lastHash.current)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+            lastHash.current = "";
+        }, 100);
+    }, [
+        location
+    ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "nav-bar",
             children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "logo",
-                    children: "PopcornPal"
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: `/`,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "logo",
+                        children: "PopcornPal"
+                    }, void 0, false, {
+                        fileName: "src/components/navigation/nav-bar.jsx",
+                        lineNumber: 45,
+                        columnNumber: 11
+                    }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 26,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "menu-bar",
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            href: "/movies",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: `/#movies`,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: "Movies"
                             }, void 0, false, {
                                 fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 29,
+                                lineNumber: 49,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 28,
-                            columnNumber: 11
+                            lineNumber: 48,
+                            columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "Genres"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 31,
+                            lineNumber: 51,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "My List"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 32,
+                            lineNumber: 52,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 27,
+                    lineNumber: 47,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35824,7 +35846,7 @@ const NavBar = ({ user, onLogout })=>{
                             src: require("b9710e7656528221")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 35,
+                            lineNumber: 55,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -35833,7 +35855,7 @@ const NavBar = ({ user, onLogout })=>{
                             src: require("3de8cf43c7f5ba07")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 39,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35843,33 +35865,37 @@ const NavBar = ({ user, onLogout })=>{
                                 onLogout: onLogout
                             }, void 0, false, {
                                 fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 45,
+                                lineNumber: 65,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 44,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 34,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/navigation/nav-bar.jsx",
-            lineNumber: 25,
+            lineNumber: 43,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/navigation/nav-bar.jsx",
-        lineNumber: 24,
+        lineNumber: 42,
         columnNumber: 5
     }, undefined);
 };
-_s(NavBar, "iuQeQ4sVg+lFcobs6EbZQm9Prm4=");
+_s(NavBar, "A0ntt7iFaqVQ2YFHSnXuWdTGQBQ=", false, function() {
+    return [
+        (0, _reactRouterDom.useLocation)
+    ];
+});
 _c = NavBar;
 var _c;
 $RefreshReg$(_c, "NavBar");
@@ -35879,7 +35905,7 @@ $RefreshReg$(_c, "NavBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","../user-menu/user-menu":"gwWGx","react":"21dqq"}],"jbnMx":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","../user-menu/user-menu":"gwWGx","react":"21dqq","react-router-dom":"9xmpe"}],"jbnMx":[function(require,module,exports) {
 module.exports = require("5578768f349e7056").getBundleURL("byUka") + "Search.f4d21c8a.svg" + "?" + Date.now();
 
 },{"5578768f349e7056":"kPWUg"}],"kPWUg":[function(require,module,exports) {
@@ -36079,6 +36105,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Hero", ()=>Hero);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
 const Hero = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "hero-container",
@@ -36088,7 +36115,7 @@ const Hero = ()=>{
                 src: require("9472117a191cca85")
             }, void 0, false, {
                 fileName: "src/components/hero/hero.jsx",
-                lineNumber: 4,
+                lineNumber: 6,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36102,7 +36129,7 @@ const Hero = ()=>{
                                 children: "Duration: 3h12m \u2022 Action"
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 7,
+                                lineNumber: 9,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -36110,7 +36137,7 @@ const Hero = ()=>{
                                 children: "Avatar: The Way of Water"
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 8,
+                                lineNumber: 10,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -36125,24 +36152,31 @@ const Hero = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 12,
+                                        lineNumber: 14,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 9,
+                                lineNumber: 11,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "hero-btns",
                                 children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                        className: "read-more-btn",
-                                        children: "Read More"
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        to: `/movies/66a99600da099ad62d373c3f`,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                            className: "read-more-btn",
+                                            children: "Read More"
+                                        }, void 0, false, {
+                                            fileName: "src/components/hero/hero.jsx",
+                                            lineNumber: 22,
+                                            columnNumber: 15
+                                        }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 19,
+                                        lineNumber: 21,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -36150,19 +36184,19 @@ const Hero = ()=>{
                                         src: require("e72d4ece8a7d5e35")
                                     }, void 0, false, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 20,
+                                        lineNumber: 24,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 18,
+                                lineNumber: 20,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/hero/hero.jsx",
-                        lineNumber: 6,
+                        lineNumber: 8,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36173,32 +36207,32 @@ const Hero = ()=>{
                                 src: require("aac761b4f4a25e61")
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 27,
+                                lineNumber: 31,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: "featured"
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 31,
+                                lineNumber: 35,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/hero/hero.jsx",
-                        lineNumber: 26,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/hero/hero.jsx",
-                lineNumber: 5,
+                lineNumber: 7,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/hero/hero.jsx",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 5
     }, undefined);
 };
@@ -36211,7 +36245,7 @@ $RefreshReg$(_c, "Hero");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","9472117a191cca85":"5CB4l","aac761b4f4a25e61":"2SwY8","e72d4ece8a7d5e35":"6J7u4"}],"5CB4l":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","9472117a191cca85":"5CB4l","aac761b4f4a25e61":"2SwY8","e72d4ece8a7d5e35":"6J7u4","react-router-dom":"9xmpe"}],"5CB4l":[function(require,module,exports) {
 module.exports = require("1569dc95ab2e052e").getBundleURL("byUka") + "avatar-bkg.4191252d.jpg" + "?" + Date.now();
 
 },{"1569dc95ab2e052e":"kPWUg"}],"2SwY8":[function(require,module,exports) {
@@ -36230,10 +36264,10 @@ parcelHelpers.export(exports, "MovieGrid", ()=>MovieGrid);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const MovieGrid = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "movies",
         className: "movie-heading-container",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                id: "movies-section",
                 children: "Movies"
             }, void 0, false, {
                 fileName: "src/components/movie-grid/movie-grid.jsx",
