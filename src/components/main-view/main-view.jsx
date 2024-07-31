@@ -14,7 +14,6 @@ export const MainView = () => {
   const storedToken = localStorage.getItem("token");
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(storedUser? storedUser : null);
-  const [selectedMovie, setSelectedMovie] = useState(null);
   const [token, setToken] = useState(storedToken? storedToken : null);
 
   useEffect(() => {
@@ -70,9 +69,9 @@ export const MainView = () => {
       />
 
       <Route path="/movies/:Title"
-      element={user ? ( <Navigate to ="/login" replace /> ) : 
+      element={!user ? ( <Navigate to ="/login" replace /> ) : 
         movies.length === 0 ? ( <div>Loading...</div> ) : 
-        ( <MovieView movieprop={selectedMovie} user={user?.username} onLogout={handleLogout} /> )}
+        ( <MovieView movies={movies} user={user?.username} onLogout={handleLogout} /> )}
       />
 
       <Route path="/" element={ <> {!user ? ( <Navigate to ="/login" replace /> ) :
