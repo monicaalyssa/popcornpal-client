@@ -100,7 +100,7 @@ button:hover {
 .hero-text {
   display: flex;
   position: absolute;
-  top: 25%;
+  top: 30%;
   padding: 0px 5%;
   width: 90%;
   max-width: 90%;
@@ -109,14 +109,6 @@ button:hover {
 .left-hero,
 .right-hero {
   flex: 1;
-}
-
-.dots {
-  display: inline-block;
-}
-
-.read-more-span {
-  display: none;
 }
 
 .left-hero {
@@ -164,7 +156,7 @@ h1 {
 }
 
 .hero-desc {
-  width: 70%;
+  width: 60%;
   color: $subtle-gray;
 }
 
@@ -617,11 +609,6 @@ input {
     padding: 0 4%;
   }
 
-  .read-more-span {
-    display: inline-block;
-    color: $main-red;
-  }
-
   .hero-btns > .white-heart {
     display: none;
   }
@@ -660,20 +647,6 @@ input {
 @media (min-width: 921px) and (max-width: 1080px) {
   .hero-title {
     width: 100%;
-  }
-}
-
-@media (min-width: 920px) and (max-width: 1080px) {
-  .left-hero > .hero-desc {
-    display: none;
-  }
-
-  .hero-btns {
-    margin-top: 10px;
-  }
-
-  .hero-text {
-    top: 40%;
   }
 }
 
@@ -741,6 +714,23 @@ input {
   }
 }
 
+@media (min-width: 920px) and (max-width: 1330px) {
+  .left-hero > .hero-desc {
+    display: none;
+  }
+  .hero-btns {
+    margin-top: 10px;
+  }
+
+  .hero-text {
+    top: 38%;
+  }
+
+  .hero-title {
+    width: 45%;
+  }
+}
+
 // big break point here
 @media (min-width: 1080px) and (max-width: 1330px) {
   * {
@@ -751,12 +741,8 @@ input {
     width: 16.5px;
   }
 
-  .hero-title {
-    width: 50%;
-  }
-
   .hero-text {
-    top: 28%;
+    top: 34%;
   }
 
   button {
@@ -777,7 +763,7 @@ input {
 
 @media (min-width: 1600px) {
   .hero-text {
-    top: 28%;
+    top: 32%;
   }
 
   .hero-title {

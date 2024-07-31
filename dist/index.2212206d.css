@@ -94,19 +94,11 @@ button:hover {
   padding: 0 5%;
   display: flex;
   position: absolute;
-  top: 25%;
+  top: 30%;
 }
 
 .left-hero, .right-hero {
   flex: 1;
-}
-
-.dots {
-  display: inline-block;
-}
-
-.read-more-span {
-  display: none;
 }
 
 .left-hero {
@@ -155,7 +147,7 @@ h1 {
 
 .hero-desc {
   color: #787b82;
-  width: 70%;
+  width: 60%;
 }
 
 h2 {
@@ -592,11 +584,6 @@ input {
     padding: 0 4%;
   }
 
-  .read-more-span {
-    color: #c20505;
-    display: inline-block;
-  }
-
   .hero-btns > .white-heart {
     display: none;
   }
@@ -635,20 +622,6 @@ input {
 @media (width >= 921px) and (width <= 1080px) {
   .hero-title {
     width: 100%;
-  }
-}
-
-@media (width >= 920px) and (width <= 1080px) {
-  .left-hero > .hero-desc {
-    display: none;
-  }
-
-  .hero-btns {
-    margin-top: 10px;
-  }
-
-  .hero-text {
-    top: 40%;
   }
 }
 
@@ -711,6 +684,24 @@ input {
   }
 }
 
+@media (width >= 920px) and (width <= 1330px) {
+  .left-hero > .hero-desc {
+    display: none;
+  }
+
+  .hero-btns {
+    margin-top: 10px;
+  }
+
+  .hero-text {
+    top: 38%;
+  }
+
+  .hero-title {
+    width: 45%;
+  }
+}
+
 @media (width >= 1080px) and (width <= 1330px) {
   * {
     font-size: 15px;
@@ -720,12 +711,8 @@ input {
     width: 16.5px;
   }
 
-  .hero-title {
-    width: 50%;
-  }
-
   .hero-text {
-    top: 28%;
+    top: 34%;
   }
 
   button {
@@ -746,7 +733,7 @@ input {
 
 @media (width >= 1600px) {
   .hero-text {
-    top: 28%;
+    top: 32%;
   }
 
   .hero-title {
