@@ -36280,6 +36280,63 @@ const MovieGrid = ()=>{
                 fileName: "src/components/movie-grid/movie-grid.jsx",
                 lineNumber: 5,
                 columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "genres",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "bubble genre-button",
+                        children: "Horror"
+                    }, void 0, false, {
+                        fileName: "src/components/movie-grid/movie-grid.jsx",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "bubble genre-button",
+                        children: "Action"
+                    }, void 0, false, {
+                        fileName: "src/components/movie-grid/movie-grid.jsx",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "bubble genre-button",
+                        children: "Drama"
+                    }, void 0, false, {
+                        fileName: "src/components/movie-grid/movie-grid.jsx",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "bubble genre-button",
+                        children: "Mystery"
+                    }, void 0, false, {
+                        fileName: "src/components/movie-grid/movie-grid.jsx",
+                        lineNumber: 10,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "bubble genre-button",
+                        children: "Fantasy"
+                    }, void 0, false, {
+                        fileName: "src/components/movie-grid/movie-grid.jsx",
+                        lineNumber: 11,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "bubble genre-button",
+                        children: "Documentary"
+                    }, void 0, false, {
+                        fileName: "src/components/movie-grid/movie-grid.jsx",
+                        lineNumber: 12,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-grid/movie-grid.jsx",
+                lineNumber: 6,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {

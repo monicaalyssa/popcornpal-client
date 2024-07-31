@@ -100,7 +100,7 @@ button:hover {
 .hero-text {
   display: flex;
   position: absolute;
-  top: 30%;
+  top: 29%;
   padding: 0px 5%;
   width: 90%;
   max-width: 90%;
@@ -168,7 +168,7 @@ h2 {
 }
 
 .movie-heading-container {
-  padding: 4% 5% 3% 5%;
+  padding: 4% 5% 20px 5%;
 }
 
 .line {
@@ -386,6 +386,24 @@ input {
   color: $main-yellow;
 }
 
+.genre-button {
+  color: $main-white;
+  cursor: pointer;
+  margin: 0;
+  padding: 7px 20px;
+  transition: background-color 0.2s ease-in;
+}
+
+.genre-button:hover {
+  background-color: $main-red;
+}
+
+.genres {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+
 .info-section {
   padding-top: 25px;
   padding-bottom: 15px;
@@ -473,12 +491,6 @@ input {
     row-gap: 0.9%;
   }
 
-  .movie-heading-container {
-    padding: 11% 2% 7% 2%;
-    display: flex;
-    justify-content: center;
-  }
-
   h1 {
     font-size: 26px;
   }
@@ -535,6 +547,10 @@ input {
     width: 28px;
     top: 0.5px;
     right: 0;
+  }
+
+  .hero-title {
+    text-align: center;
   }
 
   .favorite-btn-text {
@@ -605,6 +621,19 @@ input {
     display: none;
   }
 
+  .movie-heading-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    padding: 11% 4% 3.5% 4%;
+  }
+
+  .genres {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .grid {
     padding: 0 4%;
   }
@@ -617,12 +646,6 @@ input {
 @media (min-width: 600px) and (max-width: 920px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .movie-heading-container {
-    padding: 8% 2% 5% 2%;
-    display: flex;
-    justify-content: center;
   }
 
   .favorite-button {
