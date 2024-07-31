@@ -564,6 +564,13 @@ input {
   .movie-card {
     gap: 18px;
   }
+
+  header {
+    position: sticky;
+    top: 0;
+    background-color: $background;
+    z-index: 2;
+  }
 }
 
 // break for mobile, but not smallest devices

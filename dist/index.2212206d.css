@@ -542,6 +542,13 @@ input {
   .movie-card {
     gap: 18px;
   }
+
+  header {
+    z-index: 2;
+    background-color: #1a1a1a;
+    position: sticky;
+    top: 0;
+  }
 }
 
 @media (width >= 0) and (width <= 920px) {
