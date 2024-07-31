@@ -79,10 +79,6 @@ button:hover {
   bottom: 110px;
 }
 
-.responsive-hero-heart {
-  display: none;
-}
-
 .hero-img {
   z-index: -1;
   opacity: .4;
@@ -469,7 +465,7 @@ input {
 
   .movie-heading-container {
     justify-content: center;
-    padding: 9% 2% 3%;
+    padding: 11% 2% 7%;
     display: flex;
   }
 
@@ -484,16 +480,6 @@ input {
   .banner-container {
     background-position: right 50% top 80%;
     height: 400px;
-  }
-
-  .responsive-hero-heart {
-    cursor: pointer;
-    width: 22px;
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .banner-container {
     margin-bottom: 0;
     bottom: 0;
   }
@@ -510,7 +496,7 @@ input {
   }
 
   .movie-info {
-    padding: 30px 5% 120px;
+    padding: 4% 4% 120px;
   }
 
   .movie-heading-margin {
@@ -540,20 +526,19 @@ input {
   .favorite-btn-text {
     display: none;
   }
-}
 
-@media (width >= 600px) and (width <= 920px) {
-  .responsive-hero-heart {
-    cursor: pointer;
-    width: 24px;
-    margin-bottom: 9px;
-    display: block;
+  .grid-genre-desc {
+    padding-top: 2.5px;
+  }
+
+  .movie-card {
+    gap: 18px;
   }
 }
 
 @media (width >= 0) and (width <= 920px) {
   .nav-bar {
-    padding: 10px 2%;
+    padding: 15px 4%;
   }
 
   .logo {
@@ -570,16 +555,20 @@ input {
   }
 
   .hero-text {
-    width: 96%;
-    max-width: 96%;
-    padding: 20px 2% 0;
+    flex-direction: column-reverse;
+    width: auto;
+    max-width: 100%;
+    padding: 3% 4%;
     display: flex;
     position: static;
-    top: 0;
   }
 
   .left-hero {
-    flex-grow: 10;
+    align-items: center;
+  }
+
+  .right-hero {
+    padding: 0 0 20px;
   }
 
   .hero-title {
@@ -588,7 +577,11 @@ input {
   }
 
   .hero-desc {
-    width: 100%;
+    display: none;
+  }
+
+  .hero-btns {
+    margin-top: 15px;
   }
 
   .movie-heading-container > .line {
@@ -596,22 +589,12 @@ input {
   }
 
   .grid {
-    padding: 0 2%;
-  }
-
-  .read-more-btn {
-    display: none;
+    padding: 0 4%;
   }
 
   .read-more-span {
     color: #c20505;
     display: inline-block;
-  }
-
-  .hero-responsive-title {
-    flex-direction: row;
-    gap: 10px;
-    display: flex;
   }
 
   .hero-btns > .white-heart {
@@ -626,8 +609,16 @@ input {
 
   .movie-heading-container {
     justify-content: center;
-    padding: 7% 2% 3%;
+    padding: 8% 2% 5%;
     display: flex;
+  }
+
+  .favorite-button {
+    margin-top: 12px;
+  }
+
+  .movie-info {
+    padding: 1% 3% 120px 4%;
   }
 }
 

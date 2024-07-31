@@ -36107,25 +36107,15 @@ const Hero = ()=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "hero-responsive-title",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                        className: "hero-title",
-                                        children: "Avatar: The Way of Water"
-                                    }, void 0, false, {
-                                        fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 9,
-                                        columnNumber: 13
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "responsive-hero-heart",
-                                        src: require("e72d4ece8a7d5e35")
-                                    }, void 0, false, {
-                                        fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 10,
-                                        columnNumber: 13
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                    className: "hero-title",
+                                    children: "Avatar: The Way of Water"
+                                }, void 0, false, {
+                                    fileName: "src/components/hero/hero.jsx",
+                                    lineNumber: 9,
+                                    columnNumber: 13
+                                }, undefined)
+                            }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
                                 lineNumber: 8,
                                 columnNumber: 11
@@ -36144,13 +36134,13 @@ const Hero = ()=>{
                                                 children: "...\xa0"
                                             }, void 0, false, {
                                                 fileName: "src/components/hero/hero.jsx",
-                                                lineNumber: 22,
+                                                lineNumber: 18,
                                                 columnNumber: 15
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 18,
+                                        lineNumber: 14,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36159,13 +36149,13 @@ const Hero = ()=>{
                                         children: "read more"
                                     }, void 0, false, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 24,
+                                        lineNumber: 20,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 15,
+                                lineNumber: 11,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36176,7 +36166,7 @@ const Hero = ()=>{
                                         children: "Read More"
                                     }, void 0, false, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 29,
+                                        lineNumber: 25,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -36184,13 +36174,13 @@ const Hero = ()=>{
                                         src: require("e72d4ece8a7d5e35")
                                     }, void 0, false, {
                                         fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 30,
+                                        lineNumber: 26,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 28,
+                                lineNumber: 24,
                                 columnNumber: 11
                             }, undefined)
                         ]
@@ -36207,20 +36197,20 @@ const Hero = ()=>{
                                 src: require("aac761b4f4a25e61")
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 37,
+                                lineNumber: 33,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: "featured"
                             }, void 0, false, {
                                 fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 41,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/hero/hero.jsx",
-                        lineNumber: 36,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, undefined)
                 ]

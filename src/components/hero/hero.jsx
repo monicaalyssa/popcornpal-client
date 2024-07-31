@@ -7,10 +7,6 @@ export const Hero = () => {
           <p className="hero-duration">Duration: 3h12m • Action</p>
           <div className="hero-responsive-title">
             <h1 className="hero-title">Avatar: The Way of Water</h1>
-            <img
-              className="responsive-hero-heart"
-              src={require("../../images/Heart.svg")}
-            />
           </div>
           <p className="hero-desc">
             On the lush alien world of Pandora live the Na'vi, beings who appear
