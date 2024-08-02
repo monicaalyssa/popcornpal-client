@@ -555,11 +555,6 @@ input {
     bottom: 0;
   }
 
-  .hero-img {
-    object-fit: cover;
-    height: 400px;
-  }
-
   .back-btn-container {
     justify-content: center;
     padding-top: 20px;
@@ -616,9 +611,18 @@ input {
     position: sticky;
     top: 0;
   }
+
+  .right-hero {
+    padding: 0 0 20px;
+  }
 }
 
 @media (width >= 0) and (width <= 920px) {
+  .hero-img {
+    object-fit: cover;
+    height: 440px;
+  }
+
   .nav-bar {
     padding: 15px 4%;
   }
@@ -647,10 +651,6 @@ input {
 
   .left-hero {
     align-items: center;
-  }
-
-  .right-hero {
-    padding: 0 0 20px;
   }
 
   .hero-title {
@@ -712,6 +712,10 @@ input {
 
   h2 {
     font-size: 25px;
+  }
+
+  .right-hero {
+    padding: 0 0 10px;
   }
 }
 

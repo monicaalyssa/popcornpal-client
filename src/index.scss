@@ -580,11 +580,6 @@ input {
     margin-bottom: 0px;
   }
 
-  .hero-img {
-    height: 400px;
-    object-fit: cover;
-  }
-
   .back-btn-container {
     padding-top: 20px;
     display: flex;
@@ -642,10 +637,18 @@ input {
     background-color: $background;
     z-index: 2;
   }
+
+  .right-hero {
+    padding: 0 0 20px 0;
+  }
 }
 
 // break for mobile, but not smallest devices
 @media (min-width: 0) and (max-width: 920px) {
+  .hero-img {
+    height: 440px;
+    object-fit: cover;
+  }
 
   .nav-bar {
     padding: 15px 4%;
@@ -676,10 +679,6 @@ input {
 
   .left-hero {
     align-items: center;  
-  }
-
-  .right-hero {
-    padding: 0 0 20px 0;
   }
 
   .hero-title {
@@ -741,6 +740,10 @@ input {
 
   h2 {
     font-size: 25px;
+  }
+
+  .right-hero {
+    padding: 0 0 10px 0;
   }
 }
 
