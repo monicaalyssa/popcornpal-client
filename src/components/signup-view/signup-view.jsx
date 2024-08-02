@@ -1,4 +1,6 @@
 import { userState, useState } from "react";
+import { LoginView } from "../login-view/login-view";
+import { Link } from "react-router-dom";
 
 export const SignupView = () => {
   const [username, setUsername] = useState("");
@@ -25,7 +27,8 @@ export const SignupView = () => {
     }).then((response) => {
       if (response.ok) {
         alert("Signup successful");
-        window.location.reload();
+        window.location.href = "/login";
+        
       } else {
         alert("Signup failed");
       }
@@ -79,9 +82,12 @@ export const SignupView = () => {
             />
           </label>
         </div>
+        <div className="login-button-container">
         <button className="login-button" type="submit">
           Sign Up
         </button>
+        <p className="login-signup-redirect">Already have an account? <Link className="redirect-link" to={`/login`}>Log In</Link></p>
+        </div>
       </form>
     </div>
   );

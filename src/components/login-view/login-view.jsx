@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -21,13 +22,12 @@ export const LoginView = ({ onLoggedIn }) => {
       body: JSON.stringify(data)
     }).then((response) => response.json())
     .then((data) => {
-      console.log("Login response: ", data);
       if (data.user) {
         localStorage.setItem("user", JSON.stringify(data.user));
         localStorage.setItem("token", data.token);
         onLoggedIn(data.user, data.token);
       } else {
-        alert("No such user");
+        alert("Invalid username or password");
       }
     })
     .catch((e) => {
@@ -63,9 +63,12 @@ export const LoginView = ({ onLoggedIn }) => {
             />
           </label>
         </div>
+        <div className="login-button-container">
         <button className="login-button" type="submit">
           Login
         </button>
+        <p className="login-signup-redirect">Don't have an account? <Link className="redirect-link" to={`/signup`}>Sign up</Link></p>
+        </div>
       </form>
     </div>
   );

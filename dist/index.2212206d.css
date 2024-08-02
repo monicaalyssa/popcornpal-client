@@ -296,6 +296,23 @@ input {
   background-repeat: no-repeat;
 }
 
+.login-button-container {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px;
+  display: flex;
+}
+
+.login-signup-redirect {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.redirect-link {
+  color: #ffd600;
+}
+
 .banner-container {
   opacity: .4;
   background-position: right 50% top 20%;
@@ -834,6 +851,10 @@ input {
 
   .genre-dropdown-list {
     padding: 14px 24px;
+  }
+
+  .login-signup-redirect {
+    font-size: 14px;
   }
 }
 
