@@ -32,13 +32,13 @@ p {
   display: flex;
 }
 
-.menu-bar p {
+.menu-bar .menu-item {
   cursor: pointer;
   margin: 10px 50px;
   transition: color .4s;
 }
 
-.menu-bar p:hover {
+.menu-bar .menu-item:hover {
   color: #c20505;
 }
 
@@ -412,7 +412,7 @@ input {
   position: absolute;
   top: 4rem;
   right: 5%;
-  box-shadow: 0 0 8px #00000051;
+  box-shadow: inset 0 0 0 .5px #ffffff1a, 0 0 8px #00000051;
 }
 
 .my-account {
@@ -437,6 +437,7 @@ input {
 
 .menu-icon {
   width: 18px;
+  transition: all .3s;
 }
 
 .sign-out-icon {
@@ -445,7 +446,7 @@ input {
 }
 
 .menu-line {
-  margin: 12px 0;
+  margin: 12px 10px 12px 0;
 }
 
 .open-profile {
@@ -462,6 +463,70 @@ input {
 }
 
 .open-profile.inactive {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.menu-font-size {
+  font-size: 15px;
+}
+
+.genre-cursor {
+  cursor: pointer;
+}
+
+.genre-dropdown-list {
+  padding-inline-start: 0;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: auto;
+  padding: 18px 28px;
+  list-style-type: none;
+  display: grid;
+  position: absolute;
+  top: 3.8rem;
+  left: 45%;
+  box-shadow: inset 0 0 0 .5px #ffffff1a, 0 0 8px #00000051;
+}
+
+.genre-menu-item {
+  position: relative;
+}
+
+.genre-dropdown-item {
+  cursor: pointer;
+  border-radius: 5px;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-top: 1px;
+  margin-left: -10px;
+  padding: 9px 10px;
+  font-weight: 400;
+  transition: all .3s;
+  display: flex;
+}
+
+.genre-dropdown-item:hover {
+  color: #ffd600;
+  background-color: #242424;
+}
+
+.open-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s;
+}
+
+.open-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.open-dropdown.inactive {
   visibility: hidden;
   opacity: 0;
   transition: all .5s;
@@ -688,7 +753,7 @@ input {
     width: 30%;
   }
 
-  .menu-bar p {
+  .menu-bar .menu-item {
     margin: 10px 5px;
   }
 
@@ -711,6 +776,19 @@ input {
 
   .sign-out-icon {
     width: 13px;
+  }
+
+  .dropdown-list {
+    width: 200px;
+    padding: 24px 14px 18px 24px;
+  }
+
+  .user-menu-item, .genre-dropdown-item {
+    padding: 7px 9px;
+  }
+
+  .genre-dropdown-list {
+    padding: 14px 24px;
   }
 }
 

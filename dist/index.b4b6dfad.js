@@ -35751,12 +35751,14 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "NavBar", ()=>NavBar);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _userMenu = require("../user-menu/user-menu");
+var _genreDropdown = require("../genre-dropdown/genre-dropdown");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const NavBar = ({ user, onLogout })=>{
     _s();
     const [open, setOpen] = (0, _react.useState)(false);
+    const [openDropdown, setOpenDropdown] = (0, _react.useState)(false);
     let menuRef = (0, _react.useRef)(null);
     const location = (0, _reactRouterDom.useLocation)();
     const lastHash = (0, _react.useRef)("");
@@ -35792,12 +35794,12 @@ const NavBar = ({ user, onLogout })=>{
                         children: "PopcornPal"
                     }, void 0, false, {
                         fileName: "src/components/navigation/nav-bar.jsx",
-                        lineNumber: 45,
+                        lineNumber: 47,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 44,
+                    lineNumber: 46,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35806,35 +35808,67 @@ const NavBar = ({ user, onLogout })=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: `/#movies`,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "menu-item",
                                 children: "Movies"
                             }, void 0, false, {
                                 fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 49,
+                                lineNumber: 52,
                                 columnNumber: 13
                             }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 48,
-                            columnNumber: 9
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: "Genres"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
                             lineNumber: 51,
                             columnNumber: 11
                         }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "genre-cursor",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "menu-item genre-menu-item",
+                                    onMouseEnter: ()=>setOpenDropdown(true),
+                                    children: "Genres"
+                                }, void 0, false, {
+                                    fileName: "src/components/navigation/nav-bar.jsx",
+                                    lineNumber: 56,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: `open-dropdown ${openDropdown ? "active" : "inactive"}`,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        onMouseLeave: ()=>setOpenDropdown(false),
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreDropdown.GenreDropdown), {}, void 0, false, {
+                                            fileName: "src/components/navigation/nav-bar.jsx",
+                                            lineNumber: 68,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation/nav-bar.jsx",
+                                        lineNumber: 67,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/components/navigation/nav-bar.jsx",
+                                    lineNumber: 62,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 55,
+                            columnNumber: 11
+                        }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "menu-item",
                             children: "My List"
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 52,
+                            lineNumber: 73,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 47,
+                    lineNumber: 50,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35846,7 +35880,7 @@ const NavBar = ({ user, onLogout })=>{
                             src: require("b9710e7656528221")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 55,
+                            lineNumber: 76,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -35855,7 +35889,7 @@ const NavBar = ({ user, onLogout })=>{
                             src: require("3de8cf43c7f5ba07")
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 59,
+                            lineNumber: 80,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35865,33 +35899,33 @@ const NavBar = ({ user, onLogout })=>{
                                 onLogout: onLogout
                             }, void 0, false, {
                                 fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 65,
+                                lineNumber: 86,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 64,
+                            lineNumber: 85,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 54,
+                    lineNumber: 75,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/navigation/nav-bar.jsx",
-            lineNumber: 43,
+            lineNumber: 45,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/navigation/nav-bar.jsx",
-        lineNumber: 42,
+        lineNumber: 44,
         columnNumber: 5
     }, undefined);
 };
-_s(NavBar, "A0ntt7iFaqVQ2YFHSnXuWdTGQBQ=", false, function() {
+_s(NavBar, "MuY6egYedpDjDYBKfFOdUnMJHe8=", false, function() {
     return [
         (0, _reactRouterDom.useLocation)
     ];
@@ -35905,7 +35939,7 @@ $RefreshReg$(_c, "NavBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","../user-menu/user-menu":"gwWGx","react":"21dqq","react-router-dom":"9xmpe"}],"jbnMx":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","../user-menu/user-menu":"gwWGx","react":"21dqq","react-router-dom":"9xmpe","../genre-dropdown/genre-dropdown":"kk4Bu"}],"jbnMx":[function(require,module,exports) {
 module.exports = require("5578768f349e7056").getBundleURL("byUka") + "Search.f4d21c8a.svg" + "?" + Date.now();
 
 },{"5578768f349e7056":"kPWUg"}],"kPWUg":[function(require,module,exports) {
@@ -36091,7 +36125,181 @@ module.exports = require("a1edcfd7d2fb8636").getBundleURL("byUka") + "Heart.d0f2
 },{"a1edcfd7d2fb8636":"kPWUg"}],"lg8jF":[function(require,module,exports) {
 module.exports = require("57dcfe453f96b8f").getBundleURL("byUka") + "Sign-Out.042d0a32.svg" + "?" + Date.now();
 
-},{"57dcfe453f96b8f":"kPWUg"}],"8XQUt":[function(require,module,exports) {
+},{"57dcfe453f96b8f":"kPWUg"}],"kk4Bu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8477 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8477.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreDropdown", ()=>GenreDropdown);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _genreItem = require("../genre-item/genre-item");
+const GenreDropdown = ()=>{
+    const genres = [
+        "Horror",
+        "Drama",
+        "Action",
+        "Mystery",
+        "Fantasy",
+        "Documentary"
+    ];
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "genre-dropdown",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+            className: "genre-dropdown-list",
+            children: genres.map((genre)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreItem.GenreItem), {
+                    genre: genre
+                }, void 0, false, {
+                    fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+                    lineNumber: 13,
+                    columnNumber: 11
+                }, undefined))
+        }, void 0, false, {
+            fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+            lineNumber: 11,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+        lineNumber: 10,
+        columnNumber: 5
+    }, undefined);
+};
+_c = GenreDropdown;
+var _c;
+$RefreshReg$(_c, "GenreDropdown");
+
+  $parcel$ReactRefreshHelpers$8477.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","../genre-item/genre-item":"fq3rm"}],"fq3rm":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d1cf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d1cf.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreItem", ()=>GenreItem);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const GenreItem = ({ genre })=>{
+    _s();
+    const [isHovered, setIsHovered] = (0, _react.useState)(false);
+    const imagesList = {
+        Horror: {
+            default: require("c9ae5286fe39467c"),
+            hovered: require("5d5d8d4ad8a616d0")
+        },
+        Drama: {
+            default: require("46bb160c0148637"),
+            hovered: require("3e60e9fbc5e172f1")
+        },
+        Action: {
+            default: require("8ee24e7836c79b35"),
+            hovered: require("9dfc7cf92b66f4d4")
+        },
+        Mystery: {
+            default: require("6e62807babf075da"),
+            hovered: require("3fc3bdee6baea387")
+        },
+        Fantasy: {
+            default: require("a659001f8f493d8a"),
+            hovered: require("7148938fa9ad4774")
+        },
+        Documentary: {
+            default: require("be4866b90acbec53"),
+            hovered: require("a648f7c60334df30")
+        }
+    };
+    const getImageSrc = ()=>{
+        const images = imagesList[genre];
+        return isHovered ? images.default : images.hovered;
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+        className: "menu-font-size genre-dropdown-item",
+        onMouseEnter: ()=>setIsHovered(true),
+        onMouseLeave: ()=>setIsHovered(false),
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "menu-icon",
+                src: getImageSrc()
+            }, void 0, false, {
+                fileName: "src/components/genre-item/genre-item.jsx",
+                lineNumber: 45,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: genre
+            }, void 0, false, {
+                fileName: "src/components/genre-item/genre-item.jsx",
+                lineNumber: 46,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/genre-item/genre-item.jsx",
+        lineNumber: 40,
+        columnNumber: 5
+    }, undefined);
+};
+_s(GenreItem, "FPQn8a98tPjpohC7NUYORQR8GJE=");
+_c = GenreItem;
+var _c;
+$RefreshReg$(_c, "GenreItem");
+
+  $parcel$ReactRefreshHelpers$d1cf.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","c9ae5286fe39467c":"4h0ZY","5d5d8d4ad8a616d0":"jNNo2","46bb160c0148637":"ctxcz","3e60e9fbc5e172f1":"k01pP","8ee24e7836c79b35":"d9kUY","9dfc7cf92b66f4d4":"1vps3","a659001f8f493d8a":"ao2az","7148938fa9ad4774":"fH1rI","be4866b90acbec53":"b1vpG","a648f7c60334df30":"hk8qG","6e62807babf075da":"3iEmy","3fc3bdee6baea387":"hgyGN"}],"4h0ZY":[function(require,module,exports) {
+module.exports = require("64f92e0e017fe782").getBundleURL("byUka") + "Yellow-Horror-Genre.0b8b0d07.png" + "?" + Date.now();
+
+},{"64f92e0e017fe782":"kPWUg"}],"jNNo2":[function(require,module,exports) {
+module.exports = require("b5a9cd11c7a96fbc").getBundleURL("byUka") + "Horror-Genre.d3464b23.png" + "?" + Date.now();
+
+},{"b5a9cd11c7a96fbc":"kPWUg"}],"ctxcz":[function(require,module,exports) {
+module.exports = require("f959ce102dfe156d").getBundleURL("byUka") + "Yellow-Drama-Genre.9504496f.png" + "?" + Date.now();
+
+},{"f959ce102dfe156d":"kPWUg"}],"k01pP":[function(require,module,exports) {
+module.exports = require("ad562e21484b9061").getBundleURL("byUka") + "Drama-Genre.c995014a.png" + "?" + Date.now();
+
+},{"ad562e21484b9061":"kPWUg"}],"d9kUY":[function(require,module,exports) {
+module.exports = require("cdb7913a4f65632b").getBundleURL("byUka") + "Yellow-Action-Genre.7632234c.png" + "?" + Date.now();
+
+},{"cdb7913a4f65632b":"kPWUg"}],"1vps3":[function(require,module,exports) {
+module.exports = require("ff6f004d84531dc3").getBundleURL("byUka") + "Action-Genre.9cbbcf63.png" + "?" + Date.now();
+
+},{"ff6f004d84531dc3":"kPWUg"}],"ao2az":[function(require,module,exports) {
+module.exports = require("d8c48e982f41e8dd").getBundleURL("byUka") + "Yellow-Fantasy-Genre.ffc57b15.png" + "?" + Date.now();
+
+},{"d8c48e982f41e8dd":"kPWUg"}],"fH1rI":[function(require,module,exports) {
+module.exports = require("97a5482da5e3bc3f").getBundleURL("byUka") + "Fantasy-Genre.e9a31879.png" + "?" + Date.now();
+
+},{"97a5482da5e3bc3f":"kPWUg"}],"b1vpG":[function(require,module,exports) {
+module.exports = require("c20ece203a1b81c").getBundleURL("byUka") + "Yellow-Documentary-Genre.4066c89c.png" + "?" + Date.now();
+
+},{"c20ece203a1b81c":"kPWUg"}],"hk8qG":[function(require,module,exports) {
+module.exports = require("addc8d36fee63fa3").getBundleURL("byUka") + "Documentary-Genre.6a989893.png" + "?" + Date.now();
+
+},{"addc8d36fee63fa3":"kPWUg"}],"3iEmy":[function(require,module,exports) {
+module.exports = require("8a513cbd9361b009").getBundleURL("byUka") + "Yellow-Mystery-Genre.d0d130f8.png" + "?" + Date.now();
+
+},{"8a513cbd9361b009":"kPWUg"}],"hgyGN":[function(require,module,exports) {
+module.exports = require("eea9bd2b95631076").getBundleURL("byUka") + "Mystery-Genre.ba849ad5.png" + "?" + Date.now();
+
+},{"eea9bd2b95631076":"kPWUg"}],"8XQUt":[function(require,module,exports) {
 module.exports = require("e6f64ad6290e3fb5").getBundleURL("byUka") + "Red-Heart.8303c525.svg" + "?" + Date.now();
 
 },{"e6f64ad6290e3fb5":"kPWUg"}],"emPqA":[function(require,module,exports) {

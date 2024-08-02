@@ -1,14 +1,16 @@
 import { UserMenu } from "../user-menu/user-menu";
+import { GenreDropdown } from "../genre-dropdown/genre-dropdown";
 import { useState, useEffect, useRef } from "react";
 import { React } from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 
 export const NavBar = ({ user, onLogout }) => {
   const [open, setOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false);
   let menuRef = useRef(null);
   const location = useLocation();
-  const lastHash = useRef('');
+  const lastHash = useRef("");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -32,8 +34,8 @@ export const NavBar = ({ user, onLogout }) => {
       setTimeout(() => {
         document
           .getElementById(lastHash.current)
-          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        lastHash.current = '';
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        lastHash.current = "";
       }, 100);
     }
   }, [location]);
@@ -44,12 +46,31 @@ export const NavBar = ({ user, onLogout }) => {
         <Link to={`/`}>
           <div className="logo">PopcornPal</div>
         </Link>
+
         <div className="menu-bar">
-        <Link to={`/#movies`}>
-            <p>Movies</p>
-        </Link>
-          <p>Genres</p>
-          <p>My List</p>
+          <Link to={`/#movies`}>
+            <p className="menu-item">Movies</p>
+          </Link>
+
+          <div className="genre-cursor">
+            <p
+              className="menu-item genre-menu-item"
+              onMouseEnter={() => setOpenDropdown(true)}
+            >
+              Genres
+            </p>
+            <div
+              className={`open-dropdown ${
+                openDropdown ? "active" : "inactive"
+              }`}
+            >
+              <div onMouseLeave={() => setOpenDropdown(false)}>
+                <GenreDropdown />
+              </div>
+            </div>
+          </div>
+
+          <p className="menu-item">My List</p>
         </div>
         <div ref={menuRef} className="right-logos">
           <img

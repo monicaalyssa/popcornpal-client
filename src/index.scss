@@ -40,13 +40,13 @@ p {
   justify-content: space-between;
 }
 
-.menu-bar p {
+.menu-bar .menu-item {
   margin: 10px 50px;
   cursor: pointer;
   transition: color 0.4s ease;
 }
 
-.menu-bar p:hover {
+.menu-bar .menu-item:hover {
   color: $main-red;
 }
 
@@ -430,15 +430,14 @@ input {
   padding-inline-start: 0;
   padding: 28px 18px 22px 28px;
   font-weight: 500;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.318);
+  box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1) inset, 0 0 8px 0 rgba(0, 0, 0, 0.318);
 }
 
 .my-account {
   margin-bottom: 4px;
 }
 
-.user-menu-item {
-  cursor: pointer;
+.user-menu-item { 
   display: flex;
   align-items: center;
   gap: 10px;
@@ -447,6 +446,7 @@ input {
   margin-top: 1px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .user-menu-item:hover { 
@@ -455,6 +455,7 @@ input {
 
 .menu-icon {
   width: 18px;
+  transition: all 0.3s ease;
 }
 
 .sign-out-icon {
@@ -464,6 +465,7 @@ input {
 
 .menu-line {
   margin: 12px 0;
+  margin-right: 10px;
 }
 
 .open-profile {
@@ -480,6 +482,72 @@ input {
 }
 
 .open-profile.inactive {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.menu-font-size {
+  font-size: 15px;
+}
+
+.genre-cursor {
+  cursor: pointer;
+}
+
+.genre-dropdown-list { 
+  // add responsive padding for smaller and larger sizes
+  position: absolute;
+  top: 3.8rem;
+  left: 45%;
+  width: auto;
+  display: grid;
+  border-radius: 15px;
+  list-style-type: none;
+  padding-inline-start: 0;
+  padding: 18px 28px;
+  box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1) inset, 0 0 8px 0 rgba(0, 0, 0, 0.318);
+  background-color: $background;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.genre-menu-item{
+  position: relative;
+}
+
+.genre-dropdown-item { // font sizes 2px smaller .menu-font-size class, do i want to use this for user menu?
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 9px 10px;
+  margin-left: -10px;
+  margin-top: 1px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.genre-dropdown-item:hover { 
+  color: $main-yellow;
+  background-color: $light-background;
+}
+
+.open-dropdown {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+
+.open-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.open-dropdown.inactive {
   visibility: hidden;
   opacity: 0;
   transition: all 0.5s ease;
@@ -718,7 +786,7 @@ input {
     width: 30%;
   }
 
-  .menu-bar p {
+  .menu-bar .menu-item {
     margin: 10px 5px;
   }
 
@@ -741,6 +809,23 @@ input {
 
   .sign-out-icon {
     width: 13px;
+  }
+
+  .dropdown-list { 
+    padding: 24px 14px 18px 24px;
+    width: 200px;
+  }
+
+  .user-menu-item {
+    padding: 7px 9px;
+  }
+
+  .genre-dropdown-item {
+    padding: 7px 9px;
+  }
+
+  .genre-dropdown-list {
+    padding: 14px 24px;
   }
 }
 
