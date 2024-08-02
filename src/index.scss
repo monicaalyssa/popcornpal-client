@@ -244,7 +244,7 @@ h2 {
 }
 
 .login-container {
-  padding: 0 5%;
+  padding: 3% 5%;  
 }
 
 .login-heading {
@@ -252,7 +252,6 @@ h2 {
 }
 
 .login-form-flexbox {
-  // add media query for page padding
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -285,7 +284,6 @@ input {
 }
 
 .input-box {
-  // check or add media query for font sizes
   border-radius: 5px;
   background-color: $light-background;
   border: 0px;
@@ -641,6 +639,30 @@ input {
   .right-hero {
     padding: 0 0 20px 0;
   }
+    
+  .login-form-flexbox {
+    width: 100%;
+  }
+
+  .input-box {
+    padding: 14px 13px;
+    font-size: 14px;
+  }
+
+  .password-input {
+    background-position-x: 96.7%;
+  }
+
+  .input-box.birthday-input {
+    -webkit-appearance: none;
+    font-size: 14px;
+    height: 18px;
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    line-height: normal;
+    color: $subtle-gray;
+  }
 }
 
 // break for mobile, but not smallest devices
@@ -718,6 +740,10 @@ input {
 
   .hero-btns > .white-heart {
     display: none;
+  }
+
+  .login-container {
+    padding: 8% 4%;  
   }
 }
 

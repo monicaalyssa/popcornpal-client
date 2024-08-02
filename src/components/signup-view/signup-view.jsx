@@ -71,7 +71,7 @@ export const SignupView = () => {
           <label className="form-label-box">
             <p>Birthday</p>
             <input
-              className="input-box"
+              className="input-box birthday-input"
               type="date"
               value={birthday}
               onChange={(e) => setBirthday(e.target.value)}

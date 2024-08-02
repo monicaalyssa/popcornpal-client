@@ -36907,7 +36907,7 @@ const SignupView = ()=>{
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    className: "input-box",
+                                    className: "input-box birthday-input",
                                     type: "date",
                                     value: birthday,
                                     onChange: (e)=>setBirthday(e.target.value),

@@ -231,7 +231,7 @@ h2 {
 }
 
 .login-container {
-  padding: 0 5%;
+  padding: 3% 5%;
 }
 
 .login-heading {
@@ -615,6 +615,30 @@ input {
   .right-hero {
     padding: 0 0 20px;
   }
+
+  .login-form-flexbox {
+    width: 100%;
+  }
+
+  .input-box {
+    padding: 14px 13px;
+    font-size: 14px;
+  }
+
+  .password-input {
+    background-position-x: 96.7%;
+  }
+
+  .input-box.birthday-input {
+    -webkit-appearance: none;
+    cursor: pointer;
+    color: #787b82;
+    border: 0;
+    height: 18px;
+    font-size: 14px;
+    line-height: normal;
+    display: inline-block;
+  }
 }
 
 @media (width >= 0) and (width <= 920px) {
@@ -690,6 +714,10 @@ input {
 
   .hero-btns > .white-heart {
     display: none;
+  }
+
+  .login-container {
+    padding: 8% 4%;
   }
 }
 
