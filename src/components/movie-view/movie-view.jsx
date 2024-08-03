@@ -2,6 +2,7 @@ import { NavBar } from "../navigation/nav-bar";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export const MovieView = ({ movies, user, onLogout }) => {  
   useEffect(() => {
@@ -13,6 +14,9 @@ export const MovieView = ({ movies, user, onLogout }) => {
 
   return (
     <div>
+      <Helmet>
+        <title>PopcornPal: {movie.title}</title>
+      </Helmet>
       <NavBar user={user} onLogout={onLogout} />
       <div
         className="banner-container"

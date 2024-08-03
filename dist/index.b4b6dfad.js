@@ -2978,7 +2978,7 @@ $RefreshReg$(_c, "PopcornPalApplication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","./components/main-view/main-view":"4gflv"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27221,145 +27221,7 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"lJZlQ":[function() {},{}],"6MisQ":[function(require,module,exports) {
-"use strict";
-var Refresh = require("431d0fdca1862a0b");
-function debounce(func, delay) {
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
-            }
-        };
-    }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30);
-// Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports;
-                // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
-                // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-}
-// When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        var typeID = id + " %exports% " + key;
-        Refresh.register(exportValue, typeID);
-    }
-}
-
-},{"431d0fdca1862a0b":"4ptgy"}],"4gflv":[function(require,module,exports) {
+},{}],"4gflv":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f7a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27381,6 +27243,7 @@ var _loginView = require("../login-view/login-view");
 var _signupView = require("../signup-view/signup-view");
 var _reactRouterDom = require("react-router-dom");
 var _profileView = require("../profile-view/profile-view");
+var _reactHelmet = require("react-helmet");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
@@ -27431,25 +27294,38 @@ const MainView = ()=>{
                         to: "/"
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactHelmet.Helmet), {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("title", {
+                                    children: "PopcornPal: Sign Up"
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 63,
+                                    columnNumber: 15
+                                }, void 0)
+                            }, void 0, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 63,
+                                columnNumber: 7
+                            }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginNavBar.LoginNavBar), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 62,
+                                lineNumber: 64,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 63,
+                                lineNumber: 65,
                                 columnNumber: 7
                             }, void 0)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 60,
+                    lineNumber: 61,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27458,13 +27334,26 @@ const MainView = ()=>{
                         to: "/"
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 68,
+                        lineNumber: 70,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactHelmet.Helmet), {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("title", {
+                                    children: "PopcornPal: Log In"
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 71,
+                                    columnNumber: 15
+                                }, void 0)
+                            }, void 0, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 71,
+                                columnNumber: 7
+                            }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginNavBar.LoginNavBar), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 69,
+                                lineNumber: 72,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
@@ -27474,14 +27363,14 @@ const MainView = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 70,
+                                lineNumber: 73,
                                 columnNumber: 7
                             }, void 0)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 67,
+                    lineNumber: 69,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27491,13 +27380,13 @@ const MainView = ()=>{
                         replace: true
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 78,
+                        lineNumber: 81,
                         columnNumber: 26
                     }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: "Loading..."
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 79,
+                        lineNumber: 82,
                         columnNumber: 33
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
                         movies: movies,
@@ -27505,12 +27394,12 @@ const MainView = ()=>{
                         onLogout: handleLogout
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 80,
+                        lineNumber: 83,
                         columnNumber: 11
                     }, void 0)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 77,
+                    lineNumber: 80,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27523,32 +27412,45 @@ const MainView = ()=>{
                                 replace: true
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 83,
+                                lineNumber: 86,
                                 columnNumber: 47
                             }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: "Loading..."
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 84,
+                                lineNumber: 87,
                                 columnNumber: 31
                             }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactHelmet.Helmet), {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("title", {
+                                            children: "PopcornPal: Your Movie Database - Favorite & Discover Films!"
+                                        }, void 0, false, {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 89,
+                                            columnNumber: 15
+                                        }, void 0)
+                                    }, void 0, false, {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 89,
+                                        columnNumber: 7
+                                    }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {
                                         user: user?.Username,
                                         onLogout: handleLogout
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 86,
+                                        lineNumber: 90,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _hero.Hero), {}, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 87,
+                                        lineNumber: 91,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieGrid.MovieGrid), {}, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 88,
+                                        lineNumber: 92,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27557,12 +27459,12 @@ const MainView = ()=>{
                                                 movieprop: movieprop
                                             }, movieprop.id, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 91,
+                                                lineNumber: 95,
                                                 columnNumber: 9
                                             }, void 0))
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 89,
+                                        lineNumber: 93,
                                         columnNumber: 7
                                     }, void 0)
                                 ]
@@ -27572,7 +27474,7 @@ const MainView = ()=>{
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 83,
+                    lineNumber: 86,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27582,32 +27484,50 @@ const MainView = ()=>{
                         replace: true
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 98,
+                        lineNumber: 102,
                         columnNumber: 26
-                    }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
-                        user: user,
-                        token: token,
-                        onUpdateUser: handleUpdateUser,
-                        movies: movies
-                    }, void 0, false, {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 99,
-                        columnNumber: 7
-                    }, void 0)
+                    }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactHelmet.Helmet), {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("title", {
+                                    children: "PopcornPal: Manage Your Account Settings"
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 104,
+                                    columnNumber: 15
+                                }, void 0)
+                            }, void 0, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 104,
+                                columnNumber: 7
+                            }, void 0),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
+                                user: user,
+                                token: token,
+                                onUpdateUser: handleUpdateUser,
+                                movies: movies
+                            }, void 0, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 105,
+                                columnNumber: 7
+                            }, void 0),
+                            " "
+                        ]
+                    }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 97,
+                    lineNumber: 101,
                     columnNumber: 7
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 59,
+            lineNumber: 60,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 58,
+        lineNumber: 59,
         columnNumber: 5
     }, undefined);
 };
@@ -27621,7 +27541,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","react/jsx-dev-runtime":"iTorj","../navigation/nav-bar":"OhlYY","../hero/hero":"emPqA","../movie-grid/movie-grid":"2Vpqn","../login-view/login-view":"9YtA0","../login-nav-bar/login-nav-bar":"gexPl","../signup-view/signup-view":"4OGiN","react-router-dom":"9xmpe","../profile-view/profile-view":"2vVqf"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../navigation/nav-bar":"OhlYY","../hero/hero":"emPqA","../movie-grid/movie-grid":"2Vpqn","../login-nav-bar/login-nav-bar":"gexPl","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-router-dom":"9xmpe","../profile-view/profile-view":"2vVqf","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react-helmet":"fcX6K"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27719,37 +27639,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","prop-types":"7wKI2","react-router-dom":"9xmpe"}],"8phav":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -35626,7 +35516,175 @@ function persistAppliedTransitions(_window, transitions) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"ggaUx":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"8phav":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"6MisQ":[function(require,module,exports) {
+"use strict";
+var Refresh = require("431d0fdca1862a0b");
+function debounce(func, delay) {
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
+    }
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30);
+// Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports;
+                // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
+                // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+}
+// When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        var typeID = id + " %exports% " + key;
+        Refresh.register(exportValue, typeID);
+    }
+}
+
+},{"431d0fdca1862a0b":"4ptgy"}],"ggaUx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35641,6 +35699,7 @@ var _navBar = require("../navigation/nav-bar");
 var _react = require("react");
 var _reactRouter = require("react-router");
 var _reactRouterDom = require("react-router-dom");
+var _reactHelmet = require("react-helmet");
 var _s = $RefreshSig$();
 const MovieView = ({ movies, user, onLogout })=>{
     _s();
@@ -35651,12 +35710,28 @@ const MovieView = ({ movies, user, onLogout })=>{
     const movie = movies.find((m)=>m.id === Title);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactHelmet.Helmet), {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("title", {
+                    children: [
+                        "PopcornPal: ",
+                        movie.title
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 18,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 17,
+                columnNumber: 7
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {
                 user: user,
                 onLogout: onLogout
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 16,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35667,7 +35742,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 17,
+                lineNumber: 21,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35681,7 +35756,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.title
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 25,
+                                lineNumber: 29,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35693,7 +35768,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                         src: require("2acd39aca90b4555")
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 28,
+                                        lineNumber: 32,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35701,19 +35776,19 @@ const MovieView = ({ movies, user, onLogout })=>{
                                         children: "Favorite"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 32,
+                                        lineNumber: 36,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 26,
+                                lineNumber: 30,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 24,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35727,7 +35802,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 37,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35735,13 +35810,13 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.genre
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 38,
+                                lineNumber: 42,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 36,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35751,7 +35826,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: "Synopsis"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 42,
+                                lineNumber: 46,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35759,13 +35834,13 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.description
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 43,
+                                lineNumber: 47,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 41,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35775,7 +35850,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: "Director"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 47,
+                                lineNumber: 51,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35783,13 +35858,13 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.director
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 48,
+                                lineNumber: 52,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 46,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35800,29 +35875,29 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: "Go Back"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 53,
+                                lineNumber: 57,
                                 columnNumber: 11
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 52,
+                            lineNumber: 56,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 51,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 23,
+                lineNumber: 27,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-view/movie-view.jsx",
-        lineNumber: 15,
+        lineNumber: 16,
         columnNumber: 5
     }, undefined);
 };
@@ -35840,7 +35915,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","../navigation/nav-bar":"OhlYY","2acd39aca90b4555":"8XQUt","react":"21dqq","react-router-dom":"9xmpe","react-router":"dbWyW"}],"OhlYY":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../navigation/nav-bar":"OhlYY","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","2acd39aca90b4555":"8XQUt","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react-helmet":"fcX6K"}],"OhlYY":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$713b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36040,48 +36115,7 @@ $RefreshReg$(_c, "NavBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","../user-menu/user-menu":"gwWGx","react":"21dqq","react-router-dom":"9xmpe","../genre-dropdown/genre-dropdown":"kk4Bu"}],"jbnMx":[function(require,module,exports) {
-module.exports = require("5578768f349e7056").getBundleURL("byUka") + "Search.f4d21c8a.svg" + "?" + Date.now();
-
-},{"5578768f349e7056":"kPWUg"}],"kPWUg":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"4Az2l":[function(require,module,exports) {
-module.exports = require("d1553abe5a7be242").getBundleURL("byUka") + "User.aae1e741.svg" + "?" + Date.now();
-
-},{"d1553abe5a7be242":"kPWUg"}],"gwWGx":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../user-menu/user-menu":"gwWGx","../genre-dropdown/genre-dropdown":"kk4Bu","react":"21dqq","react-router-dom":"9xmpe","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"gwWGx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$99d0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36225,10 +36259,45 @@ $RefreshReg$(_c, "UserMenu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","77b00898d8739b3":"cu8AD","d9100586bcdbc9d0":"6J7u4","7059d21f10f10ec":"lg8jF","react-router-dom":"9xmpe"}],"cu8AD":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","77b00898d8739b3":"cu8AD","d9100586bcdbc9d0":"6J7u4","7059d21f10f10ec":"lg8jF","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"cu8AD":[function(require,module,exports) {
 module.exports = require("b2cb95b33f7f782e").getBundleURL("byUka") + "Settings.cd3021b9.svg" + "?" + Date.now();
 
-},{"b2cb95b33f7f782e":"kPWUg"}],"6J7u4":[function(require,module,exports) {
+},{"b2cb95b33f7f782e":"kPWUg"}],"kPWUg":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"6J7u4":[function(require,module,exports) {
 module.exports = require("a1edcfd7d2fb8636").getBundleURL("byUka") + "Heart.d0f25e86.svg" + "?" + Date.now();
 
 },{"a1edcfd7d2fb8636":"kPWUg"}],"lg8jF":[function(require,module,exports) {
@@ -36288,7 +36357,7 @@ $RefreshReg$(_c, "GenreDropdown");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","../genre-item/genre-item":"fq3rm"}],"fq3rm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../genre-item/genre-item":"fq3rm","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"fq3rm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d1cf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36372,7 +36441,7 @@ $RefreshReg$(_c, "GenreItem");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","c9ae5286fe39467c":"4h0ZY","5d5d8d4ad8a616d0":"jNNo2","46bb160c0148637":"ctxcz","3e60e9fbc5e172f1":"k01pP","8ee24e7836c79b35":"d9kUY","9dfc7cf92b66f4d4":"1vps3","a659001f8f493d8a":"ao2az","7148938fa9ad4774":"fH1rI","be4866b90acbec53":"b1vpG","a648f7c60334df30":"hk8qG","6e62807babf075da":"3iEmy","3fc3bdee6baea387":"hgyGN"}],"4h0ZY":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","c9ae5286fe39467c":"4h0ZY","5d5d8d4ad8a616d0":"jNNo2","46bb160c0148637":"ctxcz","3e60e9fbc5e172f1":"k01pP","8ee24e7836c79b35":"d9kUY","9dfc7cf92b66f4d4":"1vps3","6e62807babf075da":"3iEmy","3fc3bdee6baea387":"hgyGN","a659001f8f493d8a":"ao2az","7148938fa9ad4774":"fH1rI","be4866b90acbec53":"b1vpG","a648f7c60334df30":"hk8qG","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"4h0ZY":[function(require,module,exports) {
 module.exports = require("64f92e0e017fe782").getBundleURL("byUka") + "Yellow-Horror-Genre.0b8b0d07.png" + "?" + Date.now();
 
 },{"64f92e0e017fe782":"kPWUg"}],"jNNo2":[function(require,module,exports) {
@@ -36390,7 +36459,13 @@ module.exports = require("cdb7913a4f65632b").getBundleURL("byUka") + "Yellow-Act
 },{"cdb7913a4f65632b":"kPWUg"}],"1vps3":[function(require,module,exports) {
 module.exports = require("ff6f004d84531dc3").getBundleURL("byUka") + "Action-Genre.9cbbcf63.png" + "?" + Date.now();
 
-},{"ff6f004d84531dc3":"kPWUg"}],"ao2az":[function(require,module,exports) {
+},{"ff6f004d84531dc3":"kPWUg"}],"3iEmy":[function(require,module,exports) {
+module.exports = require("8a513cbd9361b009").getBundleURL("byUka") + "Yellow-Mystery-Genre.d0d130f8.png" + "?" + Date.now();
+
+},{"8a513cbd9361b009":"kPWUg"}],"hgyGN":[function(require,module,exports) {
+module.exports = require("eea9bd2b95631076").getBundleURL("byUka") + "Mystery-Genre.ba849ad5.png" + "?" + Date.now();
+
+},{"eea9bd2b95631076":"kPWUg"}],"ao2az":[function(require,module,exports) {
 module.exports = require("d8c48e982f41e8dd").getBundleURL("byUka") + "Yellow-Fantasy-Genre.ffc57b15.png" + "?" + Date.now();
 
 },{"d8c48e982f41e8dd":"kPWUg"}],"fH1rI":[function(require,module,exports) {
@@ -36402,16 +36477,896 @@ module.exports = require("c20ece203a1b81c").getBundleURL("byUka") + "Yellow-Docu
 },{"c20ece203a1b81c":"kPWUg"}],"hk8qG":[function(require,module,exports) {
 module.exports = require("addc8d36fee63fa3").getBundleURL("byUka") + "Documentary-Genre.6a989893.png" + "?" + Date.now();
 
-},{"addc8d36fee63fa3":"kPWUg"}],"3iEmy":[function(require,module,exports) {
-module.exports = require("8a513cbd9361b009").getBundleURL("byUka") + "Yellow-Mystery-Genre.d0d130f8.png" + "?" + Date.now();
+},{"addc8d36fee63fa3":"kPWUg"}],"jbnMx":[function(require,module,exports) {
+module.exports = require("5578768f349e7056").getBundleURL("byUka") + "Search.f4d21c8a.svg" + "?" + Date.now();
 
-},{"8a513cbd9361b009":"kPWUg"}],"hgyGN":[function(require,module,exports) {
-module.exports = require("eea9bd2b95631076").getBundleURL("byUka") + "Mystery-Genre.ba849ad5.png" + "?" + Date.now();
+},{"5578768f349e7056":"kPWUg"}],"4Az2l":[function(require,module,exports) {
+module.exports = require("d1553abe5a7be242").getBundleURL("byUka") + "User.aae1e741.svg" + "?" + Date.now();
 
-},{"eea9bd2b95631076":"kPWUg"}],"8XQUt":[function(require,module,exports) {
+},{"d1553abe5a7be242":"kPWUg"}],"8XQUt":[function(require,module,exports) {
 module.exports = require("e6f64ad6290e3fb5").getBundleURL("byUka") + "Red-Heart.8303c525.svg" + "?" + Date.now();
 
-},{"e6f64ad6290e3fb5":"kPWUg"}],"emPqA":[function(require,module,exports) {
+},{"e6f64ad6290e3fb5":"kPWUg"}],"fcX6K":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Helmet", ()=>HelmetExport);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactSideEffect = require("react-side-effect");
+var _reactSideEffectDefault = parcelHelpers.interopDefault(_reactSideEffect);
+var _reactFastCompare = require("react-fast-compare");
+var _reactFastCompareDefault = parcelHelpers.interopDefault(_reactFastCompare);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _objectAssign = require("object-assign");
+var _objectAssignDefault = parcelHelpers.interopDefault(_objectAssign);
+var global = arguments[3];
+var ATTRIBUTE_NAMES = {
+    BODY: "bodyAttributes",
+    HTML: "htmlAttributes",
+    TITLE: "titleAttributes"
+};
+var TAG_NAMES = {
+    BASE: "base",
+    BODY: "body",
+    HEAD: "head",
+    HTML: "html",
+    LINK: "link",
+    META: "meta",
+    NOSCRIPT: "noscript",
+    SCRIPT: "script",
+    STYLE: "style",
+    TITLE: "title"
+};
+var VALID_TAG_NAMES = Object.keys(TAG_NAMES).map(function(name) {
+    return TAG_NAMES[name];
+});
+var TAG_PROPERTIES = {
+    CHARSET: "charset",
+    CSS_TEXT: "cssText",
+    HREF: "href",
+    HTTPEQUIV: "http-equiv",
+    INNER_HTML: "innerHTML",
+    ITEM_PROP: "itemprop",
+    NAME: "name",
+    PROPERTY: "property",
+    REL: "rel",
+    SRC: "src",
+    TARGET: "target"
+};
+var REACT_TAG_MAP = {
+    accesskey: "accessKey",
+    charset: "charSet",
+    class: "className",
+    contenteditable: "contentEditable",
+    contextmenu: "contextMenu",
+    "http-equiv": "httpEquiv",
+    itemprop: "itemProp",
+    tabindex: "tabIndex"
+};
+var HELMET_PROPS = {
+    DEFAULT_TITLE: "defaultTitle",
+    DEFER: "defer",
+    ENCODE_SPECIAL_CHARACTERS: "encodeSpecialCharacters",
+    ON_CHANGE_CLIENT_STATE: "onChangeClientState",
+    TITLE_TEMPLATE: "titleTemplate"
+};
+var HTML_TAG_MAP = Object.keys(REACT_TAG_MAP).reduce(function(obj, key) {
+    obj[REACT_TAG_MAP[key]] = key;
+    return obj;
+}, {});
+var SELF_CLOSING_TAGS = [
+    TAG_NAMES.NOSCRIPT,
+    TAG_NAMES.SCRIPT,
+    TAG_NAMES.STYLE
+];
+var HELMET_ATTRIBUTE = "data-react-helmet";
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
+    return typeof obj;
+} : function(obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+var classCallCheck = function(instance, Constructor) {
+    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+};
+var createClass = function() {
+    function defineProperties(target, props) {
+        for(var i = 0; i < props.length; i++){
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
+var _extends = Object.assign || function(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i];
+        for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+    }
+    return target;
+};
+var inherits = function(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+var objectWithoutProperties = function(obj, keys) {
+    var target = {};
+    for(var i in obj){
+        if (keys.indexOf(i) >= 0) continue;
+        if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+        target[i] = obj[i];
+    }
+    return target;
+};
+var possibleConstructorReturn = function(self, call) {
+    if (!self) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
+var encodeSpecialCharacters = function encodeSpecialCharacters(str) {
+    var encode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    if (encode === false) return String(str);
+    return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
+};
+var getTitleFromPropsList = function getTitleFromPropsList(propsList) {
+    var innermostTitle = getInnermostProperty(propsList, TAG_NAMES.TITLE);
+    var innermostTemplate = getInnermostProperty(propsList, HELMET_PROPS.TITLE_TEMPLATE);
+    if (innermostTemplate && innermostTitle) // use function arg to avoid need to escape $ characters
+    return innermostTemplate.replace(/%s/g, function() {
+        return Array.isArray(innermostTitle) ? innermostTitle.join("") : innermostTitle;
+    });
+    var innermostDefaultTitle = getInnermostProperty(propsList, HELMET_PROPS.DEFAULT_TITLE);
+    return innermostTitle || innermostDefaultTitle || undefined;
+};
+var getOnChangeClientState = function getOnChangeClientState(propsList) {
+    return getInnermostProperty(propsList, HELMET_PROPS.ON_CHANGE_CLIENT_STATE) || function() {};
+};
+var getAttributesFromPropsList = function getAttributesFromPropsList(tagType, propsList) {
+    return propsList.filter(function(props) {
+        return typeof props[tagType] !== "undefined";
+    }).map(function(props) {
+        return props[tagType];
+    }).reduce(function(tagAttrs, current) {
+        return _extends({}, tagAttrs, current);
+    }, {});
+};
+var getBaseTagFromPropsList = function getBaseTagFromPropsList(primaryAttributes, propsList) {
+    return propsList.filter(function(props) {
+        return typeof props[TAG_NAMES.BASE] !== "undefined";
+    }).map(function(props) {
+        return props[TAG_NAMES.BASE];
+    }).reverse().reduce(function(innermostBaseTag, tag) {
+        if (!innermostBaseTag.length) {
+            var keys = Object.keys(tag);
+            for(var i = 0; i < keys.length; i++){
+                var attributeKey = keys[i];
+                var lowerCaseAttributeKey = attributeKey.toLowerCase();
+                if (primaryAttributes.indexOf(lowerCaseAttributeKey) !== -1 && tag[lowerCaseAttributeKey]) return innermostBaseTag.concat(tag);
+            }
+        }
+        return innermostBaseTag;
+    }, []);
+};
+var getTagsFromPropsList = function getTagsFromPropsList(tagName, primaryAttributes, propsList) {
+    // Calculate list of tags, giving priority innermost component (end of the propslist)
+    var approvedSeenTags = {};
+    return propsList.filter(function(props) {
+        if (Array.isArray(props[tagName])) return true;
+        if (typeof props[tagName] !== "undefined") warn("Helmet: " + tagName + ' should be of type "Array". Instead found type "' + _typeof(props[tagName]) + '"');
+        return false;
+    }).map(function(props) {
+        return props[tagName];
+    }).reverse().reduce(function(approvedTags, instanceTags) {
+        var instanceSeenTags = {};
+        instanceTags.filter(function(tag) {
+            var primaryAttributeKey = void 0;
+            var keys = Object.keys(tag);
+            for(var i = 0; i < keys.length; i++){
+                var attributeKey = keys[i];
+                var lowerCaseAttributeKey = attributeKey.toLowerCase();
+                // Special rule with link tags, since rel and href are both primary tags, rel takes priority
+                if (primaryAttributes.indexOf(lowerCaseAttributeKey) !== -1 && !(primaryAttributeKey === TAG_PROPERTIES.REL && tag[primaryAttributeKey].toLowerCase() === "canonical") && !(lowerCaseAttributeKey === TAG_PROPERTIES.REL && tag[lowerCaseAttributeKey].toLowerCase() === "stylesheet")) primaryAttributeKey = lowerCaseAttributeKey;
+                // Special case for innerHTML which doesn't work lowercased
+                if (primaryAttributes.indexOf(attributeKey) !== -1 && (attributeKey === TAG_PROPERTIES.INNER_HTML || attributeKey === TAG_PROPERTIES.CSS_TEXT || attributeKey === TAG_PROPERTIES.ITEM_PROP)) primaryAttributeKey = attributeKey;
+            }
+            if (!primaryAttributeKey || !tag[primaryAttributeKey]) return false;
+            var value = tag[primaryAttributeKey].toLowerCase();
+            if (!approvedSeenTags[primaryAttributeKey]) approvedSeenTags[primaryAttributeKey] = {};
+            if (!instanceSeenTags[primaryAttributeKey]) instanceSeenTags[primaryAttributeKey] = {};
+            if (!approvedSeenTags[primaryAttributeKey][value]) {
+                instanceSeenTags[primaryAttributeKey][value] = true;
+                return true;
+            }
+            return false;
+        }).reverse().forEach(function(tag) {
+            return approvedTags.push(tag);
+        });
+        // Update seen tags with tags from this instance
+        var keys = Object.keys(instanceSeenTags);
+        for(var i = 0; i < keys.length; i++){
+            var attributeKey = keys[i];
+            var tagUnion = (0, _objectAssignDefault.default)({}, approvedSeenTags[attributeKey], instanceSeenTags[attributeKey]);
+            approvedSeenTags[attributeKey] = tagUnion;
+        }
+        return approvedTags;
+    }, []).reverse();
+};
+var getInnermostProperty = function getInnermostProperty(propsList, property) {
+    for(var i = propsList.length - 1; i >= 0; i--){
+        var props = propsList[i];
+        if (props.hasOwnProperty(property)) return props[property];
+    }
+    return null;
+};
+var reducePropsToState = function reducePropsToState(propsList) {
+    return {
+        baseTag: getBaseTagFromPropsList([
+            TAG_PROPERTIES.HREF,
+            TAG_PROPERTIES.TARGET
+        ], propsList),
+        bodyAttributes: getAttributesFromPropsList(ATTRIBUTE_NAMES.BODY, propsList),
+        defer: getInnermostProperty(propsList, HELMET_PROPS.DEFER),
+        encode: getInnermostProperty(propsList, HELMET_PROPS.ENCODE_SPECIAL_CHARACTERS),
+        htmlAttributes: getAttributesFromPropsList(ATTRIBUTE_NAMES.HTML, propsList),
+        linkTags: getTagsFromPropsList(TAG_NAMES.LINK, [
+            TAG_PROPERTIES.REL,
+            TAG_PROPERTIES.HREF
+        ], propsList),
+        metaTags: getTagsFromPropsList(TAG_NAMES.META, [
+            TAG_PROPERTIES.NAME,
+            TAG_PROPERTIES.CHARSET,
+            TAG_PROPERTIES.HTTPEQUIV,
+            TAG_PROPERTIES.PROPERTY,
+            TAG_PROPERTIES.ITEM_PROP
+        ], propsList),
+        noscriptTags: getTagsFromPropsList(TAG_NAMES.NOSCRIPT, [
+            TAG_PROPERTIES.INNER_HTML
+        ], propsList),
+        onChangeClientState: getOnChangeClientState(propsList),
+        scriptTags: getTagsFromPropsList(TAG_NAMES.SCRIPT, [
+            TAG_PROPERTIES.SRC,
+            TAG_PROPERTIES.INNER_HTML
+        ], propsList),
+        styleTags: getTagsFromPropsList(TAG_NAMES.STYLE, [
+            TAG_PROPERTIES.CSS_TEXT
+        ], propsList),
+        title: getTitleFromPropsList(propsList),
+        titleAttributes: getAttributesFromPropsList(ATTRIBUTE_NAMES.TITLE, propsList)
+    };
+};
+var rafPolyfill = function() {
+    var clock = Date.now();
+    return function(callback) {
+        var currentTime = Date.now();
+        if (currentTime - clock > 16) {
+            clock = currentTime;
+            callback(currentTime);
+        } else setTimeout(function() {
+            rafPolyfill(callback);
+        }, 0);
+    };
+}();
+var cafPolyfill = function cafPolyfill(id) {
+    return clearTimeout(id);
+};
+var requestAnimationFrame = typeof window !== "undefined" ? window.requestAnimationFrame && window.requestAnimationFrame.bind(window) || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || rafPolyfill : global.requestAnimationFrame || rafPolyfill;
+var cancelAnimationFrame = typeof window !== "undefined" ? window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || cafPolyfill : global.cancelAnimationFrame || cafPolyfill;
+var warn = function warn(msg) {
+    return console && typeof console.warn === "function" && console.warn(msg);
+};
+var _helmetCallback = null;
+var handleClientStateChange = function handleClientStateChange(newState) {
+    if (_helmetCallback) cancelAnimationFrame(_helmetCallback);
+    if (newState.defer) _helmetCallback = requestAnimationFrame(function() {
+        commitTagChanges(newState, function() {
+            _helmetCallback = null;
+        });
+    });
+    else {
+        commitTagChanges(newState);
+        _helmetCallback = null;
+    }
+};
+var commitTagChanges = function commitTagChanges(newState, cb) {
+    var baseTag = newState.baseTag, bodyAttributes = newState.bodyAttributes, htmlAttributes = newState.htmlAttributes, linkTags = newState.linkTags, metaTags = newState.metaTags, noscriptTags = newState.noscriptTags, onChangeClientState = newState.onChangeClientState, scriptTags = newState.scriptTags, styleTags = newState.styleTags, title = newState.title, titleAttributes = newState.titleAttributes;
+    updateAttributes(TAG_NAMES.BODY, bodyAttributes);
+    updateAttributes(TAG_NAMES.HTML, htmlAttributes);
+    updateTitle(title, titleAttributes);
+    var tagUpdates = {
+        baseTag: updateTags(TAG_NAMES.BASE, baseTag),
+        linkTags: updateTags(TAG_NAMES.LINK, linkTags),
+        metaTags: updateTags(TAG_NAMES.META, metaTags),
+        noscriptTags: updateTags(TAG_NAMES.NOSCRIPT, noscriptTags),
+        scriptTags: updateTags(TAG_NAMES.SCRIPT, scriptTags),
+        styleTags: updateTags(TAG_NAMES.STYLE, styleTags)
+    };
+    var addedTags = {};
+    var removedTags = {};
+    Object.keys(tagUpdates).forEach(function(tagType) {
+        var _tagUpdates$tagType = tagUpdates[tagType], newTags = _tagUpdates$tagType.newTags, oldTags = _tagUpdates$tagType.oldTags;
+        if (newTags.length) addedTags[tagType] = newTags;
+        if (oldTags.length) removedTags[tagType] = tagUpdates[tagType].oldTags;
+    });
+    cb && cb();
+    onChangeClientState(newState, addedTags, removedTags);
+};
+var flattenArray = function flattenArray(possibleArray) {
+    return Array.isArray(possibleArray) ? possibleArray.join("") : possibleArray;
+};
+var updateTitle = function updateTitle(title, attributes) {
+    if (typeof title !== "undefined" && document.title !== title) document.title = flattenArray(title);
+    updateAttributes(TAG_NAMES.TITLE, attributes);
+};
+var updateAttributes = function updateAttributes(tagName, attributes) {
+    var elementTag = document.getElementsByTagName(tagName)[0];
+    if (!elementTag) return;
+    var helmetAttributeString = elementTag.getAttribute(HELMET_ATTRIBUTE);
+    var helmetAttributes = helmetAttributeString ? helmetAttributeString.split(",") : [];
+    var attributesToRemove = [].concat(helmetAttributes);
+    var attributeKeys = Object.keys(attributes);
+    for(var i = 0; i < attributeKeys.length; i++){
+        var attribute = attributeKeys[i];
+        var value = attributes[attribute] || "";
+        if (elementTag.getAttribute(attribute) !== value) elementTag.setAttribute(attribute, value);
+        if (helmetAttributes.indexOf(attribute) === -1) helmetAttributes.push(attribute);
+        var indexToSave = attributesToRemove.indexOf(attribute);
+        if (indexToSave !== -1) attributesToRemove.splice(indexToSave, 1);
+    }
+    for(var _i = attributesToRemove.length - 1; _i >= 0; _i--)elementTag.removeAttribute(attributesToRemove[_i]);
+    if (helmetAttributes.length === attributesToRemove.length) elementTag.removeAttribute(HELMET_ATTRIBUTE);
+    else if (elementTag.getAttribute(HELMET_ATTRIBUTE) !== attributeKeys.join(",")) elementTag.setAttribute(HELMET_ATTRIBUTE, attributeKeys.join(","));
+};
+var updateTags = function updateTags(type, tags) {
+    var headElement = document.head || document.querySelector(TAG_NAMES.HEAD);
+    var tagNodes = headElement.querySelectorAll(type + "[" + HELMET_ATTRIBUTE + "]");
+    var oldTags = Array.prototype.slice.call(tagNodes);
+    var newTags = [];
+    var indexToDelete = void 0;
+    if (tags && tags.length) tags.forEach(function(tag) {
+        var newElement = document.createElement(type);
+        for(var attribute in tag)if (tag.hasOwnProperty(attribute)) {
+            if (attribute === TAG_PROPERTIES.INNER_HTML) newElement.innerHTML = tag.innerHTML;
+            else if (attribute === TAG_PROPERTIES.CSS_TEXT) {
+                if (newElement.styleSheet) newElement.styleSheet.cssText = tag.cssText;
+                else newElement.appendChild(document.createTextNode(tag.cssText));
+            } else {
+                var value = typeof tag[attribute] === "undefined" ? "" : tag[attribute];
+                newElement.setAttribute(attribute, value);
+            }
+        }
+        newElement.setAttribute(HELMET_ATTRIBUTE, "true");
+        // Remove a duplicate tag from domTagstoRemove, so it isn't cleared.
+        if (oldTags.some(function(existingTag, index) {
+            indexToDelete = index;
+            return newElement.isEqualNode(existingTag);
+        })) oldTags.splice(indexToDelete, 1);
+        else newTags.push(newElement);
+    });
+    oldTags.forEach(function(tag) {
+        return tag.parentNode.removeChild(tag);
+    });
+    newTags.forEach(function(tag) {
+        return headElement.appendChild(tag);
+    });
+    return {
+        oldTags: oldTags,
+        newTags: newTags
+    };
+};
+var generateElementAttributesAsString = function generateElementAttributesAsString(attributes) {
+    return Object.keys(attributes).reduce(function(str, key) {
+        var attr = typeof attributes[key] !== "undefined" ? key + '="' + attributes[key] + '"' : "" + key;
+        return str ? str + " " + attr : attr;
+    }, "");
+};
+var generateTitleAsString = function generateTitleAsString(type, title, attributes, encode) {
+    var attributeString = generateElementAttributesAsString(attributes);
+    var flattenedTitle = flattenArray(title);
+    return attributeString ? "<" + type + " " + HELMET_ATTRIBUTE + '="true" ' + attributeString + ">" + encodeSpecialCharacters(flattenedTitle, encode) + "</" + type + ">" : "<" + type + " " + HELMET_ATTRIBUTE + '="true">' + encodeSpecialCharacters(flattenedTitle, encode) + "</" + type + ">";
+};
+var generateTagsAsString = function generateTagsAsString(type, tags, encode) {
+    return tags.reduce(function(str, tag) {
+        var attributeHtml = Object.keys(tag).filter(function(attribute) {
+            return !(attribute === TAG_PROPERTIES.INNER_HTML || attribute === TAG_PROPERTIES.CSS_TEXT);
+        }).reduce(function(string, attribute) {
+            var attr = typeof tag[attribute] === "undefined" ? attribute : attribute + '="' + encodeSpecialCharacters(tag[attribute], encode) + '"';
+            return string ? string + " " + attr : attr;
+        }, "");
+        var tagContent = tag.innerHTML || tag.cssText || "";
+        var isSelfClosing = SELF_CLOSING_TAGS.indexOf(type) === -1;
+        return str + "<" + type + " " + HELMET_ATTRIBUTE + '="true" ' + attributeHtml + (isSelfClosing ? "/>" : ">" + tagContent + "</" + type + ">");
+    }, "");
+};
+var convertElementAttributestoReactProps = function convertElementAttributestoReactProps(attributes) {
+    var initProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    return Object.keys(attributes).reduce(function(obj, key) {
+        obj[REACT_TAG_MAP[key] || key] = attributes[key];
+        return obj;
+    }, initProps);
+};
+var convertReactPropstoHtmlAttributes = function convertReactPropstoHtmlAttributes(props) {
+    var initAttributes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    return Object.keys(props).reduce(function(obj, key) {
+        obj[HTML_TAG_MAP[key] || key] = props[key];
+        return obj;
+    }, initAttributes);
+};
+var generateTitleAsReactComponent = function generateTitleAsReactComponent(type, title, attributes) {
+    var _initProps;
+    // assigning into an array to define toString function on it
+    var initProps = (_initProps = {
+        key: title
+    }, _initProps[HELMET_ATTRIBUTE] = true, _initProps);
+    var props = convertElementAttributestoReactProps(attributes, initProps);
+    return [
+        (0, _reactDefault.default).createElement(TAG_NAMES.TITLE, props, title)
+    ];
+};
+var generateTagsAsReactComponent = function generateTagsAsReactComponent(type, tags) {
+    return tags.map(function(tag, i) {
+        var _mappedTag;
+        var mappedTag = (_mappedTag = {
+            key: i
+        }, _mappedTag[HELMET_ATTRIBUTE] = true, _mappedTag);
+        Object.keys(tag).forEach(function(attribute) {
+            var mappedAttribute = REACT_TAG_MAP[attribute] || attribute;
+            if (mappedAttribute === TAG_PROPERTIES.INNER_HTML || mappedAttribute === TAG_PROPERTIES.CSS_TEXT) {
+                var content = tag.innerHTML || tag.cssText;
+                mappedTag.dangerouslySetInnerHTML = {
+                    __html: content
+                };
+            } else mappedTag[mappedAttribute] = tag[attribute];
+        });
+        return (0, _reactDefault.default).createElement(type, mappedTag);
+    });
+};
+var getMethodsForTag = function getMethodsForTag(type, tags, encode) {
+    switch(type){
+        case TAG_NAMES.TITLE:
+            return {
+                toComponent: function toComponent() {
+                    return generateTitleAsReactComponent(type, tags.title, tags.titleAttributes, encode);
+                },
+                toString: function toString() {
+                    return generateTitleAsString(type, tags.title, tags.titleAttributes, encode);
+                }
+            };
+        case ATTRIBUTE_NAMES.BODY:
+        case ATTRIBUTE_NAMES.HTML:
+            return {
+                toComponent: function toComponent() {
+                    return convertElementAttributestoReactProps(tags);
+                },
+                toString: function toString() {
+                    return generateElementAttributesAsString(tags);
+                }
+            };
+        default:
+            return {
+                toComponent: function toComponent() {
+                    return generateTagsAsReactComponent(type, tags);
+                },
+                toString: function toString() {
+                    return generateTagsAsString(type, tags, encode);
+                }
+            };
+    }
+};
+var mapStateOnServer = function mapStateOnServer(_ref) {
+    var baseTag = _ref.baseTag, bodyAttributes = _ref.bodyAttributes, encode = _ref.encode, htmlAttributes = _ref.htmlAttributes, linkTags = _ref.linkTags, metaTags = _ref.metaTags, noscriptTags = _ref.noscriptTags, scriptTags = _ref.scriptTags, styleTags = _ref.styleTags, _ref$title = _ref.title, title = _ref$title === undefined ? "" : _ref$title, titleAttributes = _ref.titleAttributes;
+    return {
+        base: getMethodsForTag(TAG_NAMES.BASE, baseTag, encode),
+        bodyAttributes: getMethodsForTag(ATTRIBUTE_NAMES.BODY, bodyAttributes, encode),
+        htmlAttributes: getMethodsForTag(ATTRIBUTE_NAMES.HTML, htmlAttributes, encode),
+        link: getMethodsForTag(TAG_NAMES.LINK, linkTags, encode),
+        meta: getMethodsForTag(TAG_NAMES.META, metaTags, encode),
+        noscript: getMethodsForTag(TAG_NAMES.NOSCRIPT, noscriptTags, encode),
+        script: getMethodsForTag(TAG_NAMES.SCRIPT, scriptTags, encode),
+        style: getMethodsForTag(TAG_NAMES.STYLE, styleTags, encode),
+        title: getMethodsForTag(TAG_NAMES.TITLE, {
+            title: title,
+            titleAttributes: titleAttributes
+        }, encode)
+    };
+};
+var Helmet = function Helmet(Component) {
+    var _class, _temp;
+    return _temp = _class = function(_React$Component) {
+        inherits(HelmetWrapper, _React$Component);
+        function HelmetWrapper() {
+            classCallCheck(this, HelmetWrapper);
+            return possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+        }
+        HelmetWrapper.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
+            return !(0, _reactFastCompareDefault.default)(this.props, nextProps);
+        };
+        HelmetWrapper.prototype.mapNestedChildrenToProps = function mapNestedChildrenToProps(child, nestedChildren) {
+            if (!nestedChildren) return null;
+            switch(child.type){
+                case TAG_NAMES.SCRIPT:
+                case TAG_NAMES.NOSCRIPT:
+                    return {
+                        innerHTML: nestedChildren
+                    };
+                case TAG_NAMES.STYLE:
+                    return {
+                        cssText: nestedChildren
+                    };
+            }
+            throw new Error("<" + child.type + " /> elements are self-closing and can not contain children. Refer to our API for more information.");
+        };
+        HelmetWrapper.prototype.flattenArrayTypeChildren = function flattenArrayTypeChildren(_ref) {
+            var _babelHelpers$extends;
+            var child = _ref.child, arrayTypeChildren = _ref.arrayTypeChildren, newChildProps = _ref.newChildProps, nestedChildren = _ref.nestedChildren;
+            return _extends({}, arrayTypeChildren, (_babelHelpers$extends = {}, _babelHelpers$extends[child.type] = [].concat(arrayTypeChildren[child.type] || [], [
+                _extends({}, newChildProps, this.mapNestedChildrenToProps(child, nestedChildren))
+            ]), _babelHelpers$extends));
+        };
+        HelmetWrapper.prototype.mapObjectTypeChildren = function mapObjectTypeChildren(_ref2) {
+            var _babelHelpers$extends2, _babelHelpers$extends3;
+            var child = _ref2.child, newProps = _ref2.newProps, newChildProps = _ref2.newChildProps, nestedChildren = _ref2.nestedChildren;
+            switch(child.type){
+                case TAG_NAMES.TITLE:
+                    return _extends({}, newProps, (_babelHelpers$extends2 = {}, _babelHelpers$extends2[child.type] = nestedChildren, _babelHelpers$extends2.titleAttributes = _extends({}, newChildProps), _babelHelpers$extends2));
+                case TAG_NAMES.BODY:
+                    return _extends({}, newProps, {
+                        bodyAttributes: _extends({}, newChildProps)
+                    });
+                case TAG_NAMES.HTML:
+                    return _extends({}, newProps, {
+                        htmlAttributes: _extends({}, newChildProps)
+                    });
+            }
+            return _extends({}, newProps, (_babelHelpers$extends3 = {}, _babelHelpers$extends3[child.type] = _extends({}, newChildProps), _babelHelpers$extends3));
+        };
+        HelmetWrapper.prototype.mapArrayTypeChildrenToProps = function mapArrayTypeChildrenToProps(arrayTypeChildren, newProps) {
+            var newFlattenedProps = _extends({}, newProps);
+            Object.keys(arrayTypeChildren).forEach(function(arrayChildName) {
+                var _babelHelpers$extends4;
+                newFlattenedProps = _extends({}, newFlattenedProps, (_babelHelpers$extends4 = {}, _babelHelpers$extends4[arrayChildName] = arrayTypeChildren[arrayChildName], _babelHelpers$extends4));
+            });
+            return newFlattenedProps;
+        };
+        HelmetWrapper.prototype.warnOnInvalidChildren = function warnOnInvalidChildren(child, nestedChildren) {
+            if (!VALID_TAG_NAMES.some(function(name) {
+                return child.type === name;
+            })) {
+                if (typeof child.type === "function") return warn("You may be attempting to nest <Helmet> components within each other, which is not allowed. Refer to our API for more information.");
+                return warn("Only elements types " + VALID_TAG_NAMES.join(", ") + " are allowed. Helmet does not support rendering <" + child.type + "> elements. Refer to our API for more information.");
+            }
+            if (nestedChildren && typeof nestedChildren !== "string" && (!Array.isArray(nestedChildren) || nestedChildren.some(function(nestedChild) {
+                return typeof nestedChild !== "string";
+            }))) throw new Error("Helmet expects a string as a child of <" + child.type + ">. Did you forget to wrap your children in braces? ( <" + child.type + ">{``}</" + child.type + "> ) Refer to our API for more information.");
+            return true;
+        };
+        HelmetWrapper.prototype.mapChildrenToProps = function mapChildrenToProps(children, newProps) {
+            var _this2 = this;
+            var arrayTypeChildren = {};
+            (0, _reactDefault.default).Children.forEach(children, function(child) {
+                if (!child || !child.props) return;
+                var _child$props = child.props, nestedChildren = _child$props.children, childProps = objectWithoutProperties(_child$props, [
+                    "children"
+                ]);
+                var newChildProps = convertReactPropstoHtmlAttributes(childProps);
+                _this2.warnOnInvalidChildren(child, nestedChildren);
+                switch(child.type){
+                    case TAG_NAMES.LINK:
+                    case TAG_NAMES.META:
+                    case TAG_NAMES.NOSCRIPT:
+                    case TAG_NAMES.SCRIPT:
+                    case TAG_NAMES.STYLE:
+                        arrayTypeChildren = _this2.flattenArrayTypeChildren({
+                            child: child,
+                            arrayTypeChildren: arrayTypeChildren,
+                            newChildProps: newChildProps,
+                            nestedChildren: nestedChildren
+                        });
+                        break;
+                    default:
+                        newProps = _this2.mapObjectTypeChildren({
+                            child: child,
+                            newProps: newProps,
+                            newChildProps: newChildProps,
+                            nestedChildren: nestedChildren
+                        });
+                        break;
+                }
+            });
+            newProps = this.mapArrayTypeChildrenToProps(arrayTypeChildren, newProps);
+            return newProps;
+        };
+        HelmetWrapper.prototype.render = function render() {
+            var _props = this.props, children = _props.children, props = objectWithoutProperties(_props, [
+                "children"
+            ]);
+            var newProps = _extends({}, props);
+            if (children) newProps = this.mapChildrenToProps(children, newProps);
+            return (0, _reactDefault.default).createElement(Component, newProps);
+        };
+        createClass(HelmetWrapper, null, [
+            {
+                key: "canUseDOM",
+                // Component.peek comes from react-side-effect:
+                // For testing, you may use a static peek() method available on the returned component.
+                // It lets you get the current state without resetting the mounted instance stack.
+                // Don’t use it for anything other than testing.
+                /**
+             * @param {Object} base: {"target": "_blank", "href": "http://mysite.com/"}
+             * @param {Object} bodyAttributes: {"className": "root"}
+             * @param {String} defaultTitle: "Default Title"
+             * @param {Boolean} defer: true
+             * @param {Boolean} encodeSpecialCharacters: true
+             * @param {Object} htmlAttributes: {"lang": "en", "amp": undefined}
+             * @param {Array} link: [{"rel": "canonical", "href": "http://mysite.com/example"}]
+             * @param {Array} meta: [{"name": "description", "content": "Test description"}]
+             * @param {Array} noscript: [{"innerHTML": "<img src='http://mysite.com/js/test.js'"}]
+             * @param {Function} onChangeClientState: "(newState) => console.log(newState)"
+             * @param {Array} script: [{"type": "text/javascript", "src": "http://mysite.com/js/test.js"}]
+             * @param {Array} style: [{"type": "text/css", "cssText": "div { display: block; color: blue; }"}]
+             * @param {String} title: "Title"
+             * @param {Object} titleAttributes: {"itemprop": "name"}
+             * @param {String} titleTemplate: "MySite.com - %s"
+             */ set: function set$$1(canUseDOM) {
+                    Component.canUseDOM = canUseDOM;
+                }
+            }
+        ]);
+        return HelmetWrapper;
+    }((0, _reactDefault.default).Component), _class.propTypes = {
+        base: (0, _propTypesDefault.default).object,
+        bodyAttributes: (0, _propTypesDefault.default).object,
+        children: (0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).node),
+            (0, _propTypesDefault.default).node
+        ]),
+        defaultTitle: (0, _propTypesDefault.default).string,
+        defer: (0, _propTypesDefault.default).bool,
+        encodeSpecialCharacters: (0, _propTypesDefault.default).bool,
+        htmlAttributes: (0, _propTypesDefault.default).object,
+        link: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        meta: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        noscript: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        onChangeClientState: (0, _propTypesDefault.default).func,
+        script: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        style: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        title: (0, _propTypesDefault.default).string,
+        titleAttributes: (0, _propTypesDefault.default).object,
+        titleTemplate: (0, _propTypesDefault.default).string
+    }, _class.defaultProps = {
+        defer: true,
+        encodeSpecialCharacters: true
+    }, _class.peek = Component.peek, _class.rewind = function() {
+        var mappedState = Component.rewind();
+        if (!mappedState) // provide fallback if mappedState is undefined
+        mappedState = mapStateOnServer({
+            baseTag: [],
+            bodyAttributes: {},
+            encodeSpecialCharacters: true,
+            htmlAttributes: {},
+            linkTags: [],
+            metaTags: [],
+            noscriptTags: [],
+            scriptTags: [],
+            styleTags: [],
+            title: "",
+            titleAttributes: {}
+        });
+        return mappedState;
+    }, _temp;
+};
+var NullComponent = function NullComponent() {
+    return null;
+};
+var HelmetSideEffects = (0, _reactSideEffectDefault.default)(reducePropsToState, handleClientStateChange, mapStateOnServer)(NullComponent);
+var HelmetExport = Helmet(HelmetSideEffects);
+HelmetExport.renderStatic = HelmetExport.rewind;
+exports.default = HelmetExport;
+
+},{"prop-types":"7wKI2","react-side-effect":"12ePA","react-fast-compare":"isHbY","react":"21dqq","object-assign":"7OXxh","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"12ePA":[function(require,module,exports) {
+"use strict";
+function _interopDefault(ex) {
+    return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
+}
+var React = require("85d8b04033ce6109");
+var React__default = _interopDefault(React);
+function _defineProperty(obj, key, value) {
+    if (key in obj) Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+    });
+    else obj[key] = value;
+    return obj;
+}
+function _inheritsLoose(subClass, superClass) {
+    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype.constructor = subClass;
+    subClass.__proto__ = superClass;
+}
+var canUseDOM = !!(typeof window !== "undefined" && window.document && window.document.createElement);
+function withSideEffect(reducePropsToState, handleStateChangeOnClient, mapStateOnServer) {
+    if (typeof reducePropsToState !== "function") throw new Error("Expected reducePropsToState to be a function.");
+    if (typeof handleStateChangeOnClient !== "function") throw new Error("Expected handleStateChangeOnClient to be a function.");
+    if (typeof mapStateOnServer !== "undefined" && typeof mapStateOnServer !== "function") throw new Error("Expected mapStateOnServer to either be undefined or a function.");
+    function getDisplayName(WrappedComponent) {
+        return WrappedComponent.displayName || WrappedComponent.name || "Component";
+    }
+    return function wrap(WrappedComponent) {
+        if (typeof WrappedComponent !== "function") throw new Error("Expected WrappedComponent to be a React component.");
+        var mountedInstances = [];
+        var state;
+        function emitChange() {
+            state = reducePropsToState(mountedInstances.map(function(instance) {
+                return instance.props;
+            }));
+            if (SideEffect.canUseDOM) handleStateChangeOnClient(state);
+            else if (mapStateOnServer) state = mapStateOnServer(state);
+        }
+        var SideEffect = /*#__PURE__*/ function(_PureComponent) {
+            _inheritsLoose(SideEffect, _PureComponent);
+            function SideEffect() {
+                return _PureComponent.apply(this, arguments) || this;
+            }
+            // Try to use displayName of wrapped component
+            // Expose canUseDOM so tests can monkeypatch it
+            SideEffect.peek = function peek() {
+                return state;
+            };
+            SideEffect.rewind = function rewind() {
+                if (SideEffect.canUseDOM) throw new Error("You may only call rewind() on the server. Call peek() to read the current state.");
+                var recordedState = state;
+                state = undefined;
+                mountedInstances = [];
+                return recordedState;
+            };
+            var _proto = SideEffect.prototype;
+            _proto.UNSAFE_componentWillMount = function UNSAFE_componentWillMount() {
+                mountedInstances.push(this);
+                emitChange();
+            };
+            _proto.componentDidUpdate = function componentDidUpdate() {
+                emitChange();
+            };
+            _proto.componentWillUnmount = function componentWillUnmount() {
+                var index = mountedInstances.indexOf(this);
+                mountedInstances.splice(index, 1);
+                emitChange();
+            };
+            _proto.render = function render() {
+                return React__default.createElement(WrappedComponent, this.props);
+            };
+            return SideEffect;
+        }(React.PureComponent);
+        _defineProperty(SideEffect, "displayName", "SideEffect(" + getDisplayName(WrappedComponent) + ")");
+        _defineProperty(SideEffect, "canUseDOM", canUseDOM);
+        return SideEffect;
+    };
+}
+module.exports = withSideEffect;
+
+},{"85d8b04033ce6109":"21dqq"}],"isHbY":[function(require,module,exports) {
+/* global Map:readonly, Set:readonly, ArrayBuffer:readonly */ var hasElementType = typeof Element !== "undefined";
+var hasMap = typeof Map === "function";
+var hasSet = typeof Set === "function";
+var hasArrayBuffer = typeof ArrayBuffer === "function" && !!ArrayBuffer.isView;
+// Note: We **don't** need `envHasBigInt64Array` in fde es6/index.js
+function equal(a, b) {
+    // START: fast-deep-equal es6/index.js 3.1.3
+    if (a === b) return true;
+    if (a && b && typeof a == "object" && typeof b == "object") {
+        if (a.constructor !== b.constructor) return false;
+        var length, i, keys;
+        if (Array.isArray(a)) {
+            length = a.length;
+            if (length != b.length) return false;
+            for(i = length; i-- !== 0;)if (!equal(a[i], b[i])) return false;
+            return true;
+        }
+        // START: Modifications:
+        // 1. Extra `has<Type> &&` helpers in initial condition allow es6 code
+        //    to co-exist with es5.
+        // 2. Replace `for of` with es5 compliant iteration using `for`.
+        //    Basically, take:
+        //
+        //    ```js
+        //    for (i of a.entries())
+        //      if (!b.has(i[0])) return false;
+        //    ```
+        //
+        //    ... and convert to:
+        //
+        //    ```js
+        //    it = a.entries();
+        //    while (!(i = it.next()).done)
+        //      if (!b.has(i.value[0])) return false;
+        //    ```
+        //
+        //    **Note**: `i` access switches to `i.value`.
+        var it;
+        if (hasMap && a instanceof Map && b instanceof Map) {
+            if (a.size !== b.size) return false;
+            it = a.entries();
+            while(!(i = it.next()).done)if (!b.has(i.value[0])) return false;
+            it = a.entries();
+            while(!(i = it.next()).done)if (!equal(i.value[1], b.get(i.value[0]))) return false;
+            return true;
+        }
+        if (hasSet && a instanceof Set && b instanceof Set) {
+            if (a.size !== b.size) return false;
+            it = a.entries();
+            while(!(i = it.next()).done)if (!b.has(i.value[0])) return false;
+            return true;
+        }
+        // END: Modifications
+        if (hasArrayBuffer && ArrayBuffer.isView(a) && ArrayBuffer.isView(b)) {
+            length = a.length;
+            if (length != b.length) return false;
+            for(i = length; i-- !== 0;)if (a[i] !== b[i]) return false;
+            return true;
+        }
+        if (a.constructor === RegExp) return a.source === b.source && a.flags === b.flags;
+        // START: Modifications:
+        // Apply guards for `Object.create(null)` handling. See:
+        // - https://github.com/FormidableLabs/react-fast-compare/issues/64
+        // - https://github.com/epoberezkin/fast-deep-equal/issues/49
+        if (a.valueOf !== Object.prototype.valueOf && typeof a.valueOf === "function" && typeof b.valueOf === "function") return a.valueOf() === b.valueOf();
+        if (a.toString !== Object.prototype.toString && typeof a.toString === "function" && typeof b.toString === "function") return a.toString() === b.toString();
+        // END: Modifications
+        keys = Object.keys(a);
+        length = keys.length;
+        if (length !== Object.keys(b).length) return false;
+        for(i = length; i-- !== 0;)if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
+        // END: fast-deep-equal
+        // START: react-fast-compare
+        // custom handling for DOM elements
+        if (hasElementType && a instanceof Element) return false;
+        // custom handling for React/Preact
+        for(i = length; i-- !== 0;){
+            if ((keys[i] === "_owner" || keys[i] === "__v" || keys[i] === "__o") && a.$$typeof) continue;
+            // all other properties should be traversed as usual
+            if (!equal(a[keys[i]], b[keys[i]])) return false;
+        }
+        // END: react-fast-compare
+        // START: fast-deep-equal
+        return true;
+    }
+    return a !== a && b !== b;
+}
+// end fast-deep-equal
+module.exports = function isEqual(a, b) {
+    try {
+        return equal(a, b);
+    } catch (error) {
+        if ((error.message || "").match(/stack|recursion/i)) {
+            // warn on circular references, don't crash
+            // browsers give this different errors name and messages:
+            // chrome/safari: "RangeError", "Maximum call stack size exceeded"
+            // firefox: "InternalError", too much recursion"
+            // edge: "Error", "Out of stack space"
+            console.warn("react-fast-compare cannot handle circular refs");
+            return false;
+        }
+        // some other error. we should definitely know about these
+        throw error;
+    }
+};
+
+},{}],"emPqA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$831a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36549,7 +37504,7 @@ $RefreshReg$(_c, "Hero");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","9472117a191cca85":"5CB4l","aac761b4f4a25e61":"2SwY8","e72d4ece8a7d5e35":"6J7u4","react-router-dom":"9xmpe"}],"5CB4l":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","9472117a191cca85":"5CB4l","e72d4ece8a7d5e35":"6J7u4","aac761b4f4a25e61":"2SwY8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"5CB4l":[function(require,module,exports) {
 module.exports = require("1569dc95ab2e052e").getBundleURL("byUka") + "avatar-bkg.4191252d.jpg" + "?" + Date.now();
 
 },{"1569dc95ab2e052e":"kPWUg"}],"2SwY8":[function(require,module,exports) {
@@ -36654,6 +37609,49 @@ var _c;
 $RefreshReg$(_c, "MovieGrid");
 
   $parcel$ReactRefreshHelpers$d750.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"gexPl":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3555 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3555.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginNavBar", ()=>LoginNavBar);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const LoginNavBar = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "nav-bar",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "logo",
+                children: "PopcornPal"
+            }, void 0, false, {
+                fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
+                lineNumber: 5,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
+            fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
+            lineNumber: 4,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = LoginNavBar;
+var _c;
+$RefreshReg$(_c, "LoginNavBar");
+
+  $parcel$ReactRefreshHelpers$3555.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
@@ -36838,50 +37836,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react":"21dqq","react-router-dom":"9xmpe"}],"gexPl":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$3555 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$3555.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginNavBar", ()=>LoginNavBar);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const LoginNavBar = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "nav-bar",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "logo",
-                children: "PopcornPal"
-            }, void 0, false, {
-                fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
-                lineNumber: 5,
-                columnNumber: 9
-            }, undefined)
-        }, void 0, false, {
-            fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
-            lineNumber: 4,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
-};
-_c = LoginNavBar;
-var _c;
-$RefreshReg$(_c, "LoginNavBar");
-
-  $parcel$ReactRefreshHelpers$3555.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"4OGiN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"4OGiN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$73d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37114,7 +38069,7 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react":"21dqq","../login-view/login-view":"9YtA0","react-router-dom":"9xmpe"}],"2vVqf":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../login-view/login-view":"9YtA0","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"2vVqf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37343,6 +38298,6 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react-router-dom":"9xmpe","react":"21dqq"}]},["itlOw","fuyGC","d8Dch"], "d8Dch", "parcelRequire1961")
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"lJZlQ":[function() {},{}]},["itlOw","fuyGC","d8Dch"], "d8Dch", "parcelRequire1961")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

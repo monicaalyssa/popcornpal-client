@@ -9,6 +9,7 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { ProfileView } from "../profile-view/profile-view";
+import { Helmet } from "react-helmet";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -59,6 +60,7 @@ export const MainView = () => {
     <Routes>
       <Route path="/signup" 
       element={ user ? ( <Navigate to="/" /> ) : <> 
+      <Helmet><title>PopcornPal: Sign Up</title></Helmet>
       <LoginNavBar />
       <SignupView />
       </> }
@@ -66,6 +68,7 @@ export const MainView = () => {
 
       <Route path="/login"
       element={ user ? ( <Navigate to="/" /> ) : <>
+      <Helmet><title>PopcornPal: Log In</title></Helmet>
       <LoginNavBar />
       <LoginView onLoggedIn={(user, token) => {
         setUser(user);
@@ -83,6 +86,7 @@ export const MainView = () => {
       <Route path="/" element={ <> {!user ? ( <Navigate to ="/login" replace /> ) :
       movies.length === 0 ? ( <div>Loading...</div> ) :
       ( <> 
+      <Helmet><title>PopcornPal: Your Movie Database - Favorite & Discover Films!</title></Helmet>
       <NavBar user={user?.Username} onLogout={handleLogout}/>
       <Hero />
       <MovieGrid />
@@ -96,7 +100,9 @@ export const MainView = () => {
 
       <Route path="/users/:Username"
       element={!user ? ( <Navigate to ="/login" replace /> ) : (
-      <ProfileView user={user} token ={token} onUpdateUser={handleUpdateUser} movies={movies}/>)}
+      <>
+      <Helmet><title>PopcornPal: Manage Your Account Settings</title></Helmet>
+      <ProfileView user={user} token ={token} onUpdateUser={handleUpdateUser} movies={movies}/> </> )}
       />
 
     </Routes>
