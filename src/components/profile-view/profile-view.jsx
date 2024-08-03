@@ -60,12 +60,11 @@ export const ProfileView = ({ user, token, onUpdateUser, movies }) => {
       }
     )
       .then((data) => {
-        console.log("Success");
         onUpdateUser({ user, Username: newUsername });
         window.location.href = `/users/${newUsername}`;
       })
       .catch((error) => {
-        console.error("not working");
+        console.error("Something went wrong");
       });
   };
 
@@ -79,12 +78,22 @@ export const ProfileView = ({ user, token, onUpdateUser, movies }) => {
     ) : null;
   });
 
+  const formatDate = (dateData) => {
+    const date = new Date(dateData);
+
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  };
+
   if (Username === user.Username && !loading) {
     return (
       <>
         <p>Username: {userAccount.username}</p>
         <p>Email: {userAccount.email}</p>
-        <p>Birthday: {userAccount.birthday}</p>
+        <p>Birthday: {formatDate(userAccount.birthday)}</p>
         <div> Favorites:
           {movieDetails.length > 0 ? (
             movieDetails
