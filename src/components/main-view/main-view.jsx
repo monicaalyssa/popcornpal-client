@@ -92,7 +92,7 @@ export const MainView = () => {
       <MovieGrid />
       <div className="grid">
       {movies.map((movieprop) => (
-        <MovieCard key={movieprop.id} movieprop={movieprop} />
+        <MovieCard user={user} token={token} key={movieprop.id} movieprop={movieprop} />
       ))} 
       </div> 
       </> )} </> } 

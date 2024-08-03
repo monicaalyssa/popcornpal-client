@@ -74,9 +74,29 @@ export const ProfileView = ({ user, token, onUpdateUser, movies }) => {
       <div key={favoriteprop}>
         <p>{movie.title}</p>
         <img className="favorites-poster" src={movie.image} />
+        <button onClick={(event) => removeFavorite(movie.id, event)}>
+          Remove Favorite
+        </button>
       </div>
     ) : null;
   });
+
+  const removeFavorite = async (movieID, event) => {
+    event.preventDefault();
+    fetch(
+      `https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${bearerToken}`
+        }
+      }
+    ).then((data) => {
+      setFavoriteMovies((prevFavorites) =>
+        prevFavorites.filter((id) => id !== movieID)
+      );
+    });
+  };
 
   const formatDate = (dateData) => {
     const date = new Date(dateData);
