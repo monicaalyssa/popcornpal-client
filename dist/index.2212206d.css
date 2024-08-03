@@ -421,6 +421,7 @@ input {
 }
 
 .dropdown-list {
+  z-index: 100;
   padding-inline-start: 0;
   background-color: #1a1a1a;
   border-radius: 15px;

@@ -10,7 +10,9 @@ const genres = ["Horror", "Drama", "Action", "Mystery", "Fantasy", "Documentary"
     <div className="genre-dropdown">
       <ul className="genre-dropdown-list">
         {genres.map((genre) => (
+          <div key={genre}>
           <GenreItem genre={genre}/>
+          </div>
         ))}
       </ul>
     </div>

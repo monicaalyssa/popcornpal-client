@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export const MovieCard = ({ movieprop, user, token }) => {
@@ -23,7 +22,7 @@ export const MovieCard = ({ movieprop, user, token }) => {
     <img
     className="white-heart poster-favorite"
     src={require("../../images/Heart.svg")}
-    />
+      />
     <div className="movie-card">
         <div className="grid-overflow">
         <img className="grid-poster" src={movieprop.image} />
@@ -40,11 +39,4 @@ export const MovieCard = ({ movieprop, user, token }) => {
     </Link>
     </>
   );
-};
-
-MovieCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  genre: PropTypes.shape ({ 
-    name: PropTypes.string}).isRequired
 };
