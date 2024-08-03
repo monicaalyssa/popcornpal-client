@@ -149,7 +149,7 @@ h1 {
 
 .hero-desc {
   color: #787b82;
-  width: 60%;
+  width: 48%;
 }
 
 h2 {
@@ -549,6 +549,10 @@ input {
   visibility: hidden;
   opacity: 0;
   transition: all .5s;
+}
+
+.favorites-poster {
+  width: 150px;
 }
 
 @media (width >= 0) and (width <= 600px) {

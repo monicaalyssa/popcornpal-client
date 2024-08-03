@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const UserMenu = ({ user, onLogout }) => {
   return (
@@ -12,7 +13,9 @@ export const UserMenu = ({ user, onLogout }) => {
             className="menu-icon"
             src={require("../../images/Settings.svg")}
           />
+          <Link to={`/users/${user}`}>
           <p>Settings</p>
+          </Link>
         </li>
         <li className="user-menu-item">
           <img className="menu-icon" src={require("../../images/Heart.svg")} />

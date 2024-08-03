@@ -8,6 +8,7 @@ import { LoginNavBar } from "../login-nav-bar/login-nav-bar";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { ProfileView } from "../profile-view/profile-view";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -48,6 +49,11 @@ export const MainView = () => {
     localStorage.clear();
   }
 
+  const handleUpdateUser = (updatedUser) => {
+    setUser(updatedUser);
+    localStorage.setItem('user', JSON.stringify(updatedUser)); 
+  };
+
   return (
     <BrowserRouter>
     <Routes>
@@ -59,7 +65,7 @@ export const MainView = () => {
       />
 
       <Route path="/login"
-      element={user ? ( <Navigate to="/" /> ) : <>
+      element={ user ? ( <Navigate to="/" /> ) : <>
       <LoginNavBar />
       <LoginView onLoggedIn={(user, token) => {
         setUser(user);
@@ -88,7 +94,12 @@ export const MainView = () => {
       </> )} </> } 
       />
 
+      <Route path="/users/:Username"
+      element={!user ? ( <Navigate to ="/login" replace /> ) : (
+      <ProfileView user={user} token ={token} onUpdateUser={handleUpdateUser} movies={movies}/>)}
+      />
+
     </Routes>
     </BrowserRouter>
-  );
+  )
 };

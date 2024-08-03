@@ -10,12 +10,7 @@ export const Hero = () => {
             <h1 className="hero-title">Avatar: The Way of Water</h1>
           <p className="hero-desc">
             On the lush alien world of Pandora live the Na'vi, beings who appear
-            primitive but are highly
-            <span className="hero-more-desc">
-              {" "}
-              evolved. Because the planet's environment is poisonous,
-              human/Na'vi hybrids, called Avatars, must link...
-            </span>
+            primitive but are highly evolved.
           </p>
           <div className="hero-btns">
             <Link to={`/movies/66a99600da099ad62d373c3f`}>
