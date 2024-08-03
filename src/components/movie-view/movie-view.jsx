@@ -1,4 +1,3 @@
-import { NavBar } from "../navigation/nav-bar";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -17,7 +16,6 @@ export const MovieView = ({ movies, user, onLogout }) => {
       <Helmet>
         <title>PopcornPal: {movie.title}</title>
       </Helmet>
-      <NavBar user={user} onLogout={onLogout} />
       <div
         className="banner-container"
         width="100%;"

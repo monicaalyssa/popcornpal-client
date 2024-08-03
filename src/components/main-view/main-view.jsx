@@ -80,7 +80,12 @@ export const MainView = () => {
       <Route path="/movies/:Title"
       element={!user ? ( <Navigate to ="/login" replace /> ) : 
         movies.length === 0 ? ( <div>Loading...</div> ) : 
-        ( <MovieView movies={movies} user={user?.username} onLogout={handleLogout} /> )}
+        (
+        <> 
+        <NavBar user={user?.Username} onLogout={handleLogout}/>
+        <MovieView movies={movies} user={user?.username} onLogout={handleLogout} />
+        </>
+         )}
       />
 
       <Route path="/" element={ <> {!user ? ( <Navigate to ="/login" replace /> ) :

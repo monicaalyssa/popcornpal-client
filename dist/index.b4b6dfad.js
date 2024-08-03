@@ -27388,15 +27388,27 @@ const MainView = ()=>{
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 82,
                         columnNumber: 33
-                    }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
-                        movies: movies,
-                        user: user?.username,
-                        onLogout: handleLogout
-                    }, void 0, false, {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 83,
-                        columnNumber: 11
-                    }, void 0)
+                    }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {
+                                user: user?.Username,
+                                onLogout: handleLogout
+                            }, void 0, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 85,
+                                columnNumber: 9
+                            }, void 0),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
+                                movies: movies,
+                                user: user?.username,
+                                onLogout: handleLogout
+                            }, void 0, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 86,
+                                columnNumber: 9
+                            }, void 0)
+                        ]
+                    }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 80,
@@ -27412,13 +27424,13 @@ const MainView = ()=>{
                                 replace: true
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 86,
+                                lineNumber: 91,
                                 columnNumber: 47
                             }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: "Loading..."
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 87,
+                                lineNumber: 92,
                                 columnNumber: 31
                             }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: [
@@ -27427,12 +27439,12 @@ const MainView = ()=>{
                                             children: "PopcornPal: Your Movie Database - Favorite & Discover Films!"
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 89,
+                                            lineNumber: 94,
                                             columnNumber: 15
                                         }, void 0)
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 89,
+                                        lineNumber: 94,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {
@@ -27440,17 +27452,17 @@ const MainView = ()=>{
                                         onLogout: handleLogout
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 90,
+                                        lineNumber: 95,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _hero.Hero), {}, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 91,
+                                        lineNumber: 96,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieGrid.MovieGrid), {}, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 92,
+                                        lineNumber: 97,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27461,12 +27473,12 @@ const MainView = ()=>{
                                                 movieprop: movieprop
                                             }, movieprop.id, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 95,
+                                                lineNumber: 100,
                                                 columnNumber: 9
                                             }, void 0))
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 93,
+                                        lineNumber: 98,
                                         columnNumber: 7
                                     }, void 0)
                                 ]
@@ -27476,7 +27488,7 @@ const MainView = ()=>{
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 86,
+                    lineNumber: 91,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27486,7 +27498,7 @@ const MainView = ()=>{
                         replace: true
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 102,
+                        lineNumber: 107,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27495,12 +27507,12 @@ const MainView = ()=>{
                                     children: "PopcornPal: Manage Your Account Settings"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 104,
+                                    lineNumber: 109,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 104,
+                                lineNumber: 109,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
@@ -27510,7 +27522,7 @@ const MainView = ()=>{
                                 movies: movies
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 105,
+                                lineNumber: 110,
                                 columnNumber: 7
                             }, void 0),
                             " "
@@ -27518,7 +27530,7 @@ const MainView = ()=>{
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 101,
+                    lineNumber: 106,
                     columnNumber: 7
                 }, undefined)
             ]
@@ -35010,7 +35022,6 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieView", ()=>MovieView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _navBar = require("../navigation/nav-bar");
 var _react = require("react");
 var _reactRouter = require("react-router");
 var _reactRouterDom = require("react-router-dom");
@@ -35033,20 +35044,12 @@ const MovieView = ({ movies, user, onLogout })=>{
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 18,
+                    lineNumber: 17,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 17,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {
-                user: user,
-                onLogout: onLogout
-            }, void 0, false, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 20,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35057,7 +35060,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 21,
+                lineNumber: 19,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35071,7 +35074,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.title
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 29,
+                                lineNumber: 27,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35083,7 +35086,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                         src: require("2acd39aca90b4555")
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 32,
+                                        lineNumber: 30,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35091,19 +35094,19 @@ const MovieView = ({ movies, user, onLogout })=>{
                                         children: "Favorite"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 36,
+                                        lineNumber: 34,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 30,
+                                lineNumber: 28,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 28,
+                        lineNumber: 26,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35117,7 +35120,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 41,
+                                lineNumber: 39,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35125,13 +35128,13 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.genre
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 42,
+                                lineNumber: 40,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 40,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35141,7 +35144,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: "Synopsis"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 46,
+                                lineNumber: 44,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35149,13 +35152,13 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.description
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 47,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 45,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35165,7 +35168,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: "Director"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 51,
+                                lineNumber: 49,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35173,13 +35176,13 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.director
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 52,
+                                lineNumber: 50,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 50,
+                        lineNumber: 48,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35190,29 +35193,29 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: "Go Back"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 57,
+                                lineNumber: 55,
                                 columnNumber: 11
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 56,
+                            lineNumber: 54,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 55,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 27,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-view/movie-view.jsx",
-        lineNumber: 16,
+        lineNumber: 15,
         columnNumber: 5
     }, undefined);
 };
@@ -35230,547 +35233,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../navigation/nav-bar":"OhlYY","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","2acd39aca90b4555":"8XQUt","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react-helmet":"fcX6K"}],"OhlYY":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$713b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$713b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "NavBar", ()=>NavBar);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _userMenu = require("../user-menu/user-menu");
-var _genreDropdown = require("../genre-dropdown/genre-dropdown");
-var _react = require("react");
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const NavBar = ({ user, onLogout })=>{
-    _s();
-    const [open, setOpen] = (0, _react.useState)(false);
-    const [openDropdown, setOpenDropdown] = (0, _react.useState)(false);
-    let menuRef = (0, _react.useRef)(null);
-    const location = (0, _reactRouterDom.useLocation)();
-    const lastHash = (0, _react.useRef)("");
-    (0, _react.useEffect)(()=>{
-        const handleClickOutside = (event)=>{
-            if (menuRef.current && !menuRef.current.contains(event.target)) setOpen(false);
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return ()=>{
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    });
-    (0, _react.useEffect)(()=>{
-        if (location.hash) lastHash.current = location.hash.slice(1);
-        if (lastHash.current && document.getElementById(lastHash.current)) setTimeout(()=>{
-            document.getElementById(lastHash.current)?.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-            lastHash.current = "";
-        }, 100);
-    }, [
-        location
-    ]);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "nav-bar",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                    to: `/`,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "logo",
-                        children: "PopcornPal"
-                    }, void 0, false, {
-                        fileName: "src/components/navigation/nav-bar.jsx",
-                        lineNumber: 47,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 46,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "menu-bar",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: `/#movies`,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "menu-item",
-                                children: "Movies"
-                            }, void 0, false, {
-                                fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 52,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 51,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "genre-cursor",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    className: "menu-item genre-menu-item",
-                                    onMouseEnter: ()=>setOpenDropdown(true),
-                                    children: "Genres"
-                                }, void 0, false, {
-                                    fileName: "src/components/navigation/nav-bar.jsx",
-                                    lineNumber: 56,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: `open-dropdown ${openDropdown ? "active" : "inactive"}`,
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        onMouseLeave: ()=>setOpenDropdown(false),
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreDropdown.GenreDropdown), {}, void 0, false, {
-                                            fileName: "src/components/navigation/nav-bar.jsx",
-                                            lineNumber: 68,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "src/components/navigation/nav-bar.jsx",
-                                        lineNumber: 67,
-                                        columnNumber: 15
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/components/navigation/nav-bar.jsx",
-                                    lineNumber: 62,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 55,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "menu-item",
-                            children: "My List"
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 73,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 50,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    ref: menuRef,
-                    className: "right-logos",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "search-btn",
-                            src: require("b9710e7656528221")
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 76,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            onClick: ()=>setOpen(!open),
-                            className: "user-btn",
-                            src: require("3de8cf43c7f5ba07")
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 80,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: `open-profile ${open ? "active" : "inactive"}`,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userMenu.UserMenu), {
-                                user: user,
-                                onLogout: onLogout
-                            }, void 0, false, {
-                                fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 86,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 85,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 75,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/navigation/nav-bar.jsx",
-            lineNumber: 45,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/navigation/nav-bar.jsx",
-        lineNumber: 44,
-        columnNumber: 5
-    }, undefined);
-};
-_s(NavBar, "MuY6egYedpDjDYBKfFOdUnMJHe8=", false, function() {
-    return [
-        (0, _reactRouterDom.useLocation)
-    ];
-});
-_c = NavBar;
-var _c;
-$RefreshReg$(_c, "NavBar");
-
-  $parcel$ReactRefreshHelpers$713b.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","../user-menu/user-menu":"gwWGx","../genre-dropdown/genre-dropdown":"kk4Bu","react":"21dqq","react-router-dom":"9xmpe","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"gwWGx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$99d0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$99d0.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "UserMenu", ()=>UserMenu);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-const UserMenu = ({ user, onLogout })=>{
-    const handleSettingsClick = ()=>{
-        // Code to handle settings click
-        console.log("Settings clicked");
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "user-menu-dropdown",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-            className: "dropdown-list",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "my-account",
-                    children: "My Account"
-                }, void 0, false, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 14,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "hero-duration",
-                    children: user
-                }, void 0, false, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 15,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "line menu-line"
-                }, void 0, false, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 16,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                    to: `/users/${user}`,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                        className: "user-menu-item",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "menu-icon",
-                                src: require("77b00898d8739b3")
-                            }, void 0, false, {
-                                fileName: "src/components/user-menu/user-menu.jsx",
-                                lineNumber: 19,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: "Settings"
-                            }, void 0, false, {
-                                fileName: "src/components/user-menu/user-menu.jsx",
-                                lineNumber: 23,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/user-menu/user-menu.jsx",
-                        lineNumber: 18,
-                        columnNumber: 9
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 17,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "user-menu-item",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "menu-icon",
-                            src: require("d9100586bcdbc9d0")
-                        }, void 0, false, {
-                            fileName: "src/components/user-menu/user-menu.jsx",
-                            lineNumber: 27,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: "My Favorites"
-                        }, void 0, false, {
-                            fileName: "src/components/user-menu/user-menu.jsx",
-                            lineNumber: 28,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 26,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "user-menu-item",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "menu-icon sign-out-icon",
-                            src: require("7059d21f10f10ec")
-                        }, void 0, false, {
-                            fileName: "src/components/user-menu/user-menu.jsx",
-                            lineNumber: 31,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            onClick: onLogout,
-                            children: "Sign Out"
-                        }, void 0, false, {
-                            fileName: "src/components/user-menu/user-menu.jsx",
-                            lineNumber: 35,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 30,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/user-menu/user-menu.jsx",
-            lineNumber: 13,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/user-menu/user-menu.jsx",
-        lineNumber: 12,
-        columnNumber: 5
-    }, undefined);
-};
-_c = UserMenu;
-var _c;
-$RefreshReg$(_c, "UserMenu");
-
-  $parcel$ReactRefreshHelpers$99d0.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","77b00898d8739b3":"cu8AD","d9100586bcdbc9d0":"6J7u4","7059d21f10f10ec":"lg8jF","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"cu8AD":[function(require,module,exports) {
-module.exports = require("b2cb95b33f7f782e").getBundleURL("byUka") + "Settings.cd3021b9.svg" + "?" + Date.now();
-
-},{"b2cb95b33f7f782e":"kPWUg"}],"lg8jF":[function(require,module,exports) {
-module.exports = require("57dcfe453f96b8f").getBundleURL("byUka") + "Sign-Out.042d0a32.svg" + "?" + Date.now();
-
-},{"57dcfe453f96b8f":"kPWUg"}],"kk4Bu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8477 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8477.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "GenreDropdown", ()=>GenreDropdown);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _genreItem = require("../genre-item/genre-item");
-const GenreDropdown = ()=>{
-    const genres = [
-        "Horror",
-        "Drama",
-        "Action",
-        "Mystery",
-        "Fantasy",
-        "Documentary"
-    ];
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "genre-dropdown",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-            className: "genre-dropdown-list",
-            children: genres.map((genre)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreItem.GenreItem), {
-                        genre: genre
-                    }, void 0, false, {
-                        fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
-                        lineNumber: 14,
-                        columnNumber: 11
-                    }, undefined)
-                }, genre, false, {
-                    fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
-                    lineNumber: 13,
-                    columnNumber: 11
-                }, undefined))
-        }, void 0, false, {
-            fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
-            lineNumber: 11,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
-        lineNumber: 10,
-        columnNumber: 5
-    }, undefined);
-};
-_c = GenreDropdown;
-var _c;
-$RefreshReg$(_c, "GenreDropdown");
-
-  $parcel$ReactRefreshHelpers$8477.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../genre-item/genre-item":"fq3rm","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"fq3rm":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d1cf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d1cf.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "GenreItem", ()=>GenreItem);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const GenreItem = ({ genre })=>{
-    _s();
-    const [isHovered, setIsHovered] = (0, _react.useState)(false);
-    const imagesList = {
-        Horror: {
-            default: require("c9ae5286fe39467c"),
-            hovered: require("5d5d8d4ad8a616d0")
-        },
-        Drama: {
-            default: require("46bb160c0148637"),
-            hovered: require("3e60e9fbc5e172f1")
-        },
-        Action: {
-            default: require("8ee24e7836c79b35"),
-            hovered: require("9dfc7cf92b66f4d4")
-        },
-        Mystery: {
-            default: require("6e62807babf075da"),
-            hovered: require("3fc3bdee6baea387")
-        },
-        Fantasy: {
-            default: require("a659001f8f493d8a"),
-            hovered: require("7148938fa9ad4774")
-        },
-        Documentary: {
-            default: require("be4866b90acbec53"),
-            hovered: require("a648f7c60334df30")
-        }
-    };
-    const getImageSrc = ()=>{
-        const images = imagesList[genre];
-        return isHovered ? images.default : images.hovered;
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-        className: "menu-font-size genre-dropdown-item",
-        onMouseEnter: ()=>setIsHovered(true),
-        onMouseLeave: ()=>setIsHovered(false),
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "menu-icon",
-                src: getImageSrc()
-            }, void 0, false, {
-                fileName: "src/components/genre-item/genre-item.jsx",
-                lineNumber: 45,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: genre
-            }, void 0, false, {
-                fileName: "src/components/genre-item/genre-item.jsx",
-                lineNumber: 46,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/genre-item/genre-item.jsx",
-        lineNumber: 40,
-        columnNumber: 5
-    }, undefined);
-};
-_s(GenreItem, "FPQn8a98tPjpohC7NUYORQR8GJE=");
-_c = GenreItem;
-var _c;
-$RefreshReg$(_c, "GenreItem");
-
-  $parcel$ReactRefreshHelpers$d1cf.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","c9ae5286fe39467c":"4h0ZY","5d5d8d4ad8a616d0":"jNNo2","46bb160c0148637":"ctxcz","3e60e9fbc5e172f1":"k01pP","8ee24e7836c79b35":"d9kUY","9dfc7cf92b66f4d4":"1vps3","6e62807babf075da":"3iEmy","3fc3bdee6baea387":"hgyGN","a659001f8f493d8a":"ao2az","7148938fa9ad4774":"fH1rI","be4866b90acbec53":"b1vpG","a648f7c60334df30":"hk8qG","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"4h0ZY":[function(require,module,exports) {
-module.exports = require("64f92e0e017fe782").getBundleURL("byUka") + "Yellow-Horror-Genre.0b8b0d07.png" + "?" + Date.now();
-
-},{"64f92e0e017fe782":"kPWUg"}],"jNNo2":[function(require,module,exports) {
-module.exports = require("b5a9cd11c7a96fbc").getBundleURL("byUka") + "Horror-Genre.d3464b23.png" + "?" + Date.now();
-
-},{"b5a9cd11c7a96fbc":"kPWUg"}],"ctxcz":[function(require,module,exports) {
-module.exports = require("f959ce102dfe156d").getBundleURL("byUka") + "Yellow-Drama-Genre.9504496f.png" + "?" + Date.now();
-
-},{"f959ce102dfe156d":"kPWUg"}],"k01pP":[function(require,module,exports) {
-module.exports = require("ad562e21484b9061").getBundleURL("byUka") + "Drama-Genre.c995014a.png" + "?" + Date.now();
-
-},{"ad562e21484b9061":"kPWUg"}],"d9kUY":[function(require,module,exports) {
-module.exports = require("cdb7913a4f65632b").getBundleURL("byUka") + "Yellow-Action-Genre.7632234c.png" + "?" + Date.now();
-
-},{"cdb7913a4f65632b":"kPWUg"}],"1vps3":[function(require,module,exports) {
-module.exports = require("ff6f004d84531dc3").getBundleURL("byUka") + "Action-Genre.9cbbcf63.png" + "?" + Date.now();
-
-},{"ff6f004d84531dc3":"kPWUg"}],"3iEmy":[function(require,module,exports) {
-module.exports = require("8a513cbd9361b009").getBundleURL("byUka") + "Yellow-Mystery-Genre.d0d130f8.png" + "?" + Date.now();
-
-},{"8a513cbd9361b009":"kPWUg"}],"hgyGN":[function(require,module,exports) {
-module.exports = require("eea9bd2b95631076").getBundleURL("byUka") + "Mystery-Genre.ba849ad5.png" + "?" + Date.now();
-
-},{"eea9bd2b95631076":"kPWUg"}],"ao2az":[function(require,module,exports) {
-module.exports = require("d8c48e982f41e8dd").getBundleURL("byUka") + "Yellow-Fantasy-Genre.ffc57b15.png" + "?" + Date.now();
-
-},{"d8c48e982f41e8dd":"kPWUg"}],"fH1rI":[function(require,module,exports) {
-module.exports = require("97a5482da5e3bc3f").getBundleURL("byUka") + "Fantasy-Genre.e9a31879.png" + "?" + Date.now();
-
-},{"97a5482da5e3bc3f":"kPWUg"}],"b1vpG":[function(require,module,exports) {
-module.exports = require("c20ece203a1b81c").getBundleURL("byUka") + "Yellow-Documentary-Genre.4066c89c.png" + "?" + Date.now();
-
-},{"c20ece203a1b81c":"kPWUg"}],"hk8qG":[function(require,module,exports) {
-module.exports = require("addc8d36fee63fa3").getBundleURL("byUka") + "Documentary-Genre.6a989893.png" + "?" + Date.now();
-
-},{"addc8d36fee63fa3":"kPWUg"}],"jbnMx":[function(require,module,exports) {
-module.exports = require("5578768f349e7056").getBundleURL("byUka") + "Search.f4d21c8a.svg" + "?" + Date.now();
-
-},{"5578768f349e7056":"kPWUg"}],"4Az2l":[function(require,module,exports) {
-module.exports = require("d1553abe5a7be242").getBundleURL("byUka") + "User.aae1e741.svg" + "?" + Date.now();
-
-},{"d1553abe5a7be242":"kPWUg"}],"8XQUt":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","2acd39aca90b4555":"8XQUt","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react-helmet":"fcX6K"}],"8XQUt":[function(require,module,exports) {
 module.exports = require("e6f64ad6290e3fb5").getBundleURL("byUka") + "Red-Heart.8303c525.svg" + "?" + Date.now();
 
 },{"e6f64ad6290e3fb5":"kPWUg"}],"fcX6K":[function(require,module,exports) {
@@ -37400,7 +36863,547 @@ module.exports = function isEqual(a, b) {
     }
 };
 
-},{}],"emPqA":[function(require,module,exports) {
+},{}],"OhlYY":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$713b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$713b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NavBar", ()=>NavBar);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _userMenu = require("../user-menu/user-menu");
+var _genreDropdown = require("../genre-dropdown/genre-dropdown");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const NavBar = ({ user, onLogout })=>{
+    _s();
+    const [open, setOpen] = (0, _react.useState)(false);
+    const [openDropdown, setOpenDropdown] = (0, _react.useState)(false);
+    let menuRef = (0, _react.useRef)(null);
+    const location = (0, _reactRouterDom.useLocation)();
+    const lastHash = (0, _react.useRef)("");
+    (0, _react.useEffect)(()=>{
+        const handleClickOutside = (event)=>{
+            if (menuRef.current && !menuRef.current.contains(event.target)) setOpen(false);
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return ()=>{
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    });
+    (0, _react.useEffect)(()=>{
+        if (location.hash) lastHash.current = location.hash.slice(1);
+        if (lastHash.current && document.getElementById(lastHash.current)) setTimeout(()=>{
+            document.getElementById(lastHash.current)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+            lastHash.current = "";
+        }, 100);
+    }, [
+        location
+    ]);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "nav-bar",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: `/`,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "logo",
+                        children: "PopcornPal"
+                    }, void 0, false, {
+                        fileName: "src/components/navigation/nav-bar.jsx",
+                        lineNumber: 47,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/navigation/nav-bar.jsx",
+                    lineNumber: 46,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "menu-bar",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: `/#movies`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "menu-item",
+                                children: "Movies"
+                            }, void 0, false, {
+                                fileName: "src/components/navigation/nav-bar.jsx",
+                                lineNumber: 52,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 51,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "genre-cursor",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "menu-item genre-menu-item",
+                                    onMouseEnter: ()=>setOpenDropdown(true),
+                                    children: "Genres"
+                                }, void 0, false, {
+                                    fileName: "src/components/navigation/nav-bar.jsx",
+                                    lineNumber: 56,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: `open-dropdown ${openDropdown ? "active" : "inactive"}`,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        onMouseLeave: ()=>setOpenDropdown(false),
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreDropdown.GenreDropdown), {}, void 0, false, {
+                                            fileName: "src/components/navigation/nav-bar.jsx",
+                                            lineNumber: 68,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation/nav-bar.jsx",
+                                        lineNumber: 67,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/components/navigation/nav-bar.jsx",
+                                    lineNumber: 62,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 55,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "menu-item",
+                            children: "My List"
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 73,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/navigation/nav-bar.jsx",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    ref: menuRef,
+                    className: "right-logos",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "search-btn",
+                            src: require("b9710e7656528221")
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 76,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            onClick: ()=>setOpen(!open),
+                            className: "user-btn",
+                            src: require("3de8cf43c7f5ba07")
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 80,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: `open-profile ${open ? "active" : "inactive"}`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userMenu.UserMenu), {
+                                user: user,
+                                onLogout: onLogout
+                            }, void 0, false, {
+                                fileName: "src/components/navigation/nav-bar.jsx",
+                                lineNumber: 86,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 85,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/navigation/nav-bar.jsx",
+                    lineNumber: 75,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/navigation/nav-bar.jsx",
+            lineNumber: 45,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/navigation/nav-bar.jsx",
+        lineNumber: 44,
+        columnNumber: 5
+    }, undefined);
+};
+_s(NavBar, "MuY6egYedpDjDYBKfFOdUnMJHe8=", false, function() {
+    return [
+        (0, _reactRouterDom.useLocation)
+    ];
+});
+_c = NavBar;
+var _c;
+$RefreshReg$(_c, "NavBar");
+
+  $parcel$ReactRefreshHelpers$713b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../user-menu/user-menu":"gwWGx","../genre-dropdown/genre-dropdown":"kk4Bu","react":"21dqq","react-router-dom":"9xmpe","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"gwWGx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$99d0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$99d0.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "UserMenu", ()=>UserMenu);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+const UserMenu = ({ user, onLogout })=>{
+    const handleSettingsClick = ()=>{
+        // Code to handle settings click
+        console.log("Settings clicked");
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "user-menu-dropdown",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+            className: "dropdown-list",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "my-account",
+                    children: "My Account"
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 14,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "hero-duration",
+                    children: user
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 15,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "line menu-line"
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 16,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: `/users/${user}`,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        className: "user-menu-item",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "menu-icon",
+                                src: require("77b00898d8739b3")
+                            }, void 0, false, {
+                                fileName: "src/components/user-menu/user-menu.jsx",
+                                lineNumber: 19,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: "Settings"
+                            }, void 0, false, {
+                                fileName: "src/components/user-menu/user-menu.jsx",
+                                lineNumber: 23,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/user-menu/user-menu.jsx",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 17,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "user-menu-item",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "menu-icon",
+                            src: require("d9100586bcdbc9d0")
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 27,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            children: "My Favorites"
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 28,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 26,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "user-menu-item",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "menu-icon sign-out-icon",
+                            src: require("7059d21f10f10ec")
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 31,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            onClick: onLogout,
+                            children: "Sign Out"
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 35,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 30,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/user-menu/user-menu.jsx",
+            lineNumber: 13,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/user-menu/user-menu.jsx",
+        lineNumber: 12,
+        columnNumber: 5
+    }, undefined);
+};
+_c = UserMenu;
+var _c;
+$RefreshReg$(_c, "UserMenu");
+
+  $parcel$ReactRefreshHelpers$99d0.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","77b00898d8739b3":"cu8AD","d9100586bcdbc9d0":"6J7u4","7059d21f10f10ec":"lg8jF","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"cu8AD":[function(require,module,exports) {
+module.exports = require("b2cb95b33f7f782e").getBundleURL("byUka") + "Settings.cd3021b9.svg" + "?" + Date.now();
+
+},{"b2cb95b33f7f782e":"kPWUg"}],"lg8jF":[function(require,module,exports) {
+module.exports = require("57dcfe453f96b8f").getBundleURL("byUka") + "Sign-Out.042d0a32.svg" + "?" + Date.now();
+
+},{"57dcfe453f96b8f":"kPWUg"}],"kk4Bu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8477 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8477.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreDropdown", ()=>GenreDropdown);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _genreItem = require("../genre-item/genre-item");
+const GenreDropdown = ()=>{
+    const genres = [
+        "Horror",
+        "Drama",
+        "Action",
+        "Mystery",
+        "Fantasy",
+        "Documentary"
+    ];
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "genre-dropdown",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+            className: "genre-dropdown-list",
+            children: genres.map((genre)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreItem.GenreItem), {
+                        genre: genre
+                    }, void 0, false, {
+                        fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+                        lineNumber: 14,
+                        columnNumber: 11
+                    }, undefined)
+                }, genre, false, {
+                    fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+                    lineNumber: 13,
+                    columnNumber: 11
+                }, undefined))
+        }, void 0, false, {
+            fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+            lineNumber: 11,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+        lineNumber: 10,
+        columnNumber: 5
+    }, undefined);
+};
+_c = GenreDropdown;
+var _c;
+$RefreshReg$(_c, "GenreDropdown");
+
+  $parcel$ReactRefreshHelpers$8477.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../genre-item/genre-item":"fq3rm","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"fq3rm":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d1cf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d1cf.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreItem", ()=>GenreItem);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const GenreItem = ({ genre })=>{
+    _s();
+    const [isHovered, setIsHovered] = (0, _react.useState)(false);
+    const imagesList = {
+        Horror: {
+            default: require("c9ae5286fe39467c"),
+            hovered: require("5d5d8d4ad8a616d0")
+        },
+        Drama: {
+            default: require("46bb160c0148637"),
+            hovered: require("3e60e9fbc5e172f1")
+        },
+        Action: {
+            default: require("8ee24e7836c79b35"),
+            hovered: require("9dfc7cf92b66f4d4")
+        },
+        Mystery: {
+            default: require("6e62807babf075da"),
+            hovered: require("3fc3bdee6baea387")
+        },
+        Fantasy: {
+            default: require("a659001f8f493d8a"),
+            hovered: require("7148938fa9ad4774")
+        },
+        Documentary: {
+            default: require("be4866b90acbec53"),
+            hovered: require("a648f7c60334df30")
+        }
+    };
+    const getImageSrc = ()=>{
+        const images = imagesList[genre];
+        return isHovered ? images.default : images.hovered;
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+        className: "menu-font-size genre-dropdown-item",
+        onMouseEnter: ()=>setIsHovered(true),
+        onMouseLeave: ()=>setIsHovered(false),
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "menu-icon",
+                src: getImageSrc()
+            }, void 0, false, {
+                fileName: "src/components/genre-item/genre-item.jsx",
+                lineNumber: 45,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: genre
+            }, void 0, false, {
+                fileName: "src/components/genre-item/genre-item.jsx",
+                lineNumber: 46,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/genre-item/genre-item.jsx",
+        lineNumber: 40,
+        columnNumber: 5
+    }, undefined);
+};
+_s(GenreItem, "FPQn8a98tPjpohC7NUYORQR8GJE=");
+_c = GenreItem;
+var _c;
+$RefreshReg$(_c, "GenreItem");
+
+  $parcel$ReactRefreshHelpers$d1cf.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","c9ae5286fe39467c":"4h0ZY","5d5d8d4ad8a616d0":"jNNo2","46bb160c0148637":"ctxcz","3e60e9fbc5e172f1":"k01pP","8ee24e7836c79b35":"d9kUY","9dfc7cf92b66f4d4":"1vps3","6e62807babf075da":"3iEmy","3fc3bdee6baea387":"hgyGN","a659001f8f493d8a":"ao2az","7148938fa9ad4774":"fH1rI","be4866b90acbec53":"b1vpG","a648f7c60334df30":"hk8qG","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"4h0ZY":[function(require,module,exports) {
+module.exports = require("64f92e0e017fe782").getBundleURL("byUka") + "Yellow-Horror-Genre.0b8b0d07.png" + "?" + Date.now();
+
+},{"64f92e0e017fe782":"kPWUg"}],"jNNo2":[function(require,module,exports) {
+module.exports = require("b5a9cd11c7a96fbc").getBundleURL("byUka") + "Horror-Genre.d3464b23.png" + "?" + Date.now();
+
+},{"b5a9cd11c7a96fbc":"kPWUg"}],"ctxcz":[function(require,module,exports) {
+module.exports = require("f959ce102dfe156d").getBundleURL("byUka") + "Yellow-Drama-Genre.9504496f.png" + "?" + Date.now();
+
+},{"f959ce102dfe156d":"kPWUg"}],"k01pP":[function(require,module,exports) {
+module.exports = require("ad562e21484b9061").getBundleURL("byUka") + "Drama-Genre.c995014a.png" + "?" + Date.now();
+
+},{"ad562e21484b9061":"kPWUg"}],"d9kUY":[function(require,module,exports) {
+module.exports = require("cdb7913a4f65632b").getBundleURL("byUka") + "Yellow-Action-Genre.7632234c.png" + "?" + Date.now();
+
+},{"cdb7913a4f65632b":"kPWUg"}],"1vps3":[function(require,module,exports) {
+module.exports = require("ff6f004d84531dc3").getBundleURL("byUka") + "Action-Genre.9cbbcf63.png" + "?" + Date.now();
+
+},{"ff6f004d84531dc3":"kPWUg"}],"3iEmy":[function(require,module,exports) {
+module.exports = require("8a513cbd9361b009").getBundleURL("byUka") + "Yellow-Mystery-Genre.d0d130f8.png" + "?" + Date.now();
+
+},{"8a513cbd9361b009":"kPWUg"}],"hgyGN":[function(require,module,exports) {
+module.exports = require("eea9bd2b95631076").getBundleURL("byUka") + "Mystery-Genre.ba849ad5.png" + "?" + Date.now();
+
+},{"eea9bd2b95631076":"kPWUg"}],"ao2az":[function(require,module,exports) {
+module.exports = require("d8c48e982f41e8dd").getBundleURL("byUka") + "Yellow-Fantasy-Genre.ffc57b15.png" + "?" + Date.now();
+
+},{"d8c48e982f41e8dd":"kPWUg"}],"fH1rI":[function(require,module,exports) {
+module.exports = require("97a5482da5e3bc3f").getBundleURL("byUka") + "Fantasy-Genre.e9a31879.png" + "?" + Date.now();
+
+},{"97a5482da5e3bc3f":"kPWUg"}],"b1vpG":[function(require,module,exports) {
+module.exports = require("c20ece203a1b81c").getBundleURL("byUka") + "Yellow-Documentary-Genre.4066c89c.png" + "?" + Date.now();
+
+},{"c20ece203a1b81c":"kPWUg"}],"hk8qG":[function(require,module,exports) {
+module.exports = require("addc8d36fee63fa3").getBundleURL("byUka") + "Documentary-Genre.6a989893.png" + "?" + Date.now();
+
+},{"addc8d36fee63fa3":"kPWUg"}],"jbnMx":[function(require,module,exports) {
+module.exports = require("5578768f349e7056").getBundleURL("byUka") + "Search.f4d21c8a.svg" + "?" + Date.now();
+
+},{"5578768f349e7056":"kPWUg"}],"4Az2l":[function(require,module,exports) {
+module.exports = require("d1553abe5a7be242").getBundleURL("byUka") + "User.aae1e741.svg" + "?" + Date.now();
+
+},{"d1553abe5a7be242":"kPWUg"}],"emPqA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$831a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
