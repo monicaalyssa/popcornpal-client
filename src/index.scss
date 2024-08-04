@@ -32,7 +32,7 @@ p {
   justify-content: space-between;
   font-weight: 600;
   position: relative;
-  z-index: 1000;
+  z-index: 1900;
 }
 
 .menu-bar {
@@ -576,6 +576,19 @@ input {
   width: 150px;
 }
 
+.poster-favorite-heart {
+  position: relative;
+  top: 40px;
+  right: 13px;
+  z-index: 900;
+}
+
+.whole-movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 @media (min-width: 0) and (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr 1fr;
@@ -767,6 +780,11 @@ input {
   .login-container {
     padding: 8% 4%;  
   }
+
+  .poster-favorite-heart {
+    top: 32px;
+    right: 12px;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 920px) {
@@ -802,6 +820,11 @@ input {
 
   h2 {
     font-size: 26px;
+  }
+   
+  .poster-favorite-heart {
+    top: 34px;
+    right: 12px;
   }
 }
 

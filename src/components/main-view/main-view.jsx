@@ -17,6 +17,7 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
+  const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
     if (!token) {
@@ -36,13 +37,39 @@ export const MainView = () => {
             genre: movie.Genre.Name,
             description: movie.Description,
             duration: movie.Duration,
-            banner: movie.BannerURL
+            banner: movie.BannerURL,
           };
         });
 
         setMovies(moviesFromApi);
       });
   }, [token]);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(
+          `https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`,
+          {
+            headers: { Authorization: `Bearer ${token}` }
+          }
+        );
+        const data = await response.json();
+        const myUser = {
+          id: data._id,
+          username: data.Username,
+          password: data.Password,
+          email: data.Email,
+          birthday: data.Birthday,
+          favoriteMovies: data.Favorites
+        };
+        setUserInfo(myUser);
+      } catch (error) {
+        console.error("Error fetching data", error);
+      }
+    };
+    fetchUserData();
+  });
 
   const handleLogout = () => {
     setUser(null); 
@@ -97,7 +124,7 @@ export const MainView = () => {
       <MovieGrid />
       <div className="grid">
       {movies.map((movieprop) => (
-        <MovieCard user={user} token={token} key={movieprop.id} movieprop={movieprop} />
+        <MovieCard user={user} userInfo={userInfo} token={token} key={movieprop.id} movieprop={movieprop} />
       ))} 
       </div> 
       </> )} </> } 

@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 
 export const UserMenu = ({ user, onLogout }) => {
 
-  const handleSettingsClick = () => {
-    // Code to handle settings click
-    console.log("Settings clicked");
-  };
-
   return (
     <div className="user-menu-dropdown">
       <ul className="dropdown-list">
@@ -23,10 +18,12 @@ export const UserMenu = ({ user, onLogout }) => {
           <p>Settings</p>
         </li>
         </Link>
+        <Link to={`/users/${user}`}>
         <li className="user-menu-item">
           <img className="menu-icon" src={require("../../images/Heart.svg")} />
           <p>My Favorites</p>
         </li>
+        </Link>
         <li className="user-menu-item">
           <img
             className="menu-icon sign-out-icon"

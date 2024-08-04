@@ -26,7 +26,6 @@ export const MovieView = ({ movies, user, onLogout }) => {
         <div className="movie-heading-flex">
           <h1 className="heading movie-heading-margin">{movie.title}</h1>
           <button className="favorite-button">
-            {" "}
             <img
               className="red-heart"
               src={require("../../images/Red-Heart.svg")}

@@ -93,7 +93,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies }) => {
       }
     ).then((data) => {
       setFavoriteMovies((prevFavorites) =>
-        prevFavorites.filter((id) => id !== movieID)
+prevFavorites.filter((id) => id !== movieID)
       );
     });
   };
