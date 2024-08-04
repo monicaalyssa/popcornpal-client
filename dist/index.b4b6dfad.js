@@ -27602,10 +27602,15 @@ var _redHeartFilledSvgDefault = parcelHelpers.interopDefault(_redHeartFilledSvg)
 var _s = $RefreshSig$();
 const MovieCard = ({ movieprop, user, token, userInfo })=>{
     _s();
-    const [favoritesList, setFavoritesList] = (0, _react.useState)(userInfo.favoriteMovies);
+    const [favoritesList, setFavoritesList] = (0, _react.useState)(userInfo?.favoriteMovies || []);
     const [myFavorite, setMyFavorite] = (0, _react.useState)(false);
     (0, _react.useEffect)(()=>{
-        setMyFavorite(favoritesList.includes(movieprop.id));
+        if (userInfo) setFavoritesList(userInfo.favoriteMovies || []);
+    }, [
+        userInfo
+    ]);
+    (0, _react.useEffect)(()=>{
+        if (favoritesList.length > 0) setMyFavorite(favoritesList.includes(movieprop.id));
     }, [
         favoritesList,
         movieprop.id
@@ -27645,7 +27650,7 @@ const MovieCard = ({ movieprop, user, token, userInfo })=>{
                     src: myFavorite ? (0, _redHeartFilledSvgDefault.default) : (0, _heartSvgDefault.default)
                 }, void 0, false, {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 50,
+                    lineNumber: 58,
                     columnNumber: 5
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27659,7 +27664,7 @@ const MovieCard = ({ movieprop, user, token, userInfo })=>{
                                     src: movieprop.image
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 57,
+                                    lineNumber: 65,
                                     columnNumber: 9
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27669,18 +27674,18 @@ const MovieCard = ({ movieprop, user, token, userInfo })=>{
                                         children: "More Details"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 59,
+                                        lineNumber: 67,
                                         columnNumber: 11
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 58,
+                                    lineNumber: 66,
                                     columnNumber: 9
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 56,
+                            lineNumber: 64,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27692,30 +27697,30 @@ const MovieCard = ({ movieprop, user, token, userInfo })=>{
                                     children: movieprop.genre
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 64,
+                                    lineNumber: 72,
                                     columnNumber: 7
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 62,
+                            lineNumber: 70,
                             columnNumber: 7
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 55,
+                    lineNumber: 63,
                     columnNumber: 5
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 49,
+            lineNumber: 57,
             columnNumber: 5
         }, undefined)
     }, void 0, false);
 };
-_s(MovieCard, "A5MxiFrZ7VwJJDYIQhsE8zvdcZU=");
+_s(MovieCard, "aoYu3ow7OGGz5B5NHbUNLa/52bw=");
 _c = MovieCard;
 var _c;
 $RefreshReg$(_c, "MovieCard");

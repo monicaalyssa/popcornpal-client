@@ -6,11 +6,19 @@ import WhiteHeart from "../../images/Heart.svg"
 import RedHeart from "../../images/Red-Heart-Filled.svg"
 
 export const MovieCard = ({ movieprop, user, token, userInfo }) => {
-  const [favoritesList, setFavoritesList] = useState(userInfo.favoriteMovies);
+  const [favoritesList, setFavoritesList] = useState(userInfo?.favoriteMovies || []);
   const [myFavorite, setMyFavorite] = useState(false);
 
   useEffect(() => {
-    setMyFavorite(favoritesList.includes(movieprop.id));
+    if (userInfo) {
+      setFavoritesList(userInfo.favoriteMovies || []);
+    }
+  }, [userInfo])
+  
+  useEffect(() => {
+    if (favoritesList.length > 0) {
+      setMyFavorite(favoritesList.includes(movieprop.id));
+    }
   }, [favoritesList, movieprop.id]);
 
   const addFavorite = async (movieID, event) => {
