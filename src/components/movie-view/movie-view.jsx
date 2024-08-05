@@ -2,14 +2,62 @@ import { useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
+import RedHeartFilled from "../../images/Red-Heart-Filled.svg"
+import RedHeart from "../../images/Red-Heart.svg"
 
-export const MovieView = ({ movies, user, onLogout }) => {  
+export const MovieView = ({ movies, user, onLogout, userInfo, token}) => {  
+  const [favoritesList, setFavoritesList] = useState(user.favoriteMovies || []);
+  const [myFavorite, setMyFavorite] = useState(false);
+  const { Title } = useParams();
+  const movie = movies.find((m) => m.id === Title);
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const { Title } = useParams();
-  const movie = movies.find((m) => m.id === Title);
+  useEffect(() => {
+    if (userInfo) {
+      setFavoritesList(userInfo.favoriteMovies || []);
+    }
+  }, [userInfo])
+  
+  useEffect(() => {
+    if (favoritesList.length > 0) {
+      setMyFavorite(favoritesList.includes(movie.id));
+    }
+  }, [favoritesList, movie.id]);
+
+  const addFavorite = async (movieID, event) => {
+    event.preventDefault();
+    if (!favoritesList.includes(movieID)) {
+      fetch(
+        `https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      ).then((data) => {
+        setFavoritesList((prevList) => [...prevList, movieID]);
+        setMyFavorite(true);
+      });
+    } else {
+      fetch(
+        `https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      ).then((data) => {
+        setFavoritesList((prevList) => prevList.filter((id) => id !== movieID));
+        setMyFavorite(false);
+      });
+    }
+  };
 
   return (
     <div>
@@ -25,10 +73,10 @@ export const MovieView = ({ movies, user, onLogout }) => {
       <div className="movie-info">
         <div className="movie-heading-flex">
           <h1 className="heading movie-heading-margin">{movie.title}</h1>
-          <button className="favorite-button">
+          <button className={`favorite-button ${myFavorite ? "my-favorite" : "not-my-favorite" }`} onClick={(event) => addFavorite(movie.id, event)}>
             <img
               className="red-heart"
-              src={require("../../images/Red-Heart.svg")}
+              src={myFavorite ? RedHeartFilled : RedHeart }
             />
             <p className="favorite-btn-text">Favorite</p>
           </button>

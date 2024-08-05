@@ -27428,8 +27428,10 @@ const MainView = ()=>{
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
                                 movies: movies,
-                                user: user?.username,
-                                onLogout: handleLogout
+                                user: user,
+                                userInfo: userInfo,
+                                onLogout: handleLogout,
+                                token: token
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 117,
@@ -27607,7 +27609,7 @@ var _redHeartFilledSvgDefault = parcelHelpers.interopDefault(_redHeartFilledSvg)
 var _s = $RefreshSig$();
 const MovieCard = ({ movieprop, user, token, userInfo })=>{
     _s();
-    const [favoritesList, setFavoritesList] = (0, _react.useState)(userInfo?.favoriteMovies || []);
+    const [favoritesList, setFavoritesList] = (0, _react.useState)(user.favoriteMovies || []);
     const [myFavorite, setMyFavorite] = (0, _react.useState)(false);
     (0, _react.useEffect)(()=>{
         if (userInfo) setFavoritesList(userInfo.favoriteMovies || []);
@@ -27725,7 +27727,7 @@ const MovieCard = ({ movieprop, user, token, userInfo })=>{
         }, undefined)
     }, void 0, false);
 };
-_s(MovieCard, "aoYu3ow7OGGz5B5NHbUNLa/52bw=");
+_s(MovieCard, "1BvLSxJIRCURCzbiquYSMOKjy70=");
 _c = MovieCard;
 var _c;
 $RefreshReg$(_c, "MovieCard");
@@ -35089,14 +35091,55 @@ var _react = require("react");
 var _reactRouter = require("react-router");
 var _reactRouterDom = require("react-router-dom");
 var _reactHelmet = require("react-helmet");
+var _redHeartFilledSvg = require("../../images/Red-Heart-Filled.svg");
+var _redHeartFilledSvgDefault = parcelHelpers.interopDefault(_redHeartFilledSvg);
+var _redHeartSvg = require("../../images/Red-Heart.svg");
+var _redHeartSvgDefault = parcelHelpers.interopDefault(_redHeartSvg);
 var _s = $RefreshSig$();
-const MovieView = ({ movies, user, onLogout })=>{
+const MovieView = ({ movies, user, onLogout, userInfo, token })=>{
     _s();
+    const [favoritesList, setFavoritesList] = (0, _react.useState)(user.favoriteMovies || []);
+    const [myFavorite, setMyFavorite] = (0, _react.useState)(false);
+    const { Title } = (0, _reactRouter.useParams)();
+    const movie = movies.find((m)=>m.id === Title);
     (0, _react.useEffect)(()=>{
         window.scrollTo(0, 0);
     }, []);
-    const { Title } = (0, _reactRouter.useParams)();
-    const movie = movies.find((m)=>m.id === Title);
+    (0, _react.useEffect)(()=>{
+        if (userInfo) setFavoritesList(userInfo.favoriteMovies || []);
+    }, [
+        userInfo
+    ]);
+    (0, _react.useEffect)(()=>{
+        if (favoritesList.length > 0) setMyFavorite(favoritesList.includes(movie.id));
+    }, [
+        favoritesList,
+        movie.id
+    ]);
+    const addFavorite = async (movieID, event)=>{
+        event.preventDefault();
+        if (!favoritesList.includes(movieID)) fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((data)=>{
+            setFavoritesList((prevList)=>[
+                    ...prevList,
+                    movieID
+                ]);
+            setMyFavorite(true);
+        });
+        else fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((data)=>{
+            setFavoritesList((prevList)=>prevList.filter((id)=>id !== movieID));
+            setMyFavorite(false);
+        });
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactHelmet.Helmet), {
@@ -35107,12 +35150,12 @@ const MovieView = ({ movies, user, onLogout })=>{
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 17,
+                    lineNumber: 65,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 16,
+                lineNumber: 64,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35123,7 +35166,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 19,
+                lineNumber: 67,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35137,18 +35180,19 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.title
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 27,
+                                lineNumber: 75,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "favorite-button",
+                                className: `favorite-button ${myFavorite ? "my-favorite" : "not-my-favorite"}`,
+                                onClick: (event)=>addFavorite(movie.id, event),
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                         className: "red-heart",
-                                        src: require("2acd39aca90b4555")
+                                        src: myFavorite ? (0, _redHeartFilledSvgDefault.default) : (0, _redHeartSvgDefault.default)
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 29,
+                                        lineNumber: 77,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35156,19 +35200,19 @@ const MovieView = ({ movies, user, onLogout })=>{
                                         children: "Favorite"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 33,
+                                        lineNumber: 81,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 28,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 26,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35182,7 +35226,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 38,
+                                lineNumber: 86,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35190,13 +35234,13 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.genre
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 39,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 37,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35206,7 +35250,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: "Synopsis"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 43,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35214,13 +35258,13 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.description
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 44,
+                                lineNumber: 92,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 42,
+                        lineNumber: 90,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35230,7 +35274,7 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: "Director"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 48,
+                                lineNumber: 96,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35238,13 +35282,13 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: movie.director
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 49,
+                                lineNumber: 97,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 47,
+                        lineNumber: 95,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35255,33 +35299,33 @@ const MovieView = ({ movies, user, onLogout })=>{
                                 children: "Go Back"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 54,
+                                lineNumber: 102,
                                 columnNumber: 11
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 53,
+                            lineNumber: 101,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 52,
+                        lineNumber: 100,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 25,
+                lineNumber: 73,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-view/movie-view.jsx",
-        lineNumber: 15,
+        lineNumber: 63,
         columnNumber: 5
     }, undefined);
 };
-_s(MovieView, "HWmHbcnReGyYiKM0G6nVaS8crig=", false, function() {
+_s(MovieView, "BBOMsMlPPLe+53zHqNwFvgyycCU=", false, function() {
     return [
         (0, _reactRouter.useParams)
     ];
@@ -35295,10 +35339,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","2acd39aca90b4555":"8XQUt","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react-helmet":"fcX6K"}],"8XQUt":[function(require,module,exports) {
-module.exports = require("e6f64ad6290e3fb5").getBundleURL("byUka") + "Red-Heart.8303c525.svg" + "?" + Date.now();
-
-},{"e6f64ad6290e3fb5":"kPWUg"}],"fcX6K":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react-helmet":"fcX6K","../../images/Red-Heart-Filled.svg":"9ZK1i","../../images/Red-Heart.svg":"8XQUt"}],"fcX6K":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Helmet", ()=>HelmetExport);
@@ -36925,7 +36966,10 @@ module.exports = function isEqual(a, b) {
     }
 };
 
-},{}],"OhlYY":[function(require,module,exports) {
+},{}],"8XQUt":[function(require,module,exports) {
+module.exports = require("e6f64ad6290e3fb5").getBundleURL("byUka") + "Red-Heart.8303c525.svg" + "?" + Date.now();
+
+},{"e6f64ad6290e3fb5":"kPWUg"}],"OhlYY":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$713b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

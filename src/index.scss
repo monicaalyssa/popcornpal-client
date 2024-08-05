@@ -356,14 +356,28 @@ input {
   gap: 30px;
 }
 
-.favorite-button {
+.favorite-button.not-my-favorite {
   background-color: transparent;
   font-weight: 400;
   border: 2px solid $main-white;
-  padding: 20px 52px;
+  padding: 20px 48px;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
+  gap: 11px;
+  color: $main-white
+}
+
+.favorite-button.my-favorite {
+  background-color: $main-white;
+  font-weight: 400;
+  border: 2px solid $main-white;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: black;
+  gap: 11px;
 }
 
 .favorite-btn-text {
@@ -385,7 +399,6 @@ input {
 .red-heart {
   width: 26px;
   position: relative;
-  right: 10px;
 }
 
 .favorite-button:hover > .red-heart {
@@ -628,24 +641,36 @@ input {
     margin-bottom: 15px;
   }
 
-  .favorite-button {
-    padding: 0px;
-    border: 0px;
+  .favorite-button.not-my-favorite {
+    background-color: transparent;
     align-self: baseline;
     position: relative;
     top: 3px;
+    padding: 0px 0px;
+    font-weight: 400;
+    border: 0px;
+    transition: all 0.3s ease;
+  }
+  
+  .favorite-button.my-favorite {
+    background-color: transparent;
+    align-self: baseline;
+    position: relative;
+    top: 3px;
+    padding: 0px 0px;
+    font-weight: 400;
+    border: 0px;
+    transition: all 0.3s ease;
   }
 
   .favorite-button:hover {
     background-color: transparent;
     box-shadow: none;
-    color: $subtle-gray;
   }
 
   .red-heart {
     width: 28px;
     top: 0.5px;
-    right: 0;
   }
 
   .hero-title {
@@ -839,14 +864,19 @@ input {
 
 
 @media (min-width: 600px) and (max-width: 1180px) {
-  .favorite-button {
-    padding: 16px 42px;
-  }
-
   .red-heart {
     width: 20px;
-    right: 9px;
     top: 0.5px;
+  }
+
+  .favorite-button.not-my-favorite {
+    padding: 17px 34px;
+    gap: 10px;
+  }
+
+  .favorite-button.my-favorite {
+    padding: 17px 34px;
+    gap: 10px;
   }
 }
 
@@ -963,8 +993,12 @@ input {
     font-size: 15px;
   }
 
-  .favorite-button {
-    padding: 20px 50px;
+  .favorite-button.not-my-favorite {
+    padding: 20px 42px;
+  }
+
+  .favorite-button.my-favorite {
+    padding: 20px 42px;
   }
 }
 

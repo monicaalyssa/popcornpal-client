@@ -341,11 +341,25 @@ input {
   display: flex;
 }
 
-.favorite-button {
+.favorite-button.not-my-favorite {
+  color: #f9f6f9;
   background-color: #0000;
   border: 2px solid #f9f6f9;
   align-items: center;
-  padding: 20px 52px;
+  gap: 11px;
+  padding: 20px 48px;
+  font-weight: 400;
+  transition: all .3s;
+  display: flex;
+}
+
+.favorite-button.my-favorite {
+  color: #000;
+  background-color: #f9f6f9;
+  border: 2px solid #f9f6f9;
+  align-items: center;
+  gap: 11px;
+  padding: 20px 48px;
   font-weight: 400;
   transition: all .3s;
   display: flex;
@@ -369,7 +383,6 @@ input {
 .red-heart {
   width: 26px;
   position: relative;
-  right: 10px;
 }
 
 .favorite-button:hover > .red-heart {
@@ -604,24 +617,25 @@ input {
     margin: 0 0 15px;
   }
 
-  .favorite-button {
+  .favorite-button.not-my-favorite, .favorite-button.my-favorite {
+    background-color: #0000;
     border: 0;
     align-self: baseline;
     padding: 0;
+    font-weight: 400;
+    transition: all .3s;
     position: relative;
     top: 3px;
   }
 
   .favorite-button:hover {
     box-shadow: none;
-    color: #787b82;
     background-color: #0000;
   }
 
   .red-heart {
     width: 28px;
     top: .5px;
-    right: 0;
   }
 
   .hero-title {
@@ -812,14 +826,14 @@ input {
 }
 
 @media (width >= 600px) and (width <= 1180px) {
-  .favorite-button {
-    padding: 16px 42px;
-  }
-
   .red-heart {
     width: 20px;
     top: .5px;
-    right: 9px;
+  }
+
+  .favorite-button.not-my-favorite, .favorite-button.my-favorite {
+    gap: 10px;
+    padding: 17px 34px;
   }
 }
 
@@ -931,8 +945,8 @@ input {
     font-size: 15px;
   }
 
-  .favorite-button {
-    padding: 20px 50px;
+  .favorite-button.not-my-favorite, .favorite-button.my-favorite {
+    padding: 20px 42px;
   }
 }
 

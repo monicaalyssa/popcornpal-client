@@ -114,7 +114,7 @@ export const MainView = () => {
         (
         <> 
         <NavBar user={user?.Username} onLogout={handleLogout}/>
-        <MovieView movies={movies} user={user?.username} onLogout={handleLogout} />
+        <MovieView movies={movies} user={user} userInfo={userInfo} onLogout={handleLogout} token={token} />
         </>
          )}
       />
