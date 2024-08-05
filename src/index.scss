@@ -408,7 +408,7 @@ input {
   color: $main-white;
   cursor: pointer;
   margin: 0;
-  padding: 7px 20px;
+  padding: 8px 20px;
   transition: background-color 0.2s ease-in;
 }
 
@@ -698,6 +698,11 @@ input {
     line-height: normal;
     color: $subtle-gray;
   }
+
+  .bubble:not(.genre-button) {
+    padding: 4px 9px;
+    margin-right: 8px;
+  }
 }
 
 // break for mobile, but not smallest devices
@@ -762,6 +767,10 @@ input {
     gap: 10px;
     display: flex;
     padding: 11% 4% 3.5% 4%;
+  }
+
+  .movie-heading-margin {
+    margin-bottom: 10px;
   }
 
   .genres {

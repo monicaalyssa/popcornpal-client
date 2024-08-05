@@ -392,7 +392,7 @@ input {
   color: #f9f6f9;
   cursor: pointer;
   margin: 0;
-  padding: 7px 20px;
+  padding: 8px 20px;
   transition: background-color .2s ease-in;
 }
 
@@ -674,6 +674,11 @@ input {
     line-height: normal;
     display: inline-block;
   }
+
+  .bubble:not(.genre-button) {
+    margin-right: 8px;
+    padding: 4px 9px;
+  }
 }
 
 @media (width >= 0) and (width <= 920px) {
@@ -736,6 +741,10 @@ input {
     gap: 10px;
     padding: 11% 4% 3.5%;
     display: flex;
+  }
+
+  .movie-heading-margin {
+    margin-bottom: 10px;
   }
 
   .genres {
