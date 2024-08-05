@@ -27310,6 +27310,9 @@ const MainView = ()=>{
         setUser(updatedUser);
         localStorage.setItem("user", JSON.stringify(updatedUser));
     };
+    const handleUpdateInfo = (updatedInfo)=>{
+        setUserInfo(updatedInfo);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
             children: [
@@ -27319,7 +27322,7 @@ const MainView = ()=>{
                         to: "/"
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 89,
+                        lineNumber: 93,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27328,29 +27331,29 @@ const MainView = ()=>{
                                     children: "PopcornPal: Sign Up"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 90,
+                                    lineNumber: 94,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 90,
+                                lineNumber: 94,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginNavBar.LoginNavBar), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 91,
+                                lineNumber: 95,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 92,
+                                lineNumber: 96,
                                 columnNumber: 7
                             }, void 0)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 88,
+                    lineNumber: 92,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27359,7 +27362,7 @@ const MainView = ()=>{
                         to: "/"
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 97,
+                        lineNumber: 101,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27368,17 +27371,17 @@ const MainView = ()=>{
                                     children: "PopcornPal: Log In"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 98,
+                                    lineNumber: 102,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 98,
+                                lineNumber: 102,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginNavBar.LoginNavBar), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 99,
+                                lineNumber: 103,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
@@ -27388,14 +27391,14 @@ const MainView = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 100,
+                                lineNumber: 104,
                                 columnNumber: 7
                             }, void 0)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 96,
+                    lineNumber: 100,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27405,13 +27408,13 @@ const MainView = ()=>{
                         replace: true
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 108,
+                        lineNumber: 112,
                         columnNumber: 26
                     }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: "Loading..."
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 109,
+                        lineNumber: 113,
                         columnNumber: 33
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27420,7 +27423,7 @@ const MainView = ()=>{
                                 onLogout: handleLogout
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 112,
+                                lineNumber: 116,
                                 columnNumber: 9
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
@@ -27429,14 +27432,14 @@ const MainView = ()=>{
                                 onLogout: handleLogout
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 113,
+                                lineNumber: 117,
                                 columnNumber: 9
                             }, void 0)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 107,
+                    lineNumber: 111,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27449,13 +27452,13 @@ const MainView = ()=>{
                                 replace: true
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 118,
+                                lineNumber: 122,
                                 columnNumber: 47
                             }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: "Loading..."
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 119,
+                                lineNumber: 123,
                                 columnNumber: 31
                             }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: [
@@ -27464,12 +27467,12 @@ const MainView = ()=>{
                                             children: "PopcornPal: Your Movie Database - Favorite & Discover Films!"
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 121,
+                                            lineNumber: 125,
                                             columnNumber: 15
                                         }, void 0)
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 121,
+                                        lineNumber: 125,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {
@@ -27477,17 +27480,17 @@ const MainView = ()=>{
                                         onLogout: handleLogout
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 122,
+                                        lineNumber: 126,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _hero.Hero), {}, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 123,
+                                        lineNumber: 127,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieGrid.MovieGrid), {}, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 124,
+                                        lineNumber: 128,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27499,12 +27502,12 @@ const MainView = ()=>{
                                                 movieprop: movieprop
                                             }, movieprop.id, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 127,
+                                                lineNumber: 131,
                                                 columnNumber: 9
                                             }, void 0))
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 125,
+                                        lineNumber: 129,
                                         columnNumber: 7
                                     }, void 0)
                                 ]
@@ -27514,7 +27517,7 @@ const MainView = ()=>{
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 118,
+                    lineNumber: 122,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27524,7 +27527,7 @@ const MainView = ()=>{
                         replace: true
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 134,
+                        lineNumber: 138,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27533,22 +27536,24 @@ const MainView = ()=>{
                                     children: "PopcornPal: Manage Your Account Settings"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 136,
+                                    lineNumber: 140,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 136,
+                                lineNumber: 140,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
                                 user: user,
+                                userInfo: userInfo,
                                 token: token,
                                 onUpdateUser: handleUpdateUser,
+                                onUpdateInfo: handleUpdateInfo,
                                 movies: movies
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 137,
+                                lineNumber: 141,
                                 columnNumber: 7
                             }, void 0),
                             " "
@@ -27556,18 +27561,18 @@ const MainView = ()=>{
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 133,
+                    lineNumber: 137,
                     columnNumber: 7
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 87,
+            lineNumber: 91,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 86,
+        lineNumber: 90,
         columnNumber: 5
     }, undefined);
 };
@@ -38188,10 +38193,11 @@ var _reactRouterDom = require("react-router-dom");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
-const ProfileView = ({ user, token, onUpdateUser, movies })=>{
+const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo })=>{
     _s();
     const { Username } = (0, _reactRouterDom.useParams)();
     const [newUsername, setNewUsername] = (0, _react.useState)(user.Username);
+    const [newEmail, setNewEmail] = (0, _react.useState)(userInfo?.email || "");
     const [userAccount, setUserAccount] = (0, _react.useState)(null);
     const [loading, setLoading] = (0, _react.useState)(true);
     const [favoriteMovies, setFavoriteMovies] = (0, _react.useState)([]);
@@ -38215,6 +38221,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                 };
                 setUserAccount(myUser);
                 setFavoriteMovies(myUser.favoriteMovies);
+                setNewEmail(myUser.email);
             } catch (error) {
                 console.error("Error fetching data", error);
             } finally{
@@ -38248,6 +38255,27 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
             console.error("Something went wrong");
         });
     };
+    const handleEmailUpdate = (event)=>{
+        event.preventDefault();
+        const data = {
+            Email: newEmail
+        };
+        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${bearerToken}`
+            }
+        }).then((data)=>{
+            onUpdateInfo({
+                email: newEmail
+            });
+            window.location.href = `/users/${user.Username}`;
+        }).catch((error)=>{
+            console.error("Something went wrong");
+        });
+    };
     const movieDetails = favoriteMovies.map((favoriteprop)=>{
         const movie = movies.find((m)=>favoriteprop === m.id);
         return movie ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38256,7 +38284,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                     children: movie.title
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 75,
+                    lineNumber: 104,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -38264,7 +38292,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                     src: movie.image
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 76,
+                    lineNumber: 105,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -38272,13 +38300,13 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                     children: "Remove Favorite"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 77,
+                    lineNumber: 106,
                     columnNumber: 9
                 }, undefined)
             ]
         }, favoriteprop, true, {
             fileName: "src/components/profile-view/profile-view.jsx",
-            lineNumber: 74,
+            lineNumber: 103,
             columnNumber: 7
         }, undefined) : null;
     });
@@ -38310,7 +38338,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 114,
+                lineNumber: 143,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38320,7 +38348,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 115,
+                lineNumber: 144,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38330,7 +38358,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 116,
+                lineNumber: 145,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38340,13 +38368,13 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                         children: "No favorite movies available."
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 121,
+                        lineNumber: 150,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 117,
+                lineNumber: 146,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -38356,7 +38384,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                         children: "Update username: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 126,
+                        lineNumber: 155,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -38366,7 +38394,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                         onChange: (e)=>setNewUsername(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 127,
+                        lineNumber: 156,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -38374,13 +38402,47 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                         children: "Enter"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 133,
+                        lineNumber: 162,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 125,
+                lineNumber: 154,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                onSubmit: handleEmailUpdate,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: "Update email: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 166,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        name: "Email",
+                        value: newEmail,
+                        onChange: (e)=>setNewEmail(e.target.value)
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 167,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        type: "submit",
+                        children: "Enter"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 173,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 165,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -38389,12 +38451,12 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
                     children: "Go Back"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 136,
+                    lineNumber: 177,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 135,
+                lineNumber: 176,
                 columnNumber: 9
             }, undefined)
         ]
@@ -38403,11 +38465,11 @@ const ProfileView = ({ user, token, onUpdateUser, movies })=>{
         children: "Error: Unauthorized"
     }, void 0, false, {
         fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 141,
+        lineNumber: 182,
         columnNumber: 12
     }, undefined);
 };
-_s(ProfileView, "xdwhpN266Cs7YHzcVS0Xjg22lL4=", false, function() {
+_s(ProfileView, "M9b8q8/A+uN5J+NRpyeLOmx8OTo=", false, function() {
     return [
         (0, _reactRouterDom.useParams)
     ];

@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import React from "react";
 
-export const ProfileView = ({ user, token, onUpdateUser, movies }) => {
+export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo }) => {
   const { Username } = useParams();
   const [newUsername, setNewUsername] = useState(user.Username);
+  const [newEmail, setNewEmail] = useState(userInfo?.email || '');
   const [userAccount, setUserAccount] = useState(null);
   const [loading, setLoading] = useState(true);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
   const bearerToken = localStorage.getItem("token");
-
+  
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -32,6 +33,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies }) => {
         };
         setUserAccount(myUser);
         setFavoriteMovies(myUser.favoriteMovies);
+        setNewEmail(myUser.email)
       } catch (error) {
         console.error("Error fetching data", error);
       } finally {
@@ -62,6 +64,33 @@ export const ProfileView = ({ user, token, onUpdateUser, movies }) => {
       .then((data) => {
         onUpdateUser({ user, Username: newUsername });
         window.location.href = `/users/${newUsername}`;
+      })
+      .catch((error) => {
+        console.error("Something went wrong");
+      });
+  };
+
+  const handleEmailUpdate = (event) => {
+    event.preventDefault();
+
+    const data = {
+      Email: newEmail
+    };
+
+    fetch(
+      `https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${bearerToken}`
+        }
+      }
+    )
+      .then((data) => {
+        onUpdateInfo({email: newEmail});
+        window.location.href = `/users/${user.Username}`;
       })
       .catch((error) => {
         console.error("Something went wrong");
@@ -132,6 +161,18 @@ prevFavorites.filter((id) => id !== movieID)
           ></input>
           <button type="submit">Enter</button>
         </form>
+
+        <form onSubmit={handleEmailUpdate}>
+          <label>Update email: </label>
+          <input
+            type="text"
+            name="Email"
+            value={newEmail}
+            onChange={(e) => setNewEmail(e.target.value)}
+          ></input>
+          <button type="submit">Enter</button>
+        </form>
+        
         <Link to={`/`}>
           <button>Go Back</button>
         </Link>

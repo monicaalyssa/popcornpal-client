@@ -82,6 +82,10 @@ export const MainView = () => {
     localStorage.setItem('user', JSON.stringify(updatedUser)); 
   };
 
+  const handleUpdateInfo = (updatedInfo) => {
+    setUserInfo(updatedInfo);
+  }
+
   return (
     <BrowserRouter>
     <Routes>
@@ -134,7 +138,7 @@ export const MainView = () => {
       element={!user ? ( <Navigate to ="/login" replace /> ) : (
       <>
       <Helmet><title>PopcornPal: Manage Your Account Settings</title></Helmet>
-      <ProfileView user={user} token ={token} onUpdateUser={handleUpdateUser} movies={movies}/> </> )}
+      <ProfileView user={user} userInfo={userInfo} token ={token} onUpdateUser={handleUpdateUser} onUpdateInfo={handleUpdateInfo} movies={movies}/> </> )}
       />
 
     </Routes>
