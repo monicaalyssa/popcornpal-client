@@ -159,7 +159,7 @@ h2 {
 }
 
 .movie-heading-container {
-  padding: 4% 5% 20px;
+  padding: 4% 5% 0;
 }
 
 .line {
@@ -739,7 +739,7 @@ input {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 11% 4% 3.5%;
+    padding: 11% 4% 0;
     display: flex;
   }
 
