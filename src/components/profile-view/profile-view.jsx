@@ -8,6 +8,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
   const { Username } = useParams();
   const [newUsername, setNewUsername] = useState(user.Username);
   const [newEmail, setNewEmail] = useState(userInfo?.email || '');
+  const [newBirthday, setNewBirthday] = useState(userInfo?.birthday || '');
   const [userAccount, setUserAccount] = useState(null);
   const [loading, setLoading] = useState(true);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
@@ -97,6 +98,33 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
       });
   };
 
+  const handleBirthdayUpdate = (event) => {
+    event.preventDefault();
+
+    const data = {
+      Birthday: newBirthday
+    };
+
+    fetch(
+      `https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`,
+      {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${bearerToken}`
+        }
+      }
+    )
+      .then((data) => {
+        onUpdateInfo({birthday: newBirthday});
+        window.location.href = `/users/${user.Username}`;
+      })
+      .catch((error) => {
+        console.error("Something went wrong");
+      });
+  };
+
   const movieDetails = favoriteMovies.map((favoriteprop) => {
     const movie = movies.find((m) => favoriteprop === m.id);
     return movie ? (
@@ -172,7 +200,18 @@ prevFavorites.filter((id) => id !== movieID)
           ></input>
           <button type="submit">Enter</button>
         </form>
-        
+
+        <form onSubmit={handleBirthdayUpdate}>
+          <label>Update birthday: </label>
+          <input
+            type="date"
+            name="Birthday"
+            value={newBirthday}
+            onChange={(e) => setNewBirthday(e.target.value)}
+          ></input>
+          <button type="submit">Enter</button>
+        </form>
+
         <Link to={`/`}>
           <button>Go Back</button>
         </Link>
