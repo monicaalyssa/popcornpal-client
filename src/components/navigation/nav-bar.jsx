@@ -70,7 +70,9 @@ export const NavBar = ({ user, onLogout }) => {
             </div>
           </div>
 
+          <Link to={`/users/${user}`}>
           <p className="menu-item">My List</p>
+          </Link>
         </div>
         <div ref={menuRef} className="right-logos">
           <img
