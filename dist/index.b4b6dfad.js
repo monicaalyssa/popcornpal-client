@@ -38298,6 +38298,22 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
             console.error("Something went wrong");
         });
     };
+    const deleteAccount = (event)=>{
+        event.preventDefault();
+        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${bearerToken}`
+            }
+        }).then((data)=>{
+            localStorage.removeItem("token");
+            onUpdateUser(null);
+            window.location.href = `/login`;
+        }).catch((error)=>{
+            console.error("Account could not be deleted");
+        });
+    };
     const movieDetails = favoriteMovies.map((favoriteprop)=>{
         const movie = movies.find((m)=>favoriteprop === m.id);
         return movie ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38306,7 +38322,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                     children: movie.title
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 132,
+                    lineNumber: 155,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -38314,7 +38330,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                     src: movie.image
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 133,
+                    lineNumber: 156,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -38322,13 +38338,13 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                     children: "Remove Favorite"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 134,
+                    lineNumber: 157,
                     columnNumber: 9
                 }, undefined)
             ]
         }, favoriteprop, true, {
             fileName: "src/components/profile-view/profile-view.jsx",
-            lineNumber: 131,
+            lineNumber: 154,
             columnNumber: 7
         }, undefined) : null;
     });
@@ -38360,7 +38376,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 171,
+                lineNumber: 194,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38370,7 +38386,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 172,
+                lineNumber: 195,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38380,7 +38396,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 173,
+                lineNumber: 196,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38390,13 +38406,13 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         children: "No favorite movies available."
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 178,
+                        lineNumber: 201,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 174,
+                lineNumber: 197,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -38406,7 +38422,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         children: "Update username: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 183,
+                        lineNumber: 206,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -38416,7 +38432,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         onChange: (e)=>setNewUsername(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 184,
+                        lineNumber: 207,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -38424,13 +38440,13 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         children: "Enter"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 190,
+                        lineNumber: 213,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 182,
+                lineNumber: 205,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -38440,7 +38456,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         children: "Update email: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 194,
+                        lineNumber: 217,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -38450,7 +38466,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         onChange: (e)=>setNewEmail(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 195,
+                        lineNumber: 218,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -38458,13 +38474,13 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         children: "Enter"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 201,
+                        lineNumber: 224,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 193,
+                lineNumber: 216,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -38474,7 +38490,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         children: "Update birthday: "
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 205,
+                        lineNumber: 228,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -38484,7 +38500,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         onChange: (e)=>setNewBirthday(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 206,
+                        lineNumber: 229,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -38492,13 +38508,37 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                         children: "Enter"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 212,
+                        lineNumber: 235,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 204,
+                lineNumber: 227,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                onSubmit: deleteAccount,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: "Delete account?"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 239,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        type: "submit",
+                        children: "Confirm"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 240,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 238,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -38507,12 +38547,12 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
                     children: "Go Back"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 216,
+                    lineNumber: 244,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 215,
+                lineNumber: 243,
                 columnNumber: 9
             }, undefined)
         ]
@@ -38521,7 +38561,7 @@ const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo
         children: "Error: Unauthorized"
     }, void 0, false, {
         fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 221,
+        lineNumber: 249,
         columnNumber: 12
     }, undefined);
 };

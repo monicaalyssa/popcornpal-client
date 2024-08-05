@@ -125,6 +125,29 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
       });
   };
 
+  const deleteAccount = (event) => {
+    event.preventDefault();
+
+    fetch(
+      `https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${bearerToken}`
+        }
+      }
+    )
+      .then((data) => {
+        localStorage.removeItem("token");
+        onUpdateUser(null);
+        window.location.href = `/login`;
+      })
+      .catch((error) => {
+        console.error("Account could not be deleted");
+      });
+  };
+
   const movieDetails = favoriteMovies.map((favoriteprop) => {
     const movie = movies.find((m) => favoriteprop === m.id);
     return movie ? (
@@ -210,6 +233,11 @@ prevFavorites.filter((id) => id !== movieID)
             onChange={(e) => setNewBirthday(e.target.value)}
           ></input>
           <button type="submit">Enter</button>
+        </form>
+
+        <form onSubmit={deleteAccount}>
+          <label>Delete account?</label>
+          <button type="submit">Confirm</button>
         </form>
 
         <Link to={`/`}>
