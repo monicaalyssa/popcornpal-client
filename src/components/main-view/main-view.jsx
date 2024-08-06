@@ -10,7 +10,7 @@ import { SignupView } from "../signup-view/signup-view";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { ProfileView } from "../profile-view/profile-view";
 import { Helmet } from "react-helmet";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -137,11 +137,13 @@ export const MainView = () => {
       <NavBar user={user?.Username} onLogout={handleLogout}/>
       <Hero />
       <MovieGrid movies={movies} genreClick={genreClick} genreReset={genreReset}/>
-      <div className="grid">
+      <motion.div layout className="grid">
+      <AnimatePresence>
       {filterList.map((movieprop) => (
         <MovieCard user={user} userInfo={userInfo} token={token} key={movieprop.id} movieprop={movieprop} />
-      ))} 
-      </div> 
+      ))}
+      </AnimatePresence> 
+      </motion.div> 
       </> )} </> } 
       />
 

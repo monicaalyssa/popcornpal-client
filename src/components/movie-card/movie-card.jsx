@@ -4,6 +4,7 @@ import React from "react";
 import { useEffect } from "react";
 import WhiteHeart from "../../images/Heart.svg"
 import RedHeart from "../../images/Red-Heart-Filled.svg"
+import { motion } from "framer-motion";
 
 export const MovieCard = ({ movieprop, user, token, userInfo }) => {
   const [favoritesList, setFavoritesList] = useState(user.favoriteMovies || []);
@@ -54,13 +55,14 @@ export const MovieCard = ({ movieprop, user, token, userInfo }) => {
 
   return (
     <>
+    <motion.div layout animate={{ opacity: 5 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }}>
     <Link className="whole-movie-card"to={`/movies/${encodeURIComponent(movieprop.id)}`}>
     <img
     onClick={(event) => addFavorite(movieprop.id, event)}
     className="white-heart poster-favorite-heart"
     src={myFavorite ? RedHeart : WhiteHeart } // make a transition effect to fill the heart
     />
-    <div className="movie-card">
+    <div layout className="movie-card">
         <div className="grid-overflow">
         <img className="grid-poster" src={movieprop.image} />
         <div className="hover-container">
@@ -73,6 +75,7 @@ export const MovieCard = ({ movieprop, user, token, userInfo }) => {
       </div>
     </div>
     </Link>
+    </motion.div>
     </>
   );
 };

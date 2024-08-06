@@ -27509,18 +27509,25 @@ const MainView = ()=>{
                                         lineNumber: 139,
                                         columnNumber: 7
                                     }, void 0),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).div, {
+                                        layout: true,
                                         className: "grid",
-                                        children: filterList.map((movieprop)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                                                user: user,
-                                                userInfo: userInfo,
-                                                token: token,
-                                                movieprop: movieprop
-                                            }, movieprop.id, false, {
-                                                fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 142,
-                                                columnNumber: 9
-                                            }, void 0))
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.AnimatePresence), {
+                                            children: filterList.map((movieprop)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                                    user: user,
+                                                    userInfo: userInfo,
+                                                    token: token,
+                                                    movieprop: movieprop
+                                                }, movieprop.id, false, {
+                                                    fileName: "src/components/main-view/main-view.jsx",
+                                                    lineNumber: 143,
+                                                    columnNumber: 9
+                                                }, void 0))
+                                        }, void 0, false, {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 141,
+                                            columnNumber: 7
+                                        }, void 0)
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
                                         lineNumber: 140,
@@ -27543,7 +27550,7 @@ const MainView = ()=>{
                         replace: true
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 149,
+                        lineNumber: 151,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27552,12 +27559,12 @@ const MainView = ()=>{
                                     children: "PopcornPal: Manage Your Account Settings"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 151,
+                                    lineNumber: 153,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 151,
+                                lineNumber: 153,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
@@ -27569,7 +27576,7 @@ const MainView = ()=>{
                                 movies: movies
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 152,
+                                lineNumber: 154,
                                 columnNumber: 7
                             }, void 0),
                             " "
@@ -27577,7 +27584,7 @@ const MainView = ()=>{
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 148,
+                    lineNumber: 150,
                     columnNumber: 7
                 }, undefined)
             ]
@@ -27620,6 +27627,7 @@ var _heartSvg = require("../../images/Heart.svg");
 var _heartSvgDefault = parcelHelpers.interopDefault(_heartSvg);
 var _redHeartFilledSvg = require("../../images/Red-Heart-Filled.svg");
 var _redHeartFilledSvgDefault = parcelHelpers.interopDefault(_redHeartFilledSvg);
+var _framerMotion = require("framer-motion");
 var _s = $RefreshSig$();
 const MovieCard = ({ movieprop, user, token, userInfo })=>{
     _s();
@@ -27661,82 +27669,99 @@ const MovieCard = ({ movieprop, user, token, userInfo })=>{
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-            className: "whole-movie-card",
-            to: `/movies/${encodeURIComponent(movieprop.id)}`,
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    onClick: (event)=>addFavorite(movieprop.id, event),
-                    className: "white-heart poster-favorite-heart",
-                    src: myFavorite ? (0, _redHeartFilledSvgDefault.default) : (0, _heartSvgDefault.default)
-                }, void 0, false, {
-                    fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 58,
-                    columnNumber: 5
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-card",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "grid-overflow",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                    className: "grid-poster",
-                                    src: movieprop.image
-                                }, void 0, false, {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 65,
-                                    columnNumber: 9
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "hover-container",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                        className: "hover-more-details",
-                                        children: "More Details"
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _framerMotion.motion).div, {
+            layout: true,
+            animate: {
+                opacity: 5
+            },
+            initial: {
+                opacity: 0
+            },
+            exit: {
+                opacity: 0
+            },
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                className: "whole-movie-card",
+                to: `/movies/${encodeURIComponent(movieprop.id)}`,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        onClick: (event)=>addFavorite(movieprop.id, event),
+                        className: "white-heart poster-favorite-heart",
+                        src: myFavorite ? (0, _redHeartFilledSvgDefault.default) : (0, _heartSvgDefault.default)
+                    }, void 0, false, {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 60,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        layout: true,
+                        className: "movie-card",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "grid-overflow",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        className: "grid-poster",
+                                        src: movieprop.image
                                     }, void 0, false, {
                                         fileName: "src/components/movie-card/movie-card.jsx",
                                         lineNumber: 67,
-                                        columnNumber: 11
+                                        columnNumber: 9
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "hover-container",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                            className: "hover-more-details",
+                                            children: "More Details"
+                                        }, void 0, false, {
+                                            fileName: "src/components/movie-card/movie-card.jsx",
+                                            lineNumber: 69,
+                                            columnNumber: 11
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-card/movie-card.jsx",
+                                        lineNumber: 68,
+                                        columnNumber: 9
                                     }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 66,
-                                    columnNumber: 9
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 64,
-                            columnNumber: 9
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "grid-movie-info",
-                            children: [
-                                movieprop.title,
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    className: "grid-genre-desc",
-                                    children: movieprop.genre
-                                }, void 0, false, {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 72,
-                                    columnNumber: 7
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 70,
-                            columnNumber: 7
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 63,
-                    columnNumber: 5
-                }, undefined)
-            ]
-        }, void 0, true, {
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-card/movie-card.jsx",
+                                lineNumber: 66,
+                                columnNumber: 9
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "grid-movie-info",
+                                children: [
+                                    movieprop.title,
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "grid-genre-desc",
+                                        children: movieprop.genre
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-card/movie-card.jsx",
+                                        lineNumber: 74,
+                                        columnNumber: 7
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-card/movie-card.jsx",
+                                lineNumber: 72,
+                                columnNumber: 7
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 65,
+                        columnNumber: 5
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 59,
+                columnNumber: 5
+            }, undefined)
+        }, void 0, false, {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 57,
+            lineNumber: 58,
             columnNumber: 5
         }, undefined)
     }, void 0, false);
@@ -27751,7 +27776,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react":"21dqq","../../images/Heart.svg":"6J7u4","../../images/Red-Heart-Filled.svg":"9ZK1i"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react":"21dqq","../../images/Heart.svg":"6J7u4","../../images/Red-Heart-Filled.svg":"9ZK1i","framer-motion":"5bZBB"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.26.0
  *
@@ -35090,3536 +35115,7 @@ exports.getOrigin = getOrigin;
 },{}],"9ZK1i":[function(require,module,exports) {
 module.exports = require("8b116c27ade22b24").getBundleURL("byUka") + "Red-Heart-Filled.d4f79917.svg" + "?" + Date.now();
 
-},{"8b116c27ade22b24":"kPWUg"}],"ggaUx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e9f6.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieView", ()=>MovieView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactRouter = require("react-router");
-var _reactRouterDom = require("react-router-dom");
-var _reactHelmet = require("react-helmet");
-var _redHeartFilledSvg = require("../../images/Red-Heart-Filled.svg");
-var _redHeartFilledSvgDefault = parcelHelpers.interopDefault(_redHeartFilledSvg);
-var _redHeartSvg = require("../../images/Red-Heart.svg");
-var _redHeartSvgDefault = parcelHelpers.interopDefault(_redHeartSvg);
-var _s = $RefreshSig$();
-const MovieView = ({ movies, user, onLogout, userInfo, token })=>{
-    _s();
-    const [favoritesList, setFavoritesList] = (0, _react.useState)(user.favoriteMovies || []);
-    const [myFavorite, setMyFavorite] = (0, _react.useState)(false);
-    const { Title } = (0, _reactRouter.useParams)();
-    const movie = movies.find((m)=>m.id === Title);
-    (0, _react.useEffect)(()=>{
-        window.scrollTo(0, 0);
-    }, []);
-    (0, _react.useEffect)(()=>{
-        if (userInfo) setFavoritesList(userInfo.favoriteMovies || []);
-    }, [
-        userInfo
-    ]);
-    (0, _react.useEffect)(()=>{
-        if (favoritesList.length > 0) setMyFavorite(favoritesList.includes(movie.id));
-    }, [
-        favoritesList,
-        movie.id
-    ]);
-    const addFavorite = async (movieID, event)=>{
-        event.preventDefault();
-        if (!favoritesList.includes(movieID)) fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`, {
-            method: "POST",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((data)=>{
-            setFavoritesList((prevList)=>[
-                    ...prevList,
-                    movieID
-                ]);
-            setMyFavorite(true);
-        });
-        else fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`, {
-            method: "DELETE",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((data)=>{
-            setFavoritesList((prevList)=>prevList.filter((id)=>id !== movieID));
-            setMyFavorite(false);
-        });
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactHelmet.Helmet), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("title", {
-                    children: [
-                        "PopcornPal: ",
-                        movie.title
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 65,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 64,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "banner-container",
-                width: "100%;",
-                style: {
-                    backgroundImage: `url(${movie.banner})`
-                }
-            }, void 0, false, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 67,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "movie-info",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "movie-heading-flex",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                className: "heading movie-heading-margin",
-                                children: movie.title
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 75,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: `favorite-button ${myFavorite ? "my-favorite" : "not-my-favorite"}`,
-                                onClick: (event)=>addFavorite(movie.id, event),
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "red-heart",
-                                        src: myFavorite ? (0, _redHeartFilledSvgDefault.default) : (0, _redHeartSvgDefault.default)
-                                    }, void 0, false, {
-                                        fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 77,
-                                        columnNumber: 13
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: "favorite-btn-text",
-                                        children: "Favorite"
-                                    }, void 0, false, {
-                                        fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 81,
-                                        columnNumber: 13
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 76,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 74,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "movie-info-bubbles",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "bubble",
-                                children: [
-                                    "Duration: ",
-                                    movie.duration
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 86,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "bubble",
-                                children: movie.genre
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 87,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 85,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "info-section",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                children: "Synopsis"
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 91,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "movie-description",
-                                children: movie.description
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 92,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 90,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "info-section",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                children: "Director"
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 96,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "movie-description",
-                                children: movie.director
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 97,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 95,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "back-btn-container",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: `/`,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                children: "Go Back"
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 102,
-                                columnNumber: 11
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 101,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 100,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 73,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/movie-view/movie-view.jsx",
-        lineNumber: 63,
-        columnNumber: 5
-    }, undefined);
-};
-_s(MovieView, "BBOMsMlPPLe+53zHqNwFvgyycCU=", false, function() {
-    return [
-        (0, _reactRouter.useParams)
-    ];
-});
-_c = MovieView;
-var _c;
-$RefreshReg$(_c, "MovieView");
-
-  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react-helmet":"fcX6K","../../images/Red-Heart-Filled.svg":"9ZK1i","../../images/Red-Heart.svg":"8XQUt"}],"fcX6K":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Helmet", ()=>HelmetExport);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactSideEffect = require("react-side-effect");
-var _reactSideEffectDefault = parcelHelpers.interopDefault(_reactSideEffect);
-var _reactFastCompare = require("react-fast-compare");
-var _reactFastCompareDefault = parcelHelpers.interopDefault(_reactFastCompare);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _objectAssign = require("object-assign");
-var _objectAssignDefault = parcelHelpers.interopDefault(_objectAssign);
-var global = arguments[3];
-var ATTRIBUTE_NAMES = {
-    BODY: "bodyAttributes",
-    HTML: "htmlAttributes",
-    TITLE: "titleAttributes"
-};
-var TAG_NAMES = {
-    BASE: "base",
-    BODY: "body",
-    HEAD: "head",
-    HTML: "html",
-    LINK: "link",
-    META: "meta",
-    NOSCRIPT: "noscript",
-    SCRIPT: "script",
-    STYLE: "style",
-    TITLE: "title"
-};
-var VALID_TAG_NAMES = Object.keys(TAG_NAMES).map(function(name) {
-    return TAG_NAMES[name];
-});
-var TAG_PROPERTIES = {
-    CHARSET: "charset",
-    CSS_TEXT: "cssText",
-    HREF: "href",
-    HTTPEQUIV: "http-equiv",
-    INNER_HTML: "innerHTML",
-    ITEM_PROP: "itemprop",
-    NAME: "name",
-    PROPERTY: "property",
-    REL: "rel",
-    SRC: "src",
-    TARGET: "target"
-};
-var REACT_TAG_MAP = {
-    accesskey: "accessKey",
-    charset: "charSet",
-    class: "className",
-    contenteditable: "contentEditable",
-    contextmenu: "contextMenu",
-    "http-equiv": "httpEquiv",
-    itemprop: "itemProp",
-    tabindex: "tabIndex"
-};
-var HELMET_PROPS = {
-    DEFAULT_TITLE: "defaultTitle",
-    DEFER: "defer",
-    ENCODE_SPECIAL_CHARACTERS: "encodeSpecialCharacters",
-    ON_CHANGE_CLIENT_STATE: "onChangeClientState",
-    TITLE_TEMPLATE: "titleTemplate"
-};
-var HTML_TAG_MAP = Object.keys(REACT_TAG_MAP).reduce(function(obj, key) {
-    obj[REACT_TAG_MAP[key]] = key;
-    return obj;
-}, {});
-var SELF_CLOSING_TAGS = [
-    TAG_NAMES.NOSCRIPT,
-    TAG_NAMES.SCRIPT,
-    TAG_NAMES.STYLE
-];
-var HELMET_ATTRIBUTE = "data-react-helmet";
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
-    return typeof obj;
-} : function(obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-};
-var classCallCheck = function(instance, Constructor) {
-    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
-};
-var createClass = function() {
-    function defineProperties(target, props) {
-        for(var i = 0; i < props.length; i++){
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || false;
-            descriptor.configurable = true;
-            if ("value" in descriptor) descriptor.writable = true;
-            Object.defineProperty(target, descriptor.key, descriptor);
-        }
-    }
-    return function(Constructor, protoProps, staticProps) {
-        if (protoProps) defineProperties(Constructor.prototype, protoProps);
-        if (staticProps) defineProperties(Constructor, staticProps);
-        return Constructor;
-    };
-}();
-var _extends = Object.assign || function(target) {
-    for(var i = 1; i < arguments.length; i++){
-        var source = arguments[i];
-        for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-    }
-    return target;
-};
-var inherits = function(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-        constructor: {
-            value: subClass,
-            enumerable: false,
-            writable: true,
-            configurable: true
-        }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-};
-var objectWithoutProperties = function(obj, keys) {
-    var target = {};
-    for(var i in obj){
-        if (keys.indexOf(i) >= 0) continue;
-        if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-        target[i] = obj[i];
-    }
-    return target;
-};
-var possibleConstructorReturn = function(self, call) {
-    if (!self) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-};
-var encodeSpecialCharacters = function encodeSpecialCharacters(str) {
-    var encode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-    if (encode === false) return String(str);
-    return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
-};
-var getTitleFromPropsList = function getTitleFromPropsList(propsList) {
-    var innermostTitle = getInnermostProperty(propsList, TAG_NAMES.TITLE);
-    var innermostTemplate = getInnermostProperty(propsList, HELMET_PROPS.TITLE_TEMPLATE);
-    if (innermostTemplate && innermostTitle) // use function arg to avoid need to escape $ characters
-    return innermostTemplate.replace(/%s/g, function() {
-        return Array.isArray(innermostTitle) ? innermostTitle.join("") : innermostTitle;
-    });
-    var innermostDefaultTitle = getInnermostProperty(propsList, HELMET_PROPS.DEFAULT_TITLE);
-    return innermostTitle || innermostDefaultTitle || undefined;
-};
-var getOnChangeClientState = function getOnChangeClientState(propsList) {
-    return getInnermostProperty(propsList, HELMET_PROPS.ON_CHANGE_CLIENT_STATE) || function() {};
-};
-var getAttributesFromPropsList = function getAttributesFromPropsList(tagType, propsList) {
-    return propsList.filter(function(props) {
-        return typeof props[tagType] !== "undefined";
-    }).map(function(props) {
-        return props[tagType];
-    }).reduce(function(tagAttrs, current) {
-        return _extends({}, tagAttrs, current);
-    }, {});
-};
-var getBaseTagFromPropsList = function getBaseTagFromPropsList(primaryAttributes, propsList) {
-    return propsList.filter(function(props) {
-        return typeof props[TAG_NAMES.BASE] !== "undefined";
-    }).map(function(props) {
-        return props[TAG_NAMES.BASE];
-    }).reverse().reduce(function(innermostBaseTag, tag) {
-        if (!innermostBaseTag.length) {
-            var keys = Object.keys(tag);
-            for(var i = 0; i < keys.length; i++){
-                var attributeKey = keys[i];
-                var lowerCaseAttributeKey = attributeKey.toLowerCase();
-                if (primaryAttributes.indexOf(lowerCaseAttributeKey) !== -1 && tag[lowerCaseAttributeKey]) return innermostBaseTag.concat(tag);
-            }
-        }
-        return innermostBaseTag;
-    }, []);
-};
-var getTagsFromPropsList = function getTagsFromPropsList(tagName, primaryAttributes, propsList) {
-    // Calculate list of tags, giving priority innermost component (end of the propslist)
-    var approvedSeenTags = {};
-    return propsList.filter(function(props) {
-        if (Array.isArray(props[tagName])) return true;
-        if (typeof props[tagName] !== "undefined") warn("Helmet: " + tagName + ' should be of type "Array". Instead found type "' + _typeof(props[tagName]) + '"');
-        return false;
-    }).map(function(props) {
-        return props[tagName];
-    }).reverse().reduce(function(approvedTags, instanceTags) {
-        var instanceSeenTags = {};
-        instanceTags.filter(function(tag) {
-            var primaryAttributeKey = void 0;
-            var keys = Object.keys(tag);
-            for(var i = 0; i < keys.length; i++){
-                var attributeKey = keys[i];
-                var lowerCaseAttributeKey = attributeKey.toLowerCase();
-                // Special rule with link tags, since rel and href are both primary tags, rel takes priority
-                if (primaryAttributes.indexOf(lowerCaseAttributeKey) !== -1 && !(primaryAttributeKey === TAG_PROPERTIES.REL && tag[primaryAttributeKey].toLowerCase() === "canonical") && !(lowerCaseAttributeKey === TAG_PROPERTIES.REL && tag[lowerCaseAttributeKey].toLowerCase() === "stylesheet")) primaryAttributeKey = lowerCaseAttributeKey;
-                // Special case for innerHTML which doesn't work lowercased
-                if (primaryAttributes.indexOf(attributeKey) !== -1 && (attributeKey === TAG_PROPERTIES.INNER_HTML || attributeKey === TAG_PROPERTIES.CSS_TEXT || attributeKey === TAG_PROPERTIES.ITEM_PROP)) primaryAttributeKey = attributeKey;
-            }
-            if (!primaryAttributeKey || !tag[primaryAttributeKey]) return false;
-            var value = tag[primaryAttributeKey].toLowerCase();
-            if (!approvedSeenTags[primaryAttributeKey]) approvedSeenTags[primaryAttributeKey] = {};
-            if (!instanceSeenTags[primaryAttributeKey]) instanceSeenTags[primaryAttributeKey] = {};
-            if (!approvedSeenTags[primaryAttributeKey][value]) {
-                instanceSeenTags[primaryAttributeKey][value] = true;
-                return true;
-            }
-            return false;
-        }).reverse().forEach(function(tag) {
-            return approvedTags.push(tag);
-        });
-        // Update seen tags with tags from this instance
-        var keys = Object.keys(instanceSeenTags);
-        for(var i = 0; i < keys.length; i++){
-            var attributeKey = keys[i];
-            var tagUnion = (0, _objectAssignDefault.default)({}, approvedSeenTags[attributeKey], instanceSeenTags[attributeKey]);
-            approvedSeenTags[attributeKey] = tagUnion;
-        }
-        return approvedTags;
-    }, []).reverse();
-};
-var getInnermostProperty = function getInnermostProperty(propsList, property) {
-    for(var i = propsList.length - 1; i >= 0; i--){
-        var props = propsList[i];
-        if (props.hasOwnProperty(property)) return props[property];
-    }
-    return null;
-};
-var reducePropsToState = function reducePropsToState(propsList) {
-    return {
-        baseTag: getBaseTagFromPropsList([
-            TAG_PROPERTIES.HREF,
-            TAG_PROPERTIES.TARGET
-        ], propsList),
-        bodyAttributes: getAttributesFromPropsList(ATTRIBUTE_NAMES.BODY, propsList),
-        defer: getInnermostProperty(propsList, HELMET_PROPS.DEFER),
-        encode: getInnermostProperty(propsList, HELMET_PROPS.ENCODE_SPECIAL_CHARACTERS),
-        htmlAttributes: getAttributesFromPropsList(ATTRIBUTE_NAMES.HTML, propsList),
-        linkTags: getTagsFromPropsList(TAG_NAMES.LINK, [
-            TAG_PROPERTIES.REL,
-            TAG_PROPERTIES.HREF
-        ], propsList),
-        metaTags: getTagsFromPropsList(TAG_NAMES.META, [
-            TAG_PROPERTIES.NAME,
-            TAG_PROPERTIES.CHARSET,
-            TAG_PROPERTIES.HTTPEQUIV,
-            TAG_PROPERTIES.PROPERTY,
-            TAG_PROPERTIES.ITEM_PROP
-        ], propsList),
-        noscriptTags: getTagsFromPropsList(TAG_NAMES.NOSCRIPT, [
-            TAG_PROPERTIES.INNER_HTML
-        ], propsList),
-        onChangeClientState: getOnChangeClientState(propsList),
-        scriptTags: getTagsFromPropsList(TAG_NAMES.SCRIPT, [
-            TAG_PROPERTIES.SRC,
-            TAG_PROPERTIES.INNER_HTML
-        ], propsList),
-        styleTags: getTagsFromPropsList(TAG_NAMES.STYLE, [
-            TAG_PROPERTIES.CSS_TEXT
-        ], propsList),
-        title: getTitleFromPropsList(propsList),
-        titleAttributes: getAttributesFromPropsList(ATTRIBUTE_NAMES.TITLE, propsList)
-    };
-};
-var rafPolyfill = function() {
-    var clock = Date.now();
-    return function(callback) {
-        var currentTime = Date.now();
-        if (currentTime - clock > 16) {
-            clock = currentTime;
-            callback(currentTime);
-        } else setTimeout(function() {
-            rafPolyfill(callback);
-        }, 0);
-    };
-}();
-var cafPolyfill = function cafPolyfill(id) {
-    return clearTimeout(id);
-};
-var requestAnimationFrame = typeof window !== "undefined" ? window.requestAnimationFrame && window.requestAnimationFrame.bind(window) || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || rafPolyfill : global.requestAnimationFrame || rafPolyfill;
-var cancelAnimationFrame = typeof window !== "undefined" ? window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || cafPolyfill : global.cancelAnimationFrame || cafPolyfill;
-var warn = function warn(msg) {
-    return console && typeof console.warn === "function" && console.warn(msg);
-};
-var _helmetCallback = null;
-var handleClientStateChange = function handleClientStateChange(newState) {
-    if (_helmetCallback) cancelAnimationFrame(_helmetCallback);
-    if (newState.defer) _helmetCallback = requestAnimationFrame(function() {
-        commitTagChanges(newState, function() {
-            _helmetCallback = null;
-        });
-    });
-    else {
-        commitTagChanges(newState);
-        _helmetCallback = null;
-    }
-};
-var commitTagChanges = function commitTagChanges(newState, cb) {
-    var baseTag = newState.baseTag, bodyAttributes = newState.bodyAttributes, htmlAttributes = newState.htmlAttributes, linkTags = newState.linkTags, metaTags = newState.metaTags, noscriptTags = newState.noscriptTags, onChangeClientState = newState.onChangeClientState, scriptTags = newState.scriptTags, styleTags = newState.styleTags, title = newState.title, titleAttributes = newState.titleAttributes;
-    updateAttributes(TAG_NAMES.BODY, bodyAttributes);
-    updateAttributes(TAG_NAMES.HTML, htmlAttributes);
-    updateTitle(title, titleAttributes);
-    var tagUpdates = {
-        baseTag: updateTags(TAG_NAMES.BASE, baseTag),
-        linkTags: updateTags(TAG_NAMES.LINK, linkTags),
-        metaTags: updateTags(TAG_NAMES.META, metaTags),
-        noscriptTags: updateTags(TAG_NAMES.NOSCRIPT, noscriptTags),
-        scriptTags: updateTags(TAG_NAMES.SCRIPT, scriptTags),
-        styleTags: updateTags(TAG_NAMES.STYLE, styleTags)
-    };
-    var addedTags = {};
-    var removedTags = {};
-    Object.keys(tagUpdates).forEach(function(tagType) {
-        var _tagUpdates$tagType = tagUpdates[tagType], newTags = _tagUpdates$tagType.newTags, oldTags = _tagUpdates$tagType.oldTags;
-        if (newTags.length) addedTags[tagType] = newTags;
-        if (oldTags.length) removedTags[tagType] = tagUpdates[tagType].oldTags;
-    });
-    cb && cb();
-    onChangeClientState(newState, addedTags, removedTags);
-};
-var flattenArray = function flattenArray(possibleArray) {
-    return Array.isArray(possibleArray) ? possibleArray.join("") : possibleArray;
-};
-var updateTitle = function updateTitle(title, attributes) {
-    if (typeof title !== "undefined" && document.title !== title) document.title = flattenArray(title);
-    updateAttributes(TAG_NAMES.TITLE, attributes);
-};
-var updateAttributes = function updateAttributes(tagName, attributes) {
-    var elementTag = document.getElementsByTagName(tagName)[0];
-    if (!elementTag) return;
-    var helmetAttributeString = elementTag.getAttribute(HELMET_ATTRIBUTE);
-    var helmetAttributes = helmetAttributeString ? helmetAttributeString.split(",") : [];
-    var attributesToRemove = [].concat(helmetAttributes);
-    var attributeKeys = Object.keys(attributes);
-    for(var i = 0; i < attributeKeys.length; i++){
-        var attribute = attributeKeys[i];
-        var value = attributes[attribute] || "";
-        if (elementTag.getAttribute(attribute) !== value) elementTag.setAttribute(attribute, value);
-        if (helmetAttributes.indexOf(attribute) === -1) helmetAttributes.push(attribute);
-        var indexToSave = attributesToRemove.indexOf(attribute);
-        if (indexToSave !== -1) attributesToRemove.splice(indexToSave, 1);
-    }
-    for(var _i = attributesToRemove.length - 1; _i >= 0; _i--)elementTag.removeAttribute(attributesToRemove[_i]);
-    if (helmetAttributes.length === attributesToRemove.length) elementTag.removeAttribute(HELMET_ATTRIBUTE);
-    else if (elementTag.getAttribute(HELMET_ATTRIBUTE) !== attributeKeys.join(",")) elementTag.setAttribute(HELMET_ATTRIBUTE, attributeKeys.join(","));
-};
-var updateTags = function updateTags(type, tags) {
-    var headElement = document.head || document.querySelector(TAG_NAMES.HEAD);
-    var tagNodes = headElement.querySelectorAll(type + "[" + HELMET_ATTRIBUTE + "]");
-    var oldTags = Array.prototype.slice.call(tagNodes);
-    var newTags = [];
-    var indexToDelete = void 0;
-    if (tags && tags.length) tags.forEach(function(tag) {
-        var newElement = document.createElement(type);
-        for(var attribute in tag)if (tag.hasOwnProperty(attribute)) {
-            if (attribute === TAG_PROPERTIES.INNER_HTML) newElement.innerHTML = tag.innerHTML;
-            else if (attribute === TAG_PROPERTIES.CSS_TEXT) {
-                if (newElement.styleSheet) newElement.styleSheet.cssText = tag.cssText;
-                else newElement.appendChild(document.createTextNode(tag.cssText));
-            } else {
-                var value = typeof tag[attribute] === "undefined" ? "" : tag[attribute];
-                newElement.setAttribute(attribute, value);
-            }
-        }
-        newElement.setAttribute(HELMET_ATTRIBUTE, "true");
-        // Remove a duplicate tag from domTagstoRemove, so it isn't cleared.
-        if (oldTags.some(function(existingTag, index) {
-            indexToDelete = index;
-            return newElement.isEqualNode(existingTag);
-        })) oldTags.splice(indexToDelete, 1);
-        else newTags.push(newElement);
-    });
-    oldTags.forEach(function(tag) {
-        return tag.parentNode.removeChild(tag);
-    });
-    newTags.forEach(function(tag) {
-        return headElement.appendChild(tag);
-    });
-    return {
-        oldTags: oldTags,
-        newTags: newTags
-    };
-};
-var generateElementAttributesAsString = function generateElementAttributesAsString(attributes) {
-    return Object.keys(attributes).reduce(function(str, key) {
-        var attr = typeof attributes[key] !== "undefined" ? key + '="' + attributes[key] + '"' : "" + key;
-        return str ? str + " " + attr : attr;
-    }, "");
-};
-var generateTitleAsString = function generateTitleAsString(type, title, attributes, encode) {
-    var attributeString = generateElementAttributesAsString(attributes);
-    var flattenedTitle = flattenArray(title);
-    return attributeString ? "<" + type + " " + HELMET_ATTRIBUTE + '="true" ' + attributeString + ">" + encodeSpecialCharacters(flattenedTitle, encode) + "</" + type + ">" : "<" + type + " " + HELMET_ATTRIBUTE + '="true">' + encodeSpecialCharacters(flattenedTitle, encode) + "</" + type + ">";
-};
-var generateTagsAsString = function generateTagsAsString(type, tags, encode) {
-    return tags.reduce(function(str, tag) {
-        var attributeHtml = Object.keys(tag).filter(function(attribute) {
-            return !(attribute === TAG_PROPERTIES.INNER_HTML || attribute === TAG_PROPERTIES.CSS_TEXT);
-        }).reduce(function(string, attribute) {
-            var attr = typeof tag[attribute] === "undefined" ? attribute : attribute + '="' + encodeSpecialCharacters(tag[attribute], encode) + '"';
-            return string ? string + " " + attr : attr;
-        }, "");
-        var tagContent = tag.innerHTML || tag.cssText || "";
-        var isSelfClosing = SELF_CLOSING_TAGS.indexOf(type) === -1;
-        return str + "<" + type + " " + HELMET_ATTRIBUTE + '="true" ' + attributeHtml + (isSelfClosing ? "/>" : ">" + tagContent + "</" + type + ">");
-    }, "");
-};
-var convertElementAttributestoReactProps = function convertElementAttributestoReactProps(attributes) {
-    var initProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    return Object.keys(attributes).reduce(function(obj, key) {
-        obj[REACT_TAG_MAP[key] || key] = attributes[key];
-        return obj;
-    }, initProps);
-};
-var convertReactPropstoHtmlAttributes = function convertReactPropstoHtmlAttributes(props) {
-    var initAttributes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    return Object.keys(props).reduce(function(obj, key) {
-        obj[HTML_TAG_MAP[key] || key] = props[key];
-        return obj;
-    }, initAttributes);
-};
-var generateTitleAsReactComponent = function generateTitleAsReactComponent(type, title, attributes) {
-    var _initProps;
-    // assigning into an array to define toString function on it
-    var initProps = (_initProps = {
-        key: title
-    }, _initProps[HELMET_ATTRIBUTE] = true, _initProps);
-    var props = convertElementAttributestoReactProps(attributes, initProps);
-    return [
-        (0, _reactDefault.default).createElement(TAG_NAMES.TITLE, props, title)
-    ];
-};
-var generateTagsAsReactComponent = function generateTagsAsReactComponent(type, tags) {
-    return tags.map(function(tag, i) {
-        var _mappedTag;
-        var mappedTag = (_mappedTag = {
-            key: i
-        }, _mappedTag[HELMET_ATTRIBUTE] = true, _mappedTag);
-        Object.keys(tag).forEach(function(attribute) {
-            var mappedAttribute = REACT_TAG_MAP[attribute] || attribute;
-            if (mappedAttribute === TAG_PROPERTIES.INNER_HTML || mappedAttribute === TAG_PROPERTIES.CSS_TEXT) {
-                var content = tag.innerHTML || tag.cssText;
-                mappedTag.dangerouslySetInnerHTML = {
-                    __html: content
-                };
-            } else mappedTag[mappedAttribute] = tag[attribute];
-        });
-        return (0, _reactDefault.default).createElement(type, mappedTag);
-    });
-};
-var getMethodsForTag = function getMethodsForTag(type, tags, encode) {
-    switch(type){
-        case TAG_NAMES.TITLE:
-            return {
-                toComponent: function toComponent() {
-                    return generateTitleAsReactComponent(type, tags.title, tags.titleAttributes, encode);
-                },
-                toString: function toString() {
-                    return generateTitleAsString(type, tags.title, tags.titleAttributes, encode);
-                }
-            };
-        case ATTRIBUTE_NAMES.BODY:
-        case ATTRIBUTE_NAMES.HTML:
-            return {
-                toComponent: function toComponent() {
-                    return convertElementAttributestoReactProps(tags);
-                },
-                toString: function toString() {
-                    return generateElementAttributesAsString(tags);
-                }
-            };
-        default:
-            return {
-                toComponent: function toComponent() {
-                    return generateTagsAsReactComponent(type, tags);
-                },
-                toString: function toString() {
-                    return generateTagsAsString(type, tags, encode);
-                }
-            };
-    }
-};
-var mapStateOnServer = function mapStateOnServer(_ref) {
-    var baseTag = _ref.baseTag, bodyAttributes = _ref.bodyAttributes, encode = _ref.encode, htmlAttributes = _ref.htmlAttributes, linkTags = _ref.linkTags, metaTags = _ref.metaTags, noscriptTags = _ref.noscriptTags, scriptTags = _ref.scriptTags, styleTags = _ref.styleTags, _ref$title = _ref.title, title = _ref$title === undefined ? "" : _ref$title, titleAttributes = _ref.titleAttributes;
-    return {
-        base: getMethodsForTag(TAG_NAMES.BASE, baseTag, encode),
-        bodyAttributes: getMethodsForTag(ATTRIBUTE_NAMES.BODY, bodyAttributes, encode),
-        htmlAttributes: getMethodsForTag(ATTRIBUTE_NAMES.HTML, htmlAttributes, encode),
-        link: getMethodsForTag(TAG_NAMES.LINK, linkTags, encode),
-        meta: getMethodsForTag(TAG_NAMES.META, metaTags, encode),
-        noscript: getMethodsForTag(TAG_NAMES.NOSCRIPT, noscriptTags, encode),
-        script: getMethodsForTag(TAG_NAMES.SCRIPT, scriptTags, encode),
-        style: getMethodsForTag(TAG_NAMES.STYLE, styleTags, encode),
-        title: getMethodsForTag(TAG_NAMES.TITLE, {
-            title: title,
-            titleAttributes: titleAttributes
-        }, encode)
-    };
-};
-var Helmet = function Helmet(Component) {
-    var _class, _temp;
-    return _temp = _class = function(_React$Component) {
-        inherits(HelmetWrapper, _React$Component);
-        function HelmetWrapper() {
-            classCallCheck(this, HelmetWrapper);
-            return possibleConstructorReturn(this, _React$Component.apply(this, arguments));
-        }
-        HelmetWrapper.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
-            return !(0, _reactFastCompareDefault.default)(this.props, nextProps);
-        };
-        HelmetWrapper.prototype.mapNestedChildrenToProps = function mapNestedChildrenToProps(child, nestedChildren) {
-            if (!nestedChildren) return null;
-            switch(child.type){
-                case TAG_NAMES.SCRIPT:
-                case TAG_NAMES.NOSCRIPT:
-                    return {
-                        innerHTML: nestedChildren
-                    };
-                case TAG_NAMES.STYLE:
-                    return {
-                        cssText: nestedChildren
-                    };
-            }
-            throw new Error("<" + child.type + " /> elements are self-closing and can not contain children. Refer to our API for more information.");
-        };
-        HelmetWrapper.prototype.flattenArrayTypeChildren = function flattenArrayTypeChildren(_ref) {
-            var _babelHelpers$extends;
-            var child = _ref.child, arrayTypeChildren = _ref.arrayTypeChildren, newChildProps = _ref.newChildProps, nestedChildren = _ref.nestedChildren;
-            return _extends({}, arrayTypeChildren, (_babelHelpers$extends = {}, _babelHelpers$extends[child.type] = [].concat(arrayTypeChildren[child.type] || [], [
-                _extends({}, newChildProps, this.mapNestedChildrenToProps(child, nestedChildren))
-            ]), _babelHelpers$extends));
-        };
-        HelmetWrapper.prototype.mapObjectTypeChildren = function mapObjectTypeChildren(_ref2) {
-            var _babelHelpers$extends2, _babelHelpers$extends3;
-            var child = _ref2.child, newProps = _ref2.newProps, newChildProps = _ref2.newChildProps, nestedChildren = _ref2.nestedChildren;
-            switch(child.type){
-                case TAG_NAMES.TITLE:
-                    return _extends({}, newProps, (_babelHelpers$extends2 = {}, _babelHelpers$extends2[child.type] = nestedChildren, _babelHelpers$extends2.titleAttributes = _extends({}, newChildProps), _babelHelpers$extends2));
-                case TAG_NAMES.BODY:
-                    return _extends({}, newProps, {
-                        bodyAttributes: _extends({}, newChildProps)
-                    });
-                case TAG_NAMES.HTML:
-                    return _extends({}, newProps, {
-                        htmlAttributes: _extends({}, newChildProps)
-                    });
-            }
-            return _extends({}, newProps, (_babelHelpers$extends3 = {}, _babelHelpers$extends3[child.type] = _extends({}, newChildProps), _babelHelpers$extends3));
-        };
-        HelmetWrapper.prototype.mapArrayTypeChildrenToProps = function mapArrayTypeChildrenToProps(arrayTypeChildren, newProps) {
-            var newFlattenedProps = _extends({}, newProps);
-            Object.keys(arrayTypeChildren).forEach(function(arrayChildName) {
-                var _babelHelpers$extends4;
-                newFlattenedProps = _extends({}, newFlattenedProps, (_babelHelpers$extends4 = {}, _babelHelpers$extends4[arrayChildName] = arrayTypeChildren[arrayChildName], _babelHelpers$extends4));
-            });
-            return newFlattenedProps;
-        };
-        HelmetWrapper.prototype.warnOnInvalidChildren = function warnOnInvalidChildren(child, nestedChildren) {
-            if (!VALID_TAG_NAMES.some(function(name) {
-                return child.type === name;
-            })) {
-                if (typeof child.type === "function") return warn("You may be attempting to nest <Helmet> components within each other, which is not allowed. Refer to our API for more information.");
-                return warn("Only elements types " + VALID_TAG_NAMES.join(", ") + " are allowed. Helmet does not support rendering <" + child.type + "> elements. Refer to our API for more information.");
-            }
-            if (nestedChildren && typeof nestedChildren !== "string" && (!Array.isArray(nestedChildren) || nestedChildren.some(function(nestedChild) {
-                return typeof nestedChild !== "string";
-            }))) throw new Error("Helmet expects a string as a child of <" + child.type + ">. Did you forget to wrap your children in braces? ( <" + child.type + ">{``}</" + child.type + "> ) Refer to our API for more information.");
-            return true;
-        };
-        HelmetWrapper.prototype.mapChildrenToProps = function mapChildrenToProps(children, newProps) {
-            var _this2 = this;
-            var arrayTypeChildren = {};
-            (0, _reactDefault.default).Children.forEach(children, function(child) {
-                if (!child || !child.props) return;
-                var _child$props = child.props, nestedChildren = _child$props.children, childProps = objectWithoutProperties(_child$props, [
-                    "children"
-                ]);
-                var newChildProps = convertReactPropstoHtmlAttributes(childProps);
-                _this2.warnOnInvalidChildren(child, nestedChildren);
-                switch(child.type){
-                    case TAG_NAMES.LINK:
-                    case TAG_NAMES.META:
-                    case TAG_NAMES.NOSCRIPT:
-                    case TAG_NAMES.SCRIPT:
-                    case TAG_NAMES.STYLE:
-                        arrayTypeChildren = _this2.flattenArrayTypeChildren({
-                            child: child,
-                            arrayTypeChildren: arrayTypeChildren,
-                            newChildProps: newChildProps,
-                            nestedChildren: nestedChildren
-                        });
-                        break;
-                    default:
-                        newProps = _this2.mapObjectTypeChildren({
-                            child: child,
-                            newProps: newProps,
-                            newChildProps: newChildProps,
-                            nestedChildren: nestedChildren
-                        });
-                        break;
-                }
-            });
-            newProps = this.mapArrayTypeChildrenToProps(arrayTypeChildren, newProps);
-            return newProps;
-        };
-        HelmetWrapper.prototype.render = function render() {
-            var _props = this.props, children = _props.children, props = objectWithoutProperties(_props, [
-                "children"
-            ]);
-            var newProps = _extends({}, props);
-            if (children) newProps = this.mapChildrenToProps(children, newProps);
-            return (0, _reactDefault.default).createElement(Component, newProps);
-        };
-        createClass(HelmetWrapper, null, [
-            {
-                key: "canUseDOM",
-                // Component.peek comes from react-side-effect:
-                // For testing, you may use a static peek() method available on the returned component.
-                // It lets you get the current state without resetting the mounted instance stack.
-                // Don’t use it for anything other than testing.
-                /**
-             * @param {Object} base: {"target": "_blank", "href": "http://mysite.com/"}
-             * @param {Object} bodyAttributes: {"className": "root"}
-             * @param {String} defaultTitle: "Default Title"
-             * @param {Boolean} defer: true
-             * @param {Boolean} encodeSpecialCharacters: true
-             * @param {Object} htmlAttributes: {"lang": "en", "amp": undefined}
-             * @param {Array} link: [{"rel": "canonical", "href": "http://mysite.com/example"}]
-             * @param {Array} meta: [{"name": "description", "content": "Test description"}]
-             * @param {Array} noscript: [{"innerHTML": "<img src='http://mysite.com/js/test.js'"}]
-             * @param {Function} onChangeClientState: "(newState) => console.log(newState)"
-             * @param {Array} script: [{"type": "text/javascript", "src": "http://mysite.com/js/test.js"}]
-             * @param {Array} style: [{"type": "text/css", "cssText": "div { display: block; color: blue; }"}]
-             * @param {String} title: "Title"
-             * @param {Object} titleAttributes: {"itemprop": "name"}
-             * @param {String} titleTemplate: "MySite.com - %s"
-             */ set: function set$$1(canUseDOM) {
-                    Component.canUseDOM = canUseDOM;
-                }
-            }
-        ]);
-        return HelmetWrapper;
-    }((0, _reactDefault.default).Component), _class.propTypes = {
-        base: (0, _propTypesDefault.default).object,
-        bodyAttributes: (0, _propTypesDefault.default).object,
-        children: (0, _propTypesDefault.default).oneOfType([
-            (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).node),
-            (0, _propTypesDefault.default).node
-        ]),
-        defaultTitle: (0, _propTypesDefault.default).string,
-        defer: (0, _propTypesDefault.default).bool,
-        encodeSpecialCharacters: (0, _propTypesDefault.default).bool,
-        htmlAttributes: (0, _propTypesDefault.default).object,
-        link: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
-        meta: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
-        noscript: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
-        onChangeClientState: (0, _propTypesDefault.default).func,
-        script: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
-        style: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
-        title: (0, _propTypesDefault.default).string,
-        titleAttributes: (0, _propTypesDefault.default).object,
-        titleTemplate: (0, _propTypesDefault.default).string
-    }, _class.defaultProps = {
-        defer: true,
-        encodeSpecialCharacters: true
-    }, _class.peek = Component.peek, _class.rewind = function() {
-        var mappedState = Component.rewind();
-        if (!mappedState) // provide fallback if mappedState is undefined
-        mappedState = mapStateOnServer({
-            baseTag: [],
-            bodyAttributes: {},
-            encodeSpecialCharacters: true,
-            htmlAttributes: {},
-            linkTags: [],
-            metaTags: [],
-            noscriptTags: [],
-            scriptTags: [],
-            styleTags: [],
-            title: "",
-            titleAttributes: {}
-        });
-        return mappedState;
-    }, _temp;
-};
-var NullComponent = function NullComponent() {
-    return null;
-};
-var HelmetSideEffects = (0, _reactSideEffectDefault.default)(reducePropsToState, handleClientStateChange, mapStateOnServer)(NullComponent);
-var HelmetExport = Helmet(HelmetSideEffects);
-HelmetExport.renderStatic = HelmetExport.rewind;
-exports.default = HelmetExport;
-
-},{"prop-types":"7wKI2","react-side-effect":"12ePA","react-fast-compare":"isHbY","react":"21dqq","object-assign":"7OXxh","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"7wKI2":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ var ReactIs = require("96e34ae03f5a2631");
-// By explicitly using `prop-types` you are opting into new development behavior.
-// http://fb.me/prop-types-in-prod
-var throwOnDirectAccess = true;
-module.exports = require("cb216452e2171041")(ReactIs.isElement, throwOnDirectAccess);
-
-},{"96e34ae03f5a2631":"7EuwB","cb216452e2171041":"bBUgD"}],"7EuwB":[function(require,module,exports) {
-"use strict";
-module.exports = require("2255125a8e8b1051");
-
-},{"2255125a8e8b1051":"5DsXl"}],"5DsXl":[function(require,module,exports) {
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-(function() {
-    "use strict";
-    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-    // nor polyfill, then a plain number is used for performance.
-    var hasSymbol = typeof Symbol === "function" && Symbol.for;
-    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
-    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
-    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
-    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
-    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
-    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
-    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-    // (unstable) APIs that have been removed. Can we remove the symbols?
-    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
-    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
-    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
-    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
-    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
-    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
-    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
-    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
-    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
-    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
-    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
-    function isValidElementType(type) {
-        return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-        type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-    }
-    function typeOf(object) {
-        if (typeof object === "object" && object !== null) {
-            var $$typeof = object.$$typeof;
-            switch($$typeof){
-                case REACT_ELEMENT_TYPE:
-                    var type = object.type;
-                    switch(type){
-                        case REACT_ASYNC_MODE_TYPE:
-                        case REACT_CONCURRENT_MODE_TYPE:
-                        case REACT_FRAGMENT_TYPE:
-                        case REACT_PROFILER_TYPE:
-                        case REACT_STRICT_MODE_TYPE:
-                        case REACT_SUSPENSE_TYPE:
-                            return type;
-                        default:
-                            var $$typeofType = type && type.$$typeof;
-                            switch($$typeofType){
-                                case REACT_CONTEXT_TYPE:
-                                case REACT_FORWARD_REF_TYPE:
-                                case REACT_LAZY_TYPE:
-                                case REACT_MEMO_TYPE:
-                                case REACT_PROVIDER_TYPE:
-                                    return $$typeofType;
-                                default:
-                                    return $$typeof;
-                            }
-                    }
-                case REACT_PORTAL_TYPE:
-                    return $$typeof;
-            }
-        }
-        return undefined;
-    } // AsyncMode is deprecated along with isAsyncMode
-    var AsyncMode = REACT_ASYNC_MODE_TYPE;
-    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-    var ContextConsumer = REACT_CONTEXT_TYPE;
-    var ContextProvider = REACT_PROVIDER_TYPE;
-    var Element = REACT_ELEMENT_TYPE;
-    var ForwardRef = REACT_FORWARD_REF_TYPE;
-    var Fragment = REACT_FRAGMENT_TYPE;
-    var Lazy = REACT_LAZY_TYPE;
-    var Memo = REACT_MEMO_TYPE;
-    var Portal = REACT_PORTAL_TYPE;
-    var Profiler = REACT_PROFILER_TYPE;
-    var StrictMode = REACT_STRICT_MODE_TYPE;
-    var Suspense = REACT_SUSPENSE_TYPE;
-    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-    function isAsyncMode(object) {
-        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
-        }
-        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-    }
-    function isConcurrentMode(object) {
-        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-    }
-    function isContextConsumer(object) {
-        return typeOf(object) === REACT_CONTEXT_TYPE;
-    }
-    function isContextProvider(object) {
-        return typeOf(object) === REACT_PROVIDER_TYPE;
-    }
-    function isElement(object) {
-        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-    }
-    function isForwardRef(object) {
-        return typeOf(object) === REACT_FORWARD_REF_TYPE;
-    }
-    function isFragment(object) {
-        return typeOf(object) === REACT_FRAGMENT_TYPE;
-    }
-    function isLazy(object) {
-        return typeOf(object) === REACT_LAZY_TYPE;
-    }
-    function isMemo(object) {
-        return typeOf(object) === REACT_MEMO_TYPE;
-    }
-    function isPortal(object) {
-        return typeOf(object) === REACT_PORTAL_TYPE;
-    }
-    function isProfiler(object) {
-        return typeOf(object) === REACT_PROFILER_TYPE;
-    }
-    function isStrictMode(object) {
-        return typeOf(object) === REACT_STRICT_MODE_TYPE;
-    }
-    function isSuspense(object) {
-        return typeOf(object) === REACT_SUSPENSE_TYPE;
-    }
-    exports.AsyncMode = AsyncMode;
-    exports.ConcurrentMode = ConcurrentMode;
-    exports.ContextConsumer = ContextConsumer;
-    exports.ContextProvider = ContextProvider;
-    exports.Element = Element;
-    exports.ForwardRef = ForwardRef;
-    exports.Fragment = Fragment;
-    exports.Lazy = Lazy;
-    exports.Memo = Memo;
-    exports.Portal = Portal;
-    exports.Profiler = Profiler;
-    exports.StrictMode = StrictMode;
-    exports.Suspense = Suspense;
-    exports.isAsyncMode = isAsyncMode;
-    exports.isConcurrentMode = isConcurrentMode;
-    exports.isContextConsumer = isContextConsumer;
-    exports.isContextProvider = isContextProvider;
-    exports.isElement = isElement;
-    exports.isForwardRef = isForwardRef;
-    exports.isFragment = isFragment;
-    exports.isLazy = isLazy;
-    exports.isMemo = isMemo;
-    exports.isPortal = isPortal;
-    exports.isProfiler = isProfiler;
-    exports.isStrictMode = isStrictMode;
-    exports.isSuspense = isSuspense;
-    exports.isValidElementType = isValidElementType;
-    exports.typeOf = typeOf;
-})();
-
-},{}],"bBUgD":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var ReactIs = require("c437388b089702c3");
-var assign = require("c067a60101d8520c");
-var ReactPropTypesSecret = require("74a0f89a70b9f3c2");
-var has = require("18441b11647bc78");
-var checkPropTypes = require("bec3f6ff89f0b072");
-var printWarning = function() {};
-printWarning = function(text) {
-    var message = "Warning: " + text;
-    if (typeof console !== "undefined") console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {}
-};
-function emptyFunctionThatReturnsNull() {
-    return null;
-}
-module.exports = function(isValidElement, throwOnDirectAccess) {
-    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
-    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
-    /**
-   * Returns the iterator method function contained on the iterable object.
-   *
-   * Be sure to invoke the function with the iterable as context:
-   *
-   *     var iteratorFn = getIteratorFn(myIterable);
-   *     if (iteratorFn) {
-   *       var iterator = iteratorFn.call(myIterable);
-   *       ...
-   *     }
-   *
-   * @param {?object} maybeIterable
-   * @return {?function}
-   */ function getIteratorFn(maybeIterable) {
-        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-        if (typeof iteratorFn === "function") return iteratorFn;
-    }
-    /**
-   * Collection of methods that allow declaration and validation of props that are
-   * supplied to React components. Example usage:
-   *
-   *   var Props = require('ReactPropTypes');
-   *   var MyArticle = React.createClass({
-   *     propTypes: {
-   *       // An optional string prop named "description".
-   *       description: Props.string,
-   *
-   *       // A required enum prop named "category".
-   *       category: Props.oneOf(['News','Photos']).isRequired,
-   *
-   *       // A prop named "dialog" that requires an instance of Dialog.
-   *       dialog: Props.instanceOf(Dialog).isRequired
-   *     },
-   *     render: function() { ... }
-   *   });
-   *
-   * A more formal specification of how these methods are used:
-   *
-   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-   *   decl := ReactPropTypes.{type}(.isRequired)?
-   *
-   * Each and every declaration produces a function with the same signature. This
-   * allows the creation of custom validation functions. For example:
-   *
-   *  var MyLink = React.createClass({
-   *    propTypes: {
-   *      // An optional string or URI prop named "href".
-   *      href: function(props, propName, componentName) {
-   *        var propValue = props[propName];
-   *        if (propValue != null && typeof propValue !== 'string' &&
-   *            !(propValue instanceof URI)) {
-   *          return new Error(
-   *            'Expected a string or an URI for ' + propName + ' in ' +
-   *            componentName
-   *          );
-   *        }
-   *      }
-   *    },
-   *    render: function() {...}
-   *  });
-   *
-   * @internal
-   */ var ANONYMOUS = "<<anonymous>>";
-    // Important!
-    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-    var ReactPropTypes = {
-        array: createPrimitiveTypeChecker("array"),
-        bigint: createPrimitiveTypeChecker("bigint"),
-        bool: createPrimitiveTypeChecker("boolean"),
-        func: createPrimitiveTypeChecker("function"),
-        number: createPrimitiveTypeChecker("number"),
-        object: createPrimitiveTypeChecker("object"),
-        string: createPrimitiveTypeChecker("string"),
-        symbol: createPrimitiveTypeChecker("symbol"),
-        any: createAnyTypeChecker(),
-        arrayOf: createArrayOfTypeChecker,
-        element: createElementTypeChecker(),
-        elementType: createElementTypeTypeChecker(),
-        instanceOf: createInstanceTypeChecker,
-        node: createNodeChecker(),
-        objectOf: createObjectOfTypeChecker,
-        oneOf: createEnumTypeChecker,
-        oneOfType: createUnionTypeChecker,
-        shape: createShapeTypeChecker,
-        exact: createStrictShapeTypeChecker
-    };
-    /**
-   * inlined Object.is polyfill to avoid requiring consumers ship their own
-   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-   */ /*eslint-disable no-self-compare*/ function is(x, y) {
-        // SameValue algorithm
-        if (x === y) // Steps 1-5, 7-10
-        // Steps 6.b-6.e: +0 != -0
-        return x !== 0 || 1 / x === 1 / y;
-        else // Step 6.a: NaN == NaN
-        return x !== x && y !== y;
-    }
-    /*eslint-enable no-self-compare*/ /**
-   * We use an Error-like object for backward compatibility as people may call
-   * PropTypes directly and inspect their output. However, we don't use real
-   * Errors anymore. We don't inspect their stack anyway, and creating them
-   * is prohibitively expensive if they are created too often, such as what
-   * happens in oneOfType() for any type before the one that matched.
-   */ function PropTypeError(message, data) {
-        this.message = message;
-        this.data = data && typeof data === "object" ? data : {};
-        this.stack = "";
-    }
-    // Make `instanceof Error` still work for returned errors.
-    PropTypeError.prototype = Error.prototype;
-    function createChainableTypeChecker(validate) {
-        var manualPropTypeCallCache = {};
-        var manualPropTypeWarningCount = 0;
-        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-            componentName = componentName || ANONYMOUS;
-            propFullName = propFullName || propName;
-            if (secret !== ReactPropTypesSecret) {
-                if (throwOnDirectAccess) {
-                    // New behavior only for users of `prop-types` package
-                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
-                    err.name = "Invariant Violation";
-                    throw err;
-                } else if (typeof console !== "undefined") {
-                    // Old behavior for people using React.PropTypes
-                    var cacheKey = componentName + ":" + propName;
-                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
-                    manualPropTypeWarningCount < 3) {
-                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
-                        manualPropTypeCallCache[cacheKey] = true;
-                        manualPropTypeWarningCount++;
-                    }
-                }
-            }
-            if (props[propName] == null) {
-                if (isRequired) {
-                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
-                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
-                }
-                return null;
-            } else return validate(props, propName, componentName, location, propFullName);
-        }
-        var chainedCheckType = checkType.bind(null, false);
-        chainedCheckType.isRequired = checkType.bind(null, true);
-        return chainedCheckType;
-    }
-    function createPrimitiveTypeChecker(expectedType) {
-        function validate(props, propName, componentName, location, propFullName, secret) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== expectedType) {
-                // `propValue` being instance of, say, date/regexp, pass the 'object'
-                // check, but we can offer a more precise error message here rather than
-                // 'of type `object`'.
-                var preciseType = getPreciseType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
-                    expectedType: expectedType
-                });
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createAnyTypeChecker() {
-        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-    }
-    function createArrayOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
-            var propValue = props[propName];
-            if (!Array.isArray(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
-            }
-            for(var i = 0; i < propValue.length; i++){
-                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!isValidElement(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!ReactIs.isValidElementType(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createInstanceTypeChecker(expectedClass) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!(props[propName] instanceof expectedClass)) {
-                var expectedClassName = expectedClass.name || ANONYMOUS;
-                var actualClassName = getClassName(props[propName]);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createEnumTypeChecker(expectedValues) {
-        if (!Array.isArray(expectedValues)) {
-            {
-                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
-                else printWarning("Invalid argument supplied to oneOf, expected an array.");
-            }
-            return emptyFunctionThatReturnsNull;
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            for(var i = 0; i < expectedValues.length; i++){
-                if (is(propValue, expectedValues[i])) return null;
-            }
-            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-                var type = getPreciseType(value);
-                if (type === "symbol") return String(value);
-                return value;
-            });
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createObjectOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
-            for(var key in propValue)if (has(propValue, key)) {
-                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createUnionTypeChecker(arrayOfTypeCheckers) {
-        if (!Array.isArray(arrayOfTypeCheckers)) {
-            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
-            return emptyFunctionThatReturnsNull;
-        }
-        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
-            var checker = arrayOfTypeCheckers[i];
-            if (typeof checker !== "function") {
-                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i + ".");
-                return emptyFunctionThatReturnsNull;
-            }
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            var expectedTypes = [];
-            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
-                var checker = arrayOfTypeCheckers[i];
-                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
-                if (checkerResult == null) return null;
-                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
-            }
-            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createNodeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function invalidValidatorError(componentName, location, propFullName, key, type) {
-        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
-    }
-    function createShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            for(var key in shapeTypes){
-                var checker = shapeTypes[key];
-                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createStrictShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            // We need to check all keys in case some are required but missing from props.
-            var allKeys = assign({}, props[propName], shapeTypes);
-            for(var key in allKeys){
-                var checker = shapeTypes[key];
-                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
-                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function isNode(propValue) {
-        switch(typeof propValue){
-            case "number":
-            case "string":
-            case "undefined":
-                return true;
-            case "boolean":
-                return !propValue;
-            case "object":
-                if (Array.isArray(propValue)) return propValue.every(isNode);
-                if (propValue === null || isValidElement(propValue)) return true;
-                var iteratorFn = getIteratorFn(propValue);
-                if (iteratorFn) {
-                    var iterator = iteratorFn.call(propValue);
-                    var step;
-                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
-                        if (!isNode(step.value)) return false;
-                    }
-                    else // Iterator will provide entry [k,v] tuples rather than values.
-                    while(!(step = iterator.next()).done){
-                        var entry = step.value;
-                        if (entry) {
-                            if (!isNode(entry[1])) return false;
-                        }
-                    }
-                } else return false;
-                return true;
-            default:
-                return false;
-        }
-    }
-    function isSymbol(propType, propValue) {
-        // Native Symbol.
-        if (propType === "symbol") return true;
-        // falsy value can't be a Symbol
-        if (!propValue) return false;
-        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-        if (propValue["@@toStringTag"] === "Symbol") return true;
-        // Fallback for non-spec compliant Symbols which are polyfilled.
-        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
-        return false;
-    }
-    // Equivalent of `typeof` but with special handling for array and regexp.
-    function getPropType(propValue) {
-        var propType = typeof propValue;
-        if (Array.isArray(propValue)) return "array";
-        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
-        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-        // passes PropTypes.object.
-        return "object";
-        if (isSymbol(propType, propValue)) return "symbol";
-        return propType;
-    }
-    // This handles more types than `getPropType`. Only used for error messages.
-    // See `createPrimitiveTypeChecker`.
-    function getPreciseType(propValue) {
-        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
-        var propType = getPropType(propValue);
-        if (propType === "object") {
-            if (propValue instanceof Date) return "date";
-            else if (propValue instanceof RegExp) return "regexp";
-        }
-        return propType;
-    }
-    // Returns a string that is postfixed to a warning about an invalid type.
-    // For example, "undefined" or "of type array"
-    function getPostfixForTypeWarning(value) {
-        var type = getPreciseType(value);
-        switch(type){
-            case "array":
-            case "object":
-                return "an " + type;
-            case "boolean":
-            case "date":
-            case "regexp":
-                return "a " + type;
-            default:
-                return type;
-        }
-    }
-    // Returns class name of the object, if any.
-    function getClassName(propValue) {
-        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
-        return propValue.constructor.name;
-    }
-    ReactPropTypes.checkPropTypes = checkPropTypes;
-    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-    ReactPropTypes.PropTypes = ReactPropTypes;
-    return ReactPropTypes;
-};
-
-},{"c437388b089702c3":"7EuwB","c067a60101d8520c":"7OXxh","74a0f89a70b9f3c2":"jZTZJ","18441b11647bc78":"fqKuf","bec3f6ff89f0b072":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/ "use strict";
-/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-function toObject(val) {
-    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
-    return Object(val);
-}
-function shouldUseNative() {
-    try {
-        if (!Object.assign) return false;
-        // Detect buggy property enumeration order in older V8 versions.
-        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
-        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
-        test1[5] = "de";
-        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
-        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test2 = {};
-        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
-        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
-            return test2[n];
-        });
-        if (order2.join("") !== "0123456789") return false;
-        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test3 = {};
-        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
-            test3[letter] = letter;
-        });
-        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
-        return true;
-    } catch (err) {
-        // We don't expect any of the above to throw, but better to be safe.
-        return false;
-    }
-}
-module.exports = shouldUseNative() ? Object.assign : function(target, source) {
-    var from;
-    var to = toObject(target);
-    var symbols;
-    for(var s = 1; s < arguments.length; s++){
-        from = Object(arguments[s]);
-        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
-        if (getOwnPropertySymbols) {
-            symbols = getOwnPropertySymbols(from);
-            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
-        }
-    }
-    return to;
-};
-
-},{}],"jZTZJ":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
-module.exports = ReactPropTypesSecret;
-
-},{}],"fqKuf":[function(require,module,exports) {
-module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
-
-},{}],"5VwyJ":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-var printWarning = function() {};
-var ReactPropTypesSecret = require("24ba1e58d167a82c");
-var loggedTypeFailures = {};
-var has = require("898bc82f39d83f7c");
-printWarning = function(text) {
-    var message = "Warning: " + text;
-    if (typeof console !== "undefined") console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {}
-};
-/**
- * Assert that the values match with the type specs.
- * Error messages are memorized and will only be shown once.
- *
- * @param {object} typeSpecs Map of name to a ReactPropType
- * @param {object} values Runtime values that need to be type-checked
- * @param {string} location e.g. "prop", "context", "child context"
- * @param {string} componentName Name of the component for error messages.
- * @param {?Function} getStack Returns the component stack.
- * @private
- */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
-        var error;
-        // Prop type validation may throw. In case they do, we don't want to
-        // fail the render phase where it didn't fail before. So we log it.
-        // After these have been cleaned up, we'll let them throw.
-        try {
-            // This is intentionally an invariant that gets caught. It's the same
-            // behavior as without this statement except with a better message.
-            if (typeof typeSpecs[typeSpecName] !== "function") {
-                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
-                err.name = "Invariant Violation";
-                throw err;
-            }
-            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-        } catch (ex) {
-            error = ex;
-        }
-        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
-        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-            // Only monitor this failure once because there tends to be a lot of the
-            // same error.
-            loggedTypeFailures[error.message] = true;
-            var stack = getStack ? getStack() : "";
-            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
-        }
-    }
-}
-/**
- * Resets warning cache when testing.
- *
- * @private
- */ checkPropTypes.resetWarningCache = function() {
-    loggedTypeFailures = {};
-};
-module.exports = checkPropTypes;
-
-},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}],"12ePA":[function(require,module,exports) {
-"use strict";
-function _interopDefault(ex) {
-    return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
-}
-var React = require("85d8b04033ce6109");
-var React__default = _interopDefault(React);
-function _defineProperty(obj, key, value) {
-    if (key in obj) Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-    });
-    else obj[key] = value;
-    return obj;
-}
-function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    subClass.__proto__ = superClass;
-}
-var canUseDOM = !!(typeof window !== "undefined" && window.document && window.document.createElement);
-function withSideEffect(reducePropsToState, handleStateChangeOnClient, mapStateOnServer) {
-    if (typeof reducePropsToState !== "function") throw new Error("Expected reducePropsToState to be a function.");
-    if (typeof handleStateChangeOnClient !== "function") throw new Error("Expected handleStateChangeOnClient to be a function.");
-    if (typeof mapStateOnServer !== "undefined" && typeof mapStateOnServer !== "function") throw new Error("Expected mapStateOnServer to either be undefined or a function.");
-    function getDisplayName(WrappedComponent) {
-        return WrappedComponent.displayName || WrappedComponent.name || "Component";
-    }
-    return function wrap(WrappedComponent) {
-        if (typeof WrappedComponent !== "function") throw new Error("Expected WrappedComponent to be a React component.");
-        var mountedInstances = [];
-        var state;
-        function emitChange() {
-            state = reducePropsToState(mountedInstances.map(function(instance) {
-                return instance.props;
-            }));
-            if (SideEffect.canUseDOM) handleStateChangeOnClient(state);
-            else if (mapStateOnServer) state = mapStateOnServer(state);
-        }
-        var SideEffect = /*#__PURE__*/ function(_PureComponent) {
-            _inheritsLoose(SideEffect, _PureComponent);
-            function SideEffect() {
-                return _PureComponent.apply(this, arguments) || this;
-            }
-            // Try to use displayName of wrapped component
-            // Expose canUseDOM so tests can monkeypatch it
-            SideEffect.peek = function peek() {
-                return state;
-            };
-            SideEffect.rewind = function rewind() {
-                if (SideEffect.canUseDOM) throw new Error("You may only call rewind() on the server. Call peek() to read the current state.");
-                var recordedState = state;
-                state = undefined;
-                mountedInstances = [];
-                return recordedState;
-            };
-            var _proto = SideEffect.prototype;
-            _proto.UNSAFE_componentWillMount = function UNSAFE_componentWillMount() {
-                mountedInstances.push(this);
-                emitChange();
-            };
-            _proto.componentDidUpdate = function componentDidUpdate() {
-                emitChange();
-            };
-            _proto.componentWillUnmount = function componentWillUnmount() {
-                var index = mountedInstances.indexOf(this);
-                mountedInstances.splice(index, 1);
-                emitChange();
-            };
-            _proto.render = function render() {
-                return React__default.createElement(WrappedComponent, this.props);
-            };
-            return SideEffect;
-        }(React.PureComponent);
-        _defineProperty(SideEffect, "displayName", "SideEffect(" + getDisplayName(WrappedComponent) + ")");
-        _defineProperty(SideEffect, "canUseDOM", canUseDOM);
-        return SideEffect;
-    };
-}
-module.exports = withSideEffect;
-
-},{"85d8b04033ce6109":"21dqq"}],"isHbY":[function(require,module,exports) {
-/* global Map:readonly, Set:readonly, ArrayBuffer:readonly */ var hasElementType = typeof Element !== "undefined";
-var hasMap = typeof Map === "function";
-var hasSet = typeof Set === "function";
-var hasArrayBuffer = typeof ArrayBuffer === "function" && !!ArrayBuffer.isView;
-// Note: We **don't** need `envHasBigInt64Array` in fde es6/index.js
-function equal(a, b) {
-    // START: fast-deep-equal es6/index.js 3.1.3
-    if (a === b) return true;
-    if (a && b && typeof a == "object" && typeof b == "object") {
-        if (a.constructor !== b.constructor) return false;
-        var length, i, keys;
-        if (Array.isArray(a)) {
-            length = a.length;
-            if (length != b.length) return false;
-            for(i = length; i-- !== 0;)if (!equal(a[i], b[i])) return false;
-            return true;
-        }
-        // START: Modifications:
-        // 1. Extra `has<Type> &&` helpers in initial condition allow es6 code
-        //    to co-exist with es5.
-        // 2. Replace `for of` with es5 compliant iteration using `for`.
-        //    Basically, take:
-        //
-        //    ```js
-        //    for (i of a.entries())
-        //      if (!b.has(i[0])) return false;
-        //    ```
-        //
-        //    ... and convert to:
-        //
-        //    ```js
-        //    it = a.entries();
-        //    while (!(i = it.next()).done)
-        //      if (!b.has(i.value[0])) return false;
-        //    ```
-        //
-        //    **Note**: `i` access switches to `i.value`.
-        var it;
-        if (hasMap && a instanceof Map && b instanceof Map) {
-            if (a.size !== b.size) return false;
-            it = a.entries();
-            while(!(i = it.next()).done)if (!b.has(i.value[0])) return false;
-            it = a.entries();
-            while(!(i = it.next()).done)if (!equal(i.value[1], b.get(i.value[0]))) return false;
-            return true;
-        }
-        if (hasSet && a instanceof Set && b instanceof Set) {
-            if (a.size !== b.size) return false;
-            it = a.entries();
-            while(!(i = it.next()).done)if (!b.has(i.value[0])) return false;
-            return true;
-        }
-        // END: Modifications
-        if (hasArrayBuffer && ArrayBuffer.isView(a) && ArrayBuffer.isView(b)) {
-            length = a.length;
-            if (length != b.length) return false;
-            for(i = length; i-- !== 0;)if (a[i] !== b[i]) return false;
-            return true;
-        }
-        if (a.constructor === RegExp) return a.source === b.source && a.flags === b.flags;
-        // START: Modifications:
-        // Apply guards for `Object.create(null)` handling. See:
-        // - https://github.com/FormidableLabs/react-fast-compare/issues/64
-        // - https://github.com/epoberezkin/fast-deep-equal/issues/49
-        if (a.valueOf !== Object.prototype.valueOf && typeof a.valueOf === "function" && typeof b.valueOf === "function") return a.valueOf() === b.valueOf();
-        if (a.toString !== Object.prototype.toString && typeof a.toString === "function" && typeof b.toString === "function") return a.toString() === b.toString();
-        // END: Modifications
-        keys = Object.keys(a);
-        length = keys.length;
-        if (length !== Object.keys(b).length) return false;
-        for(i = length; i-- !== 0;)if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
-        // END: fast-deep-equal
-        // START: react-fast-compare
-        // custom handling for DOM elements
-        if (hasElementType && a instanceof Element) return false;
-        // custom handling for React/Preact
-        for(i = length; i-- !== 0;){
-            if ((keys[i] === "_owner" || keys[i] === "__v" || keys[i] === "__o") && a.$$typeof) continue;
-            // all other properties should be traversed as usual
-            if (!equal(a[keys[i]], b[keys[i]])) return false;
-        }
-        // END: react-fast-compare
-        // START: fast-deep-equal
-        return true;
-    }
-    return a !== a && b !== b;
-}
-// end fast-deep-equal
-module.exports = function isEqual(a, b) {
-    try {
-        return equal(a, b);
-    } catch (error) {
-        if ((error.message || "").match(/stack|recursion/i)) {
-            // warn on circular references, don't crash
-            // browsers give this different errors name and messages:
-            // chrome/safari: "RangeError", "Maximum call stack size exceeded"
-            // firefox: "InternalError", too much recursion"
-            // edge: "Error", "Out of stack space"
-            console.warn("react-fast-compare cannot handle circular refs");
-            return false;
-        }
-        // some other error. we should definitely know about these
-        throw error;
-    }
-};
-
-},{}],"8XQUt":[function(require,module,exports) {
-module.exports = require("e6f64ad6290e3fb5").getBundleURL("byUka") + "Red-Heart.8303c525.svg" + "?" + Date.now();
-
-},{"e6f64ad6290e3fb5":"kPWUg"}],"OhlYY":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$713b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$713b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "NavBar", ()=>NavBar);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _userMenu = require("../user-menu/user-menu");
-var _genreDropdown = require("../genre-dropdown/genre-dropdown");
-var _react = require("react");
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const NavBar = ({ user, onLogout })=>{
-    _s();
-    const [open, setOpen] = (0, _react.useState)(false);
-    const [openDropdown, setOpenDropdown] = (0, _react.useState)(false);
-    let menuRef = (0, _react.useRef)(null);
-    const location = (0, _reactRouterDom.useLocation)();
-    const lastHash = (0, _react.useRef)("");
-    (0, _react.useEffect)(()=>{
-        const handleClickOutside = (event)=>{
-            if (menuRef.current && !menuRef.current.contains(event.target)) setOpen(false);
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return ()=>{
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    });
-    (0, _react.useEffect)(()=>{
-        if (location.hash) lastHash.current = location.hash.slice(1);
-        if (lastHash.current && document.getElementById(lastHash.current)) setTimeout(()=>{
-            document.getElementById(lastHash.current)?.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-            lastHash.current = "";
-        }, 100);
-    }, [
-        location
-    ]);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "nav-bar",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                    to: `/`,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "logo",
-                        children: "PopcornPal"
-                    }, void 0, false, {
-                        fileName: "src/components/navigation/nav-bar.jsx",
-                        lineNumber: 47,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 46,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "menu-bar",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: `/#movies`,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "menu-item",
-                                children: "Movies"
-                            }, void 0, false, {
-                                fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 52,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 51,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "genre-cursor",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    className: "menu-item genre-menu-item",
-                                    onMouseEnter: ()=>setOpenDropdown(true),
-                                    children: "Genres"
-                                }, void 0, false, {
-                                    fileName: "src/components/navigation/nav-bar.jsx",
-                                    lineNumber: 56,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: `open-dropdown ${openDropdown ? "active" : "inactive"}`,
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        onMouseLeave: ()=>setOpenDropdown(false),
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreDropdown.GenreDropdown), {}, void 0, false, {
-                                            fileName: "src/components/navigation/nav-bar.jsx",
-                                            lineNumber: 68,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "src/components/navigation/nav-bar.jsx",
-                                        lineNumber: 67,
-                                        columnNumber: 15
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/components/navigation/nav-bar.jsx",
-                                    lineNumber: 62,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 55,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: `/users/${user}`,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "menu-item",
-                                children: "My List"
-                            }, void 0, false, {
-                                fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 74,
-                                columnNumber: 11
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 73,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 50,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    ref: menuRef,
-                    className: "right-logos",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "search-btn",
-                            src: require("b9710e7656528221")
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 78,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            onClick: ()=>setOpen(!open),
-                            className: "user-btn",
-                            src: require("3de8cf43c7f5ba07")
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 82,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: `open-profile ${open ? "active" : "inactive"}`,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userMenu.UserMenu), {
-                                user: user,
-                                onLogout: onLogout
-                            }, void 0, false, {
-                                fileName: "src/components/navigation/nav-bar.jsx",
-                                lineNumber: 88,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/navigation/nav-bar.jsx",
-                            lineNumber: 87,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/navigation/nav-bar.jsx",
-                    lineNumber: 77,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/navigation/nav-bar.jsx",
-            lineNumber: 45,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/navigation/nav-bar.jsx",
-        lineNumber: 44,
-        columnNumber: 5
-    }, undefined);
-};
-_s(NavBar, "MuY6egYedpDjDYBKfFOdUnMJHe8=", false, function() {
-    return [
-        (0, _reactRouterDom.useLocation)
-    ];
-});
-_c = NavBar;
-var _c;
-$RefreshReg$(_c, "NavBar");
-
-  $parcel$ReactRefreshHelpers$713b.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","../user-menu/user-menu":"gwWGx","../genre-dropdown/genre-dropdown":"kk4Bu","react":"21dqq","react-router-dom":"9xmpe","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"gwWGx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$99d0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$99d0.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "UserMenu", ()=>UserMenu);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-const UserMenu = ({ user, onLogout })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "user-menu-dropdown",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-            className: "dropdown-list",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "my-account",
-                    children: "My Account"
-                }, void 0, false, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 9,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "hero-duration",
-                    children: user
-                }, void 0, false, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 10,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "line menu-line"
-                }, void 0, false, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 11,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                    to: `/users/${user}`,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                        className: "user-menu-item",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "menu-icon",
-                                src: require("77b00898d8739b3")
-                            }, void 0, false, {
-                                fileName: "src/components/user-menu/user-menu.jsx",
-                                lineNumber: 14,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: "Settings"
-                            }, void 0, false, {
-                                fileName: "src/components/user-menu/user-menu.jsx",
-                                lineNumber: 18,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/user-menu/user-menu.jsx",
-                        lineNumber: 13,
-                        columnNumber: 9
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 12,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                    to: `/users/${user}`,
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                        className: "user-menu-item",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "menu-icon",
-                                src: require("d9100586bcdbc9d0")
-                            }, void 0, false, {
-                                fileName: "src/components/user-menu/user-menu.jsx",
-                                lineNumber: 23,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: "My Favorites"
-                            }, void 0, false, {
-                                fileName: "src/components/user-menu/user-menu.jsx",
-                                lineNumber: 24,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/user-menu/user-menu.jsx",
-                        lineNumber: 22,
-                        columnNumber: 9
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 21,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                    className: "user-menu-item",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "menu-icon sign-out-icon",
-                            src: require("7059d21f10f10ec")
-                        }, void 0, false, {
-                            fileName: "src/components/user-menu/user-menu.jsx",
-                            lineNumber: 28,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            onClick: onLogout,
-                            children: "Sign Out"
-                        }, void 0, false, {
-                            fileName: "src/components/user-menu/user-menu.jsx",
-                            lineNumber: 32,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/user-menu/user-menu.jsx",
-                    lineNumber: 27,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/user-menu/user-menu.jsx",
-            lineNumber: 8,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/user-menu/user-menu.jsx",
-        lineNumber: 7,
-        columnNumber: 5
-    }, undefined);
-};
-_c = UserMenu;
-var _c;
-$RefreshReg$(_c, "UserMenu");
-
-  $parcel$ReactRefreshHelpers$99d0.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","77b00898d8739b3":"cu8AD","d9100586bcdbc9d0":"6J7u4","7059d21f10f10ec":"lg8jF","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"cu8AD":[function(require,module,exports) {
-module.exports = require("b2cb95b33f7f782e").getBundleURL("byUka") + "Settings.cd3021b9.svg" + "?" + Date.now();
-
-},{"b2cb95b33f7f782e":"kPWUg"}],"lg8jF":[function(require,module,exports) {
-module.exports = require("57dcfe453f96b8f").getBundleURL("byUka") + "Sign-Out.042d0a32.svg" + "?" + Date.now();
-
-},{"57dcfe453f96b8f":"kPWUg"}],"kk4Bu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8477 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8477.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "GenreDropdown", ()=>GenreDropdown);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _genreItem = require("../genre-item/genre-item");
-const GenreDropdown = ()=>{
-    const genres = [
-        "Horror",
-        "Drama",
-        "Action",
-        "Mystery",
-        "Fantasy",
-        "Documentary"
-    ];
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "genre-dropdown",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-            className: "genre-dropdown-list",
-            children: genres.map((genre)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreItem.GenreItem), {
-                        genre: genre
-                    }, void 0, false, {
-                        fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
-                        lineNumber: 14,
-                        columnNumber: 11
-                    }, undefined)
-                }, genre, false, {
-                    fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
-                    lineNumber: 13,
-                    columnNumber: 11
-                }, undefined))
-        }, void 0, false, {
-            fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
-            lineNumber: 11,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
-        lineNumber: 10,
-        columnNumber: 5
-    }, undefined);
-};
-_c = GenreDropdown;
-var _c;
-$RefreshReg$(_c, "GenreDropdown");
-
-  $parcel$ReactRefreshHelpers$8477.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../genre-item/genre-item":"fq3rm","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"fq3rm":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d1cf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d1cf.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "GenreItem", ()=>GenreItem);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const GenreItem = ({ genre })=>{
-    _s();
-    const [isHovered, setIsHovered] = (0, _react.useState)(false);
-    const imagesList = {
-        Horror: {
-            default: require("c9ae5286fe39467c"),
-            hovered: require("5d5d8d4ad8a616d0")
-        },
-        Drama: {
-            default: require("46bb160c0148637"),
-            hovered: require("3e60e9fbc5e172f1")
-        },
-        Action: {
-            default: require("8ee24e7836c79b35"),
-            hovered: require("9dfc7cf92b66f4d4")
-        },
-        Mystery: {
-            default: require("6e62807babf075da"),
-            hovered: require("3fc3bdee6baea387")
-        },
-        Fantasy: {
-            default: require("a659001f8f493d8a"),
-            hovered: require("7148938fa9ad4774")
-        },
-        Documentary: {
-            default: require("be4866b90acbec53"),
-            hovered: require("a648f7c60334df30")
-        }
-    };
-    const getImageSrc = ()=>{
-        const images = imagesList[genre];
-        return isHovered ? images.default : images.hovered;
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-        className: "menu-font-size genre-dropdown-item",
-        onMouseEnter: ()=>setIsHovered(true),
-        onMouseLeave: ()=>setIsHovered(false),
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "menu-icon",
-                src: getImageSrc()
-            }, void 0, false, {
-                fileName: "src/components/genre-item/genre-item.jsx",
-                lineNumber: 45,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: genre
-            }, void 0, false, {
-                fileName: "src/components/genre-item/genre-item.jsx",
-                lineNumber: 46,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/genre-item/genre-item.jsx",
-        lineNumber: 40,
-        columnNumber: 5
-    }, undefined);
-};
-_s(GenreItem, "FPQn8a98tPjpohC7NUYORQR8GJE=");
-_c = GenreItem;
-var _c;
-$RefreshReg$(_c, "GenreItem");
-
-  $parcel$ReactRefreshHelpers$d1cf.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","c9ae5286fe39467c":"4h0ZY","5d5d8d4ad8a616d0":"jNNo2","46bb160c0148637":"ctxcz","3e60e9fbc5e172f1":"k01pP","8ee24e7836c79b35":"d9kUY","9dfc7cf92b66f4d4":"1vps3","6e62807babf075da":"3iEmy","3fc3bdee6baea387":"hgyGN","a659001f8f493d8a":"ao2az","7148938fa9ad4774":"fH1rI","be4866b90acbec53":"b1vpG","a648f7c60334df30":"hk8qG","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"4h0ZY":[function(require,module,exports) {
-module.exports = require("64f92e0e017fe782").getBundleURL("byUka") + "Yellow-Horror-Genre.0b8b0d07.png" + "?" + Date.now();
-
-},{"64f92e0e017fe782":"kPWUg"}],"jNNo2":[function(require,module,exports) {
-module.exports = require("b5a9cd11c7a96fbc").getBundleURL("byUka") + "Horror-Genre.d3464b23.png" + "?" + Date.now();
-
-},{"b5a9cd11c7a96fbc":"kPWUg"}],"ctxcz":[function(require,module,exports) {
-module.exports = require("f959ce102dfe156d").getBundleURL("byUka") + "Yellow-Drama-Genre.9504496f.png" + "?" + Date.now();
-
-},{"f959ce102dfe156d":"kPWUg"}],"k01pP":[function(require,module,exports) {
-module.exports = require("ad562e21484b9061").getBundleURL("byUka") + "Drama-Genre.c995014a.png" + "?" + Date.now();
-
-},{"ad562e21484b9061":"kPWUg"}],"d9kUY":[function(require,module,exports) {
-module.exports = require("cdb7913a4f65632b").getBundleURL("byUka") + "Yellow-Action-Genre.7632234c.png" + "?" + Date.now();
-
-},{"cdb7913a4f65632b":"kPWUg"}],"1vps3":[function(require,module,exports) {
-module.exports = require("ff6f004d84531dc3").getBundleURL("byUka") + "Action-Genre.9cbbcf63.png" + "?" + Date.now();
-
-},{"ff6f004d84531dc3":"kPWUg"}],"3iEmy":[function(require,module,exports) {
-module.exports = require("8a513cbd9361b009").getBundleURL("byUka") + "Yellow-Mystery-Genre.d0d130f8.png" + "?" + Date.now();
-
-},{"8a513cbd9361b009":"kPWUg"}],"hgyGN":[function(require,module,exports) {
-module.exports = require("eea9bd2b95631076").getBundleURL("byUka") + "Mystery-Genre.ba849ad5.png" + "?" + Date.now();
-
-},{"eea9bd2b95631076":"kPWUg"}],"ao2az":[function(require,module,exports) {
-module.exports = require("d8c48e982f41e8dd").getBundleURL("byUka") + "Yellow-Fantasy-Genre.ffc57b15.png" + "?" + Date.now();
-
-},{"d8c48e982f41e8dd":"kPWUg"}],"fH1rI":[function(require,module,exports) {
-module.exports = require("97a5482da5e3bc3f").getBundleURL("byUka") + "Fantasy-Genre.e9a31879.png" + "?" + Date.now();
-
-},{"97a5482da5e3bc3f":"kPWUg"}],"b1vpG":[function(require,module,exports) {
-module.exports = require("c20ece203a1b81c").getBundleURL("byUka") + "Yellow-Documentary-Genre.4066c89c.png" + "?" + Date.now();
-
-},{"c20ece203a1b81c":"kPWUg"}],"hk8qG":[function(require,module,exports) {
-module.exports = require("addc8d36fee63fa3").getBundleURL("byUka") + "Documentary-Genre.6a989893.png" + "?" + Date.now();
-
-},{"addc8d36fee63fa3":"kPWUg"}],"jbnMx":[function(require,module,exports) {
-module.exports = require("5578768f349e7056").getBundleURL("byUka") + "Search.f4d21c8a.svg" + "?" + Date.now();
-
-},{"5578768f349e7056":"kPWUg"}],"4Az2l":[function(require,module,exports) {
-module.exports = require("d1553abe5a7be242").getBundleURL("byUka") + "User.aae1e741.svg" + "?" + Date.now();
-
-},{"d1553abe5a7be242":"kPWUg"}],"emPqA":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$831a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$831a.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Hero", ()=>Hero);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-const Hero = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "hero-container",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                className: "hero-img",
-                src: require("9472117a191cca85")
-            }, void 0, false, {
-                fileName: "src/components/hero/hero.jsx",
-                lineNumber: 6,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "hero-text",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "left-hero",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "hero-duration",
-                                children: "Duration: 3h12m \u2022 Action"
-                            }, void 0, false, {
-                                fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 9,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                className: "hero-title",
-                                children: "Avatar: The Way of Water"
-                            }, void 0, false, {
-                                fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 10,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "hero-desc",
-                                children: "On the lush alien world of Pandora live the Na'vi, beings who appear primitive but are highly evolved."
-                            }, void 0, false, {
-                                fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 11,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "hero-btns",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                        to: `/movies/66a99600da099ad62d373c3f`,
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                            className: "read-more-btn",
-                                            children: "Read More"
-                                        }, void 0, false, {
-                                            fileName: "src/components/hero/hero.jsx",
-                                            lineNumber: 17,
-                                            columnNumber: 15
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 16,
-                                        columnNumber: 13
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "white-heart",
-                                        src: require("e72d4ece8a7d5e35")
-                                    }, void 0, false, {
-                                        fileName: "src/components/hero/hero.jsx",
-                                        lineNumber: 19,
-                                        columnNumber: 13
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 15,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/hero/hero.jsx",
-                        lineNumber: 8,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "right-hero",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "featured-star",
-                                src: require("aac761b4f4a25e61")
-                            }, void 0, false, {
-                                fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 26,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: "featured"
-                            }, void 0, false, {
-                                fileName: "src/components/hero/hero.jsx",
-                                lineNumber: 30,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/hero/hero.jsx",
-                        lineNumber: 25,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/hero/hero.jsx",
-                lineNumber: 7,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/hero/hero.jsx",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Hero;
-var _c;
-$RefreshReg$(_c, "Hero");
-
-  $parcel$ReactRefreshHelpers$831a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","9472117a191cca85":"5CB4l","e72d4ece8a7d5e35":"6J7u4","aac761b4f4a25e61":"2SwY8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"5CB4l":[function(require,module,exports) {
-module.exports = require("1569dc95ab2e052e").getBundleURL("byUka") + "avatar-bkg.4191252d.jpg" + "?" + Date.now();
-
-},{"1569dc95ab2e052e":"kPWUg"}],"2SwY8":[function(require,module,exports) {
-module.exports = require("a16688772f530b67").getBundleURL("byUka") + "Star.00b9023a.svg" + "?" + Date.now();
-
-},{"a16688772f530b67":"kPWUg"}],"2Vpqn":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d750 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d750.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieGrid", ()=>MovieGrid);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _movieCard = require("../movie-card/movie-card");
-var _s = $RefreshSig$();
-const MovieGrid = ({ movies, genreClick, genreReset })=>{
-    _s();
-    const [activeGenre, setActiveGenre] = (0, _react.useState)(null);
-    const genres = [
-        "Horror",
-        "Drama",
-        "Action",
-        "Mystery",
-        "Fantasy",
-        "Documentary"
-    ];
-    const handleGenreClick = (genrename)=>{
-        if (activeGenre === genrename) {
-            setActiveGenre(null);
-            genreReset();
-        } else {
-            setActiveGenre(genrename);
-            genreClick(genrename);
-        }
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        id: "movies",
-        className: "movie-heading-container",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Movies"
-            }, void 0, false, {
-                fileName: "src/components/movie-grid/movie-grid.jsx",
-                lineNumber: 20,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "line"
-            }, void 0, false, {
-                fileName: "src/components/movie-grid/movie-grid.jsx",
-                lineNumber: 21,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "genres",
-                children: genres.map((genre)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        onClick: ()=>handleGenreClick(genre),
-                        className: `bubble genre-button ${activeGenre === genre ? "active" : "not-active"}`,
-                        children: genre
-                    }, genre, false, {
-                        fileName: "src/components/movie-grid/movie-grid.jsx",
-                        lineNumber: 24,
-                        columnNumber: 11
-                    }, undefined))
-            }, void 0, false, {
-                fileName: "src/components/movie-grid/movie-grid.jsx",
-                lineNumber: 22,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/movie-grid/movie-grid.jsx",
-        lineNumber: 19,
-        columnNumber: 5
-    }, undefined);
-};
-_s(MovieGrid, "cyd8/vje5zPIHFKExErQWBKUs3E=");
-_c = MovieGrid;
-var _c;
-$RefreshReg$(_c, "MovieGrid");
-
-  $parcel$ReactRefreshHelpers$d750.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react":"21dqq","../movie-card/movie-card":"bwuIu"}],"gexPl":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$3555 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$3555.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginNavBar", ()=>LoginNavBar);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const LoginNavBar = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "nav-bar",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "logo",
-                children: "PopcornPal"
-            }, void 0, false, {
-                fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
-                lineNumber: 5,
-                columnNumber: 9
-            }, undefined)
-        }, void 0, false, {
-            fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
-            lineNumber: 4,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
-};
-_c = LoginNavBar;
-var _c;
-$RefreshReg$(_c, "LoginNavBar");
-
-  $parcel$ReactRefreshHelpers$3555.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"9YtA0":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$9fee.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginView", ()=>LoginView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const LoginView = ({ onLoggedIn })=>{
-    _s();
-    const [username, setUsername] = (0, _react.useState)("");
-    const [password, setPassword] = (0, _react.useState)("");
-    const handleSubmit = (event)=>{
-        // prevents the default behavior of the page reloading when the form is submitted
-        event.preventDefault();
-        const data = {
-            Username: username,
-            Password: password
-        };
-        fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        }).then((response)=>response.json()).then((data)=>{
-            if (data.user) {
-                localStorage.setItem("user", JSON.stringify(data.user));
-                localStorage.setItem("token", data.token);
-                onLoggedIn(data.user, data.token);
-            } else alert("Invalid username or password");
-        }).catch((e)=>{
-            alert("Something went wrong");
-        });
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "login-container",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-            onSubmit: handleSubmit,
-            className: "login-form-flexbox",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                    className: "login-heading",
-                    children: "Log In"
-                }, void 0, false, {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 41,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "form-labels-container",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            className: "form-label-box",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: "Username"
-                                }, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 44,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    type: "text",
-                                    value: username,
-                                    onChange: (e)=>setUsername(e.target.value),
-                                    placeholder: "Enter your username",
-                                    className: "input-box",
-                                    required: true
-                                }, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 45,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 43,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            className: "form-label-box",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: "Password"
-                                }, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 55,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    value: password,
-                                    onChange: (e)=>setPassword(e.target.value),
-                                    placeholder: "Enter your password",
-                                    className: "input-box password-input",
-                                    type: "password",
-                                    required: true
-                                }, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 56,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 54,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 42,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "login-button-container",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "login-button",
-                            type: "submit",
-                            children: "Login"
-                        }, void 0, false, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 67,
-                            columnNumber: 9
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "login-signup-redirect",
-                            children: [
-                                "Don't have an account? ",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    className: "redirect-link",
-                                    to: `/signup`,
-                                    children: "Sign up"
-                                }, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 70,
-                                    columnNumber: 69
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 70,
-                            columnNumber: 9
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 66,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 40,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 39,
-        columnNumber: 5
-    }, undefined);
-};
-_s(LoginView, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
-_c = LoginView;
-var _c;
-$RefreshReg$(_c, "LoginView");
-
-  $parcel$ReactRefreshHelpers$9fee.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"4OGiN":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$73d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$73d1.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SignupView", ()=>SignupView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _loginView = require("../login-view/login-view");
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const SignupView = ()=>{
-    _s();
-    const [username, setUsername] = (0, _react.useState)("");
-    const [password, setPassword] = (0, _react.useState)("");
-    const [email, setEmail] = (0, _react.useState)("");
-    const [birthday, setBirthday] = (0, _react.useState)("");
-    const handleSubmit = (event)=>{
-        event.preventDefault();
-        const data = {
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthday: birthday
-        };
-        fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/users", {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then((response)=>{
-            if (response.ok) {
-                alert("Signup successful");
-                window.location.href = "/login";
-            } else alert("Signup failed");
-        });
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "login-container",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-            onSubmit: handleSubmit,
-            className: "login-form-flexbox",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                    className: "login-heading",
-                    children: "Sign Up"
-                }, void 0, false, {
-                    fileName: "src/components/signup-view/signup-view.jsx",
-                    lineNumber: 41,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "form-labels-container",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            className: "form-label-box",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: "Username"
-                                }, void 0, false, {
-                                    fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 44,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    className: "input-box",
-                                    type: "text",
-                                    value: username,
-                                    onChange: (e)=>setUsername(e.target.value),
-                                    required: true,
-                                    minLength: "3"
-                                }, void 0, false, {
-                                    fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 45,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 43,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            className: "form-label-box",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: "Password"
-                                }, void 0, false, {
-                                    fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 55,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    className: "input-box password-input",
-                                    type: "password",
-                                    value: password,
-                                    onChange: (e)=>setPassword(e.target.value),
-                                    required: true
-                                }, void 0, false, {
-                                    fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 56,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 54,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            className: "form-label-box",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: "Email"
-                                }, void 0, false, {
-                                    fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 65,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    className: "input-box",
-                                    type: "email",
-                                    value: email,
-                                    onChange: (e)=>setEmail(e.target.value),
-                                    required: true
-                                }, void 0, false, {
-                                    fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 66,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 64,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            className: "form-label-box",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: "Birthday"
-                                }, void 0, false, {
-                                    fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 75,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    className: "input-box birthday-input",
-                                    type: "date",
-                                    value: birthday,
-                                    onChange: (e)=>setBirthday(e.target.value),
-                                    required: true
-                                }, void 0, false, {
-                                    fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 76,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 74,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/signup-view/signup-view.jsx",
-                    lineNumber: 42,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "login-button-container",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "login-button",
-                            type: "submit",
-                            children: "Sign Up"
-                        }, void 0, false, {
-                            fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 86,
-                            columnNumber: 9
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "login-signup-redirect",
-                            children: [
-                                "Already have an account? ",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    className: "redirect-link",
-                                    to: `/login`,
-                                    children: "Log In"
-                                }, void 0, false, {
-                                    fileName: "src/components/signup-view/signup-view.jsx",
-                                    lineNumber: 89,
-                                    columnNumber: 71
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/signup-view/signup-view.jsx",
-                            lineNumber: 89,
-                            columnNumber: 9
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/signup-view/signup-view.jsx",
-                    lineNumber: 85,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/signup-view/signup-view.jsx",
-            lineNumber: 40,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/signup-view/signup-view.jsx",
-        lineNumber: 39,
-        columnNumber: 5
-    }, undefined);
-};
-_s(SignupView, "jsOQN3GC2XlBG9ITlzCdpyJOnso=");
-_c = SignupView;
-var _c;
-$RefreshReg$(_c, "SignupView");
-
-  $parcel$ReactRefreshHelpers$73d1.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../login-view/login-view":"9YtA0","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"2vVqf":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$3c12.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ProfileView", ()=>ProfileView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouterDom = require("react-router-dom");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo })=>{
-    _s();
-    const { Username } = (0, _reactRouterDom.useParams)();
-    const [newUsername, setNewUsername] = (0, _react.useState)(user.Username);
-    const [newEmail, setNewEmail] = (0, _react.useState)(userInfo?.email || "");
-    const [newBirthday, setNewBirthday] = (0, _react.useState)(userInfo?.birthday || "");
-    const [userAccount, setUserAccount] = (0, _react.useState)(null);
-    const [loading, setLoading] = (0, _react.useState)(true);
-    const [favoriteMovies, setFavoriteMovies] = (0, _react.useState)([]);
-    const bearerToken = localStorage.getItem("token");
-    (0, _react.useEffect)(()=>{
-        const fetchUserData = async ()=>{
-            try {
-                const response = await fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                const data = await response.json();
-                const myUser = {
-                    id: data._id,
-                    username: data.Username,
-                    password: data.Password,
-                    email: data.Email,
-                    birthday: data.Birthday,
-                    favoriteMovies: data.Favorites
-                };
-                setUserAccount(myUser);
-                setFavoriteMovies(myUser.favoriteMovies);
-                setNewEmail(myUser.email);
-            } catch (error) {
-                console.error("Error fetching data", error);
-            } finally{
-                setLoading(false);
-            }
-        };
-        fetchUserData();
-    }, [
-        user.Username,
-        token
-    ]);
-    const handleUpdate = (event)=>{
-        event.preventDefault();
-        const data = {
-            Username: newUsername
-        };
-        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
-            method: "PUT",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${bearerToken}`
-            }
-        }).then((data)=>{
-            onUpdateUser({
-                user,
-                Username: newUsername
-            });
-            window.location.href = `/users/${newUsername}`;
-        }).catch((error)=>{
-            console.error("Something went wrong");
-        });
-    };
-    const handleEmailUpdate = (event)=>{
-        event.preventDefault();
-        const data = {
-            Email: newEmail
-        };
-        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
-            method: "PUT",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${bearerToken}`
-            }
-        }).then((data)=>{
-            onUpdateInfo({
-                email: newEmail
-            });
-            window.location.href = `/users/${user.Username}`;
-        }).catch((error)=>{
-            console.error("Something went wrong");
-        });
-    };
-    const handleBirthdayUpdate = (event)=>{
-        event.preventDefault();
-        const data = {
-            Birthday: newBirthday
-        };
-        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
-            method: "PUT",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${bearerToken}`
-            }
-        }).then((data)=>{
-            onUpdateInfo({
-                birthday: newBirthday
-            });
-            window.location.href = `/users/${user.Username}`;
-        }).catch((error)=>{
-            console.error("Something went wrong");
-        });
-    };
-    const deleteAccount = (event)=>{
-        event.preventDefault();
-        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${bearerToken}`
-            }
-        }).then((data)=>{
-            localStorage.removeItem("token");
-            onUpdateUser(null);
-            window.location.href = `/login`;
-        }).catch((error)=>{
-            console.error("Account could not be deleted");
-        });
-    };
-    const movieDetails = favoriteMovies.map((favoriteprop)=>{
-        const movie = movies.find((m)=>favoriteprop === m.id);
-        return movie ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    children: movie.title
-                }, void 0, false, {
-                    fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 155,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    className: "favorites-poster",
-                    src: movie.image
-                }, void 0, false, {
-                    fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 156,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: (event)=>removeFavorite(movie.id, event),
-                    children: "Remove Favorite"
-                }, void 0, false, {
-                    fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 157,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, favoriteprop, true, {
-            fileName: "src/components/profile-view/profile-view.jsx",
-            lineNumber: 154,
-            columnNumber: 7
-        }, undefined) : null;
-    });
-    const removeFavorite = async (movieID, event)=>{
-        event.preventDefault();
-        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`, {
-            method: "DELETE",
-            headers: {
-                Authorization: `Bearer ${bearerToken}`
-            }
-        }).then((data)=>{
-            setFavoriteMovies((prevFavorites)=>prevFavorites.filter((id)=>id !== movieID));
-        });
-    };
-    const formatDate = (dateData)=>{
-        const date = new Date(dateData);
-        return date.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-        });
-    };
-    if (Username === user.Username && !loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: [
-                    "Username: ",
-                    userAccount.username
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 194,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: [
-                    "Email: ",
-                    userAccount.email
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 195,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: [
-                    "Birthday: ",
-                    formatDate(userAccount.birthday)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 196,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    " Favorites:",
-                    movieDetails.length > 0 ? movieDetails : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        children: "No favorite movies available."
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 201,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 197,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                onSubmit: handleUpdate,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        children: "Update username: "
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 206,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        name: "Username",
-                        value: newUsername,
-                        onChange: (e)=>setNewUsername(e.target.value)
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 207,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        type: "submit",
-                        children: "Enter"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 213,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 205,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                onSubmit: handleEmailUpdate,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        children: "Update email: "
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 217,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        name: "Email",
-                        value: newEmail,
-                        onChange: (e)=>setNewEmail(e.target.value)
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 218,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        type: "submit",
-                        children: "Enter"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 224,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 216,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                onSubmit: handleBirthdayUpdate,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        children: "Update birthday: "
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 228,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "date",
-                        name: "Birthday",
-                        value: newBirthday,
-                        onChange: (e)=>setNewBirthday(e.target.value)
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 229,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        type: "submit",
-                        children: "Enter"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 235,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 227,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                onSubmit: deleteAccount,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        children: "Delete account?"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 239,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        type: "submit",
-                        children: "Confirm"
-                    }, void 0, false, {
-                        fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 240,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 238,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                to: `/`,
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    children: "Go Back"
-                }, void 0, false, {
-                    fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 244,
-                    columnNumber: 11
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 243,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true);
-    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Error: Unauthorized"
-    }, void 0, false, {
-        fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 249,
-        columnNumber: 12
-    }, undefined);
-};
-_s(ProfileView, "bYYsAx8QIravF+oivRyumQb6CXk=", false, function() {
-    return [
-        (0, _reactRouterDom.useParams)
-    ];
-});
-_c = ProfileView;
-var _c;
-$RefreshReg$(_c, "ProfileView");
-
-  $parcel$ReactRefreshHelpers$3c12.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"5bZBB":[function(require,module,exports) {
+},{"8b116c27ade22b24":"kPWUg"}],"5bZBB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createDomMotionComponent", ()=>(0, _motionMjs.createDomMotionComponent));
@@ -38846,7 +35342,7 @@ var _useUnmountEffectMjs = require("./utils/use-unmount-effect.mjs");
 var _useIsomorphicEffectMjs = require("./utils/use-isomorphic-effect.mjs");
 var _useForceUpdateMjs = require("./utils/use-force-update.mjs");
 
-},{"./render/dom/motion.mjs":"9Tsxv","./render/dom/motion-minimal.mjs":"dti0O","./components/AnimatePresence/index.mjs":"fBuY4","./components/MotionConfig/index.mjs":"4Dtw3","./components/LazyMotion/index.mjs":"gir8X","./components/LayoutGroup/index.mjs":"b9GPH","./components/Reorder/index.mjs":"9SwgC","./render/dom/features-min.mjs":"3zboP","./render/dom/features-animation.mjs":"JCL26","./render/dom/features-max.mjs":"4i5ex","./value/use-motion-value.mjs":"rszYa","./value/use-motion-template.mjs":"cjUvi","./value/utils/resolve-motion-value.mjs":"2waBq","./value/use-transform.mjs":"gAMIr","./value/use-spring.mjs":"2gasM","./value/use-velocity.mjs":"cl4th","./value/use-scroll.mjs":"8vYLG","./value/scroll/use-element-scroll.mjs":"aZTUZ","./value/scroll/use-viewport-scroll.mjs":"dr5jF","./value/use-time.mjs":"o2prt","./value/use-will-change/index.mjs":"9VGCG","./utils/use-motion-value-event.mjs":"l3eTb","./utils/reduced-motion/use-reduced-motion.mjs":"8WCy4","./utils/reduced-motion/use-reduced-motion-config.mjs":"1tbj3","./animation/hooks/animation-controls.mjs":"b0jPR","./animation/hooks/use-animate.mjs":"bAyXK","./animation/hooks/use-animation.mjs":"gGFFX","./utils/use-animation-frame.mjs":"jPG8M","./animation/interfaces/visual-element.mjs":"e0aFv","./utils/use-cycle.mjs":"04q0C","./motion/utils/valid-prop.mjs":"9bBA6","./components/AnimatePresence/use-presence.mjs":"5CDO8","./utils/use-in-view.mjs":"diahp","./gestures/drag/use-drag-controls.mjs":"4F1ee","./events/use-dom-event.mjs":"7UOGF","./motion/index.mjs":"iexSD","./motion/utils/is-motion-component.mjs":"6FqHQ","./motion/utils/unwrap-motion-component.mjs":"5Ip67","./render/VisualElement.mjs":"3YJr4","./projection/styles/scale-correction.mjs":"4Bydu","./utils/use-instant-transition.mjs":"22k6b","./projection/use-instant-layout-transition.mjs":"4nSHl","./projection/use-reset-projection.mjs":"4obBa","./render/html/utils/build-transform.mjs":"exDqb","./render/store.mjs":"aGZeB","./animation/animators/MainThreadAnimation.mjs":"8xbKM","./value/types/color/index.mjs":"1nAma","./value/types/complex/index.mjs":"lmoWV","./value/types/numbers/units.mjs":"lGBHA","./utils/GlobalConfig.mjs":"e6NaD","./animation/animators/AcceleratedAnimation.mjs":"5UDch","./animation/optimized-appear/start.mjs":"ex7eY","./animation/optimized-appear/data-id.mjs":"4rpx1","./animation/generators/spring/index.mjs":"aNeOI","./context/MotionContext/index.mjs":"3aBYo","./context/MotionConfigContext.mjs":"8MLRw","./context/PresenceContext.mjs":"7DzvZ","./context/LayoutGroupContext.mjs":"dEA1W","./context/SwitchLayoutGroupContext.mjs":"7GP4u","./render/utils/flat-tree.mjs":"cinYO","./context/DeprecatedLayoutGroupContext.mjs":"6NZsP","./animation/hooks/use-animated-state.mjs":"6M6nJ","./value/use-inverted-scale.mjs":"a81pc","./components/AnimateSharedLayout.mjs":"5dn5T","./value/index.mjs":"he8bY","./animation/animate.mjs":"kfwt5","./render/dom/scroll/index.mjs":"WMW6Q","./render/dom/scroll/track.mjs":"inFgs","./render/dom/viewport/index.mjs":"flLUA","./animation/utils/stagger.mjs":"l87y1","./utils/transform.mjs":"a4wqO","./utils/clamp.mjs":"aZOh4","./utils/mix/index.mjs":"jMt8J","./utils/pipe.mjs":"jGo2b","./utils/progress.mjs":"3vvIn","./utils/wrap.mjs":"j9YxN","./frameloop/index-legacy.mjs":"eK1zf","./easing/anticipate.mjs":"1Nbn6","./easing/back.mjs":"d5Nwb","./easing/circ.mjs":"LdSua","./easing/ease.mjs":"8Qwxb","./easing/cubic-bezier.mjs":"hC5AC","./easing/modifiers/mirror.mjs":"8JYdZ","./easing/modifiers/reverse.mjs":"9dSeG","./utils/delay.mjs":"bbpYv","./utils/distance.mjs":"adpzX","./utils/errors.mjs":"drRZ6","./utils/interpolate.mjs":"d7x9H","./frameloop/frame.mjs":"3xPo8","./motion/features/animations.mjs":"c1lwU","./projection/geometry/models.mjs":"8tocy","./projection/geometry/delta-calc.mjs":"7r3CU","./render/dom/utils/filter-props.mjs":"juMO1","./motion/utils/use-visual-state.mjs":"bYE4p","./gestures/drag/utils/lock.mjs":"81Jq8","./events/add-pointer-event.mjs":"80iJi","./events/event-info.mjs":"4Spbd","./value/utils/is-motion-value.mjs":"94AYa","./utils/is-browser.mjs":"1XAMO","./utils/use-unmount-effect.mjs":"gNrSX","./utils/use-isomorphic-effect.mjs":"5Yog2","./utils/use-force-update.mjs":"58SRa","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"9Tsxv":[function(require,module,exports) {
+},{"./render/dom/motion.mjs":"9Tsxv","./render/dom/motion-minimal.mjs":false,"./components/AnimatePresence/index.mjs":"fBuY4","./components/MotionConfig/index.mjs":false,"./components/LazyMotion/index.mjs":false,"./components/LayoutGroup/index.mjs":false,"./components/Reorder/index.mjs":false,"./render/dom/features-min.mjs":false,"./render/dom/features-animation.mjs":false,"./render/dom/features-max.mjs":false,"./value/use-motion-value.mjs":false,"./value/use-motion-template.mjs":false,"./value/utils/resolve-motion-value.mjs":false,"./value/use-transform.mjs":false,"./value/use-spring.mjs":false,"./value/use-velocity.mjs":false,"./value/use-scroll.mjs":false,"./value/scroll/use-element-scroll.mjs":false,"./value/scroll/use-viewport-scroll.mjs":false,"./value/use-time.mjs":false,"./value/use-will-change/index.mjs":false,"./utils/use-motion-value-event.mjs":false,"./utils/reduced-motion/use-reduced-motion.mjs":false,"./utils/reduced-motion/use-reduced-motion-config.mjs":false,"./animation/hooks/animation-controls.mjs":false,"./animation/hooks/use-animate.mjs":false,"./animation/hooks/use-animation.mjs":false,"./utils/use-animation-frame.mjs":false,"./animation/interfaces/visual-element.mjs":false,"./utils/use-cycle.mjs":false,"./motion/utils/valid-prop.mjs":false,"./components/AnimatePresence/use-presence.mjs":false,"./utils/use-in-view.mjs":false,"./gestures/drag/use-drag-controls.mjs":false,"./events/use-dom-event.mjs":false,"./motion/index.mjs":false,"./motion/utils/is-motion-component.mjs":false,"./motion/utils/unwrap-motion-component.mjs":false,"./render/VisualElement.mjs":false,"./projection/styles/scale-correction.mjs":false,"./utils/use-instant-transition.mjs":false,"./projection/use-instant-layout-transition.mjs":false,"./projection/use-reset-projection.mjs":false,"./render/html/utils/build-transform.mjs":false,"./render/store.mjs":false,"./animation/animators/MainThreadAnimation.mjs":false,"./value/types/color/index.mjs":false,"./value/types/complex/index.mjs":false,"./value/types/numbers/units.mjs":false,"./utils/GlobalConfig.mjs":false,"./animation/animators/AcceleratedAnimation.mjs":false,"./animation/optimized-appear/start.mjs":false,"./animation/optimized-appear/data-id.mjs":false,"./animation/generators/spring/index.mjs":false,"./context/MotionContext/index.mjs":false,"./context/MotionConfigContext.mjs":false,"./context/PresenceContext.mjs":false,"./context/LayoutGroupContext.mjs":false,"./context/SwitchLayoutGroupContext.mjs":false,"./render/utils/flat-tree.mjs":false,"./context/DeprecatedLayoutGroupContext.mjs":false,"./animation/hooks/use-animated-state.mjs":false,"./value/use-inverted-scale.mjs":false,"./components/AnimateSharedLayout.mjs":false,"./value/index.mjs":false,"./animation/animate.mjs":false,"./render/dom/scroll/index.mjs":false,"./render/dom/scroll/track.mjs":false,"./render/dom/viewport/index.mjs":false,"./animation/utils/stagger.mjs":false,"./utils/transform.mjs":false,"./utils/clamp.mjs":false,"./utils/mix/index.mjs":false,"./utils/pipe.mjs":false,"./utils/progress.mjs":false,"./utils/wrap.mjs":false,"./frameloop/index-legacy.mjs":false,"./easing/anticipate.mjs":false,"./easing/back.mjs":false,"./easing/circ.mjs":false,"./easing/ease.mjs":false,"./easing/cubic-bezier.mjs":false,"./easing/modifiers/mirror.mjs":false,"./easing/modifiers/reverse.mjs":false,"./utils/delay.mjs":false,"./utils/distance.mjs":false,"./utils/errors.mjs":false,"./utils/interpolate.mjs":false,"./frameloop/frame.mjs":false,"./motion/features/animations.mjs":false,"./projection/geometry/models.mjs":false,"./projection/geometry/delta-calc.mjs":false,"./render/dom/utils/filter-props.mjs":false,"./motion/utils/use-visual-state.mjs":false,"./gestures/drag/utils/lock.mjs":false,"./events/add-pointer-event.mjs":false,"./events/event-info.mjs":false,"./value/utils/is-motion-value.mjs":false,"./utils/is-browser.mjs":false,"./utils/use-unmount-effect.mjs":false,"./utils/use-isomorphic-effect.mjs":false,"./utils/use-force-update.mjs":false,"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"9Tsxv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createDomMotionComponent", ()=>createDomMotionComponent);
@@ -49437,17 +45933,7 @@ const layout = {
     }
 };
 
-},{"../../projection/node/HTMLProjectionNode.mjs":"d4eCC","./layout/MeasureLayout.mjs":"kA9rP","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"dti0O":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "m", ()=>m);
-var _motionProxyMjs = require("./motion-proxy.mjs");
-var _createConfigMjs = require("./utils/create-config.mjs");
-/**
- * @public
- */ const m = (0, _motionProxyMjs.createMotionProxy)((0, _createConfigMjs.createDomMotionConfig));
-
-},{"./motion-proxy.mjs":"3j9Za","./utils/create-config.mjs":"6TbpJ","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"fBuY4":[function(require,module,exports) {
+},{"../../projection/node/HTMLProjectionNode.mjs":"d4eCC","./layout/MeasureLayout.mjs":"kA9rP","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"fBuY4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AnimatePresence", ()=>AnimatePresence);
@@ -49756,2750 +46242,3535 @@ function onlyElements(children) {
     return filtered;
 }
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"4Dtw3":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MotionConfig", ()=>MotionConfig);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _motionConfigContextMjs = require("../../context/MotionConfigContext.mjs");
-var _filterPropsMjs = require("../../render/dom/utils/filter-props.mjs");
-var _useConstantMjs = require("../../utils/use-constant.mjs");
-/**
- * `MotionConfig` is used to set configuration options for all children `motion` components.
- *
- * ```jsx
- * import { motion, MotionConfig } from "framer-motion"
- *
- * export function App() {
- *   return (
- *     <MotionConfig transition={{ type: "spring" }}>
- *       <motion.div animate={{ x: 100 }} />
- *     </MotionConfig>
- *   )
- * }
- * ```
- *
- * @public
- */ function MotionConfig({ children, isValidProp, ...config }) {
-    isValidProp && (0, _filterPropsMjs.loadExternalIsValidProp)(isValidProp);
-    /**
-     * Inherit props from any parent MotionConfig components
-     */ config = {
-        ...(0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext)),
-        ...config
-    };
-    /**
-     * Don't allow isStatic to change between renders as it affects how many hooks
-     * motion components fire.
-     */ config.isStatic = (0, _useConstantMjs.useConstant)(()=>config.isStatic);
-    /**
-     * Creating a new config context object will re-render every `motion` component
-     * every time it renders. So we only want to create a new one sparingly.
-     */ const context = (0, _react.useMemo)(()=>config, [
-        JSON.stringify(config.transition),
-        config.transformPagePoint,
-        config.reducedMotion
-    ]);
-    return (0, _jsxRuntime.jsx)((0, _motionConfigContextMjs.MotionConfigContext).Provider, {
-        value: context,
-        children: children
-    });
-}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"ggaUx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e9f6.prelude(module);
 
-},{"react/jsx-runtime":"6AEwr","react":"21dqq","../../context/MotionConfigContext.mjs":"8MLRw","../../render/dom/utils/filter-props.mjs":"juMO1","../../utils/use-constant.mjs":"gAAJI","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"gir8X":[function(require,module,exports) {
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LazyMotion", ()=>LazyMotion);
-var _jsxRuntime = require("react/jsx-runtime");
+parcelHelpers.export(exports, "MovieView", ()=>MovieView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
-var _lazyContextMjs = require("../../context/LazyContext.mjs");
-var _loadFeaturesMjs = require("../../motion/features/load-features.mjs");
-/**
- * Used in conjunction with the `m` component to reduce bundle size.
- *
- * `m` is a version of the `motion` component that only loads functionality
- * critical for the initial render.
- *
- * `LazyMotion` can then be used to either synchronously or asynchronously
- * load animation and gesture support.
- *
- * ```jsx
- * // Synchronous loading
- * import { LazyMotion, m, domAnimation } from "framer-motion"
- *
- * function App() {
- *   return (
- *     <LazyMotion features={domAnimation}>
- *       <m.div animate={{ scale: 2 }} />
- *     </LazyMotion>
- *   )
- * }
- *
- * // Asynchronous loading
- * import { LazyMotion, m } from "framer-motion"
- *
- * function App() {
- *   return (
- *     <LazyMotion features={() => import('./path/to/domAnimation')}>
- *       <m.div animate={{ scale: 2 }} />
- *     </LazyMotion>
- *   )
- * }
- * ```
- *
- * @public
- */ function LazyMotion({ children, features, strict = false }) {
-    const [, setIsLoaded] = (0, _react.useState)(!isLazyBundle(features));
-    const loadedRenderer = (0, _react.useRef)(undefined);
-    /**
-     * If this is a synchronous load, load features immediately
-     */ if (!isLazyBundle(features)) {
-        const { renderer, ...loadedFeatures } = features;
-        loadedRenderer.current = renderer;
-        (0, _loadFeaturesMjs.loadFeatures)(loadedFeatures);
-    }
+var _reactRouter = require("react-router");
+var _reactRouterDom = require("react-router-dom");
+var _reactHelmet = require("react-helmet");
+var _redHeartFilledSvg = require("../../images/Red-Heart-Filled.svg");
+var _redHeartFilledSvgDefault = parcelHelpers.interopDefault(_redHeartFilledSvg);
+var _redHeartSvg = require("../../images/Red-Heart.svg");
+var _redHeartSvgDefault = parcelHelpers.interopDefault(_redHeartSvg);
+var _s = $RefreshSig$();
+const MovieView = ({ movies, user, onLogout, userInfo, token })=>{
+    _s();
+    const [favoritesList, setFavoritesList] = (0, _react.useState)(user.favoriteMovies || []);
+    const [myFavorite, setMyFavorite] = (0, _react.useState)(false);
+    const { Title } = (0, _reactRouter.useParams)();
+    const movie = movies.find((m)=>m.id === Title);
     (0, _react.useEffect)(()=>{
-        if (isLazyBundle(features)) features().then(({ renderer, ...loadedFeatures })=>{
-            (0, _loadFeaturesMjs.loadFeatures)(loadedFeatures);
-            loadedRenderer.current = renderer;
-            setIsLoaded(true);
-        });
+        window.scrollTo(0, 0);
     }, []);
-    return (0, _jsxRuntime.jsx)((0, _lazyContextMjs.LazyContext).Provider, {
-        value: {
-            renderer: loadedRenderer.current,
-            strict
-        },
-        children: children
-    });
-}
-function isLazyBundle(features) {
-    return typeof features === "function";
-}
-
-},{"react/jsx-runtime":"6AEwr","react":"21dqq","../../context/LazyContext.mjs":"3dClU","../../motion/features/load-features.mjs":"5V8E4","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"b9GPH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LayoutGroup", ()=>LayoutGroup);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _layoutGroupContextMjs = require("../../context/LayoutGroupContext.mjs");
-var _deprecatedLayoutGroupContextMjs = require("../../context/DeprecatedLayoutGroupContext.mjs");
-var _useForceUpdateMjs = require("../../utils/use-force-update.mjs");
-var _groupMjs = require("../../projection/node/group.mjs");
-const shouldInheritGroup = (inherit)=>inherit === true;
-const shouldInheritId = (inherit)=>shouldInheritGroup(inherit === true) || inherit === "id";
-const LayoutGroup = ({ children, id, inherit = true })=>{
-    const layoutGroupContext = (0, _react.useContext)((0, _layoutGroupContextMjs.LayoutGroupContext));
-    const deprecatedLayoutGroupContext = (0, _react.useContext)((0, _deprecatedLayoutGroupContextMjs.DeprecatedLayoutGroupContext));
-    const [forceRender, key] = (0, _useForceUpdateMjs.useForceUpdate)();
-    const context = (0, _react.useRef)(null);
-    const upstreamId = layoutGroupContext.id || deprecatedLayoutGroupContext;
-    if (context.current === null) {
-        if (shouldInheritId(inherit) && upstreamId) id = id ? upstreamId + "-" + id : upstreamId;
-        context.current = {
-            id,
-            group: shouldInheritGroup(inherit) ? layoutGroupContext.group || (0, _groupMjs.nodeGroup)() : (0, _groupMjs.nodeGroup)()
-        };
-    }
-    const memoizedContext = (0, _react.useMemo)(()=>({
-            ...context.current,
-            forceRender
-        }), [
-        key
-    ]);
-    return (0, _jsxRuntime.jsx)((0, _layoutGroupContextMjs.LayoutGroupContext).Provider, {
-        value: memoizedContext,
-        children: children
-    });
-};
-
-},{"react/jsx-runtime":"6AEwr","react":"21dqq","../../context/LayoutGroupContext.mjs":"dEA1W","../../context/DeprecatedLayoutGroupContext.mjs":"6NZsP","../../utils/use-force-update.mjs":"58SRa","../../projection/node/group.mjs":"4741X","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"6NZsP":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "DeprecatedLayoutGroupContext", ()=>DeprecatedLayoutGroupContext);
-var _react = require("react");
-/**
- * Note: Still used by components generated by old versions of Framer
- *
- * @deprecated
- */ const DeprecatedLayoutGroupContext = (0, _react.createContext)(null);
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"58SRa":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useForceUpdate", ()=>useForceUpdate);
-var _react = require("react");
-var _useIsMountedMjs = require("./use-is-mounted.mjs");
-var _frameMjs = require("../frameloop/frame.mjs");
-function useForceUpdate() {
-    const isMounted = (0, _useIsMountedMjs.useIsMounted)();
-    const [forcedRenderCount, setForcedRenderCount] = (0, _react.useState)(0);
-    const forceRender = (0, _react.useCallback)(()=>{
-        isMounted.current && setForcedRenderCount(forcedRenderCount + 1);
-    }, [
-        forcedRenderCount
-    ]);
-    /**
-     * Defer this to the end of the next animation frame in case there are multiple
-     * synchronous calls.
-     */ const deferredForceRender = (0, _react.useCallback)(()=>(0, _frameMjs.frame).postRender(forceRender), [
-        forceRender
-    ]);
-    return [
-        deferredForceRender,
-        forcedRenderCount
-    ];
-}
-
-},{"react":"21dqq","./use-is-mounted.mjs":"6UT6v","../frameloop/frame.mjs":"3xPo8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"6UT6v":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useIsMounted", ()=>useIsMounted);
-var _react = require("react");
-var _useIsomorphicEffectMjs = require("./use-isomorphic-effect.mjs");
-function useIsMounted() {
-    const isMounted = (0, _react.useRef)(false);
-    (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(()=>{
-        isMounted.current = true;
-        return ()=>{
-            isMounted.current = false;
-        };
-    }, []);
-    return isMounted;
-}
-
-},{"react":"21dqq","./use-isomorphic-effect.mjs":"5Yog2","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"4741X":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "nodeGroup", ()=>nodeGroup);
-const notify = (node)=>!node.isLayoutDirty && node.willUpdate(false);
-function nodeGroup() {
-    const nodes = new Set();
-    const subscriptions = new WeakMap();
-    const dirtyAll = ()=>nodes.forEach(notify);
-    return {
-        add: (node)=>{
-            nodes.add(node);
-            subscriptions.set(node, node.addEventListener("willUpdate", dirtyAll));
-        },
-        remove: (node)=>{
-            nodes.delete(node);
-            const unsubscribe = subscriptions.get(node);
-            if (unsubscribe) {
-                unsubscribe();
-                subscriptions.delete(node);
-            }
-            dirtyAll();
-        },
-        dirty: dirtyAll
-    };
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"9SwgC":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Reorder", ()=>Reorder);
-var _groupMjs = require("./Group.mjs");
-var _itemMjs = require("./Item.mjs");
-const Reorder = {
-    Group: (0, _groupMjs.Group),
-    Item: (0, _itemMjs.Item)
-};
-
-},{"./Group.mjs":"55l9J","./Item.mjs":"16oLN","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"55l9J":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Group", ()=>Group);
-parcelHelpers.export(exports, "ReorderGroup", ()=>ReorderGroup);
-var _jsxRuntime = require("react/jsx-runtime");
-var _errorsMjs = require("../../utils/errors.mjs");
-var _react = require("react");
-var _reorderContextMjs = require("../../context/ReorderContext.mjs");
-var _motionMjs = require("../../render/dom/motion.mjs");
-var _useConstantMjs = require("../../utils/use-constant.mjs");
-var _checkReorderMjs = require("./utils/check-reorder.mjs");
-function ReorderGroup({ children, as = "ul", axis = "y", onReorder, values, ...props }, externalRef) {
-    const Component = (0, _useConstantMjs.useConstant)(()=>(0, _motionMjs.motion)(as));
-    const order = [];
-    const isReordering = (0, _react.useRef)(false);
-    (0, _errorsMjs.invariant)(Boolean(values), "Reorder.Group must be provided a values prop");
-    const context = {
-        axis,
-        registerItem: (value, layout)=>{
-            // If the entry was already added, update it rather than adding it again
-            const idx = order.findIndex((entry)=>value === entry.value);
-            if (idx !== -1) order[idx].layout = layout[axis];
-            else order.push({
-                value: value,
-                layout: layout[axis]
-            });
-            order.sort(compareMin);
-        },
-        updateOrder: (item, offset, velocity)=>{
-            if (isReordering.current) return;
-            const newOrder = (0, _checkReorderMjs.checkReorder)(order, item, offset, velocity);
-            if (order !== newOrder) {
-                isReordering.current = true;
-                onReorder(newOrder.map(getValue).filter((value)=>values.indexOf(value) !== -1));
-            }
-        }
-    };
     (0, _react.useEffect)(()=>{
-        isReordering.current = false;
-    });
-    return (0, _jsxRuntime.jsx)(Component, {
-        ...props,
-        ref: externalRef,
-        ignoreStrict: true,
-        children: (0, _jsxRuntime.jsx)((0, _reorderContextMjs.ReorderContext).Provider, {
-            value: context,
-            children: children
-        })
-    });
-}
-const Group = (0, _react.forwardRef)(ReorderGroup);
-function getValue(item) {
-    return item.value;
-}
-function compareMin(a, b) {
-    return a.layout.min - b.layout.min;
-}
-
-},{"react/jsx-runtime":"6AEwr","../../utils/errors.mjs":"drRZ6","react":"21dqq","../../context/ReorderContext.mjs":"dIz8S","../../render/dom/motion.mjs":"9Tsxv","../../utils/use-constant.mjs":"gAAJI","./utils/check-reorder.mjs":"j38VC","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"dIz8S":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ReorderContext", ()=>ReorderContext);
-var _react = require("react");
-const ReorderContext = (0, _react.createContext)(null);
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"j38VC":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "checkReorder", ()=>checkReorder);
-var _arrayMjs = require("../../../utils/array.mjs");
-var _numberMjs = require("../../../utils/mix/number.mjs");
-function checkReorder(order, value, offset, velocity) {
-    if (!velocity) return order;
-    const index = order.findIndex((item)=>item.value === value);
-    if (index === -1) return order;
-    const nextOffset = velocity > 0 ? 1 : -1;
-    const nextItem = order[index + nextOffset];
-    if (!nextItem) return order;
-    const item = order[index];
-    const nextLayout = nextItem.layout;
-    const nextItemCenter = (0, _numberMjs.mixNumber)(nextLayout.min, nextLayout.max, 0.5);
-    if (nextOffset === 1 && item.layout.max + offset > nextItemCenter || nextOffset === -1 && item.layout.min + offset < nextItemCenter) return (0, _arrayMjs.moveItem)(order, index, index + nextOffset);
-    return order;
-}
-
-},{"../../../utils/array.mjs":"fpJYa","../../../utils/mix/number.mjs":"2kavH","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"16oLN":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Item", ()=>Item);
-parcelHelpers.export(exports, "ReorderItem", ()=>ReorderItem);
-var _jsxRuntime = require("react/jsx-runtime");
-var _errorsMjs = require("../../utils/errors.mjs");
-var _react = require("react");
-var _reorderContextMjs = require("../../context/ReorderContext.mjs");
-var _motionMjs = require("../../render/dom/motion.mjs");
-var _useConstantMjs = require("../../utils/use-constant.mjs");
-var _useMotionValueMjs = require("../../value/use-motion-value.mjs");
-var _useTransformMjs = require("../../value/use-transform.mjs");
-var _isMotionValueMjs = require("../../value/utils/is-motion-value.mjs");
-function useDefaultMotionValue(value, defaultValue = 0) {
-    return (0, _isMotionValueMjs.isMotionValue)(value) ? value : (0, _useMotionValueMjs.useMotionValue)(defaultValue);
-}
-function ReorderItem({ children, style = {}, value, as = "li", onDrag, layout = true, ...props }, externalRef) {
-    const Component = (0, _useConstantMjs.useConstant)(()=>(0, _motionMjs.motion)(as));
-    const context = (0, _react.useContext)((0, _reorderContextMjs.ReorderContext));
-    const point = {
-        x: useDefaultMotionValue(style.x),
-        y: useDefaultMotionValue(style.y)
-    };
-    const zIndex = (0, _useTransformMjs.useTransform)([
-        point.x,
-        point.y
-    ], ([latestX, latestY])=>latestX || latestY ? 1 : "unset");
-    (0, _errorsMjs.invariant)(Boolean(context), "Reorder.Item must be a child of Reorder.Group");
-    const { axis, registerItem, updateOrder } = context;
-    return (0, _jsxRuntime.jsx)(Component, {
-        drag: axis,
-        ...props,
-        dragSnapToOrigin: true,
-        style: {
-            ...style,
-            x: point.x,
-            y: point.y,
-            zIndex
-        },
-        layout: layout,
-        onDrag: (event, gesturePoint)=>{
-            const { velocity } = gesturePoint;
-            velocity[axis] && updateOrder(value, point[axis].get(), velocity[axis]);
-            onDrag && onDrag(event, gesturePoint);
-        },
-        onLayoutMeasure: (measured)=>registerItem(value, measured),
-        ref: externalRef,
-        ignoreStrict: true,
-        children: children
-    });
-}
-const Item = (0, _react.forwardRef)(ReorderItem);
-
-},{"react/jsx-runtime":"6AEwr","../../utils/errors.mjs":"drRZ6","react":"21dqq","../../context/ReorderContext.mjs":"dIz8S","../../render/dom/motion.mjs":"9Tsxv","../../utils/use-constant.mjs":"gAAJI","../../value/use-motion-value.mjs":"rszYa","../../value/use-transform.mjs":"gAMIr","../../value/utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"rszYa":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useMotionValue", ()=>useMotionValue);
-var _react = require("react");
-var _indexMjs = require("./index.mjs");
-var _motionConfigContextMjs = require("../context/MotionConfigContext.mjs");
-var _useConstantMjs = require("../utils/use-constant.mjs");
-/**
- * Creates a `MotionValue` to track the state and velocity of a value.
- *
- * Usually, these are created automatically. For advanced use-cases, like use with `useTransform`, you can create `MotionValue`s externally and pass them into the animated component via the `style` prop.
- *
- * ```jsx
- * export const MyComponent = () => {
- *   const scale = useMotionValue(1)
- *
- *   return <motion.div style={{ scale }} />
- * }
- * ```
- *
- * @param initial - The initial state.
- *
- * @public
- */ function useMotionValue(initial) {
-    const value = (0, _useConstantMjs.useConstant)(()=>(0, _indexMjs.motionValue)(initial));
-    /**
-     * If this motion value is being used in static mode, like on
-     * the Framer canvas, force components to rerender when the motion
-     * value is updated.
-     */ const { isStatic } = (0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext));
-    if (isStatic) {
-        const [, setLatest] = (0, _react.useState)(initial);
-        (0, _react.useEffect)(()=>value.on("change", setLatest), []);
-    }
-    return value;
-}
-
-},{"react":"21dqq","./index.mjs":"he8bY","../context/MotionConfigContext.mjs":"8MLRw","../utils/use-constant.mjs":"gAAJI","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"gAMIr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useTransform", ()=>useTransform);
-var _transformMjs = require("../utils/transform.mjs");
-var _useCombineValuesMjs = require("./use-combine-values.mjs");
-var _useConstantMjs = require("../utils/use-constant.mjs");
-var _useComputedMjs = require("./use-computed.mjs");
-function useTransform(input, inputRangeOrTransformer, outputRange, options) {
-    if (typeof input === "function") return (0, _useComputedMjs.useComputed)(input);
-    const transformer = typeof inputRangeOrTransformer === "function" ? inputRangeOrTransformer : (0, _transformMjs.transform)(inputRangeOrTransformer, outputRange, options);
-    return Array.isArray(input) ? useListTransform(input, transformer) : useListTransform([
-        input
-    ], ([latest])=>transformer(latest));
-}
-function useListTransform(values, transformer) {
-    const latest = (0, _useConstantMjs.useConstant)(()=>[]);
-    return (0, _useCombineValuesMjs.useCombineMotionValues)(values, ()=>{
-        latest.length = 0;
-        const numValues = values.length;
-        for(let i = 0; i < numValues; i++)latest[i] = values[i].get();
-        return transformer(latest);
-    });
-}
-
-},{"../utils/transform.mjs":"a4wqO","./use-combine-values.mjs":"jGAaZ","../utils/use-constant.mjs":"gAAJI","./use-computed.mjs":"cRQPn","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"a4wqO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "transform", ()=>transform);
-var _interpolateMjs = require("./interpolate.mjs");
-const isCustomValueType = (v)=>{
-    return v && typeof v === "object" && v.mix;
-};
-const getMixer = (v)=>isCustomValueType(v) ? v.mix : undefined;
-function transform(...args) {
-    const useImmediate = !Array.isArray(args[0]);
-    const argOffset = useImmediate ? 0 : -1;
-    const inputValue = args[0 + argOffset];
-    const inputRange = args[1 + argOffset];
-    const outputRange = args[2 + argOffset];
-    const options = args[3 + argOffset];
-    const interpolator = (0, _interpolateMjs.interpolate)(inputRange, outputRange, {
-        mixer: getMixer(outputRange[0]),
-        ...options
-    });
-    return useImmediate ? interpolator(inputValue) : interpolator;
-}
-
-},{"./interpolate.mjs":"d7x9H","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"jGAaZ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useCombineMotionValues", ()=>useCombineMotionValues);
-var _useMotionValueMjs = require("./use-motion-value.mjs");
-var _useIsomorphicEffectMjs = require("../utils/use-isomorphic-effect.mjs");
-var _frameMjs = require("../frameloop/frame.mjs");
-function useCombineMotionValues(values, combineValues) {
-    /**
-     * Initialise the returned motion value. This remains the same between renders.
-     */ const value = (0, _useMotionValueMjs.useMotionValue)(combineValues());
-    /**
-     * Create a function that will update the template motion value with the latest values.
-     * This is pre-bound so whenever a motion value updates it can schedule its
-     * execution in Framesync. If it's already been scheduled it won't be fired twice
-     * in a single frame.
-     */ const updateValue = ()=>value.set(combineValues());
-    /**
-     * Synchronously update the motion value with the latest values during the render.
-     * This ensures that within a React render, the styles applied to the DOM are up-to-date.
-     */ updateValue();
-    /**
-     * Subscribe to all motion values found within the template. Whenever any of them change,
-     * schedule an update.
-     */ (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(()=>{
-        const scheduleUpdate = ()=>(0, _frameMjs.frame).preRender(updateValue, false, true);
-        const subscriptions = values.map((v)=>v.on("change", scheduleUpdate));
-        return ()=>{
-            subscriptions.forEach((unsubscribe)=>unsubscribe());
-            (0, _frameMjs.cancelFrame)(updateValue);
-        };
-    });
-    return value;
-}
-
-},{"./use-motion-value.mjs":"rszYa","../utils/use-isomorphic-effect.mjs":"5Yog2","../frameloop/frame.mjs":"3xPo8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"cRQPn":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useComputed", ()=>useComputed);
-var _indexMjs = require("./index.mjs");
-var _useCombineValuesMjs = require("./use-combine-values.mjs");
-function useComputed(compute) {
-    /**
-     * Open session of collectMotionValues. Any MotionValue that calls get()
-     * will be saved into this array.
-     */ (0, _indexMjs.collectMotionValues).current = [];
-    compute();
-    const value = (0, _useCombineValuesMjs.useCombineMotionValues)((0, _indexMjs.collectMotionValues).current, compute);
-    /**
-     * Synchronously close session of collectMotionValues.
-     */ (0, _indexMjs.collectMotionValues).current = undefined;
-    return value;
-}
-
-},{"./index.mjs":"he8bY","./use-combine-values.mjs":"jGAaZ","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"3zboP":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "domMin", ()=>domMin);
-var _animationsMjs = require("../../motion/features/animations.mjs");
-var _createVisualElementMjs = require("./create-visual-element.mjs");
-/**
- * @public
- */ const domMin = {
-    renderer: (0, _createVisualElementMjs.createDomVisualElement),
-    ...(0, _animationsMjs.animations)
-};
-
-},{"../../motion/features/animations.mjs":"c1lwU","./create-visual-element.mjs":"WHCBp","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"JCL26":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "domAnimation", ()=>domAnimation);
-var _animationsMjs = require("../../motion/features/animations.mjs");
-var _gesturesMjs = require("../../motion/features/gestures.mjs");
-var _createVisualElementMjs = require("./create-visual-element.mjs");
-/**
- * @public
- */ const domAnimation = {
-    renderer: (0, _createVisualElementMjs.createDomVisualElement),
-    ...(0, _animationsMjs.animations),
-    ...(0, _gesturesMjs.gestureAnimations)
-};
-
-},{"../../motion/features/animations.mjs":"c1lwU","../../motion/features/gestures.mjs":"h2ALs","./create-visual-element.mjs":"WHCBp","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"4i5ex":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "domMax", ()=>domMax);
-var _dragMjs = require("../../motion/features/drag.mjs");
-var _layoutMjs = require("../../motion/features/layout.mjs");
-var _featuresAnimationMjs = require("./features-animation.mjs");
-/**
- * @public
- */ const domMax = {
-    ...(0, _featuresAnimationMjs.domAnimation),
-    ...(0, _dragMjs.drag),
-    ...(0, _layoutMjs.layout)
-};
-
-},{"../../motion/features/drag.mjs":"fBUJ5","../../motion/features/layout.mjs":"6XGhA","./features-animation.mjs":"JCL26","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"cjUvi":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useMotionTemplate", ()=>useMotionTemplate);
-var _useCombineValuesMjs = require("./use-combine-values.mjs");
-var _isMotionValueMjs = require("./utils/is-motion-value.mjs");
-/**
- * Combine multiple motion values into a new one using a string template literal.
- *
- * ```jsx
- * import {
- *   motion,
- *   useSpring,
- *   useMotionValue,
- *   useMotionTemplate
- * } from "framer-motion"
- *
- * function Component() {
- *   const shadowX = useSpring(0)
- *   const shadowY = useMotionValue(0)
- *   const shadow = useMotionTemplate`drop-shadow(${shadowX}px ${shadowY}px 20px rgba(0,0,0,0.3))`
- *
- *   return <motion.div style={{ filter: shadow }} />
- * }
- * ```
- *
- * @public
- */ function useMotionTemplate(fragments, ...values) {
-    /**
-     * Create a function that will build a string from the latest motion values.
-     */ const numFragments = fragments.length;
-    function buildValue() {
-        let output = ``;
-        for(let i = 0; i < numFragments; i++){
-            output += fragments[i];
-            const value = values[i];
-            if (value) output += (0, _isMotionValueMjs.isMotionValue)(value) ? value.get() : value;
-        }
-        return output;
-    }
-    return (0, _useCombineValuesMjs.useCombineMotionValues)(values.filter((0, _isMotionValueMjs.isMotionValue)), buildValue);
-}
-
-},{"./use-combine-values.mjs":"jGAaZ","./utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"2gasM":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useSpring", ()=>useSpring);
-var _react = require("react");
-var _isMotionValueMjs = require("./utils/is-motion-value.mjs");
-var _useMotionValueMjs = require("./use-motion-value.mjs");
-var _motionConfigContextMjs = require("../context/MotionConfigContext.mjs");
-var _useIsomorphicEffectMjs = require("../utils/use-isomorphic-effect.mjs");
-var _mainThreadAnimationMjs = require("../animation/animators/MainThreadAnimation.mjs");
-var _frameMjs = require("../frameloop/frame.mjs");
-function toNumber(v) {
-    if (typeof v === "number") return v;
-    return parseFloat(v);
-}
-/**
- * Creates a `MotionValue` that, when `set`, will use a spring animation to animate to its new state.
- *
- * It can either work as a stand-alone `MotionValue` by initialising it with a value, or as a subscriber
- * to another `MotionValue`.
- *
- * @remarks
- *
- * ```jsx
- * const x = useSpring(0, { stiffness: 300 })
- * const y = useSpring(x, { damping: 10 })
- * ```
- *
- * @param inputValue - `MotionValue` or number. If provided a `MotionValue`, when the input `MotionValue` changes, the created `MotionValue` will spring towards that value.
- * @param springConfig - Configuration options for the spring.
- * @returns `MotionValue`
- *
- * @public
- */ function useSpring(source, config = {}) {
-    const { isStatic } = (0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext));
-    const activeSpringAnimation = (0, _react.useRef)(null);
-    const value = (0, _useMotionValueMjs.useMotionValue)((0, _isMotionValueMjs.isMotionValue)(source) ? toNumber(source.get()) : source);
-    const latestValue = (0, _react.useRef)(value.get());
-    const latestSetter = (0, _react.useRef)(()=>{});
-    const startAnimation = ()=>{
-        /**
-         * If the previous animation hasn't had the chance to even render a frame, render it now.
-         */ const animation = activeSpringAnimation.current;
-        if (animation && animation.time === 0) animation.sample((0, _frameMjs.frameData).delta);
-        stopAnimation();
-        activeSpringAnimation.current = (0, _mainThreadAnimationMjs.animateValue)({
-            keyframes: [
-                value.get(),
-                latestValue.current
-            ],
-            velocity: value.getVelocity(),
-            type: "spring",
-            restDelta: 0.001,
-            restSpeed: 0.01,
-            ...config,
-            onUpdate: latestSetter.current
-        });
-    };
-    const stopAnimation = ()=>{
-        if (activeSpringAnimation.current) activeSpringAnimation.current.stop();
-    };
-    (0, _react.useInsertionEffect)(()=>{
-        return value.attach((v, set)=>{
-            /**
-             * A more hollistic approach to this might be to use isStatic to fix VisualElement animations
-             * at that level, but this will work for now
-             */ if (isStatic) return set(v);
-            latestValue.current = v;
-            latestSetter.current = set;
-            (0, _frameMjs.frame).update(startAnimation);
-            return value.get();
-        }, stopAnimation);
+        if (userInfo) setFavoritesList(userInfo.favoriteMovies || []);
     }, [
-        JSON.stringify(config)
+        userInfo
     ]);
-    (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(()=>{
-        if ((0, _isMotionValueMjs.isMotionValue)(source)) return source.on("change", (v)=>value.set(toNumber(v)));
-    }, [
-        value
-    ]);
-    return value;
-}
-
-},{"react":"21dqq","./utils/is-motion-value.mjs":"94AYa","./use-motion-value.mjs":"rszYa","../context/MotionConfigContext.mjs":"8MLRw","../utils/use-isomorphic-effect.mjs":"5Yog2","../animation/animators/MainThreadAnimation.mjs":"8xbKM","../frameloop/frame.mjs":"3xPo8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"cl4th":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useVelocity", ()=>useVelocity);
-var _useMotionValueEventMjs = require("../utils/use-motion-value-event.mjs");
-var _useMotionValueMjs = require("./use-motion-value.mjs");
-var _frameMjs = require("../frameloop/frame.mjs");
-/**
- * Creates a `MotionValue` that updates when the velocity of the provided `MotionValue` changes.
- *
- * ```javascript
- * const x = useMotionValue(0)
- * const xVelocity = useVelocity(x)
- * const xAcceleration = useVelocity(xVelocity)
- * ```
- *
- * @public
- */ function useVelocity(value) {
-    const velocity = (0, _useMotionValueMjs.useMotionValue)(value.getVelocity());
-    const updateVelocity = ()=>{
-        const latest = value.getVelocity();
-        velocity.set(latest);
-        /**
-         * If we still have velocity, schedule an update for the next frame
-         * to keep checking until it is zero.
-         */ if (latest) (0, _frameMjs.frame).update(updateVelocity);
-    };
-    (0, _useMotionValueEventMjs.useMotionValueEvent)(value, "change", ()=>{
-        // Schedule an update to this value at the end of the current frame.
-        (0, _frameMjs.frame).update(updateVelocity, false, true);
-    });
-    return velocity;
-}
-
-},{"../utils/use-motion-value-event.mjs":"l3eTb","./use-motion-value.mjs":"rszYa","../frameloop/frame.mjs":"3xPo8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"l3eTb":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useMotionValueEvent", ()=>useMotionValueEvent);
-var _react = require("react");
-function useMotionValueEvent(value, event, callback) {
-    /**
-     * useInsertionEffect will create subscriptions before any other
-     * effects will run. Effects run upwards through the tree so it
-     * can be that binding a useLayoutEffect higher up the tree can
-     * miss changes from lower down the tree.
-     */ (0, _react.useInsertionEffect)(()=>value.on(event, callback), [
-        value,
-        event,
-        callback
-    ]);
-}
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"8vYLG":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useScroll", ()=>useScroll);
-var _indexMjs = require("./index.mjs");
-var _useConstantMjs = require("../utils/use-constant.mjs");
-var _react = require("react");
-var _errorsMjs = require("../utils/errors.mjs");
-var _trackMjs = require("../render/dom/scroll/track.mjs");
-var _useIsomorphicEffectMjs = require("../utils/use-isomorphic-effect.mjs");
-function refWarning(name, ref) {
-    (0, _errorsMjs.warning)(Boolean(!ref || ref.current), `You have defined a ${name} options but the provided ref is not yet hydrated, probably because it's defined higher up the tree. Try calling useScroll() in the same component as the ref, or setting its \`layoutEffect: false\` option.`);
-}
-const createScrollMotionValues = ()=>({
-        scrollX: (0, _indexMjs.motionValue)(0),
-        scrollY: (0, _indexMjs.motionValue)(0),
-        scrollXProgress: (0, _indexMjs.motionValue)(0),
-        scrollYProgress: (0, _indexMjs.motionValue)(0)
-    });
-function useScroll({ container, target, layoutEffect = true, ...options } = {}) {
-    const values = (0, _useConstantMjs.useConstant)(createScrollMotionValues);
-    const useLifecycleEffect = layoutEffect ? (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect) : (0, _react.useEffect);
-    useLifecycleEffect(()=>{
-        refWarning("target", target);
-        refWarning("container", container);
-        return (0, _trackMjs.scrollInfo)(({ x, y })=>{
-            values.scrollX.set(x.current);
-            values.scrollXProgress.set(x.progress);
-            values.scrollY.set(y.current);
-            values.scrollYProgress.set(y.progress);
-        }, {
-            ...options,
-            container: (container === null || container === void 0 ? void 0 : container.current) || undefined,
-            target: (target === null || target === void 0 ? void 0 : target.current) || undefined
-        });
-    }, [
-        container,
-        target,
-        JSON.stringify(options.offset)
-    ]);
-    return values;
-}
-
-},{"./index.mjs":"he8bY","../utils/use-constant.mjs":"gAAJI","react":"21dqq","../utils/errors.mjs":"drRZ6","../render/dom/scroll/track.mjs":"inFgs","../utils/use-isomorphic-effect.mjs":"5Yog2","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"inFgs":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "scrollInfo", ()=>scrollInfo);
-var _indexMjs = require("../resize/index.mjs");
-var _infoMjs = require("./info.mjs");
-var _onScrollHandlerMjs = require("./on-scroll-handler.mjs");
-var _frameMjs = require("../../../frameloop/frame.mjs");
-const scrollListeners = new WeakMap();
-const resizeListeners = new WeakMap();
-const onScrollHandlers = new WeakMap();
-const getEventTarget = (element)=>element === document.documentElement ? window : element;
-function scrollInfo(onScroll, { container = document.documentElement, ...options } = {}) {
-    let containerHandlers = onScrollHandlers.get(container);
-    /**
-     * Get the onScroll handlers for this container.
-     * If one isn't found, create a new one.
-     */ if (!containerHandlers) {
-        containerHandlers = new Set();
-        onScrollHandlers.set(container, containerHandlers);
-    }
-    /**
-     * Create a new onScroll handler for the provided callback.
-     */ const info = (0, _infoMjs.createScrollInfo)();
-    const containerHandler = (0, _onScrollHandlerMjs.createOnScrollHandler)(container, onScroll, info, options);
-    containerHandlers.add(containerHandler);
-    /**
-     * Check if there's a scroll event listener for this container.
-     * If not, create one.
-     */ if (!scrollListeners.has(container)) {
-        const measureAll = ()=>{
-            for (const handler of containerHandlers)handler.measure();
-        };
-        const updateAll = ()=>{
-            for (const handler of containerHandlers)handler.update((0, _frameMjs.frameData).timestamp);
-        };
-        const notifyAll = ()=>{
-            for (const handler of containerHandlers)handler.notify();
-        };
-        const listener = ()=>{
-            (0, _frameMjs.frame).read(measureAll, false, true);
-            (0, _frameMjs.frame).read(updateAll, false, true);
-            (0, _frameMjs.frame).update(notifyAll, false, true);
-        };
-        scrollListeners.set(container, listener);
-        const target = getEventTarget(container);
-        window.addEventListener("resize", listener, {
-            passive: true
-        });
-        if (container !== document.documentElement) resizeListeners.set(container, (0, _indexMjs.resize)(container, listener));
-        target.addEventListener("scroll", listener, {
-            passive: true
-        });
-    }
-    const listener = scrollListeners.get(container);
-    (0, _frameMjs.frame).read(listener, false, true);
-    return ()=>{
-        var _a;
-        (0, _frameMjs.cancelFrame)(listener);
-        /**
-         * Check if we even have any handlers for this container.
-         */ const currentHandlers = onScrollHandlers.get(container);
-        if (!currentHandlers) return;
-        currentHandlers.delete(containerHandler);
-        if (currentHandlers.size) return;
-        /**
-         * If no more handlers, remove the scroll listener too.
-         */ const scrollListener = scrollListeners.get(container);
-        scrollListeners.delete(container);
-        if (scrollListener) {
-            getEventTarget(container).removeEventListener("scroll", scrollListener);
-            (_a = resizeListeners.get(container)) === null || _a === void 0 || _a();
-            window.removeEventListener("resize", scrollListener);
-        }
-    };
-}
-
-},{"../resize/index.mjs":"gbNqq","./info.mjs":"bucvA","./on-scroll-handler.mjs":"hrhV7","../../../frameloop/frame.mjs":"3xPo8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"gbNqq":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "resize", ()=>resize);
-var _handleElementMjs = require("./handle-element.mjs");
-var _handleWindowMjs = require("./handle-window.mjs");
-function resize(a, b) {
-    return typeof a === "function" ? (0, _handleWindowMjs.resizeWindow)(a) : (0, _handleElementMjs.resizeElement)(a, b);
-}
-
-},{"./handle-element.mjs":"aukti","./handle-window.mjs":"h6aqH","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"aukti":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "resizeElement", ()=>resizeElement);
-var _resolveElementMjs = require("../utils/resolve-element.mjs");
-const resizeHandlers = new WeakMap();
-let observer;
-function getElementSize(target, borderBoxSize) {
-    if (borderBoxSize) {
-        const { inlineSize, blockSize } = borderBoxSize[0];
-        return {
-            width: inlineSize,
-            height: blockSize
-        };
-    } else if (target instanceof SVGElement && "getBBox" in target) return target.getBBox();
-    else return {
-        width: target.offsetWidth,
-        height: target.offsetHeight
-    };
-}
-function notifyTarget({ target, contentRect, borderBoxSize }) {
-    var _a;
-    (_a = resizeHandlers.get(target)) === null || _a === void 0 || _a.forEach((handler)=>{
-        handler({
-            target,
-            contentSize: contentRect,
-            get size () {
-                return getElementSize(target, borderBoxSize);
-            }
-        });
-    });
-}
-function notifyAll(entries) {
-    entries.forEach(notifyTarget);
-}
-function createResizeObserver() {
-    if (typeof ResizeObserver === "undefined") return;
-    observer = new ResizeObserver(notifyAll);
-}
-function resizeElement(target, handler) {
-    if (!observer) createResizeObserver();
-    const elements = (0, _resolveElementMjs.resolveElements)(target);
-    elements.forEach((element)=>{
-        let elementHandlers = resizeHandlers.get(element);
-        if (!elementHandlers) {
-            elementHandlers = new Set();
-            resizeHandlers.set(element, elementHandlers);
-        }
-        elementHandlers.add(handler);
-        observer === null || observer === void 0 || observer.observe(element);
-    });
-    return ()=>{
-        elements.forEach((element)=>{
-            const elementHandlers = resizeHandlers.get(element);
-            elementHandlers === null || elementHandlers === void 0 || elementHandlers.delete(handler);
-            if (!(elementHandlers === null || elementHandlers === void 0 ? void 0 : elementHandlers.size)) observer === null || observer === void 0 || observer.unobserve(element);
-        });
-    };
-}
-
-},{"../utils/resolve-element.mjs":"9MT4j","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"9MT4j":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "resolveElements", ()=>resolveElements);
-var _errorsMjs = require("../../../utils/errors.mjs");
-function resolveElements(elements, scope, selectorCache) {
-    var _a;
-    if (typeof elements === "string") {
-        let root = document;
-        if (scope) {
-            (0, _errorsMjs.invariant)(Boolean(scope.current), "Scope provided, but no element detected.");
-            root = scope.current;
-        }
-        if (selectorCache) {
-            (_a = selectorCache[elements]) !== null && _a !== void 0 ? _a : selectorCache[elements] = root.querySelectorAll(elements);
-            elements = selectorCache[elements];
-        } else elements = root.querySelectorAll(elements);
-    } else if (elements instanceof Element) elements = [
-        elements
-    ];
-    /**
-     * Return an empty array
-     */ return Array.from(elements || []);
-}
-
-},{"../../../utils/errors.mjs":"drRZ6","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"h6aqH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "resizeWindow", ()=>resizeWindow);
-const windowCallbacks = new Set();
-let windowResizeHandler;
-function createWindowResizeHandler() {
-    windowResizeHandler = ()=>{
-        const size = {
-            width: window.innerWidth,
-            height: window.innerHeight
-        };
-        const info = {
-            target: window,
-            size,
-            contentSize: size
-        };
-        windowCallbacks.forEach((callback)=>callback(info));
-    };
-    window.addEventListener("resize", windowResizeHandler);
-}
-function resizeWindow(callback) {
-    windowCallbacks.add(callback);
-    if (!windowResizeHandler) createWindowResizeHandler();
-    return ()=>{
-        windowCallbacks.delete(callback);
-        if (!windowCallbacks.size && windowResizeHandler) windowResizeHandler = undefined;
-    };
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"bucvA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createScrollInfo", ()=>createScrollInfo);
-parcelHelpers.export(exports, "updateScrollInfo", ()=>updateScrollInfo);
-var _progressMjs = require("../../../utils/progress.mjs");
-var _velocityPerSecondMjs = require("../../../utils/velocity-per-second.mjs");
-/**
- * A time in milliseconds, beyond which we consider the scroll velocity to be 0.
- */ const maxElapsed = 50;
-const createAxisInfo = ()=>({
-        current: 0,
-        offset: [],
-        progress: 0,
-        scrollLength: 0,
-        targetOffset: 0,
-        targetLength: 0,
-        containerLength: 0,
-        velocity: 0
-    });
-const createScrollInfo = ()=>({
-        time: 0,
-        x: createAxisInfo(),
-        y: createAxisInfo()
-    });
-const keys = {
-    x: {
-        length: "Width",
-        position: "Left"
-    },
-    y: {
-        length: "Height",
-        position: "Top"
-    }
-};
-function updateAxisInfo(element, axisName, info, time) {
-    const axis = info[axisName];
-    const { length, position } = keys[axisName];
-    const prev = axis.current;
-    const prevTime = info.time;
-    axis.current = element[`scroll${position}`];
-    axis.scrollLength = element[`scroll${length}`] - element[`client${length}`];
-    axis.offset.length = 0;
-    axis.offset[0] = 0;
-    axis.offset[1] = axis.scrollLength;
-    axis.progress = (0, _progressMjs.progress)(0, axis.scrollLength, axis.current);
-    const elapsed = time - prevTime;
-    axis.velocity = elapsed > maxElapsed ? 0 : (0, _velocityPerSecondMjs.velocityPerSecond)(axis.current - prev, elapsed);
-}
-function updateScrollInfo(element, info, time) {
-    updateAxisInfo(element, "x", info, time);
-    updateAxisInfo(element, "y", info, time);
-    info.time = time;
-}
-
-},{"../../../utils/progress.mjs":"3vvIn","../../../utils/velocity-per-second.mjs":"1eGg6","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"hrhV7":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createOnScrollHandler", ()=>createOnScrollHandler);
-var _warnOnceMjs = require("../../../utils/warn-once.mjs");
-var _infoMjs = require("./info.mjs");
-var _indexMjs = require("./offsets/index.mjs");
-function measure(container, target = container, info) {
-    /**
-     * Find inset of target within scrollable container
-     */ info.x.targetOffset = 0;
-    info.y.targetOffset = 0;
-    if (target !== container) {
-        let node = target;
-        while(node && node !== container){
-            info.x.targetOffset += node.offsetLeft;
-            info.y.targetOffset += node.offsetTop;
-            node = node.offsetParent;
-        }
-    }
-    info.x.targetLength = target === container ? target.scrollWidth : target.clientWidth;
-    info.y.targetLength = target === container ? target.scrollHeight : target.clientHeight;
-    info.x.containerLength = container.clientWidth;
-    info.y.containerLength = container.clientHeight;
-    if (container && target && target !== container) (0, _warnOnceMjs.warnOnce)(getComputedStyle(container).position !== "static", "Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.");
-}
-function createOnScrollHandler(element, onScroll, info, options = {}) {
-    return {
-        measure: ()=>measure(element, options.target, info),
-        update: (time)=>{
-            (0, _infoMjs.updateScrollInfo)(element, info, time);
-            if (options.offset || options.target) (0, _indexMjs.resolveOffsets)(element, info, options);
-        },
-        notify: ()=>onScroll(info)
-    };
-}
-
-},{"../../../utils/warn-once.mjs":"JIiQV","./info.mjs":"bucvA","./offsets/index.mjs":"3Feto","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"3Feto":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "resolveOffsets", ()=>resolveOffsets);
-var _insetMjs = require("./inset.mjs");
-var _presetsMjs = require("./presets.mjs");
-var _offsetMjs = require("./offset.mjs");
-var _interpolateMjs = require("../../../../utils/interpolate.mjs");
-var _defaultMjs = require("../../../../utils/offsets/default.mjs");
-const point = {
-    x: 0,
-    y: 0
-};
-function getTargetSize(target) {
-    return "getBBox" in target && target.tagName !== "svg" ? target.getBBox() : {
-        width: target.clientWidth,
-        height: target.clientHeight
-    };
-}
-function resolveOffsets(container, info, options) {
-    const { offset: offsetDefinition = (0, _presetsMjs.ScrollOffset).All } = options;
-    const { target = container, axis = "y" } = options;
-    const lengthLabel = axis === "y" ? "height" : "width";
-    const inset = target !== container ? (0, _insetMjs.calcInset)(target, container) : point;
-    /**
-     * Measure the target and container. If they're the same thing then we
-     * use the container's scrollWidth/Height as the target, from there
-     * all other calculations can remain the same.
-     */ const targetSize = target === container ? {
-        width: container.scrollWidth,
-        height: container.scrollHeight
-    } : getTargetSize(target);
-    const containerSize = {
-        width: container.clientWidth,
-        height: container.clientHeight
-    };
-    /**
-     * Reset the length of the resolved offset array rather than creating a new one.
-     * TODO: More reusable data structures for targetSize/containerSize would also be good.
-     */ info[axis].offset.length = 0;
-    /**
-     * Populate the offset array by resolving the user's offset definition into
-     * a list of pixel scroll offets.
-     */ let hasChanged = !info[axis].interpolate;
-    const numOffsets = offsetDefinition.length;
-    for(let i = 0; i < numOffsets; i++){
-        const offset = (0, _offsetMjs.resolveOffset)(offsetDefinition[i], containerSize[lengthLabel], targetSize[lengthLabel], inset[axis]);
-        if (!hasChanged && offset !== info[axis].interpolatorOffsets[i]) hasChanged = true;
-        info[axis].offset[i] = offset;
-    }
-    /**
-     * If the pixel scroll offsets have changed, create a new interpolator function
-     * to map scroll value into a progress.
-     */ if (hasChanged) {
-        info[axis].interpolate = (0, _interpolateMjs.interpolate)(info[axis].offset, (0, _defaultMjs.defaultOffset)(offsetDefinition));
-        info[axis].interpolatorOffsets = [
-            ...info[axis].offset
-        ];
-    }
-    info[axis].progress = info[axis].interpolate(info[axis].current);
-}
-
-},{"./inset.mjs":"cxHkE","./presets.mjs":"dj3i3","./offset.mjs":"aSFe8","../../../../utils/interpolate.mjs":"d7x9H","../../../../utils/offsets/default.mjs":"7Njqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"cxHkE":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "calcInset", ()=>calcInset);
-function calcInset(element, container) {
-    const inset = {
-        x: 0,
-        y: 0
-    };
-    let current = element;
-    while(current && current !== container){
-        if (current instanceof HTMLElement) {
-            inset.x += current.offsetLeft;
-            inset.y += current.offsetTop;
-            current = current.offsetParent;
-        } else if (current.tagName === "svg") {
-            /**
-             * This isn't an ideal approach to measuring the offset of <svg /> tags.
-             * It would be preferable, given they behave like HTMLElements in most ways
-             * to use offsetLeft/Top. But these don't exist on <svg />. Likewise we
-             * can't use .getBBox() like most SVG elements as these provide the offset
-             * relative to the SVG itself, which for <svg /> is usually 0x0.
-             */ const svgBoundingBox = current.getBoundingClientRect();
-            current = current.parentElement;
-            const parentBoundingBox = current.getBoundingClientRect();
-            inset.x += svgBoundingBox.left - parentBoundingBox.left;
-            inset.y += svgBoundingBox.top - parentBoundingBox.top;
-        } else if (current instanceof SVGGraphicsElement) {
-            const { x, y } = current.getBBox();
-            inset.x += x;
-            inset.y += y;
-            let svg = null;
-            let parent = current.parentNode;
-            while(!svg){
-                if (parent.tagName === "svg") svg = parent;
-                parent = current.parentNode;
-            }
-            current = svg;
-        } else break;
-    }
-    return inset;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"dj3i3":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ScrollOffset", ()=>ScrollOffset);
-const ScrollOffset = {
-    Enter: [
-        [
-            0,
-            1
-        ],
-        [
-            1,
-            1
-        ]
-    ],
-    Exit: [
-        [
-            0,
-            0
-        ],
-        [
-            1,
-            0
-        ]
-    ],
-    Any: [
-        [
-            1,
-            0
-        ],
-        [
-            0,
-            1
-        ]
-    ],
-    All: [
-        [
-            0,
-            0
-        ],
-        [
-            1,
-            1
-        ]
-    ]
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"aSFe8":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "resolveOffset", ()=>resolveOffset);
-var _edgeMjs = require("./edge.mjs");
-const defaultOffset = [
-    0,
-    0
-];
-function resolveOffset(offset, containerLength, targetLength, targetInset) {
-    let offsetDefinition = Array.isArray(offset) ? offset : defaultOffset;
-    let targetPoint = 0;
-    let containerPoint = 0;
-    if (typeof offset === "number") /**
-         * If we're provided offset: [0, 0.5, 1] then each number x should become
-         * [x, x], so we default to the behaviour of mapping 0 => 0 of both target
-         * and container etc.
-         */ offsetDefinition = [
-        offset,
-        offset
-    ];
-    else if (typeof offset === "string") {
-        offset = offset.trim();
-        if (offset.includes(" ")) offsetDefinition = offset.split(" ");
-        else /**
-             * If we're provided a definition like "100px" then we want to apply
-             * that only to the top of the target point, leaving the container at 0.
-             * Whereas a named offset like "end" should be applied to both.
-             */ offsetDefinition = [
-            offset,
-            (0, _edgeMjs.namedEdges)[offset] ? offset : `0`
-        ];
-    }
-    targetPoint = (0, _edgeMjs.resolveEdge)(offsetDefinition[0], targetLength, targetInset);
-    containerPoint = (0, _edgeMjs.resolveEdge)(offsetDefinition[1], containerLength);
-    return targetPoint - containerPoint;
-}
-
-},{"./edge.mjs":"1TwYO","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"1TwYO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "namedEdges", ()=>namedEdges);
-parcelHelpers.export(exports, "resolveEdge", ()=>resolveEdge);
-const namedEdges = {
-    start: 0,
-    center: 0.5,
-    end: 1
-};
-function resolveEdge(edge, length, inset = 0) {
-    let delta = 0;
-    /**
-     * If we have this edge defined as a preset, replace the definition
-     * with the numerical value.
-     */ if (edge in namedEdges) edge = namedEdges[edge];
-    /**
-     * Handle unit values
-     */ if (typeof edge === "string") {
-        const asNumber = parseFloat(edge);
-        if (edge.endsWith("px")) delta = asNumber;
-        else if (edge.endsWith("%")) edge = asNumber / 100;
-        else if (edge.endsWith("vw")) delta = asNumber / 100 * document.documentElement.clientWidth;
-        else if (edge.endsWith("vh")) delta = asNumber / 100 * document.documentElement.clientHeight;
-        else edge = asNumber;
-    }
-    /**
-     * If the edge is defined as a number, handle as a progress value.
-     */ if (typeof edge === "number") delta = length * edge;
-    return inset + delta;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"aZTUZ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useElementScroll", ()=>useElementScroll);
-var _warnOnceMjs = require("../../utils/warn-once.mjs");
-var _useScrollMjs = require("../use-scroll.mjs");
-/**
- * @deprecated useElementScroll is deprecated. Convert to useScroll({ container: ref })
- */ function useElementScroll(ref) {
-    (0, _warnOnceMjs.warnOnce)(false, "useElementScroll is deprecated. Convert to useScroll({ container: ref }).");
-    return (0, _useScrollMjs.useScroll)({
-        container: ref
-    });
-}
-
-},{"../../utils/warn-once.mjs":"JIiQV","../use-scroll.mjs":"8vYLG","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"dr5jF":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useViewportScroll", ()=>useViewportScroll);
-var _warnOnceMjs = require("../../utils/warn-once.mjs");
-var _useScrollMjs = require("../use-scroll.mjs");
-/**
- * @deprecated useViewportScroll is deprecated. Convert to useScroll()
- */ function useViewportScroll() {
-    (0, _warnOnceMjs.warnOnce)(false, "useViewportScroll is deprecated. Convert to useScroll().");
-    return (0, _useScrollMjs.useScroll)();
-}
-
-},{"../../utils/warn-once.mjs":"JIiQV","../use-scroll.mjs":"8vYLG","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"o2prt":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useTime", ()=>useTime);
-var _useAnimationFrameMjs = require("../utils/use-animation-frame.mjs");
-var _useMotionValueMjs = require("./use-motion-value.mjs");
-function useTime() {
-    const time = (0, _useMotionValueMjs.useMotionValue)(0);
-    (0, _useAnimationFrameMjs.useAnimationFrame)((t)=>time.set(t));
-    return time;
-}
-
-},{"../utils/use-animation-frame.mjs":"jPG8M","./use-motion-value.mjs":"rszYa","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"jPG8M":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useAnimationFrame", ()=>useAnimationFrame);
-var _react = require("react");
-var _motionConfigContextMjs = require("../context/MotionConfigContext.mjs");
-var _frameMjs = require("../frameloop/frame.mjs");
-function useAnimationFrame(callback) {
-    const initialTimestamp = (0, _react.useRef)(0);
-    const { isStatic } = (0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext));
     (0, _react.useEffect)(()=>{
-        if (isStatic) return;
-        const provideTimeSinceStart = ({ timestamp, delta })=>{
-            if (!initialTimestamp.current) initialTimestamp.current = timestamp;
-            callback(timestamp - initialTimestamp.current, delta);
-        };
-        (0, _frameMjs.frame).update(provideTimeSinceStart, true);
-        return ()=>(0, _frameMjs.cancelFrame)(provideTimeSinceStart);
+        if (favoritesList.length > 0) setMyFavorite(favoritesList.includes(movie.id));
     }, [
-        callback
+        favoritesList,
+        movie.id
     ]);
-}
-
-},{"react":"21dqq","../context/MotionConfigContext.mjs":"8MLRw","../frameloop/frame.mjs":"3xPo8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"9VGCG":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useWillChange", ()=>useWillChange);
-var _useConstantMjs = require("../../utils/use-constant.mjs");
-var _willChangeMotionValueMjs = require("./WillChangeMotionValue.mjs");
-function useWillChange() {
-    return (0, _useConstantMjs.useConstant)(()=>new (0, _willChangeMotionValueMjs.WillChangeMotionValue)("auto"));
-}
-
-},{"../../utils/use-constant.mjs":"gAAJI","./WillChangeMotionValue.mjs":"4e9L3","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"8WCy4":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useReducedMotion", ()=>useReducedMotion);
-var _react = require("react");
-var _indexMjs = require("./index.mjs");
-var _warnOnceMjs = require("../warn-once.mjs");
-var _stateMjs = require("./state.mjs");
-/**
- * A hook that returns `true` if we should be using reduced motion based on the current device's Reduced Motion setting.
- *
- * This can be used to implement changes to your UI based on Reduced Motion. For instance, replacing motion-sickness inducing
- * `x`/`y` animations with `opacity`, disabling the autoplay of background videos, or turning off parallax motion.
- *
- * It will actively respond to changes and re-render your components with the latest setting.
- *
- * ```jsx
- * export function Sidebar({ isOpen }) {
- *   const shouldReduceMotion = useReducedMotion()
- *   const closedX = shouldReduceMotion ? 0 : "-100%"
- *
- *   return (
- *     <motion.div animate={{
- *       opacity: isOpen ? 1 : 0,
- *       x: isOpen ? 0 : closedX
- *     }} />
- *   )
- * }
- * ```
- *
- * @return boolean
- *
- * @public
- */ function useReducedMotion() {
-    /**
-     * Lazy initialisation of prefersReducedMotion
-     */ !(0, _stateMjs.hasReducedMotionListener).current && (0, _indexMjs.initPrefersReducedMotion)();
-    const [shouldReduceMotion] = (0, _react.useState)((0, _stateMjs.prefersReducedMotion).current);
-    (0, _warnOnceMjs.warnOnce)(shouldReduceMotion !== true, "You have Reduced Motion enabled on your device. Animations may not appear as expected.");
-    /**
-     * TODO See if people miss automatically updating shouldReduceMotion setting
-     */ return shouldReduceMotion;
-}
-
-},{"react":"21dqq","./index.mjs":"6cOfX","../warn-once.mjs":"JIiQV","./state.mjs":"bxW6Y","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"1tbj3":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useReducedMotionConfig", ()=>useReducedMotionConfig);
-var _react = require("react");
-var _motionConfigContextMjs = require("../../context/MotionConfigContext.mjs");
-var _useReducedMotionMjs = require("./use-reduced-motion.mjs");
-function useReducedMotionConfig() {
-    const reducedMotionPreference = (0, _useReducedMotionMjs.useReducedMotion)();
-    const { reducedMotion } = (0, _react.useContext)((0, _motionConfigContextMjs.MotionConfigContext));
-    if (reducedMotion === "never") return false;
-    else if (reducedMotion === "always") return true;
-    else return reducedMotionPreference;
-}
-
-},{"react":"21dqq","../../context/MotionConfigContext.mjs":"8MLRw","./use-reduced-motion.mjs":"8WCy4","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"b0jPR":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "animationControls", ()=>animationControls);
-parcelHelpers.export(exports, "setValues", ()=>setValues);
-var _errorsMjs = require("../../utils/errors.mjs");
-var _settersMjs = require("../../render/utils/setters.mjs");
-var _visualElementMjs = require("../interfaces/visual-element.mjs");
-function stopAnimation(visualElement) {
-    visualElement.values.forEach((value)=>value.stop());
-}
-function setVariants(visualElement, variantLabels) {
-    const reversedLabels = [
-        ...variantLabels
-    ].reverse();
-    reversedLabels.forEach((key)=>{
-        const variant = visualElement.getVariant(key);
-        variant && (0, _settersMjs.setTarget)(visualElement, variant);
-        if (visualElement.variantChildren) visualElement.variantChildren.forEach((child)=>{
-            setVariants(child, variantLabels);
+    const addFavorite = async (movieID, event)=>{
+        event.preventDefault();
+        if (!favoritesList.includes(movieID)) fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((data)=>{
+            setFavoritesList((prevList)=>[
+                    ...prevList,
+                    movieID
+                ]);
+            setMyFavorite(true);
         });
-    });
-}
-function setValues(visualElement, definition) {
-    if (Array.isArray(definition)) return setVariants(visualElement, definition);
-    else if (typeof definition === "string") return setVariants(visualElement, [
-        definition
-    ]);
-    else (0, _settersMjs.setTarget)(visualElement, definition);
-}
-/**
- * @public
- */ function animationControls() {
-    /**
-     * Track whether the host component has mounted.
-     */ let hasMounted = false;
-    /**
-     * A collection of linked component animation controls.
-     */ const subscribers = new Set();
-    const controls = {
-        subscribe (visualElement) {
-            subscribers.add(visualElement);
-            return ()=>void subscribers.delete(visualElement);
-        },
-        start (definition, transitionOverride) {
-            (0, _errorsMjs.invariant)(hasMounted, "controls.start() should only be called after a component has mounted. Consider calling within a useEffect hook.");
-            const animations = [];
-            subscribers.forEach((visualElement)=>{
-                animations.push((0, _visualElementMjs.animateVisualElement)(visualElement, definition, {
-                    transitionOverride
-                }));
-            });
-            return Promise.all(animations);
-        },
-        set (definition) {
-            (0, _errorsMjs.invariant)(hasMounted, "controls.set() should only be called after a component has mounted. Consider calling within a useEffect hook.");
-            return subscribers.forEach((visualElement)=>{
-                setValues(visualElement, definition);
-            });
-        },
-        stop () {
-            subscribers.forEach((visualElement)=>{
-                stopAnimation(visualElement);
-            });
-        },
-        mount () {
-            hasMounted = true;
-            return ()=>{
-                hasMounted = false;
-                controls.stop();
-            };
-        }
+        else fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((data)=>{
+            setFavoritesList((prevList)=>prevList.filter((id)=>id !== movieID));
+            setMyFavorite(false);
+        });
     };
-    return controls;
-}
-
-},{"../../utils/errors.mjs":"drRZ6","../../render/utils/setters.mjs":"5AEB8","../interfaces/visual-element.mjs":"e0aFv","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"bAyXK":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useAnimate", ()=>useAnimate);
-var _useConstantMjs = require("../../utils/use-constant.mjs");
-var _useUnmountEffectMjs = require("../../utils/use-unmount-effect.mjs");
-var _animateMjs = require("../animate.mjs");
-function useAnimate() {
-    const scope = (0, _useConstantMjs.useConstant)(()=>({
-            current: null,
-            animations: []
-        }));
-    const animate = (0, _useConstantMjs.useConstant)(()=>(0, _animateMjs.createScopedAnimate)(scope));
-    (0, _useUnmountEffectMjs.useUnmountEffect)(()=>{
-        scope.animations.forEach((animation)=>animation.stop());
-    });
-    return [
-        scope,
-        animate
-    ];
-}
-
-},{"../../utils/use-constant.mjs":"gAAJI","../../utils/use-unmount-effect.mjs":"gNrSX","../animate.mjs":"kfwt5","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"gNrSX":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useUnmountEffect", ()=>useUnmountEffect);
-var _react = require("react");
-function useUnmountEffect(callback) {
-    return (0, _react.useEffect)(()=>()=>callback(), []);
-}
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"kfwt5":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "animate", ()=>animate);
-parcelHelpers.export(exports, "createScopedAnimate", ()=>createScopedAnimate);
-var _resolveElementMjs = require("../render/dom/utils/resolve-element.mjs");
-var _storeMjs = require("../render/store.mjs");
-var _errorsMjs = require("../utils/errors.mjs");
-var _groupPlaybackControlsMjs = require("./GroupPlaybackControls.mjs");
-var _isDomKeyframesMjs = require("./utils/is-dom-keyframes.mjs");
-var _visualElementTargetMjs = require("./interfaces/visual-element-target.mjs");
-var _createVisualElementMjs = require("./utils/create-visual-element.mjs");
-var _singleValueMjs = require("./interfaces/single-value.mjs");
-var _createMjs = require("./sequence/create.mjs");
-var _isMotionValueMjs = require("../value/utils/is-motion-value.mjs");
-function animateElements(elementOrSelector, keyframes, options, scope) {
-    const elements = (0, _resolveElementMjs.resolveElements)(elementOrSelector, scope);
-    const numElements = elements.length;
-    (0, _errorsMjs.invariant)(Boolean(numElements), "No valid element provided.");
-    const animations = [];
-    for(let i = 0; i < numElements; i++){
-        const element = elements[i];
-        /**
-         * Check each element for an associated VisualElement. If none exists,
-         * we need to create one.
-         */ if (!(0, _storeMjs.visualElementStore).has(element)) /**
-             * TODO: We only need render-specific parts of the VisualElement.
-             * With some additional work the size of the animate() function
-             * could be reduced significantly.
-             */ (0, _createVisualElementMjs.createVisualElement)(element);
-        const visualElement = (0, _storeMjs.visualElementStore).get(element);
-        const transition = {
-            ...options
-        };
-        /**
-         * Resolve stagger function if provided.
-         */ if (typeof transition.delay === "function") transition.delay = transition.delay(i, numElements);
-        animations.push(...(0, _visualElementTargetMjs.animateTarget)(visualElement, {
-            ...keyframes,
-            transition
-        }, {}));
-    }
-    return new (0, _groupPlaybackControlsMjs.GroupPlaybackControls)(animations);
-}
-const isSequence = (value)=>Array.isArray(value) && Array.isArray(value[0]);
-function animateSequence(sequence, options, scope) {
-    const animations = [];
-    const animationDefinitions = (0, _createMjs.createAnimationsFromSequence)(sequence, options, scope);
-    animationDefinitions.forEach(({ keyframes, transition }, subject)=>{
-        let animation;
-        if ((0, _isMotionValueMjs.isMotionValue)(subject)) animation = (0, _singleValueMjs.animateSingleValue)(subject, keyframes.default, transition.default);
-        else animation = animateElements(subject, keyframes, transition);
-        animations.push(animation);
-    });
-    return new (0, _groupPlaybackControlsMjs.GroupPlaybackControls)(animations);
-}
-const createScopedAnimate = (scope)=>{
-    /**
-     * Implementation
-     */ function scopedAnimate(valueOrElementOrSequence, keyframes, options) {
-        let animation;
-        if (isSequence(valueOrElementOrSequence)) animation = animateSequence(valueOrElementOrSequence, keyframes, scope);
-        else if ((0, _isDomKeyframesMjs.isDOMKeyframes)(keyframes)) animation = animateElements(valueOrElementOrSequence, keyframes, options, scope);
-        else animation = (0, _singleValueMjs.animateSingleValue)(valueOrElementOrSequence, keyframes, options);
-        if (scope) scope.animations.push(animation);
-        return animation;
-    }
-    return scopedAnimate;
-};
-const animate = createScopedAnimate();
-
-},{"../render/dom/utils/resolve-element.mjs":"9MT4j","../render/store.mjs":"aGZeB","../utils/errors.mjs":"drRZ6","./GroupPlaybackControls.mjs":"fGvAY","./utils/is-dom-keyframes.mjs":"k3wr8","./interfaces/visual-element-target.mjs":"6SL9E","./utils/create-visual-element.mjs":"3YhEX","./interfaces/single-value.mjs":"BcqjY","./sequence/create.mjs":"6B8iV","../value/utils/is-motion-value.mjs":"94AYa","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"k3wr8":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "isDOMKeyframes", ()=>isDOMKeyframes);
-function isDOMKeyframes(keyframes) {
-    return typeof keyframes === "object" && !Array.isArray(keyframes);
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"3YhEX":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createVisualElement", ()=>createVisualElement);
-var _isSvgElementMjs = require("../../render/dom/utils/is-svg-element.mjs");
-var _svgvisualElementMjs = require("../../render/svg/SVGVisualElement.mjs");
-var _htmlvisualElementMjs = require("../../render/html/HTMLVisualElement.mjs");
-var _storeMjs = require("../../render/store.mjs");
-function createVisualElement(element) {
-    const options = {
-        presenceContext: null,
-        props: {},
-        visualState: {
-            renderState: {
-                transform: {},
-                transformOrigin: {},
-                style: {},
-                vars: {},
-                attrs: {}
-            },
-            latestValues: {}
-        }
-    };
-    const node = (0, _isSvgElementMjs.isSVGElement)(element) ? new (0, _svgvisualElementMjs.SVGVisualElement)(options) : new (0, _htmlvisualElementMjs.HTMLVisualElement)(options);
-    node.mount(element);
-    (0, _storeMjs.visualElementStore).set(element, node);
-}
-
-},{"../../render/dom/utils/is-svg-element.mjs":"4r61T","../../render/svg/SVGVisualElement.mjs":"7bI6y","../../render/html/HTMLVisualElement.mjs":"3a21f","../../render/store.mjs":"aGZeB","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"6B8iV":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createAnimationsFromSequence", ()=>createAnimationsFromSequence);
-parcelHelpers.export(exports, "getValueTransition", ()=>getValueTransition);
-var _createGeneratorEasingMjs = require("../../easing/utils/create-generator-easing.mjs");
-var _resolveElementMjs = require("../../render/dom/utils/resolve-element.mjs");
-var _defaultMjs = require("../../utils/offsets/default.mjs");
-var _fillMjs = require("../../utils/offsets/fill.mjs");
-var _progressMjs = require("../../utils/progress.mjs");
-var _timeConversionMjs = require("../../utils/time-conversion.mjs");
-var _isMotionValueMjs = require("../../value/utils/is-motion-value.mjs");
-var _calcTimeMjs = require("./utils/calc-time.mjs");
-var _editMjs = require("./utils/edit.mjs");
-var _sortMjs = require("./utils/sort.mjs");
-const defaultSegmentEasing = "easeInOut";
-function createAnimationsFromSequence(sequence, { defaultTransition = {}, ...sequenceTransition } = {}, scope) {
-    const defaultDuration = defaultTransition.duration || 0.3;
-    const animationDefinitions = new Map();
-    const sequences = new Map();
-    const elementCache = {};
-    const timeLabels = new Map();
-    let prevTime = 0;
-    let currentTime = 0;
-    let totalDuration = 0;
-    /**
-     * Build the timeline by mapping over the sequence array and converting
-     * the definitions into keyframes and offsets with absolute time values.
-     * These will later get converted into relative offsets in a second pass.
-     */ for(let i = 0; i < sequence.length; i++){
-        const segment = sequence[i];
-        /**
-         * If this is a timeline label, mark it and skip the rest of this iteration.
-         */ if (typeof segment === "string") {
-            timeLabels.set(segment, currentTime);
-            continue;
-        } else if (!Array.isArray(segment)) {
-            timeLabels.set(segment.name, (0, _calcTimeMjs.calcNextTime)(currentTime, segment.at, prevTime, timeLabels));
-            continue;
-        }
-        let [subject, keyframes, transition = {}] = segment;
-        /**
-         * If a relative or absolute time value has been specified we need to resolve
-         * it in relation to the currentTime.
-         */ if (transition.at !== undefined) currentTime = (0, _calcTimeMjs.calcNextTime)(currentTime, transition.at, prevTime, timeLabels);
-        /**
-         * Keep track of the maximum duration in this definition. This will be
-         * applied to currentTime once the definition has been parsed.
-         */ let maxDuration = 0;
-        const resolveValueSequence = (valueKeyframes, valueTransition, valueSequence, elementIndex = 0, numElements = 0)=>{
-            const valueKeyframesAsList = keyframesAsList(valueKeyframes);
-            const { delay = 0, times = (0, _defaultMjs.defaultOffset)(valueKeyframesAsList), type = "keyframes", ...remainingTransition } = valueTransition;
-            let { ease = defaultTransition.ease || "easeOut", duration } = valueTransition;
-            /**
-             * Resolve stagger() if defined.
-             */ const calculatedDelay = typeof delay === "function" ? delay(elementIndex, numElements) : delay;
-            /**
-             * If this animation should and can use a spring, generate a spring easing function.
-             */ const numKeyframes = valueKeyframesAsList.length;
-            if (numKeyframes <= 2 && type === "spring") {
-                /**
-                 * As we're creating an easing function from a spring,
-                 * ideally we want to generate it using the real distance
-                 * between the two keyframes. However this isn't always
-                 * possible - in these situations we use 0-100.
-                 */ let absoluteDelta = 100;
-                if (numKeyframes === 2 && isNumberKeyframesArray(valueKeyframesAsList)) {
-                    const delta = valueKeyframesAsList[1] - valueKeyframesAsList[0];
-                    absoluteDelta = Math.abs(delta);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactHelmet.Helmet), {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("title", {
+                    children: [
+                        "PopcornPal: ",
+                        movie.title
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 65,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 64,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "banner-container",
+                width: "100%;",
+                style: {
+                    backgroundImage: `url(${movie.banner})`
                 }
-                const springTransition = {
-                    ...remainingTransition
-                };
-                if (duration !== undefined) springTransition.duration = (0, _timeConversionMjs.secondsToMilliseconds)(duration);
-                const springEasing = (0, _createGeneratorEasingMjs.createGeneratorEasing)(springTransition, absoluteDelta);
-                ease = springEasing.ease;
-                duration = springEasing.duration;
-            }
-            duration !== null && duration !== void 0 ? duration : duration = defaultDuration;
-            const startTime = currentTime + calculatedDelay;
-            const targetTime = startTime + duration;
-            /**
-             * If there's only one time offset of 0, fill in a second with length 1
-             */ if (times.length === 1 && times[0] === 0) times[1] = 1;
-            /**
-             * Fill out if offset if fewer offsets than keyframes
-             */ const remainder = times.length - valueKeyframesAsList.length;
-            remainder > 0 && (0, _fillMjs.fillOffset)(times, remainder);
-            /**
-             * If only one value has been set, ie [1], push a null to the start of
-             * the keyframe array. This will let us mark a keyframe at this point
-             * that will later be hydrated with the previous value.
-             */ valueKeyframesAsList.length === 1 && valueKeyframesAsList.unshift(null);
-            /**
-             * Add keyframes, mapping offsets to absolute time.
-             */ (0, _editMjs.addKeyframes)(valueSequence, valueKeyframesAsList, ease, times, startTime, targetTime);
-            maxDuration = Math.max(calculatedDelay + duration, maxDuration);
-            totalDuration = Math.max(targetTime, totalDuration);
-        };
-        if ((0, _isMotionValueMjs.isMotionValue)(subject)) {
-            const subjectSequence = getSubjectSequence(subject, sequences);
-            resolveValueSequence(keyframes, transition, getValueSequence("default", subjectSequence));
-        } else {
-            /**
-             * Find all the elements specified in the definition and parse value
-             * keyframes from their timeline definitions.
-             */ const elements = (0, _resolveElementMjs.resolveElements)(subject, scope, elementCache);
-            const numElements = elements.length;
-            /**
-             * For every element in this segment, process the defined values.
-             */ for(let elementIndex = 0; elementIndex < numElements; elementIndex++){
-                /**
-                 * Cast necessary, but we know these are of this type
-                 */ keyframes;
-                transition;
-                const element = elements[elementIndex];
-                const subjectSequence = getSubjectSequence(element, sequences);
-                for(const key in keyframes)resolveValueSequence(keyframes[key], getValueTransition(transition, key), getValueSequence(key, subjectSequence), elementIndex, numElements);
-            }
-        }
-        prevTime = currentTime;
-        currentTime += maxDuration;
-    }
-    /**
-     * For every element and value combination create a new animation.
-     */ sequences.forEach((valueSequences, element)=>{
-        for(const key in valueSequences){
-            const valueSequence = valueSequences[key];
-            /**
-             * Arrange all the keyframes in ascending time order.
-             */ valueSequence.sort((0, _sortMjs.compareByTime));
-            const keyframes = [];
-            const valueOffset = [];
-            const valueEasing = [];
-            /**
-             * For each keyframe, translate absolute times into
-             * relative offsets based on the total duration of the timeline.
-             */ for(let i = 0; i < valueSequence.length; i++){
-                const { at, value, easing } = valueSequence[i];
-                keyframes.push(value);
-                valueOffset.push((0, _progressMjs.progress)(0, totalDuration, at));
-                valueEasing.push(easing || "easeOut");
-            }
-            /**
-             * If the first keyframe doesn't land on offset: 0
-             * provide one by duplicating the initial keyframe. This ensures
-             * it snaps to the first keyframe when the animation starts.
-             */ if (valueOffset[0] !== 0) {
-                valueOffset.unshift(0);
-                keyframes.unshift(keyframes[0]);
-                valueEasing.unshift(defaultSegmentEasing);
-            }
-            /**
-             * If the last keyframe doesn't land on offset: 1
-             * provide one with a null wildcard value. This will ensure it
-             * stays static until the end of the animation.
-             */ if (valueOffset[valueOffset.length - 1] !== 1) {
-                valueOffset.push(1);
-                keyframes.push(null);
-            }
-            if (!animationDefinitions.has(element)) animationDefinitions.set(element, {
-                keyframes: {},
-                transition: {}
-            });
-            const definition = animationDefinitions.get(element);
-            definition.keyframes[key] = keyframes;
-            definition.transition[key] = {
-                ...defaultTransition,
-                duration: totalDuration,
-                ease: valueEasing,
-                times: valueOffset,
-                ...sequenceTransition
-            };
-        }
-    });
-    return animationDefinitions;
-}
-function getSubjectSequence(subject, sequences) {
-    !sequences.has(subject) && sequences.set(subject, {});
-    return sequences.get(subject);
-}
-function getValueSequence(name, sequences) {
-    if (!sequences[name]) sequences[name] = [];
-    return sequences[name];
-}
-function keyframesAsList(keyframes) {
-    return Array.isArray(keyframes) ? keyframes : [
-        keyframes
-    ];
-}
-function getValueTransition(transition, key) {
-    return transition[key] ? {
-        ...transition,
-        ...transition[key]
-    } : {
-        ...transition
-    };
-}
-const isNumber = (keyframe)=>typeof keyframe === "number";
-const isNumberKeyframesArray = (keyframes)=>keyframes.every(isNumber);
-
-},{"../../easing/utils/create-generator-easing.mjs":"1JEgJ","../../render/dom/utils/resolve-element.mjs":"9MT4j","../../utils/offsets/default.mjs":"7Njqq","../../utils/offsets/fill.mjs":"i5hk9","../../utils/progress.mjs":"3vvIn","../../utils/time-conversion.mjs":"gdr8V","../../value/utils/is-motion-value.mjs":"94AYa","./utils/calc-time.mjs":"77G0z","./utils/edit.mjs":"ii4Xv","./utils/sort.mjs":"25DYN","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"1JEgJ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createGeneratorEasing", ()=>createGeneratorEasing);
-var _indexMjs = require("../../animation/generators/spring/index.mjs");
-var _calcDurationMjs = require("../../animation/generators/utils/calc-duration.mjs");
-var _timeConversionMjs = require("../../utils/time-conversion.mjs");
-/**
- * Create a progress => progress easing function from a generator.
- */ function createGeneratorEasing(options, scale = 100) {
-    const generator = (0, _indexMjs.spring)({
-        keyframes: [
-            0,
-            scale
-        ],
-        ...options
-    });
-    const duration = Math.min((0, _calcDurationMjs.calcGeneratorDuration)(generator), (0, _calcDurationMjs.maxGeneratorDuration));
-    return {
-        type: "keyframes",
-        ease: (progress)=>generator.next(duration * progress).value / scale,
-        duration: (0, _timeConversionMjs.millisecondsToSeconds)(duration)
-    };
-}
-
-},{"../../animation/generators/spring/index.mjs":"aNeOI","../../animation/generators/utils/calc-duration.mjs":"iTe1T","../../utils/time-conversion.mjs":"gdr8V","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"77G0z":[function(require,module,exports) {
-/**
- * Given a absolute or relative time definition and current/prev time state of the sequence,
- * calculate an absolute time for the next keyframes.
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "calcNextTime", ()=>calcNextTime);
-function calcNextTime(current, next, prev, labels) {
-    var _a;
-    if (typeof next === "number") return next;
-    else if (next.startsWith("-") || next.startsWith("+")) return Math.max(0, current + parseFloat(next));
-    else if (next === "<") return prev;
-    else return (_a = labels.get(next)) !== null && _a !== void 0 ? _a : current;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"ii4Xv":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "addKeyframes", ()=>addKeyframes);
-parcelHelpers.export(exports, "eraseKeyframes", ()=>eraseKeyframes);
-var _getEasingForSegmentMjs = require("../../../easing/utils/get-easing-for-segment.mjs");
-var _arrayMjs = require("../../../utils/array.mjs");
-var _numberMjs = require("../../../utils/mix/number.mjs");
-function eraseKeyframes(sequence, startTime, endTime) {
-    for(let i = 0; i < sequence.length; i++){
-        const keyframe = sequence[i];
-        if (keyframe.at > startTime && keyframe.at < endTime) {
-            (0, _arrayMjs.removeItem)(sequence, keyframe);
-            // If we remove this item we have to push the pointer back one
-            i--;
-        }
-    }
-}
-function addKeyframes(sequence, keyframes, easing, offset, startTime, endTime) {
-    /**
-     * Erase every existing value between currentTime and targetTime,
-     * this will essentially splice this timeline into any currently
-     * defined ones.
-     */ eraseKeyframes(sequence, startTime, endTime);
-    for(let i = 0; i < keyframes.length; i++)sequence.push({
-        value: keyframes[i],
-        at: (0, _numberMjs.mixNumber)(startTime, endTime, offset[i]),
-        easing: (0, _getEasingForSegmentMjs.getEasingForSegment)(easing, i)
-    });
-}
-
-},{"../../../easing/utils/get-easing-for-segment.mjs":"lI1qH","../../../utils/array.mjs":"fpJYa","../../../utils/mix/number.mjs":"2kavH","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"lI1qH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getEasingForSegment", ()=>getEasingForSegment);
-var _wrapMjs = require("../../utils/wrap.mjs");
-var _isEasingArrayMjs = require("./is-easing-array.mjs");
-function getEasingForSegment(easing, i) {
-    return (0, _isEasingArrayMjs.isEasingArray)(easing) ? easing[(0, _wrapMjs.wrap)(0, easing.length, i)] : easing;
-}
-
-},{"../../utils/wrap.mjs":"j9YxN","./is-easing-array.mjs":"i3ygY","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"j9YxN":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "wrap", ()=>wrap);
-const wrap = (min, max, v)=>{
-    const rangeSize = max - min;
-    return ((v - min) % rangeSize + rangeSize) % rangeSize + min;
+            }, void 0, false, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 67,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "movie-info",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "movie-heading-flex",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                className: "heading movie-heading-margin",
+                                children: movie.title
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 75,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: `favorite-button ${myFavorite ? "my-favorite" : "not-my-favorite"}`,
+                                onClick: (event)=>addFavorite(movie.id, event),
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        className: "red-heart",
+                                        src: myFavorite ? (0, _redHeartFilledSvgDefault.default) : (0, _redHeartSvgDefault.default)
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 77,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "favorite-btn-text",
+                                        children: "Favorite"
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 81,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 76,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 74,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "movie-info-bubbles",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "bubble",
+                                children: [
+                                    "Duration: ",
+                                    movie.duration
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 86,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "bubble",
+                                children: movie.genre
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 87,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 85,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "info-section",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                children: "Synopsis"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 91,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "movie-description",
+                                children: movie.description
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 92,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 90,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "info-section",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                children: "Director"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 96,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "movie-description",
+                                children: movie.director
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 97,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 95,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "back-btn-container",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: `/`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                children: "Go Back"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 102,
+                                columnNumber: 11
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 101,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 100,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 73,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/movie-view/movie-view.jsx",
+        lineNumber: 63,
+        columnNumber: 5
+    }, undefined);
 };
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"25DYN":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "compareByTime", ()=>compareByTime);
-function compareByTime(a, b) {
-    if (a.at === b.at) {
-        if (a.value === null) return 1;
-        if (b.value === null) return -1;
-        return 0;
-    } else return a.at - b.at;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"gGFFX":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useAnimation", ()=>useAnimation);
-parcelHelpers.export(exports, "useAnimationControls", ()=>useAnimationControls);
-var _animationControlsMjs = require("./animation-controls.mjs");
-var _useConstantMjs = require("../../utils/use-constant.mjs");
-var _useIsomorphicEffectMjs = require("../../utils/use-isomorphic-effect.mjs");
-/**
- * Creates `AnimationControls`, which can be used to manually start, stop
- * and sequence animations on one or more components.
- *
- * The returned `AnimationControls` should be passed to the `animate` property
- * of the components you want to animate.
- *
- * These components can then be animated with the `start` method.
- *
- * ```jsx
- * import * as React from 'react'
- * import { motion, useAnimation } from 'framer-motion'
- *
- * export function MyComponent(props) {
- *    const controls = useAnimation()
- *
- *    controls.start({
- *        x: 100,
- *        transition: { duration: 0.5 },
- *    })
- *
- *    return <motion.div animate={controls} />
- * }
- * ```
- *
- * @returns Animation controller with `start` and `stop` methods
- *
- * @public
- */ function useAnimationControls() {
-    const controls = (0, _useConstantMjs.useConstant)((0, _animationControlsMjs.animationControls));
-    (0, _useIsomorphicEffectMjs.useIsomorphicLayoutEffect)(controls.mount, []);
-    return controls;
-}
-const useAnimation = useAnimationControls;
-
-},{"./animation-controls.mjs":"b0jPR","../../utils/use-constant.mjs":"gAAJI","../../utils/use-isomorphic-effect.mjs":"5Yog2","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"04q0C":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useCycle", ()=>useCycle);
-var _react = require("react");
-var _wrapMjs = require("./wrap.mjs");
-/**
- * Cycles through a series of visual properties. Can be used to toggle between or cycle through animations. It works similar to `useState` in React. It is provided an initial array of possible states, and returns an array of two arguments.
- *
- * An index value can be passed to the returned `cycle` function to cycle to a specific index.
- *
- * ```jsx
- * import * as React from "react"
- * import { motion, useCycle } from "framer-motion"
- *
- * export const MyComponent = () => {
- *   const [x, cycleX] = useCycle(0, 50, 100)
- *
- *   return (
- *     <motion.div
- *       animate={{ x: x }}
- *       onTap={() => cycleX()}
- *      />
- *    )
- * }
- * ```
- *
- * @param items - items to cycle through
- * @returns [currentState, cycleState]
- *
- * @public
- */ function useCycle(...items) {
-    const index = (0, _react.useRef)(0);
-    const [item, setItem] = (0, _react.useState)(items[index.current]);
-    const runCycle = (0, _react.useCallback)((next)=>{
-        index.current = typeof next !== "number" ? (0, _wrapMjs.wrap)(0, items.length, index.current + 1) : next;
-        setItem(items[index.current]);
-    }, // The array will change on each call, but by putting items.length at
-    // the front of this array, we guarantee the dependency comparison will match up
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [
-        items.length,
-        ...items
-    ]);
+_s(MovieView, "BBOMsMlPPLe+53zHqNwFvgyycCU=", false, function() {
     return [
-        item,
-        runCycle
+        (0, _reactRouter.useParams)
     ];
-}
-
-},{"react":"21dqq","./wrap.mjs":"j9YxN","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"diahp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useInView", ()=>useInView);
-var _react = require("react");
-var _indexMjs = require("../render/dom/viewport/index.mjs");
-function useInView(ref, { root, margin, amount, once = false } = {}) {
-    const [isInView, setInView] = (0, _react.useState)(false);
-    (0, _react.useEffect)(()=>{
-        if (!ref.current || once && isInView) return;
-        const onEnter = ()=>{
-            setInView(true);
-            return once ? undefined : ()=>setInView(false);
-        };
-        const options = {
-            root: root && root.current || undefined,
-            margin,
-            amount
-        };
-        return (0, _indexMjs.inView)(ref.current, onEnter, options);
-    }, [
-        root,
-        ref,
-        margin,
-        once,
-        amount
-    ]);
-    return isInView;
-}
-
-},{"react":"21dqq","../render/dom/viewport/index.mjs":"flLUA","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"flLUA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "inView", ()=>inView);
-var _resolveElementMjs = require("../utils/resolve-element.mjs");
-const thresholds = {
-    some: 0,
-    all: 1
-};
-function inView(elementOrSelector, onStart, { root, margin: rootMargin, amount = "some" } = {}) {
-    const elements = (0, _resolveElementMjs.resolveElements)(elementOrSelector);
-    const activeIntersections = new WeakMap();
-    const onIntersectionChange = (entries)=>{
-        entries.forEach((entry)=>{
-            const onEnd = activeIntersections.get(entry.target);
-            /**
-             * If there's no change to the intersection, we don't need to
-             * do anything here.
-             */ if (entry.isIntersecting === Boolean(onEnd)) return;
-            if (entry.isIntersecting) {
-                const newOnEnd = onStart(entry);
-                if (typeof newOnEnd === "function") activeIntersections.set(entry.target, newOnEnd);
-                else observer.unobserve(entry.target);
-            } else if (onEnd) {
-                onEnd(entry);
-                activeIntersections.delete(entry.target);
-            }
-        });
-    };
-    const observer = new IntersectionObserver(onIntersectionChange, {
-        root,
-        rootMargin,
-        threshold: typeof amount === "number" ? amount : thresholds[amount]
-    });
-    elements.forEach((element)=>observer.observe(element));
-    return ()=>observer.disconnect();
-}
-
-},{"../utils/resolve-element.mjs":"9MT4j","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"4F1ee":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "DragControls", ()=>DragControls);
-parcelHelpers.export(exports, "useDragControls", ()=>useDragControls);
-var _useConstantMjs = require("../../utils/use-constant.mjs");
-/**
- * Can manually trigger a drag gesture on one or more `drag`-enabled `motion` components.
- *
- * ```jsx
- * const dragControls = useDragControls()
- *
- * function startDrag(event) {
- *   dragControls.start(event, { snapToCursor: true })
- * }
- *
- * return (
- *   <>
- *     <div onPointerDown={startDrag} />
- *     <motion.div drag="x" dragControls={dragControls} />
- *   </>
- * )
- * ```
- *
- * @public
- */ class DragControls {
-    constructor(){
-        this.componentControls = new Set();
-    }
-    /**
-     * Subscribe a component's internal `VisualElementDragControls` to the user-facing API.
-     *
-     * @internal
-     */ subscribe(controls) {
-        this.componentControls.add(controls);
-        return ()=>this.componentControls.delete(controls);
-    }
-    /**
-     * Start a drag gesture on every `motion` component that has this set of drag controls
-     * passed into it via the `dragControls` prop.
-     *
-     * ```jsx
-     * dragControls.start(e, {
-     *   snapToCursor: true
-     * })
-     * ```
-     *
-     * @param event - PointerEvent
-     * @param options - Options
-     *
-     * @public
-     */ start(event, options) {
-        this.componentControls.forEach((controls)=>{
-            controls.start(event.nativeEvent || event, options);
-        });
-    }
-}
-const createDragControls = ()=>new DragControls();
-/**
- * Usually, dragging is initiated by pressing down on a `motion` component with a `drag` prop
- * and moving it. For some use-cases, for instance clicking at an arbitrary point on a video scrubber, we
- * might want to initiate that dragging from a different component than the draggable one.
- *
- * By creating a `dragControls` using the `useDragControls` hook, we can pass this into
- * the draggable component's `dragControls` prop. It exposes a `start` method
- * that can start dragging from pointer events on other components.
- *
- * ```jsx
- * const dragControls = useDragControls()
- *
- * function startDrag(event) {
- *   dragControls.start(event, { snapToCursor: true })
- * }
- *
- * return (
- *   <>
- *     <div onPointerDown={startDrag} />
- *     <motion.div drag="x" dragControls={dragControls} />
- *   </>
- * )
- * ```
- *
- * @public
- */ function useDragControls() {
-    return (0, _useConstantMjs.useConstant)(createDragControls);
-}
-
-},{"../../utils/use-constant.mjs":"gAAJI","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"7UOGF":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useDomEvent", ()=>useDomEvent);
-var _react = require("react");
-var _addDomEventMjs = require("./add-dom-event.mjs");
-/**
- * Attaches an event listener directly to the provided DOM element.
- *
- * Bypassing React's event system can be desirable, for instance when attaching non-passive
- * event handlers.
- *
- * ```jsx
- * const ref = useRef(null)
- *
- * useDomEvent(ref, 'wheel', onWheel, { passive: false })
- *
- * return <div ref={ref} />
- * ```
- *
- * @param ref - React.RefObject that's been provided to the element you want to bind the listener to.
- * @param eventName - Name of the event you want listen for.
- * @param handler - Function to fire when receiving the event.
- * @param options - Options to pass to `Event.addEventListener`.
- *
- * @public
- */ function useDomEvent(ref, eventName, handler, options) {
-    (0, _react.useEffect)(()=>{
-        const element = ref.current;
-        if (handler && element) return (0, _addDomEventMjs.addDomEvent)(element, eventName, handler, options);
-    }, [
-        ref,
-        eventName,
-        handler,
-        options
-    ]);
-}
-
-},{"react":"21dqq","./add-dom-event.mjs":"jAgCf","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"6FqHQ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "isMotionComponent", ()=>isMotionComponent);
-var _symbolMjs = require("./symbol.mjs");
-/**
- * Checks if a component is a `motion` component.
- */ function isMotionComponent(component) {
-    return component !== null && typeof component === "object" && (0, _symbolMjs.motionComponentSymbol) in component;
-}
-
-},{"./symbol.mjs":"11WZZ","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"5Ip67":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "unwrapMotionComponent", ()=>unwrapMotionComponent);
-var _isMotionComponentMjs = require("./is-motion-component.mjs");
-var _symbolMjs = require("./symbol.mjs");
-/**
- * Unwraps a `motion` component and returns either a string for `motion.div` or
- * the React component for `motion(Component)`.
- *
- * If the component is not a `motion` component it returns undefined.
- */ function unwrapMotionComponent(component) {
-    if ((0, _isMotionComponentMjs.isMotionComponent)(component)) return component[0, _symbolMjs.motionComponentSymbol];
-    return undefined;
-}
-
-},{"./is-motion-component.mjs":"6FqHQ","./symbol.mjs":"11WZZ","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"22k6b":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "disableInstantTransitions", ()=>disableInstantTransitions);
-parcelHelpers.export(exports, "useInstantTransition", ()=>useInstantTransition);
-var _react = require("react");
-var _useInstantLayoutTransitionMjs = require("../projection/use-instant-layout-transition.mjs");
-var _useForceUpdateMjs = require("./use-force-update.mjs");
-var _useInstantTransitionStateMjs = require("./use-instant-transition-state.mjs");
-var _frameMjs = require("../frameloop/frame.mjs");
-function useInstantTransition() {
-    const [forceUpdate, forcedRenderCount] = (0, _useForceUpdateMjs.useForceUpdate)();
-    const startInstantLayoutTransition = (0, _useInstantLayoutTransitionMjs.useInstantLayoutTransition)();
-    const unlockOnFrameRef = (0, _react.useRef)();
-    (0, _react.useEffect)(()=>{
-        /**
-         * Unblock after two animation frames, otherwise this will unblock too soon.
-         */ (0, _frameMjs.frame).postRender(()=>(0, _frameMjs.frame).postRender(()=>{
-                /**
-             * If the callback has been called again after the effect
-             * triggered this 2 frame delay, don't unblock animations. This
-             * prevents the previous effect from unblocking the current
-             * instant transition too soon. This becomes more likely when
-             * used in conjunction with React.startTransition().
-             */ if (forcedRenderCount !== unlockOnFrameRef.current) return;
-                (0, _useInstantTransitionStateMjs.instantAnimationState).current = false;
-            }));
-    }, [
-        forcedRenderCount
-    ]);
-    return (callback)=>{
-        startInstantLayoutTransition(()=>{
-            (0, _useInstantTransitionStateMjs.instantAnimationState).current = true;
-            forceUpdate();
-            callback();
-            unlockOnFrameRef.current = forcedRenderCount + 1;
-        });
-    };
-}
-function disableInstantTransitions() {
-    (0, _useInstantTransitionStateMjs.instantAnimationState).current = false;
-}
-
-},{"react":"21dqq","../projection/use-instant-layout-transition.mjs":"4nSHl","./use-force-update.mjs":"58SRa","./use-instant-transition-state.mjs":"acYRG","../frameloop/frame.mjs":"3xPo8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"4nSHl":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useInstantLayoutTransition", ()=>useInstantLayoutTransition);
-var _htmlprojectionNodeMjs = require("./node/HTMLProjectionNode.mjs");
-function useInstantLayoutTransition() {
-    return startTransition;
-}
-function startTransition(callback) {
-    if (!(0, _htmlprojectionNodeMjs.rootProjectionNode).current) return;
-    (0, _htmlprojectionNodeMjs.rootProjectionNode).current.isUpdating = false;
-    (0, _htmlprojectionNodeMjs.rootProjectionNode).current.blockUpdate();
-    callback && callback();
-}
-
-},{"./node/HTMLProjectionNode.mjs":"d4eCC","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"4obBa":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useResetProjection", ()=>useResetProjection);
-var _react = require("react");
-var _htmlprojectionNodeMjs = require("./node/HTMLProjectionNode.mjs");
-function useResetProjection() {
-    const reset = (0, _react.useCallback)(()=>{
-        const root = (0, _htmlprojectionNodeMjs.rootProjectionNode).current;
-        if (!root) return;
-        root.resetTree();
-    }, []);
-    return reset;
-}
-
-},{"react":"21dqq","./node/HTMLProjectionNode.mjs":"d4eCC","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"ex7eY":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "startOptimizedAppearAnimation", ()=>startOptimizedAppearAnimation);
-var _storeIdMjs = require("./store-id.mjs");
-var _indexMjs = require("../animators/waapi/index.mjs");
-var _dataIdMjs = require("./data-id.mjs");
-var _handoffMjs = require("./handoff.mjs");
-var _storeMjs = require("./store.mjs");
-var _noopMjs = require("../../utils/noop.mjs");
-/**
- * A single time to use across all animations to manually set startTime
- * and ensure they're all in sync.
- */ let startFrameTime;
-/**
- * A dummy animation to detect when Chrome is ready to start
- * painting the page and hold off from triggering the real animation
- * until then. We only need one animation to detect paint ready.
- *
- * https://bugs.chromium.org/p/chromium/issues/detail?id=1406850
- */ let readyAnimation;
-function startOptimizedAppearAnimation(element, name, keyframes, options, onReady) {
-    // Prevent optimised appear animations if Motion has already started animating.
-    if (window.HandoffComplete) {
-        window.HandoffAppearAnimations = undefined;
-        return;
-    }
-    const id = element.dataset[0, _dataIdMjs.optimizedAppearDataId];
-    if (!id) return;
-    window.HandoffAppearAnimations = (0, _handoffMjs.handoffOptimizedAppearAnimation);
-    const storeId = (0, _storeIdMjs.appearStoreId)(id, name);
-    if (!readyAnimation) {
-        readyAnimation = (0, _indexMjs.animateStyle)(element, name, [
-            keyframes[0],
-            keyframes[0]
-        ], /**
-         * 10 secs is basically just a super-safe duration to give Chrome
-         * long enough to get the animation ready.
-         */ {
-            duration: 10000,
-            ease: "linear"
-        });
-        (0, _storeMjs.appearAnimationStore).set(storeId, {
-            animation: readyAnimation,
-            startTime: null
-        });
-        if (!window.HandoffCancelAllAnimations) window.HandoffCancelAllAnimations = ()=>{
-            (0, _storeMjs.appearAnimationStore).forEach(({ animation })=>{
-                animation.cancel();
-            });
-            (0, _storeMjs.appearAnimationStore).clear();
-            window.HandoffCancelAllAnimations = undefined;
-        };
-    }
-    const startAnimation = ()=>{
-        readyAnimation.cancel();
-        const appearAnimation = (0, _indexMjs.animateStyle)(element, name, keyframes, options);
-        /**
-         * Record the time of the first started animation. We call performance.now() once
-         * here and once in handoff to ensure we're getting
-         * close to a frame-locked time. This keeps all animations in sync.
-         */ if (startFrameTime === undefined) startFrameTime = performance.now();
-        appearAnimation.startTime = startFrameTime;
-        (0, _storeMjs.appearAnimationStore).set(storeId, {
-            animation: appearAnimation,
-            startTime: startFrameTime
-        });
-        if (onReady) onReady(appearAnimation);
-    };
-    if (readyAnimation.ready) readyAnimation.ready.then(startAnimation).catch((0, _noopMjs.noop));
-    else startAnimation();
-}
-
-},{"./store-id.mjs":"iOynl","../animators/waapi/index.mjs":"br5tE","./data-id.mjs":"4rpx1","./handoff.mjs":"gZIXd","./store.mjs":"fEgCy","../../utils/noop.mjs":"67SDH","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"iOynl":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "appearStoreId", ()=>appearStoreId);
-const appearStoreId = (id, value)=>`${id}: ${value}`;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"gZIXd":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "handoffOptimizedAppearAnimation", ()=>handoffOptimizedAppearAnimation);
-var _transformMjs = require("../../render/html/utils/transform.mjs");
-var _storeMjs = require("./store.mjs");
-var _storeIdMjs = require("./store-id.mjs");
-let handoffFrameTime;
-function handoffOptimizedAppearAnimation(elementId, valueName, /**
- * Legacy arguments. This function is inlined as part of SSG so it can be there's
- * a version mismatch between the main included Motion and the inlined script.
- *
- * Remove in early 2024.
- */ _value, frame) {
-    const optimisedValueName = (0, _transformMjs.transformProps).has(valueName) ? "transform" : valueName;
-    const storeId = (0, _storeIdMjs.appearStoreId)(elementId, optimisedValueName);
-    const optimisedAnimation = (0, _storeMjs.appearAnimationStore).get(storeId);
-    if (!optimisedAnimation) return null;
-    const { animation, startTime } = optimisedAnimation;
-    const cancelAnimation = ()=>{
-        (0, _storeMjs.appearAnimationStore).delete(storeId);
-        if (frame) /**
-             * If we've been provided the frameloop as an argument, use it to defer
-             * cancellation until keyframes of the subsequent animation have been resolved.
-             * This "papers over" a gap where the JS animations haven't rendered with
-             * the latest time after a potential heavy blocking workload.
-             * Otherwise cancel immediately.
-             *
-             * This is an optional dependency to deal with the fact that this inline
-             * script and the library can be version sharded, and there have been
-             * times when this isn't provided as an argument.
-             */ frame.render(()=>frame.render(()=>{
-                try {
-                    animation.cancel();
-                } catch (error) {}
-            }));
-        else try {
-            animation.cancel();
-        } catch (error) {}
-    };
-    /**
-     * If the startTime is null, this animation is the Paint Ready detection animation
-     * and we can cancel it immediately without handoff.
-     *
-     * Or if we've already handed off the animation then we're now interrupting it.
-     * In which case we need to cancel it.
-     */ if (startTime === null || window.HandoffComplete) {
-        cancelAnimation();
-        return null;
-    } else {
-        /**
-         * Otherwise we're handing off this animation to the main thread.
-         *
-         * Record the time of the first handoff. We call performance.now() once
-         * here and once in startOptimisedAnimation to ensure we're getting
-         * close to a frame-locked time. This keeps all animations in sync.
-         */ if (handoffFrameTime === undefined) handoffFrameTime = performance.now();
-        /**
-         * We use main thread timings vs those returned by Animation.currentTime as it
-         * can be the case, particularly in Firefox, that currentTime doesn't return
-         * an updated value for several frames, even as the animation plays smoothly via
-         * the GPU.
-         */ return handoffFrameTime - startTime || 0;
-    }
-}
-
-},{"../../render/html/utils/transform.mjs":"iSy8E","./store.mjs":"fEgCy","./store-id.mjs":"iOynl","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"fEgCy":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "appearAnimationStore", ()=>appearAnimationStore);
-const appearAnimationStore = new Map();
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"6M6nJ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useAnimatedState", ()=>useAnimatedState);
-var _react = require("react");
-var _useConstantMjs = require("../../utils/use-constant.mjs");
-var _useVisualStateMjs = require("../../motion/utils/use-visual-state.mjs");
-var _modelsMjs = require("../../projection/geometry/models.mjs");
-var _visualElementMjs = require("../../render/VisualElement.mjs");
-var _visualElementMjs1 = require("../interfaces/visual-element.mjs");
-const createObject = ()=>({});
-class StateVisualElement extends (0, _visualElementMjs.VisualElement) {
-    constructor(){
-        super(...arguments);
-        this.measureInstanceViewportBox = (0, _modelsMjs.createBox);
-    }
-    build() {}
-    resetTransform() {}
-    restoreTransform() {}
-    removeValueFromRenderState() {}
-    renderInstance() {}
-    scrapeMotionValuesFromProps() {
-        return createObject();
-    }
-    getBaseTargetFromProps() {
-        return undefined;
-    }
-    readValueFromInstance(_state, key, options) {
-        return options.initialState[key] || 0;
-    }
-    sortInstanceNodePosition() {
-        return 0;
-    }
-}
-const useVisualState = (0, _useVisualStateMjs.makeUseVisualState)({
-    scrapeMotionValuesFromProps: createObject,
-    createRenderState: createObject
 });
-/**
- * This is not an officially supported API and may be removed
- * on any version.
- */ function useAnimatedState(initialState) {
-    const [animationState, setAnimationState] = (0, _react.useState)(initialState);
-    const visualState = useVisualState({}, false);
-    const element = (0, _useConstantMjs.useConstant)(()=>{
-        return new StateVisualElement({
-            props: {},
-            visualState,
-            presenceContext: null
-        }, {
-            initialState
+_c = MovieView;
+var _c;
+$RefreshReg$(_c, "MovieView");
+
+  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router":"dbWyW","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react-helmet":"fcX6K","../../images/Red-Heart-Filled.svg":"9ZK1i","../../images/Red-Heart.svg":"8XQUt"}],"fcX6K":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Helmet", ()=>HelmetExport);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactSideEffect = require("react-side-effect");
+var _reactSideEffectDefault = parcelHelpers.interopDefault(_reactSideEffect);
+var _reactFastCompare = require("react-fast-compare");
+var _reactFastCompareDefault = parcelHelpers.interopDefault(_reactFastCompare);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _objectAssign = require("object-assign");
+var _objectAssignDefault = parcelHelpers.interopDefault(_objectAssign);
+var global = arguments[3];
+var ATTRIBUTE_NAMES = {
+    BODY: "bodyAttributes",
+    HTML: "htmlAttributes",
+    TITLE: "titleAttributes"
+};
+var TAG_NAMES = {
+    BASE: "base",
+    BODY: "body",
+    HEAD: "head",
+    HTML: "html",
+    LINK: "link",
+    META: "meta",
+    NOSCRIPT: "noscript",
+    SCRIPT: "script",
+    STYLE: "style",
+    TITLE: "title"
+};
+var VALID_TAG_NAMES = Object.keys(TAG_NAMES).map(function(name) {
+    return TAG_NAMES[name];
+});
+var TAG_PROPERTIES = {
+    CHARSET: "charset",
+    CSS_TEXT: "cssText",
+    HREF: "href",
+    HTTPEQUIV: "http-equiv",
+    INNER_HTML: "innerHTML",
+    ITEM_PROP: "itemprop",
+    NAME: "name",
+    PROPERTY: "property",
+    REL: "rel",
+    SRC: "src",
+    TARGET: "target"
+};
+var REACT_TAG_MAP = {
+    accesskey: "accessKey",
+    charset: "charSet",
+    class: "className",
+    contenteditable: "contentEditable",
+    contextmenu: "contextMenu",
+    "http-equiv": "httpEquiv",
+    itemprop: "itemProp",
+    tabindex: "tabIndex"
+};
+var HELMET_PROPS = {
+    DEFAULT_TITLE: "defaultTitle",
+    DEFER: "defer",
+    ENCODE_SPECIAL_CHARACTERS: "encodeSpecialCharacters",
+    ON_CHANGE_CLIENT_STATE: "onChangeClientState",
+    TITLE_TEMPLATE: "titleTemplate"
+};
+var HTML_TAG_MAP = Object.keys(REACT_TAG_MAP).reduce(function(obj, key) {
+    obj[REACT_TAG_MAP[key]] = key;
+    return obj;
+}, {});
+var SELF_CLOSING_TAGS = [
+    TAG_NAMES.NOSCRIPT,
+    TAG_NAMES.SCRIPT,
+    TAG_NAMES.STYLE
+];
+var HELMET_ATTRIBUTE = "data-react-helmet";
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
+    return typeof obj;
+} : function(obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+var classCallCheck = function(instance, Constructor) {
+    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+};
+var createClass = function() {
+    function defineProperties(target, props) {
+        for(var i = 0; i < props.length; i++){
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }
+    return function(Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);
+        if (staticProps) defineProperties(Constructor, staticProps);
+        return Constructor;
+    };
+}();
+var _extends = Object.assign || function(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i];
+        for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+    }
+    return target;
+};
+var inherits = function(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+var objectWithoutProperties = function(obj, keys) {
+    var target = {};
+    for(var i in obj){
+        if (keys.indexOf(i) >= 0) continue;
+        if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+        target[i] = obj[i];
+    }
+    return target;
+};
+var possibleConstructorReturn = function(self, call) {
+    if (!self) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
+var encodeSpecialCharacters = function encodeSpecialCharacters(str) {
+    var encode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    if (encode === false) return String(str);
+    return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
+};
+var getTitleFromPropsList = function getTitleFromPropsList(propsList) {
+    var innermostTitle = getInnermostProperty(propsList, TAG_NAMES.TITLE);
+    var innermostTemplate = getInnermostProperty(propsList, HELMET_PROPS.TITLE_TEMPLATE);
+    if (innermostTemplate && innermostTitle) // use function arg to avoid need to escape $ characters
+    return innermostTemplate.replace(/%s/g, function() {
+        return Array.isArray(innermostTitle) ? innermostTitle.join("") : innermostTitle;
+    });
+    var innermostDefaultTitle = getInnermostProperty(propsList, HELMET_PROPS.DEFAULT_TITLE);
+    return innermostTitle || innermostDefaultTitle || undefined;
+};
+var getOnChangeClientState = function getOnChangeClientState(propsList) {
+    return getInnermostProperty(propsList, HELMET_PROPS.ON_CHANGE_CLIENT_STATE) || function() {};
+};
+var getAttributesFromPropsList = function getAttributesFromPropsList(tagType, propsList) {
+    return propsList.filter(function(props) {
+        return typeof props[tagType] !== "undefined";
+    }).map(function(props) {
+        return props[tagType];
+    }).reduce(function(tagAttrs, current) {
+        return _extends({}, tagAttrs, current);
+    }, {});
+};
+var getBaseTagFromPropsList = function getBaseTagFromPropsList(primaryAttributes, propsList) {
+    return propsList.filter(function(props) {
+        return typeof props[TAG_NAMES.BASE] !== "undefined";
+    }).map(function(props) {
+        return props[TAG_NAMES.BASE];
+    }).reverse().reduce(function(innermostBaseTag, tag) {
+        if (!innermostBaseTag.length) {
+            var keys = Object.keys(tag);
+            for(var i = 0; i < keys.length; i++){
+                var attributeKey = keys[i];
+                var lowerCaseAttributeKey = attributeKey.toLowerCase();
+                if (primaryAttributes.indexOf(lowerCaseAttributeKey) !== -1 && tag[lowerCaseAttributeKey]) return innermostBaseTag.concat(tag);
+            }
+        }
+        return innermostBaseTag;
+    }, []);
+};
+var getTagsFromPropsList = function getTagsFromPropsList(tagName, primaryAttributes, propsList) {
+    // Calculate list of tags, giving priority innermost component (end of the propslist)
+    var approvedSeenTags = {};
+    return propsList.filter(function(props) {
+        if (Array.isArray(props[tagName])) return true;
+        if (typeof props[tagName] !== "undefined") warn("Helmet: " + tagName + ' should be of type "Array". Instead found type "' + _typeof(props[tagName]) + '"');
+        return false;
+    }).map(function(props) {
+        return props[tagName];
+    }).reverse().reduce(function(approvedTags, instanceTags) {
+        var instanceSeenTags = {};
+        instanceTags.filter(function(tag) {
+            var primaryAttributeKey = void 0;
+            var keys = Object.keys(tag);
+            for(var i = 0; i < keys.length; i++){
+                var attributeKey = keys[i];
+                var lowerCaseAttributeKey = attributeKey.toLowerCase();
+                // Special rule with link tags, since rel and href are both primary tags, rel takes priority
+                if (primaryAttributes.indexOf(lowerCaseAttributeKey) !== -1 && !(primaryAttributeKey === TAG_PROPERTIES.REL && tag[primaryAttributeKey].toLowerCase() === "canonical") && !(lowerCaseAttributeKey === TAG_PROPERTIES.REL && tag[lowerCaseAttributeKey].toLowerCase() === "stylesheet")) primaryAttributeKey = lowerCaseAttributeKey;
+                // Special case for innerHTML which doesn't work lowercased
+                if (primaryAttributes.indexOf(attributeKey) !== -1 && (attributeKey === TAG_PROPERTIES.INNER_HTML || attributeKey === TAG_PROPERTIES.CSS_TEXT || attributeKey === TAG_PROPERTIES.ITEM_PROP)) primaryAttributeKey = attributeKey;
+            }
+            if (!primaryAttributeKey || !tag[primaryAttributeKey]) return false;
+            var value = tag[primaryAttributeKey].toLowerCase();
+            if (!approvedSeenTags[primaryAttributeKey]) approvedSeenTags[primaryAttributeKey] = {};
+            if (!instanceSeenTags[primaryAttributeKey]) instanceSeenTags[primaryAttributeKey] = {};
+            if (!approvedSeenTags[primaryAttributeKey][value]) {
+                instanceSeenTags[primaryAttributeKey][value] = true;
+                return true;
+            }
+            return false;
+        }).reverse().forEach(function(tag) {
+            return approvedTags.push(tag);
+        });
+        // Update seen tags with tags from this instance
+        var keys = Object.keys(instanceSeenTags);
+        for(var i = 0; i < keys.length; i++){
+            var attributeKey = keys[i];
+            var tagUnion = (0, _objectAssignDefault.default)({}, approvedSeenTags[attributeKey], instanceSeenTags[attributeKey]);
+            approvedSeenTags[attributeKey] = tagUnion;
+        }
+        return approvedTags;
+    }, []).reverse();
+};
+var getInnermostProperty = function getInnermostProperty(propsList, property) {
+    for(var i = propsList.length - 1; i >= 0; i--){
+        var props = propsList[i];
+        if (props.hasOwnProperty(property)) return props[property];
+    }
+    return null;
+};
+var reducePropsToState = function reducePropsToState(propsList) {
+    return {
+        baseTag: getBaseTagFromPropsList([
+            TAG_PROPERTIES.HREF,
+            TAG_PROPERTIES.TARGET
+        ], propsList),
+        bodyAttributes: getAttributesFromPropsList(ATTRIBUTE_NAMES.BODY, propsList),
+        defer: getInnermostProperty(propsList, HELMET_PROPS.DEFER),
+        encode: getInnermostProperty(propsList, HELMET_PROPS.ENCODE_SPECIAL_CHARACTERS),
+        htmlAttributes: getAttributesFromPropsList(ATTRIBUTE_NAMES.HTML, propsList),
+        linkTags: getTagsFromPropsList(TAG_NAMES.LINK, [
+            TAG_PROPERTIES.REL,
+            TAG_PROPERTIES.HREF
+        ], propsList),
+        metaTags: getTagsFromPropsList(TAG_NAMES.META, [
+            TAG_PROPERTIES.NAME,
+            TAG_PROPERTIES.CHARSET,
+            TAG_PROPERTIES.HTTPEQUIV,
+            TAG_PROPERTIES.PROPERTY,
+            TAG_PROPERTIES.ITEM_PROP
+        ], propsList),
+        noscriptTags: getTagsFromPropsList(TAG_NAMES.NOSCRIPT, [
+            TAG_PROPERTIES.INNER_HTML
+        ], propsList),
+        onChangeClientState: getOnChangeClientState(propsList),
+        scriptTags: getTagsFromPropsList(TAG_NAMES.SCRIPT, [
+            TAG_PROPERTIES.SRC,
+            TAG_PROPERTIES.INNER_HTML
+        ], propsList),
+        styleTags: getTagsFromPropsList(TAG_NAMES.STYLE, [
+            TAG_PROPERTIES.CSS_TEXT
+        ], propsList),
+        title: getTitleFromPropsList(propsList),
+        titleAttributes: getAttributesFromPropsList(ATTRIBUTE_NAMES.TITLE, propsList)
+    };
+};
+var rafPolyfill = function() {
+    var clock = Date.now();
+    return function(callback) {
+        var currentTime = Date.now();
+        if (currentTime - clock > 16) {
+            clock = currentTime;
+            callback(currentTime);
+        } else setTimeout(function() {
+            rafPolyfill(callback);
+        }, 0);
+    };
+}();
+var cafPolyfill = function cafPolyfill(id) {
+    return clearTimeout(id);
+};
+var requestAnimationFrame = typeof window !== "undefined" ? window.requestAnimationFrame && window.requestAnimationFrame.bind(window) || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || rafPolyfill : global.requestAnimationFrame || rafPolyfill;
+var cancelAnimationFrame = typeof window !== "undefined" ? window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || cafPolyfill : global.cancelAnimationFrame || cafPolyfill;
+var warn = function warn(msg) {
+    return console && typeof console.warn === "function" && console.warn(msg);
+};
+var _helmetCallback = null;
+var handleClientStateChange = function handleClientStateChange(newState) {
+    if (_helmetCallback) cancelAnimationFrame(_helmetCallback);
+    if (newState.defer) _helmetCallback = requestAnimationFrame(function() {
+        commitTagChanges(newState, function() {
+            _helmetCallback = null;
         });
     });
-    (0, _react.useEffect)(()=>{
-        element.mount({});
-        return ()=>element.unmount();
-    }, [
-        element
-    ]);
-    (0, _react.useEffect)(()=>{
-        element.update({
-            onUpdate: (v)=>{
-                setAnimationState({
-                    ...v
+    else {
+        commitTagChanges(newState);
+        _helmetCallback = null;
+    }
+};
+var commitTagChanges = function commitTagChanges(newState, cb) {
+    var baseTag = newState.baseTag, bodyAttributes = newState.bodyAttributes, htmlAttributes = newState.htmlAttributes, linkTags = newState.linkTags, metaTags = newState.metaTags, noscriptTags = newState.noscriptTags, onChangeClientState = newState.onChangeClientState, scriptTags = newState.scriptTags, styleTags = newState.styleTags, title = newState.title, titleAttributes = newState.titleAttributes;
+    updateAttributes(TAG_NAMES.BODY, bodyAttributes);
+    updateAttributes(TAG_NAMES.HTML, htmlAttributes);
+    updateTitle(title, titleAttributes);
+    var tagUpdates = {
+        baseTag: updateTags(TAG_NAMES.BASE, baseTag),
+        linkTags: updateTags(TAG_NAMES.LINK, linkTags),
+        metaTags: updateTags(TAG_NAMES.META, metaTags),
+        noscriptTags: updateTags(TAG_NAMES.NOSCRIPT, noscriptTags),
+        scriptTags: updateTags(TAG_NAMES.SCRIPT, scriptTags),
+        styleTags: updateTags(TAG_NAMES.STYLE, styleTags)
+    };
+    var addedTags = {};
+    var removedTags = {};
+    Object.keys(tagUpdates).forEach(function(tagType) {
+        var _tagUpdates$tagType = tagUpdates[tagType], newTags = _tagUpdates$tagType.newTags, oldTags = _tagUpdates$tagType.oldTags;
+        if (newTags.length) addedTags[tagType] = newTags;
+        if (oldTags.length) removedTags[tagType] = tagUpdates[tagType].oldTags;
+    });
+    cb && cb();
+    onChangeClientState(newState, addedTags, removedTags);
+};
+var flattenArray = function flattenArray(possibleArray) {
+    return Array.isArray(possibleArray) ? possibleArray.join("") : possibleArray;
+};
+var updateTitle = function updateTitle(title, attributes) {
+    if (typeof title !== "undefined" && document.title !== title) document.title = flattenArray(title);
+    updateAttributes(TAG_NAMES.TITLE, attributes);
+};
+var updateAttributes = function updateAttributes(tagName, attributes) {
+    var elementTag = document.getElementsByTagName(tagName)[0];
+    if (!elementTag) return;
+    var helmetAttributeString = elementTag.getAttribute(HELMET_ATTRIBUTE);
+    var helmetAttributes = helmetAttributeString ? helmetAttributeString.split(",") : [];
+    var attributesToRemove = [].concat(helmetAttributes);
+    var attributeKeys = Object.keys(attributes);
+    for(var i = 0; i < attributeKeys.length; i++){
+        var attribute = attributeKeys[i];
+        var value = attributes[attribute] || "";
+        if (elementTag.getAttribute(attribute) !== value) elementTag.setAttribute(attribute, value);
+        if (helmetAttributes.indexOf(attribute) === -1) helmetAttributes.push(attribute);
+        var indexToSave = attributesToRemove.indexOf(attribute);
+        if (indexToSave !== -1) attributesToRemove.splice(indexToSave, 1);
+    }
+    for(var _i = attributesToRemove.length - 1; _i >= 0; _i--)elementTag.removeAttribute(attributesToRemove[_i]);
+    if (helmetAttributes.length === attributesToRemove.length) elementTag.removeAttribute(HELMET_ATTRIBUTE);
+    else if (elementTag.getAttribute(HELMET_ATTRIBUTE) !== attributeKeys.join(",")) elementTag.setAttribute(HELMET_ATTRIBUTE, attributeKeys.join(","));
+};
+var updateTags = function updateTags(type, tags) {
+    var headElement = document.head || document.querySelector(TAG_NAMES.HEAD);
+    var tagNodes = headElement.querySelectorAll(type + "[" + HELMET_ATTRIBUTE + "]");
+    var oldTags = Array.prototype.slice.call(tagNodes);
+    var newTags = [];
+    var indexToDelete = void 0;
+    if (tags && tags.length) tags.forEach(function(tag) {
+        var newElement = document.createElement(type);
+        for(var attribute in tag)if (tag.hasOwnProperty(attribute)) {
+            if (attribute === TAG_PROPERTIES.INNER_HTML) newElement.innerHTML = tag.innerHTML;
+            else if (attribute === TAG_PROPERTIES.CSS_TEXT) {
+                if (newElement.styleSheet) newElement.styleSheet.cssText = tag.cssText;
+                else newElement.appendChild(document.createTextNode(tag.cssText));
+            } else {
+                var value = typeof tag[attribute] === "undefined" ? "" : tag[attribute];
+                newElement.setAttribute(attribute, value);
+            }
+        }
+        newElement.setAttribute(HELMET_ATTRIBUTE, "true");
+        // Remove a duplicate tag from domTagstoRemove, so it isn't cleared.
+        if (oldTags.some(function(existingTag, index) {
+            indexToDelete = index;
+            return newElement.isEqualNode(existingTag);
+        })) oldTags.splice(indexToDelete, 1);
+        else newTags.push(newElement);
+    });
+    oldTags.forEach(function(tag) {
+        return tag.parentNode.removeChild(tag);
+    });
+    newTags.forEach(function(tag) {
+        return headElement.appendChild(tag);
+    });
+    return {
+        oldTags: oldTags,
+        newTags: newTags
+    };
+};
+var generateElementAttributesAsString = function generateElementAttributesAsString(attributes) {
+    return Object.keys(attributes).reduce(function(str, key) {
+        var attr = typeof attributes[key] !== "undefined" ? key + '="' + attributes[key] + '"' : "" + key;
+        return str ? str + " " + attr : attr;
+    }, "");
+};
+var generateTitleAsString = function generateTitleAsString(type, title, attributes, encode) {
+    var attributeString = generateElementAttributesAsString(attributes);
+    var flattenedTitle = flattenArray(title);
+    return attributeString ? "<" + type + " " + HELMET_ATTRIBUTE + '="true" ' + attributeString + ">" + encodeSpecialCharacters(flattenedTitle, encode) + "</" + type + ">" : "<" + type + " " + HELMET_ATTRIBUTE + '="true">' + encodeSpecialCharacters(flattenedTitle, encode) + "</" + type + ">";
+};
+var generateTagsAsString = function generateTagsAsString(type, tags, encode) {
+    return tags.reduce(function(str, tag) {
+        var attributeHtml = Object.keys(tag).filter(function(attribute) {
+            return !(attribute === TAG_PROPERTIES.INNER_HTML || attribute === TAG_PROPERTIES.CSS_TEXT);
+        }).reduce(function(string, attribute) {
+            var attr = typeof tag[attribute] === "undefined" ? attribute : attribute + '="' + encodeSpecialCharacters(tag[attribute], encode) + '"';
+            return string ? string + " " + attr : attr;
+        }, "");
+        var tagContent = tag.innerHTML || tag.cssText || "";
+        var isSelfClosing = SELF_CLOSING_TAGS.indexOf(type) === -1;
+        return str + "<" + type + " " + HELMET_ATTRIBUTE + '="true" ' + attributeHtml + (isSelfClosing ? "/>" : ">" + tagContent + "</" + type + ">");
+    }, "");
+};
+var convertElementAttributestoReactProps = function convertElementAttributestoReactProps(attributes) {
+    var initProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    return Object.keys(attributes).reduce(function(obj, key) {
+        obj[REACT_TAG_MAP[key] || key] = attributes[key];
+        return obj;
+    }, initProps);
+};
+var convertReactPropstoHtmlAttributes = function convertReactPropstoHtmlAttributes(props) {
+    var initAttributes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    return Object.keys(props).reduce(function(obj, key) {
+        obj[HTML_TAG_MAP[key] || key] = props[key];
+        return obj;
+    }, initAttributes);
+};
+var generateTitleAsReactComponent = function generateTitleAsReactComponent(type, title, attributes) {
+    var _initProps;
+    // assigning into an array to define toString function on it
+    var initProps = (_initProps = {
+        key: title
+    }, _initProps[HELMET_ATTRIBUTE] = true, _initProps);
+    var props = convertElementAttributestoReactProps(attributes, initProps);
+    return [
+        (0, _reactDefault.default).createElement(TAG_NAMES.TITLE, props, title)
+    ];
+};
+var generateTagsAsReactComponent = function generateTagsAsReactComponent(type, tags) {
+    return tags.map(function(tag, i) {
+        var _mappedTag;
+        var mappedTag = (_mappedTag = {
+            key: i
+        }, _mappedTag[HELMET_ATTRIBUTE] = true, _mappedTag);
+        Object.keys(tag).forEach(function(attribute) {
+            var mappedAttribute = REACT_TAG_MAP[attribute] || attribute;
+            if (mappedAttribute === TAG_PROPERTIES.INNER_HTML || mappedAttribute === TAG_PROPERTIES.CSS_TEXT) {
+                var content = tag.innerHTML || tag.cssText;
+                mappedTag.dangerouslySetInnerHTML = {
+                    __html: content
+                };
+            } else mappedTag[mappedAttribute] = tag[attribute];
+        });
+        return (0, _reactDefault.default).createElement(type, mappedTag);
+    });
+};
+var getMethodsForTag = function getMethodsForTag(type, tags, encode) {
+    switch(type){
+        case TAG_NAMES.TITLE:
+            return {
+                toComponent: function toComponent() {
+                    return generateTitleAsReactComponent(type, tags.title, tags.titleAttributes, encode);
+                },
+                toString: function toString() {
+                    return generateTitleAsString(type, tags.title, tags.titleAttributes, encode);
+                }
+            };
+        case ATTRIBUTE_NAMES.BODY:
+        case ATTRIBUTE_NAMES.HTML:
+            return {
+                toComponent: function toComponent() {
+                    return convertElementAttributestoReactProps(tags);
+                },
+                toString: function toString() {
+                    return generateElementAttributesAsString(tags);
+                }
+            };
+        default:
+            return {
+                toComponent: function toComponent() {
+                    return generateTagsAsReactComponent(type, tags);
+                },
+                toString: function toString() {
+                    return generateTagsAsString(type, tags, encode);
+                }
+            };
+    }
+};
+var mapStateOnServer = function mapStateOnServer(_ref) {
+    var baseTag = _ref.baseTag, bodyAttributes = _ref.bodyAttributes, encode = _ref.encode, htmlAttributes = _ref.htmlAttributes, linkTags = _ref.linkTags, metaTags = _ref.metaTags, noscriptTags = _ref.noscriptTags, scriptTags = _ref.scriptTags, styleTags = _ref.styleTags, _ref$title = _ref.title, title = _ref$title === undefined ? "" : _ref$title, titleAttributes = _ref.titleAttributes;
+    return {
+        base: getMethodsForTag(TAG_NAMES.BASE, baseTag, encode),
+        bodyAttributes: getMethodsForTag(ATTRIBUTE_NAMES.BODY, bodyAttributes, encode),
+        htmlAttributes: getMethodsForTag(ATTRIBUTE_NAMES.HTML, htmlAttributes, encode),
+        link: getMethodsForTag(TAG_NAMES.LINK, linkTags, encode),
+        meta: getMethodsForTag(TAG_NAMES.META, metaTags, encode),
+        noscript: getMethodsForTag(TAG_NAMES.NOSCRIPT, noscriptTags, encode),
+        script: getMethodsForTag(TAG_NAMES.SCRIPT, scriptTags, encode),
+        style: getMethodsForTag(TAG_NAMES.STYLE, styleTags, encode),
+        title: getMethodsForTag(TAG_NAMES.TITLE, {
+            title: title,
+            titleAttributes: titleAttributes
+        }, encode)
+    };
+};
+var Helmet = function Helmet(Component) {
+    var _class, _temp;
+    return _temp = _class = function(_React$Component) {
+        inherits(HelmetWrapper, _React$Component);
+        function HelmetWrapper() {
+            classCallCheck(this, HelmetWrapper);
+            return possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+        }
+        HelmetWrapper.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
+            return !(0, _reactFastCompareDefault.default)(this.props, nextProps);
+        };
+        HelmetWrapper.prototype.mapNestedChildrenToProps = function mapNestedChildrenToProps(child, nestedChildren) {
+            if (!nestedChildren) return null;
+            switch(child.type){
+                case TAG_NAMES.SCRIPT:
+                case TAG_NAMES.NOSCRIPT:
+                    return {
+                        innerHTML: nestedChildren
+                    };
+                case TAG_NAMES.STYLE:
+                    return {
+                        cssText: nestedChildren
+                    };
+            }
+            throw new Error("<" + child.type + " /> elements are self-closing and can not contain children. Refer to our API for more information.");
+        };
+        HelmetWrapper.prototype.flattenArrayTypeChildren = function flattenArrayTypeChildren(_ref) {
+            var _babelHelpers$extends;
+            var child = _ref.child, arrayTypeChildren = _ref.arrayTypeChildren, newChildProps = _ref.newChildProps, nestedChildren = _ref.nestedChildren;
+            return _extends({}, arrayTypeChildren, (_babelHelpers$extends = {}, _babelHelpers$extends[child.type] = [].concat(arrayTypeChildren[child.type] || [], [
+                _extends({}, newChildProps, this.mapNestedChildrenToProps(child, nestedChildren))
+            ]), _babelHelpers$extends));
+        };
+        HelmetWrapper.prototype.mapObjectTypeChildren = function mapObjectTypeChildren(_ref2) {
+            var _babelHelpers$extends2, _babelHelpers$extends3;
+            var child = _ref2.child, newProps = _ref2.newProps, newChildProps = _ref2.newChildProps, nestedChildren = _ref2.nestedChildren;
+            switch(child.type){
+                case TAG_NAMES.TITLE:
+                    return _extends({}, newProps, (_babelHelpers$extends2 = {}, _babelHelpers$extends2[child.type] = nestedChildren, _babelHelpers$extends2.titleAttributes = _extends({}, newChildProps), _babelHelpers$extends2));
+                case TAG_NAMES.BODY:
+                    return _extends({}, newProps, {
+                        bodyAttributes: _extends({}, newChildProps)
+                    });
+                case TAG_NAMES.HTML:
+                    return _extends({}, newProps, {
+                        htmlAttributes: _extends({}, newChildProps)
+                    });
+            }
+            return _extends({}, newProps, (_babelHelpers$extends3 = {}, _babelHelpers$extends3[child.type] = _extends({}, newChildProps), _babelHelpers$extends3));
+        };
+        HelmetWrapper.prototype.mapArrayTypeChildrenToProps = function mapArrayTypeChildrenToProps(arrayTypeChildren, newProps) {
+            var newFlattenedProps = _extends({}, newProps);
+            Object.keys(arrayTypeChildren).forEach(function(arrayChildName) {
+                var _babelHelpers$extends4;
+                newFlattenedProps = _extends({}, newFlattenedProps, (_babelHelpers$extends4 = {}, _babelHelpers$extends4[arrayChildName] = arrayTypeChildren[arrayChildName], _babelHelpers$extends4));
+            });
+            return newFlattenedProps;
+        };
+        HelmetWrapper.prototype.warnOnInvalidChildren = function warnOnInvalidChildren(child, nestedChildren) {
+            if (!VALID_TAG_NAMES.some(function(name) {
+                return child.type === name;
+            })) {
+                if (typeof child.type === "function") return warn("You may be attempting to nest <Helmet> components within each other, which is not allowed. Refer to our API for more information.");
+                return warn("Only elements types " + VALID_TAG_NAMES.join(", ") + " are allowed. Helmet does not support rendering <" + child.type + "> elements. Refer to our API for more information.");
+            }
+            if (nestedChildren && typeof nestedChildren !== "string" && (!Array.isArray(nestedChildren) || nestedChildren.some(function(nestedChild) {
+                return typeof nestedChild !== "string";
+            }))) throw new Error("Helmet expects a string as a child of <" + child.type + ">. Did you forget to wrap your children in braces? ( <" + child.type + ">{``}</" + child.type + "> ) Refer to our API for more information.");
+            return true;
+        };
+        HelmetWrapper.prototype.mapChildrenToProps = function mapChildrenToProps(children, newProps) {
+            var _this2 = this;
+            var arrayTypeChildren = {};
+            (0, _reactDefault.default).Children.forEach(children, function(child) {
+                if (!child || !child.props) return;
+                var _child$props = child.props, nestedChildren = _child$props.children, childProps = objectWithoutProperties(_child$props, [
+                    "children"
+                ]);
+                var newChildProps = convertReactPropstoHtmlAttributes(childProps);
+                _this2.warnOnInvalidChildren(child, nestedChildren);
+                switch(child.type){
+                    case TAG_NAMES.LINK:
+                    case TAG_NAMES.META:
+                    case TAG_NAMES.NOSCRIPT:
+                    case TAG_NAMES.SCRIPT:
+                    case TAG_NAMES.STYLE:
+                        arrayTypeChildren = _this2.flattenArrayTypeChildren({
+                            child: child,
+                            arrayTypeChildren: arrayTypeChildren,
+                            newChildProps: newChildProps,
+                            nestedChildren: nestedChildren
+                        });
+                        break;
+                    default:
+                        newProps = _this2.mapObjectTypeChildren({
+                            child: child,
+                            newProps: newProps,
+                            newChildProps: newChildProps,
+                            nestedChildren: nestedChildren
+                        });
+                        break;
+                }
+            });
+            newProps = this.mapArrayTypeChildrenToProps(arrayTypeChildren, newProps);
+            return newProps;
+        };
+        HelmetWrapper.prototype.render = function render() {
+            var _props = this.props, children = _props.children, props = objectWithoutProperties(_props, [
+                "children"
+            ]);
+            var newProps = _extends({}, props);
+            if (children) newProps = this.mapChildrenToProps(children, newProps);
+            return (0, _reactDefault.default).createElement(Component, newProps);
+        };
+        createClass(HelmetWrapper, null, [
+            {
+                key: "canUseDOM",
+                // Component.peek comes from react-side-effect:
+                // For testing, you may use a static peek() method available on the returned component.
+                // It lets you get the current state without resetting the mounted instance stack.
+                // Don’t use it for anything other than testing.
+                /**
+             * @param {Object} base: {"target": "_blank", "href": "http://mysite.com/"}
+             * @param {Object} bodyAttributes: {"className": "root"}
+             * @param {String} defaultTitle: "Default Title"
+             * @param {Boolean} defer: true
+             * @param {Boolean} encodeSpecialCharacters: true
+             * @param {Object} htmlAttributes: {"lang": "en", "amp": undefined}
+             * @param {Array} link: [{"rel": "canonical", "href": "http://mysite.com/example"}]
+             * @param {Array} meta: [{"name": "description", "content": "Test description"}]
+             * @param {Array} noscript: [{"innerHTML": "<img src='http://mysite.com/js/test.js'"}]
+             * @param {Function} onChangeClientState: "(newState) => console.log(newState)"
+             * @param {Array} script: [{"type": "text/javascript", "src": "http://mysite.com/js/test.js"}]
+             * @param {Array} style: [{"type": "text/css", "cssText": "div { display: block; color: blue; }"}]
+             * @param {String} title: "Title"
+             * @param {Object} titleAttributes: {"itemprop": "name"}
+             * @param {String} titleTemplate: "MySite.com - %s"
+             */ set: function set$$1(canUseDOM) {
+                    Component.canUseDOM = canUseDOM;
+                }
+            }
+        ]);
+        return HelmetWrapper;
+    }((0, _reactDefault.default).Component), _class.propTypes = {
+        base: (0, _propTypesDefault.default).object,
+        bodyAttributes: (0, _propTypesDefault.default).object,
+        children: (0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).node),
+            (0, _propTypesDefault.default).node
+        ]),
+        defaultTitle: (0, _propTypesDefault.default).string,
+        defer: (0, _propTypesDefault.default).bool,
+        encodeSpecialCharacters: (0, _propTypesDefault.default).bool,
+        htmlAttributes: (0, _propTypesDefault.default).object,
+        link: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        meta: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        noscript: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        onChangeClientState: (0, _propTypesDefault.default).func,
+        script: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        style: (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).object),
+        title: (0, _propTypesDefault.default).string,
+        titleAttributes: (0, _propTypesDefault.default).object,
+        titleTemplate: (0, _propTypesDefault.default).string
+    }, _class.defaultProps = {
+        defer: true,
+        encodeSpecialCharacters: true
+    }, _class.peek = Component.peek, _class.rewind = function() {
+        var mappedState = Component.rewind();
+        if (!mappedState) // provide fallback if mappedState is undefined
+        mappedState = mapStateOnServer({
+            baseTag: [],
+            bodyAttributes: {},
+            encodeSpecialCharacters: true,
+            htmlAttributes: {},
+            linkTags: [],
+            metaTags: [],
+            noscriptTags: [],
+            scriptTags: [],
+            styleTags: [],
+            title: "",
+            titleAttributes: {}
+        });
+        return mappedState;
+    }, _temp;
+};
+var NullComponent = function NullComponent() {
+    return null;
+};
+var HelmetSideEffects = (0, _reactSideEffectDefault.default)(reducePropsToState, handleClientStateChange, mapStateOnServer)(NullComponent);
+var HelmetExport = Helmet(HelmetSideEffects);
+HelmetExport.renderStatic = HelmetExport.rewind;
+exports.default = HelmetExport;
+
+},{"prop-types":"7wKI2","react-side-effect":"12ePA","react-fast-compare":"isHbY","react":"21dqq","object-assign":"7OXxh","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"7wKI2":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var ReactIs = require("96e34ae03f5a2631");
+// By explicitly using `prop-types` you are opting into new development behavior.
+// http://fb.me/prop-types-in-prod
+var throwOnDirectAccess = true;
+module.exports = require("cb216452e2171041")(ReactIs.isElement, throwOnDirectAccess);
+
+},{"96e34ae03f5a2631":"7EuwB","cb216452e2171041":"bBUgD"}],"7EuwB":[function(require,module,exports) {
+"use strict";
+module.exports = require("2255125a8e8b1051");
+
+},{"2255125a8e8b1051":"5DsXl"}],"5DsXl":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var hasSymbol = typeof Symbol === "function" && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
+    function isValidElementType(type) {
+        return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+        type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+    function typeOf(object) {
+        if (typeof object === "object" && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch($$typeof){
+                case REACT_ELEMENT_TYPE:
+                    var type = object.type;
+                    switch(type){
+                        case REACT_ASYNC_MODE_TYPE:
+                        case REACT_CONCURRENT_MODE_TYPE:
+                        case REACT_FRAGMENT_TYPE:
+                        case REACT_PROFILER_TYPE:
+                        case REACT_STRICT_MODE_TYPE:
+                        case REACT_SUSPENSE_TYPE:
+                            return type;
+                        default:
+                            var $$typeofType = type && type.$$typeof;
+                            switch($$typeofType){
+                                case REACT_CONTEXT_TYPE:
+                                case REACT_FORWARD_REF_TYPE:
+                                case REACT_LAZY_TYPE:
+                                case REACT_MEMO_TYPE:
+                                case REACT_PROVIDER_TYPE:
+                                    return $$typeofType;
+                                default:
+                                    return $$typeof;
+                            }
+                    }
+                case REACT_PORTAL_TYPE:
+                    return $$typeof;
+            }
+        }
+        return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+    function isAsyncMode(object) {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+        }
+        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+    function isConcurrentMode(object) {
+        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+    function isContextConsumer(object) {
+        return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+    function isContextProvider(object) {
+        return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+    function isElement(object) {
+        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function isForwardRef(object) {
+        return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+    function isFragment(object) {
+        return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+    function isLazy(object) {
+        return typeOf(object) === REACT_LAZY_TYPE;
+    }
+    function isMemo(object) {
+        return typeOf(object) === REACT_MEMO_TYPE;
+    }
+    function isPortal(object) {
+        return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+    function isProfiler(object) {
+        return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+    function isStrictMode(object) {
+        return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+    function isSuspense(object) {
+        return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+})();
+
+},{}],"bBUgD":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactIs = require("c437388b089702c3");
+var assign = require("c067a60101d8520c");
+var ReactPropTypesSecret = require("74a0f89a70b9f3c2");
+var has = require("18441b11647bc78");
+var checkPropTypes = require("bec3f6ff89f0b072");
+var printWarning = function() {};
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+function emptyFunctionThatReturnsNull() {
+    return null;
+}
+module.exports = function(isValidElement, throwOnDirectAccess) {
+    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
+    /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */ function getIteratorFn(maybeIterable) {
+        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+        if (typeof iteratorFn === "function") return iteratorFn;
+    }
+    /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */ var ANONYMOUS = "<<anonymous>>";
+    // Important!
+    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+    var ReactPropTypes = {
+        array: createPrimitiveTypeChecker("array"),
+        bigint: createPrimitiveTypeChecker("bigint"),
+        bool: createPrimitiveTypeChecker("boolean"),
+        func: createPrimitiveTypeChecker("function"),
+        number: createPrimitiveTypeChecker("number"),
+        object: createPrimitiveTypeChecker("object"),
+        string: createPrimitiveTypeChecker("string"),
+        symbol: createPrimitiveTypeChecker("symbol"),
+        any: createAnyTypeChecker(),
+        arrayOf: createArrayOfTypeChecker,
+        element: createElementTypeChecker(),
+        elementType: createElementTypeTypeChecker(),
+        instanceOf: createInstanceTypeChecker,
+        node: createNodeChecker(),
+        objectOf: createObjectOfTypeChecker,
+        oneOf: createEnumTypeChecker,
+        oneOfType: createUnionTypeChecker,
+        shape: createShapeTypeChecker,
+        exact: createStrictShapeTypeChecker
+    };
+    /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */ /*eslint-disable no-self-compare*/ function is(x, y) {
+        // SameValue algorithm
+        if (x === y) // Steps 1-5, 7-10
+        // Steps 6.b-6.e: +0 != -0
+        return x !== 0 || 1 / x === 1 / y;
+        else // Step 6.a: NaN == NaN
+        return x !== x && y !== y;
+    }
+    /*eslint-enable no-self-compare*/ /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */ function PropTypeError(message, data) {
+        this.message = message;
+        this.data = data && typeof data === "object" ? data : {};
+        this.stack = "";
+    }
+    // Make `instanceof Error` still work for returned errors.
+    PropTypeError.prototype = Error.prototype;
+    function createChainableTypeChecker(validate) {
+        var manualPropTypeCallCache = {};
+        var manualPropTypeWarningCount = 0;
+        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+                if (throwOnDirectAccess) {
+                    // New behavior only for users of `prop-types` package
+                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
+                    err.name = "Invariant Violation";
+                    throw err;
+                } else if (typeof console !== "undefined") {
+                    // Old behavior for people using React.PropTypes
+                    var cacheKey = componentName + ":" + propName;
+                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                    manualPropTypeWarningCount < 3) {
+                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
+                        manualPropTypeCallCache[cacheKey] = true;
+                        manualPropTypeWarningCount++;
+                    }
+                }
+            }
+            if (props[propName] == null) {
+                if (isRequired) {
+                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
+                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
+                }
+                return null;
+            } else return validate(props, propName, componentName, location, propFullName);
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+    function createPrimitiveTypeChecker(expectedType) {
+        function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+                // `propValue` being instance of, say, date/regexp, pass the 'object'
+                // check, but we can offer a more precise error message here rather than
+                // 'of type `object`'.
+                var preciseType = getPreciseType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
+                    expectedType: expectedType
                 });
             }
-        }, null);
-    }, [
-        setAnimationState,
-        element
-    ]);
-    const startAnimation = (0, _useConstantMjs.useConstant)(()=>(animationDefinition)=>{
-            return (0, _visualElementMjs1.animateVisualElement)(element, animationDefinition);
-        });
-    return [
-        animationState,
-        startAnimation
-    ];
-}
-
-},{"react":"21dqq","../../utils/use-constant.mjs":"gAAJI","../../motion/utils/use-visual-state.mjs":"bYE4p","../../projection/geometry/models.mjs":"8tocy","../../render/VisualElement.mjs":"3YJr4","../interfaces/visual-element.mjs":"e0aFv","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"a81pc":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "invertScale", ()=>invertScale);
-parcelHelpers.export(exports, "useInvertedScale", ()=>useInvertedScale);
-var _useTransformMjs = require("./use-transform.mjs");
-var _errorsMjs = require("../utils/errors.mjs");
-var _useMotionValueMjs = require("./use-motion-value.mjs");
-var _indexMjs = require("../context/MotionContext/index.mjs");
-var _react = require("react");
-// Keep things reasonable and avoid scale: Infinity. In practise we might need
-// to add another value, opacity, that could interpolate scaleX/Y [0,0.01] => [0,1]
-// to simply hide content at unreasonable scales.
-const maxScale = 100000;
-const invertScale = (scale)=>scale > 0.001 ? 1 / scale : maxScale;
-let hasWarned = false;
-/**
- * Returns a `MotionValue` each for `scaleX` and `scaleY` that update with the inverse
- * of their respective parent scales.
- *
- * This is useful for undoing the distortion of content when scaling a parent component.
- *
- * By default, `useInvertedScale` will automatically fetch `scaleX` and `scaleY` from the nearest parent.
- * By passing other `MotionValue`s in as `useInvertedScale({ scaleX, scaleY })`, it will invert the output
- * of those instead.
- *
- * ```jsx
- * const MyComponent = () => {
- *   const { scaleX, scaleY } = useInvertedScale()
- *   return <motion.div style={{ scaleX, scaleY }} />
- * }
- * ```
- *
- * @deprecated
- */ function useInvertedScale(scale) {
-    let parentScaleX = (0, _useMotionValueMjs.useMotionValue)(1);
-    let parentScaleY = (0, _useMotionValueMjs.useMotionValue)(1);
-    const { visualElement } = (0, _react.useContext)((0, _indexMjs.MotionContext));
-    (0, _errorsMjs.invariant)(!!(scale || visualElement), "If no scale values are provided, useInvertedScale must be used within a child of another motion component.");
-    (0, _errorsMjs.warning)(hasWarned, "useInvertedScale is deprecated and will be removed in 3.0. Use the layout prop instead.");
-    hasWarned = true;
-    if (scale) {
-        parentScaleX = scale.scaleX || parentScaleX;
-        parentScaleY = scale.scaleY || parentScaleY;
-    } else if (visualElement) {
-        parentScaleX = visualElement.getValue("scaleX", 1);
-        parentScaleY = visualElement.getValue("scaleY", 1);
+            return null;
+        }
+        return createChainableTypeChecker(validate);
     }
-    const scaleX = (0, _useTransformMjs.useTransform)(parentScaleX, invertScale);
-    const scaleY = (0, _useTransformMjs.useTransform)(parentScaleY, invertScale);
-    return {
-        scaleX,
-        scaleY
-    };
-}
-
-},{"./use-transform.mjs":"gAMIr","../utils/errors.mjs":"drRZ6","./use-motion-value.mjs":"rszYa","../context/MotionContext/index.mjs":"3aBYo","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"5dn5T":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "AnimateSharedLayout", ()=>AnimateSharedLayout);
-var _jsxRuntime = require("react/jsx-runtime");
-var _errorsMjs = require("../utils/errors.mjs");
-var _react = require("react");
-var _useConstantMjs = require("../utils/use-constant.mjs");
-var _indexMjs = require("./LayoutGroup/index.mjs");
-let id = 0;
-const AnimateSharedLayout = ({ children })=>{
-    _react.useEffect(()=>{
-        (0, _errorsMjs.invariant)(false, "AnimateSharedLayout is deprecated: https://www.framer.com/docs/guide-upgrade/##shared-layout-animations");
-    }, []);
-    return (0, _jsxRuntime.jsx)((0, _indexMjs.LayoutGroup), {
-        id: (0, _useConstantMjs.useConstant)(()=>`asl-${id++}`),
-        children: children
-    });
+    function createAnyTypeChecker() {
+        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    }
+    function createArrayOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
+            }
+            for(var i = 0; i < propValue.length; i++){
+                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createInstanceTypeChecker(expectedClass) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+                var expectedClassName = expectedClass.name || ANONYMOUS;
+                var actualClassName = getClassName(props[propName]);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createEnumTypeChecker(expectedValues) {
+        if (!Array.isArray(expectedValues)) {
+            {
+                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
+                else printWarning("Invalid argument supplied to oneOf, expected an array.");
+            }
+            return emptyFunctionThatReturnsNull;
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for(var i = 0; i < expectedValues.length; i++){
+                if (is(propValue, expectedValues[i])) return null;
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+                var type = getPreciseType(value);
+                if (type === "symbol") return String(value);
+                return value;
+            });
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createObjectOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
+            for(var key in propValue)if (has(propValue, key)) {
+                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+        if (!Array.isArray(arrayOfTypeCheckers)) {
+            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
+            return emptyFunctionThatReturnsNull;
+        }
+        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+            var checker = arrayOfTypeCheckers[i];
+            if (typeof checker !== "function") {
+                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i + ".");
+                return emptyFunctionThatReturnsNull;
+            }
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var expectedTypes = [];
+            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+                var checker = arrayOfTypeCheckers[i];
+                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+                if (checkerResult == null) return null;
+                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
+            }
+            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createNodeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function invalidValidatorError(componentName, location, propFullName, key, type) {
+        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
+    }
+    function createShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            for(var key in shapeTypes){
+                var checker = shapeTypes[key];
+                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createStrictShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            // We need to check all keys in case some are required but missing from props.
+            var allKeys = assign({}, props[propName], shapeTypes);
+            for(var key in allKeys){
+                var checker = shapeTypes[key];
+                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function isNode(propValue) {
+        switch(typeof propValue){
+            case "number":
+            case "string":
+            case "undefined":
+                return true;
+            case "boolean":
+                return !propValue;
+            case "object":
+                if (Array.isArray(propValue)) return propValue.every(isNode);
+                if (propValue === null || isValidElement(propValue)) return true;
+                var iteratorFn = getIteratorFn(propValue);
+                if (iteratorFn) {
+                    var iterator = iteratorFn.call(propValue);
+                    var step;
+                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
+                        if (!isNode(step.value)) return false;
+                    }
+                    else // Iterator will provide entry [k,v] tuples rather than values.
+                    while(!(step = iterator.next()).done){
+                        var entry = step.value;
+                        if (entry) {
+                            if (!isNode(entry[1])) return false;
+                        }
+                    }
+                } else return false;
+                return true;
+            default:
+                return false;
+        }
+    }
+    function isSymbol(propType, propValue) {
+        // Native Symbol.
+        if (propType === "symbol") return true;
+        // falsy value can't be a Symbol
+        if (!propValue) return false;
+        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+        if (propValue["@@toStringTag"] === "Symbol") return true;
+        // Fallback for non-spec compliant Symbols which are polyfilled.
+        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
+        return false;
+    }
+    // Equivalent of `typeof` but with special handling for array and regexp.
+    function getPropType(propValue) {
+        var propType = typeof propValue;
+        if (Array.isArray(propValue)) return "array";
+        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
+        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+        // passes PropTypes.object.
+        return "object";
+        if (isSymbol(propType, propValue)) return "symbol";
+        return propType;
+    }
+    // This handles more types than `getPropType`. Only used for error messages.
+    // See `createPrimitiveTypeChecker`.
+    function getPreciseType(propValue) {
+        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
+        var propType = getPropType(propValue);
+        if (propType === "object") {
+            if (propValue instanceof Date) return "date";
+            else if (propValue instanceof RegExp) return "regexp";
+        }
+        return propType;
+    }
+    // Returns a string that is postfixed to a warning about an invalid type.
+    // For example, "undefined" or "of type array"
+    function getPostfixForTypeWarning(value) {
+        var type = getPreciseType(value);
+        switch(type){
+            case "array":
+            case "object":
+                return "an " + type;
+            case "boolean":
+            case "date":
+            case "regexp":
+                return "a " + type;
+            default:
+                return type;
+        }
+    }
+    // Returns class name of the object, if any.
+    function getClassName(propValue) {
+        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
+        return propValue.constructor.name;
+    }
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
 };
 
-},{"react/jsx-runtime":"6AEwr","../utils/errors.mjs":"drRZ6","react":"21dqq","../utils/use-constant.mjs":"gAAJI","./LayoutGroup/index.mjs":"b9GPH","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"WMW6Q":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "scroll", ()=>scroll);
-var _trackMjs = require("./track.mjs");
-var _observeMjs = require("./observe.mjs");
-var _supportsMjs = require("./supports.mjs");
-function scrollTimelineFallback({ source, axis = "y" }) {
-    // ScrollTimeline records progress as a percentage CSSUnitValue
-    const currentTime = {
-        value: 0
-    };
-    const cancel = (0, _trackMjs.scrollInfo)((info)=>{
-        currentTime.value = info[axis].progress * 100;
-    }, {
-        container: source,
-        axis
-    });
-    return {
-        currentTime,
-        cancel
-    };
+},{"c437388b089702c3":"7EuwB","c067a60101d8520c":"7OXxh","74a0f89a70b9f3c2":"jZTZJ","18441b11647bc78":"fqKuf","bec3f6ff89f0b072":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/ "use strict";
+/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function toObject(val) {
+    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
+    return Object(val);
 }
-const timelineCache = new Map();
-function getTimeline({ source = document.documentElement, axis = "y" } = {}) {
-    if (!timelineCache.has(source)) timelineCache.set(source, {});
-    const elementCache = timelineCache.get(source);
-    if (!elementCache[axis]) elementCache[axis] = (0, _supportsMjs.supportsScrollTimeline)() ? new ScrollTimeline({
-        source,
-        axis
-    }) : scrollTimelineFallback({
-        source,
-        axis
-    });
-    return elementCache[axis];
-}
-function scroll(onScroll, options) {
-    const timeline = getTimeline(options);
-    if (typeof onScroll === "function") return (0, _observeMjs.observeTimeline)(onScroll, timeline);
-    else return onScroll.attachTimeline(timeline);
-}
-
-},{"./track.mjs":"inFgs","./observe.mjs":"itvbn","./supports.mjs":"ghApE","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"l87y1":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getOriginIndex", ()=>getOriginIndex);
-parcelHelpers.export(exports, "stagger", ()=>stagger);
-var _mapMjs = require("../../easing/utils/map.mjs");
-function getOriginIndex(from, total) {
-    if (from === "first") return 0;
-    else {
-        const lastIndex = total - 1;
-        return from === "last" ? lastIndex : lastIndex / 2;
+function shouldUseNative() {
+    try {
+        if (!Object.assign) return false;
+        // Detect buggy property enumeration order in older V8 versions.
+        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
+        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
+        test1[5] = "de";
+        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test2 = {};
+        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
+        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
+            return test2[n];
+        });
+        if (order2.join("") !== "0123456789") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test3 = {};
+        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
+            test3[letter] = letter;
+        });
+        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
+        return true;
+    } catch (err) {
+        // We don't expect any of the above to throw, but better to be safe.
+        return false;
     }
 }
-function stagger(duration = 0.1, { startDelay = 0, from = 0, ease } = {}) {
-    return (i, total)=>{
-        const fromIndex = typeof from === "number" ? from : getOriginIndex(from, total);
-        const distance = Math.abs(fromIndex - i);
-        let delay = duration * distance;
-        if (ease) {
-            const maxDelay = total * duration;
-            const easingFunction = (0, _mapMjs.easingDefinitionToFunction)(ease);
-            delay = easingFunction(delay / maxDelay) * maxDelay;
+module.exports = shouldUseNative() ? Object.assign : function(target, source) {
+    var from;
+    var to = toObject(target);
+    var symbols;
+    for(var s = 1; s < arguments.length; s++){
+        from = Object(arguments[s]);
+        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
+        if (getOwnPropertySymbols) {
+            symbols = getOwnPropertySymbols(from);
+            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
         }
-        return startDelay + delay;
+    }
+    return to;
+};
+
+},{}],"jZTZJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+module.exports = ReactPropTypesSecret;
+
+},{}],"fqKuf":[function(require,module,exports) {
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+},{}],"5VwyJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var printWarning = function() {};
+var ReactPropTypesSecret = require("24ba1e58d167a82c");
+var loggedTypeFailures = {};
+var has = require("898bc82f39d83f7c");
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+            // This is intentionally an invariant that gets caught. It's the same
+            // behavior as without this statement except with a better message.
+            if (typeof typeSpecs[typeSpecName] !== "function") {
+                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                err.name = "Invariant Violation";
+                throw err;
+            }
+            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+            error = ex;
+        }
+        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+            // Only monitor this failure once because there tends to be a lot of the
+            // same error.
+            loggedTypeFailures[error.message] = true;
+            var stack = getStack ? getStack() : "";
+            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
+        }
+    }
+}
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */ checkPropTypes.resetWarningCache = function() {
+    loggedTypeFailures = {};
+};
+module.exports = checkPropTypes;
+
+},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}],"12ePA":[function(require,module,exports) {
+"use strict";
+function _interopDefault(ex) {
+    return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
+}
+var React = require("85d8b04033ce6109");
+var React__default = _interopDefault(React);
+function _defineProperty(obj, key, value) {
+    if (key in obj) Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+    });
+    else obj[key] = value;
+    return obj;
+}
+function _inheritsLoose(subClass, superClass) {
+    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype.constructor = subClass;
+    subClass.__proto__ = superClass;
+}
+var canUseDOM = !!(typeof window !== "undefined" && window.document && window.document.createElement);
+function withSideEffect(reducePropsToState, handleStateChangeOnClient, mapStateOnServer) {
+    if (typeof reducePropsToState !== "function") throw new Error("Expected reducePropsToState to be a function.");
+    if (typeof handleStateChangeOnClient !== "function") throw new Error("Expected handleStateChangeOnClient to be a function.");
+    if (typeof mapStateOnServer !== "undefined" && typeof mapStateOnServer !== "function") throw new Error("Expected mapStateOnServer to either be undefined or a function.");
+    function getDisplayName(WrappedComponent) {
+        return WrappedComponent.displayName || WrappedComponent.name || "Component";
+    }
+    return function wrap(WrappedComponent) {
+        if (typeof WrappedComponent !== "function") throw new Error("Expected WrappedComponent to be a React component.");
+        var mountedInstances = [];
+        var state;
+        function emitChange() {
+            state = reducePropsToState(mountedInstances.map(function(instance) {
+                return instance.props;
+            }));
+            if (SideEffect.canUseDOM) handleStateChangeOnClient(state);
+            else if (mapStateOnServer) state = mapStateOnServer(state);
+        }
+        var SideEffect = /*#__PURE__*/ function(_PureComponent) {
+            _inheritsLoose(SideEffect, _PureComponent);
+            function SideEffect() {
+                return _PureComponent.apply(this, arguments) || this;
+            }
+            // Try to use displayName of wrapped component
+            // Expose canUseDOM so tests can monkeypatch it
+            SideEffect.peek = function peek() {
+                return state;
+            };
+            SideEffect.rewind = function rewind() {
+                if (SideEffect.canUseDOM) throw new Error("You may only call rewind() on the server. Call peek() to read the current state.");
+                var recordedState = state;
+                state = undefined;
+                mountedInstances = [];
+                return recordedState;
+            };
+            var _proto = SideEffect.prototype;
+            _proto.UNSAFE_componentWillMount = function UNSAFE_componentWillMount() {
+                mountedInstances.push(this);
+                emitChange();
+            };
+            _proto.componentDidUpdate = function componentDidUpdate() {
+                emitChange();
+            };
+            _proto.componentWillUnmount = function componentWillUnmount() {
+                var index = mountedInstances.indexOf(this);
+                mountedInstances.splice(index, 1);
+                emitChange();
+            };
+            _proto.render = function render() {
+                return React__default.createElement(WrappedComponent, this.props);
+            };
+            return SideEffect;
+        }(React.PureComponent);
+        _defineProperty(SideEffect, "displayName", "SideEffect(" + getDisplayName(WrappedComponent) + ")");
+        _defineProperty(SideEffect, "canUseDOM", canUseDOM);
+        return SideEffect;
     };
 }
+module.exports = withSideEffect;
 
-},{"../../easing/utils/map.mjs":"e97Gy","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"eK1zf":[function(require,module,exports) {
+},{"85d8b04033ce6109":"21dqq"}],"isHbY":[function(require,module,exports) {
+/* global Map:readonly, Set:readonly, ArrayBuffer:readonly */ var hasElementType = typeof Element !== "undefined";
+var hasMap = typeof Map === "function";
+var hasSet = typeof Set === "function";
+var hasArrayBuffer = typeof ArrayBuffer === "function" && !!ArrayBuffer.isView;
+// Note: We **don't** need `envHasBigInt64Array` in fde es6/index.js
+function equal(a, b) {
+    // START: fast-deep-equal es6/index.js 3.1.3
+    if (a === b) return true;
+    if (a && b && typeof a == "object" && typeof b == "object") {
+        if (a.constructor !== b.constructor) return false;
+        var length, i, keys;
+        if (Array.isArray(a)) {
+            length = a.length;
+            if (length != b.length) return false;
+            for(i = length; i-- !== 0;)if (!equal(a[i], b[i])) return false;
+            return true;
+        }
+        // START: Modifications:
+        // 1. Extra `has<Type> &&` helpers in initial condition allow es6 code
+        //    to co-exist with es5.
+        // 2. Replace `for of` with es5 compliant iteration using `for`.
+        //    Basically, take:
+        //
+        //    ```js
+        //    for (i of a.entries())
+        //      if (!b.has(i[0])) return false;
+        //    ```
+        //
+        //    ... and convert to:
+        //
+        //    ```js
+        //    it = a.entries();
+        //    while (!(i = it.next()).done)
+        //      if (!b.has(i.value[0])) return false;
+        //    ```
+        //
+        //    **Note**: `i` access switches to `i.value`.
+        var it;
+        if (hasMap && a instanceof Map && b instanceof Map) {
+            if (a.size !== b.size) return false;
+            it = a.entries();
+            while(!(i = it.next()).done)if (!b.has(i.value[0])) return false;
+            it = a.entries();
+            while(!(i = it.next()).done)if (!equal(i.value[1], b.get(i.value[0]))) return false;
+            return true;
+        }
+        if (hasSet && a instanceof Set && b instanceof Set) {
+            if (a.size !== b.size) return false;
+            it = a.entries();
+            while(!(i = it.next()).done)if (!b.has(i.value[0])) return false;
+            return true;
+        }
+        // END: Modifications
+        if (hasArrayBuffer && ArrayBuffer.isView(a) && ArrayBuffer.isView(b)) {
+            length = a.length;
+            if (length != b.length) return false;
+            for(i = length; i-- !== 0;)if (a[i] !== b[i]) return false;
+            return true;
+        }
+        if (a.constructor === RegExp) return a.source === b.source && a.flags === b.flags;
+        // START: Modifications:
+        // Apply guards for `Object.create(null)` handling. See:
+        // - https://github.com/FormidableLabs/react-fast-compare/issues/64
+        // - https://github.com/epoberezkin/fast-deep-equal/issues/49
+        if (a.valueOf !== Object.prototype.valueOf && typeof a.valueOf === "function" && typeof b.valueOf === "function") return a.valueOf() === b.valueOf();
+        if (a.toString !== Object.prototype.toString && typeof a.toString === "function" && typeof b.toString === "function") return a.toString() === b.toString();
+        // END: Modifications
+        keys = Object.keys(a);
+        length = keys.length;
+        if (length !== Object.keys(b).length) return false;
+        for(i = length; i-- !== 0;)if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
+        // END: fast-deep-equal
+        // START: react-fast-compare
+        // custom handling for DOM elements
+        if (hasElementType && a instanceof Element) return false;
+        // custom handling for React/Preact
+        for(i = length; i-- !== 0;){
+            if ((keys[i] === "_owner" || keys[i] === "__v" || keys[i] === "__o") && a.$$typeof) continue;
+            // all other properties should be traversed as usual
+            if (!equal(a[keys[i]], b[keys[i]])) return false;
+        }
+        // END: react-fast-compare
+        // START: fast-deep-equal
+        return true;
+    }
+    return a !== a && b !== b;
+}
+// end fast-deep-equal
+module.exports = function isEqual(a, b) {
+    try {
+        return equal(a, b);
+    } catch (error) {
+        if ((error.message || "").match(/stack|recursion/i)) {
+            // warn on circular references, don't crash
+            // browsers give this different errors name and messages:
+            // chrome/safari: "RangeError", "Maximum call stack size exceeded"
+            // firefox: "InternalError", too much recursion"
+            // edge: "Error", "Out of stack space"
+            console.warn("react-fast-compare cannot handle circular refs");
+            return false;
+        }
+        // some other error. we should definitely know about these
+        throw error;
+    }
+};
+
+},{}],"8XQUt":[function(require,module,exports) {
+module.exports = require("e6f64ad6290e3fb5").getBundleURL("byUka") + "Red-Heart.8303c525.svg" + "?" + Date.now();
+
+},{"e6f64ad6290e3fb5":"kPWUg"}],"OhlYY":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$713b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$713b.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "cancelSync", ()=>cancelSync);
-parcelHelpers.export(exports, "sync", ()=>sync);
-var _batcherMjs = require("./batcher.mjs");
-var _frameMjs = require("./frame.mjs");
-/**
- * @deprecated
- *
- * Import as `frame` instead.
- */ const sync = (0, _frameMjs.frame);
-/**
- * @deprecated
- *
- * Use cancelFrame(callback) instead.
- */ const cancelSync = (0, _batcherMjs.stepsOrder).reduce((acc, key)=>{
-    acc[key] = (process)=>(0, _frameMjs.cancelFrame)(process);
-    return acc;
-}, {});
+parcelHelpers.export(exports, "NavBar", ()=>NavBar);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _userMenu = require("../user-menu/user-menu");
+var _genreDropdown = require("../genre-dropdown/genre-dropdown");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const NavBar = ({ user, onLogout })=>{
+    _s();
+    const [open, setOpen] = (0, _react.useState)(false);
+    const [openDropdown, setOpenDropdown] = (0, _react.useState)(false);
+    let menuRef = (0, _react.useRef)(null);
+    const location = (0, _reactRouterDom.useLocation)();
+    const lastHash = (0, _react.useRef)("");
+    (0, _react.useEffect)(()=>{
+        const handleClickOutside = (event)=>{
+            if (menuRef.current && !menuRef.current.contains(event.target)) setOpen(false);
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return ()=>{
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    });
+    (0, _react.useEffect)(()=>{
+        if (location.hash) lastHash.current = location.hash.slice(1);
+        if (lastHash.current && document.getElementById(lastHash.current)) setTimeout(()=>{
+            document.getElementById(lastHash.current)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+            lastHash.current = "";
+        }, 100);
+    }, [
+        location
+    ]);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "nav-bar",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: `/`,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "logo",
+                        children: "PopcornPal"
+                    }, void 0, false, {
+                        fileName: "src/components/navigation/nav-bar.jsx",
+                        lineNumber: 47,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/navigation/nav-bar.jsx",
+                    lineNumber: 46,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "menu-bar",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: `/#movies`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "menu-item",
+                                children: "Movies"
+                            }, void 0, false, {
+                                fileName: "src/components/navigation/nav-bar.jsx",
+                                lineNumber: 52,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 51,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "genre-cursor",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "menu-item genre-menu-item",
+                                    onMouseEnter: ()=>setOpenDropdown(true),
+                                    children: "Genres"
+                                }, void 0, false, {
+                                    fileName: "src/components/navigation/nav-bar.jsx",
+                                    lineNumber: 56,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: `open-dropdown ${openDropdown ? "active" : "inactive"}`,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        onMouseLeave: ()=>setOpenDropdown(false),
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreDropdown.GenreDropdown), {}, void 0, false, {
+                                            fileName: "src/components/navigation/nav-bar.jsx",
+                                            lineNumber: 68,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/navigation/nav-bar.jsx",
+                                        lineNumber: 67,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/components/navigation/nav-bar.jsx",
+                                    lineNumber: 62,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 55,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: `/users/${user}`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "menu-item",
+                                children: "My List"
+                            }, void 0, false, {
+                                fileName: "src/components/navigation/nav-bar.jsx",
+                                lineNumber: 74,
+                                columnNumber: 11
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 73,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/navigation/nav-bar.jsx",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    ref: menuRef,
+                    className: "right-logos",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "search-btn",
+                            src: require("b9710e7656528221")
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 78,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            onClick: ()=>setOpen(!open),
+                            className: "user-btn",
+                            src: require("3de8cf43c7f5ba07")
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 82,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: `open-profile ${open ? "active" : "inactive"}`,
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userMenu.UserMenu), {
+                                user: user,
+                                onLogout: onLogout
+                            }, void 0, false, {
+                                fileName: "src/components/navigation/nav-bar.jsx",
+                                lineNumber: 88,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/navigation/nav-bar.jsx",
+                            lineNumber: 87,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/navigation/nav-bar.jsx",
+                    lineNumber: 77,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/navigation/nav-bar.jsx",
+            lineNumber: 45,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/navigation/nav-bar.jsx",
+        lineNumber: 44,
+        columnNumber: 5
+    }, undefined);
+};
+_s(NavBar, "MuY6egYedpDjDYBKfFOdUnMJHe8=", false, function() {
+    return [
+        (0, _reactRouterDom.useLocation)
+    ];
+});
+_c = NavBar;
+var _c;
+$RefreshReg$(_c, "NavBar");
 
-},{"./batcher.mjs":"3fYwv","./frame.mjs":"3xPo8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav"}],"lJZlQ":[function() {},{}]},["itlOw","fuyGC","d8Dch"], "d8Dch", "parcelRequire1961")
+  $parcel$ReactRefreshHelpers$713b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../user-menu/user-menu":"gwWGx","../genre-dropdown/genre-dropdown":"kk4Bu","react":"21dqq","react-router-dom":"9xmpe","b9710e7656528221":"jbnMx","3de8cf43c7f5ba07":"4Az2l","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"gwWGx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$99d0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$99d0.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "UserMenu", ()=>UserMenu);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+const UserMenu = ({ user, onLogout })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "user-menu-dropdown",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+            className: "dropdown-list",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "my-account",
+                    children: "My Account"
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "hero-duration",
+                    children: user
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "line menu-line"
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: `/users/${user}`,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        className: "user-menu-item",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "menu-icon",
+                                src: require("77b00898d8739b3")
+                            }, void 0, false, {
+                                fileName: "src/components/user-menu/user-menu.jsx",
+                                lineNumber: 14,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: "Settings"
+                            }, void 0, false, {
+                                fileName: "src/components/user-menu/user-menu.jsx",
+                                lineNumber: 18,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/user-menu/user-menu.jsx",
+                        lineNumber: 13,
+                        columnNumber: 9
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 12,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                    to: `/users/${user}`,
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        className: "user-menu-item",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "menu-icon",
+                                src: require("d9100586bcdbc9d0")
+                            }, void 0, false, {
+                                fileName: "src/components/user-menu/user-menu.jsx",
+                                lineNumber: 23,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: "My Favorites"
+                            }, void 0, false, {
+                                fileName: "src/components/user-menu/user-menu.jsx",
+                                lineNumber: 24,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/user-menu/user-menu.jsx",
+                        lineNumber: 22,
+                        columnNumber: 9
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 21,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    className: "user-menu-item",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "menu-icon sign-out-icon",
+                            src: require("7059d21f10f10ec")
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 28,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            onClick: onLogout,
+                            children: "Sign Out"
+                        }, void 0, false, {
+                            fileName: "src/components/user-menu/user-menu.jsx",
+                            lineNumber: 32,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/user-menu/user-menu.jsx",
+                    lineNumber: 27,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/user-menu/user-menu.jsx",
+            lineNumber: 8,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/user-menu/user-menu.jsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, undefined);
+};
+_c = UserMenu;
+var _c;
+$RefreshReg$(_c, "UserMenu");
+
+  $parcel$ReactRefreshHelpers$99d0.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","77b00898d8739b3":"cu8AD","d9100586bcdbc9d0":"6J7u4","7059d21f10f10ec":"lg8jF","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"cu8AD":[function(require,module,exports) {
+module.exports = require("b2cb95b33f7f782e").getBundleURL("byUka") + "Settings.cd3021b9.svg" + "?" + Date.now();
+
+},{"b2cb95b33f7f782e":"kPWUg"}],"lg8jF":[function(require,module,exports) {
+module.exports = require("57dcfe453f96b8f").getBundleURL("byUka") + "Sign-Out.042d0a32.svg" + "?" + Date.now();
+
+},{"57dcfe453f96b8f":"kPWUg"}],"kk4Bu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8477 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8477.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreDropdown", ()=>GenreDropdown);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _genreItem = require("../genre-item/genre-item");
+const GenreDropdown = ()=>{
+    const genres = [
+        "Horror",
+        "Drama",
+        "Action",
+        "Mystery",
+        "Fantasy",
+        "Documentary"
+    ];
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "genre-dropdown",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+            className: "genre-dropdown-list",
+            children: genres.map((genre)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genreItem.GenreItem), {
+                        genre: genre
+                    }, void 0, false, {
+                        fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+                        lineNumber: 14,
+                        columnNumber: 11
+                    }, undefined)
+                }, genre, false, {
+                    fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+                    lineNumber: 13,
+                    columnNumber: 11
+                }, undefined))
+        }, void 0, false, {
+            fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+            lineNumber: 11,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/genre-dropdown/genre-dropdown.jsx",
+        lineNumber: 10,
+        columnNumber: 5
+    }, undefined);
+};
+_c = GenreDropdown;
+var _c;
+$RefreshReg$(_c, "GenreDropdown");
+
+  $parcel$ReactRefreshHelpers$8477.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../genre-item/genre-item":"fq3rm","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"fq3rm":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d1cf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d1cf.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreItem", ()=>GenreItem);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const GenreItem = ({ genre })=>{
+    _s();
+    const [isHovered, setIsHovered] = (0, _react.useState)(false);
+    const imagesList = {
+        Horror: {
+            default: require("c9ae5286fe39467c"),
+            hovered: require("5d5d8d4ad8a616d0")
+        },
+        Drama: {
+            default: require("46bb160c0148637"),
+            hovered: require("3e60e9fbc5e172f1")
+        },
+        Action: {
+            default: require("8ee24e7836c79b35"),
+            hovered: require("9dfc7cf92b66f4d4")
+        },
+        Mystery: {
+            default: require("6e62807babf075da"),
+            hovered: require("3fc3bdee6baea387")
+        },
+        Fantasy: {
+            default: require("a659001f8f493d8a"),
+            hovered: require("7148938fa9ad4774")
+        },
+        Documentary: {
+            default: require("be4866b90acbec53"),
+            hovered: require("a648f7c60334df30")
+        }
+    };
+    const getImageSrc = ()=>{
+        const images = imagesList[genre];
+        return isHovered ? images.default : images.hovered;
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+        className: "menu-font-size genre-dropdown-item",
+        onMouseEnter: ()=>setIsHovered(true),
+        onMouseLeave: ()=>setIsHovered(false),
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "menu-icon",
+                src: getImageSrc()
+            }, void 0, false, {
+                fileName: "src/components/genre-item/genre-item.jsx",
+                lineNumber: 45,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: genre
+            }, void 0, false, {
+                fileName: "src/components/genre-item/genre-item.jsx",
+                lineNumber: 46,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/genre-item/genre-item.jsx",
+        lineNumber: 40,
+        columnNumber: 5
+    }, undefined);
+};
+_s(GenreItem, "FPQn8a98tPjpohC7NUYORQR8GJE=");
+_c = GenreItem;
+var _c;
+$RefreshReg$(_c, "GenreItem");
+
+  $parcel$ReactRefreshHelpers$d1cf.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","c9ae5286fe39467c":"4h0ZY","5d5d8d4ad8a616d0":"jNNo2","46bb160c0148637":"ctxcz","3e60e9fbc5e172f1":"k01pP","8ee24e7836c79b35":"d9kUY","9dfc7cf92b66f4d4":"1vps3","6e62807babf075da":"3iEmy","3fc3bdee6baea387":"hgyGN","a659001f8f493d8a":"ao2az","7148938fa9ad4774":"fH1rI","be4866b90acbec53":"b1vpG","a648f7c60334df30":"hk8qG","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"4h0ZY":[function(require,module,exports) {
+module.exports = require("64f92e0e017fe782").getBundleURL("byUka") + "Yellow-Horror-Genre.0b8b0d07.png" + "?" + Date.now();
+
+},{"64f92e0e017fe782":"kPWUg"}],"jNNo2":[function(require,module,exports) {
+module.exports = require("b5a9cd11c7a96fbc").getBundleURL("byUka") + "Horror-Genre.d3464b23.png" + "?" + Date.now();
+
+},{"b5a9cd11c7a96fbc":"kPWUg"}],"ctxcz":[function(require,module,exports) {
+module.exports = require("f959ce102dfe156d").getBundleURL("byUka") + "Yellow-Drama-Genre.9504496f.png" + "?" + Date.now();
+
+},{"f959ce102dfe156d":"kPWUg"}],"k01pP":[function(require,module,exports) {
+module.exports = require("ad562e21484b9061").getBundleURL("byUka") + "Drama-Genre.c995014a.png" + "?" + Date.now();
+
+},{"ad562e21484b9061":"kPWUg"}],"d9kUY":[function(require,module,exports) {
+module.exports = require("cdb7913a4f65632b").getBundleURL("byUka") + "Yellow-Action-Genre.7632234c.png" + "?" + Date.now();
+
+},{"cdb7913a4f65632b":"kPWUg"}],"1vps3":[function(require,module,exports) {
+module.exports = require("ff6f004d84531dc3").getBundleURL("byUka") + "Action-Genre.9cbbcf63.png" + "?" + Date.now();
+
+},{"ff6f004d84531dc3":"kPWUg"}],"3iEmy":[function(require,module,exports) {
+module.exports = require("8a513cbd9361b009").getBundleURL("byUka") + "Yellow-Mystery-Genre.d0d130f8.png" + "?" + Date.now();
+
+},{"8a513cbd9361b009":"kPWUg"}],"hgyGN":[function(require,module,exports) {
+module.exports = require("eea9bd2b95631076").getBundleURL("byUka") + "Mystery-Genre.ba849ad5.png" + "?" + Date.now();
+
+},{"eea9bd2b95631076":"kPWUg"}],"ao2az":[function(require,module,exports) {
+module.exports = require("d8c48e982f41e8dd").getBundleURL("byUka") + "Yellow-Fantasy-Genre.ffc57b15.png" + "?" + Date.now();
+
+},{"d8c48e982f41e8dd":"kPWUg"}],"fH1rI":[function(require,module,exports) {
+module.exports = require("97a5482da5e3bc3f").getBundleURL("byUka") + "Fantasy-Genre.e9a31879.png" + "?" + Date.now();
+
+},{"97a5482da5e3bc3f":"kPWUg"}],"b1vpG":[function(require,module,exports) {
+module.exports = require("c20ece203a1b81c").getBundleURL("byUka") + "Yellow-Documentary-Genre.4066c89c.png" + "?" + Date.now();
+
+},{"c20ece203a1b81c":"kPWUg"}],"hk8qG":[function(require,module,exports) {
+module.exports = require("addc8d36fee63fa3").getBundleURL("byUka") + "Documentary-Genre.6a989893.png" + "?" + Date.now();
+
+},{"addc8d36fee63fa3":"kPWUg"}],"jbnMx":[function(require,module,exports) {
+module.exports = require("5578768f349e7056").getBundleURL("byUka") + "Search.f4d21c8a.svg" + "?" + Date.now();
+
+},{"5578768f349e7056":"kPWUg"}],"4Az2l":[function(require,module,exports) {
+module.exports = require("d1553abe5a7be242").getBundleURL("byUka") + "User.aae1e741.svg" + "?" + Date.now();
+
+},{"d1553abe5a7be242":"kPWUg"}],"emPqA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$831a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$831a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Hero", ()=>Hero);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+const Hero = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "hero-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "hero-img",
+                src: require("9472117a191cca85")
+            }, void 0, false, {
+                fileName: "src/components/hero/hero.jsx",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "hero-text",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "left-hero",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "hero-duration",
+                                children: "Duration: 3h12m \u2022 Action"
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 9,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                className: "hero-title",
+                                children: "Avatar: The Way of Water"
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 10,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "hero-desc",
+                                children: "On the lush alien world of Pandora live the Na'vi, beings who appear primitive but are highly evolved."
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 11,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "hero-btns",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        to: `/movies/66a99600da099ad62d373c3f`,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                            className: "read-more-btn",
+                                            children: "Read More"
+                                        }, void 0, false, {
+                                            fileName: "src/components/hero/hero.jsx",
+                                            lineNumber: 17,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/hero/hero.jsx",
+                                        lineNumber: 16,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        className: "white-heart",
+                                        src: require("e72d4ece8a7d5e35")
+                                    }, void 0, false, {
+                                        fileName: "src/components/hero/hero.jsx",
+                                        lineNumber: 19,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 15,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/hero/hero.jsx",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "right-hero",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "featured-star",
+                                src: require("aac761b4f4a25e61")
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 26,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: "featured"
+                            }, void 0, false, {
+                                fileName: "src/components/hero/hero.jsx",
+                                lineNumber: 30,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/hero/hero.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/hero/hero.jsx",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/hero/hero.jsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Hero;
+var _c;
+$RefreshReg$(_c, "Hero");
+
+  $parcel$ReactRefreshHelpers$831a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","9472117a191cca85":"5CB4l","e72d4ece8a7d5e35":"6J7u4","aac761b4f4a25e61":"2SwY8","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"5CB4l":[function(require,module,exports) {
+module.exports = require("1569dc95ab2e052e").getBundleURL("byUka") + "avatar-bkg.4191252d.jpg" + "?" + Date.now();
+
+},{"1569dc95ab2e052e":"kPWUg"}],"2SwY8":[function(require,module,exports) {
+module.exports = require("a16688772f530b67").getBundleURL("byUka") + "Star.00b9023a.svg" + "?" + Date.now();
+
+},{"a16688772f530b67":"kPWUg"}],"2Vpqn":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d750 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d750.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieGrid", ()=>MovieGrid);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _movieCard = require("../movie-card/movie-card");
+var _s = $RefreshSig$();
+const MovieGrid = ({ movies, genreClick, genreReset })=>{
+    _s();
+    const [activeGenre, setActiveGenre] = (0, _react.useState)(null);
+    const genres = [
+        "Horror",
+        "Drama",
+        "Action",
+        "Mystery",
+        "Fantasy",
+        "Documentary"
+    ];
+    const handleGenreClick = (genrename)=>{
+        if (activeGenre === genrename) {
+            setActiveGenre(null);
+            genreReset();
+        } else {
+            setActiveGenre(genrename);
+            genreClick(genrename);
+        }
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "movies",
+        className: "movie-heading-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Movies"
+            }, void 0, false, {
+                fileName: "src/components/movie-grid/movie-grid.jsx",
+                lineNumber: 20,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "line"
+            }, void 0, false, {
+                fileName: "src/components/movie-grid/movie-grid.jsx",
+                lineNumber: 21,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "genres",
+                children: genres.map((genre)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        onClick: ()=>handleGenreClick(genre),
+                        className: `bubble genre-button ${activeGenre === genre ? "active" : "not-active"}`,
+                        children: genre
+                    }, genre, false, {
+                        fileName: "src/components/movie-grid/movie-grid.jsx",
+                        lineNumber: 24,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/components/movie-grid/movie-grid.jsx",
+                lineNumber: 22,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/movie-grid/movie-grid.jsx",
+        lineNumber: 19,
+        columnNumber: 5
+    }, undefined);
+};
+_s(MovieGrid, "cyd8/vje5zPIHFKExErQWBKUs3E=");
+_c = MovieGrid;
+var _c;
+$RefreshReg$(_c, "MovieGrid");
+
+  $parcel$ReactRefreshHelpers$d750.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react":"21dqq","../movie-card/movie-card":"bwuIu"}],"gexPl":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3555 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3555.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginNavBar", ()=>LoginNavBar);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const LoginNavBar = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "nav-bar",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "logo",
+                children: "PopcornPal"
+            }, void 0, false, {
+                fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
+                lineNumber: 5,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
+            fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
+            lineNumber: 4,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/login-nav-bar/login-nav-bar.jsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = LoginNavBar;
+var _c;
+$RefreshReg$(_c, "LoginNavBar");
+
+  $parcel$ReactRefreshHelpers$3555.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"9YtA0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9fee.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginView", ()=>LoginView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const LoginView = ({ onLoggedIn })=>{
+    _s();
+    const [username, setUsername] = (0, _react.useState)("");
+    const [password, setPassword] = (0, _react.useState)("");
+    const handleSubmit = (event)=>{
+        // prevents the default behavior of the page reloading when the form is submitted
+        event.preventDefault();
+        const data = {
+            Username: username,
+            Password: password
+        };
+        fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }).then((response)=>response.json()).then((data)=>{
+            if (data.user) {
+                localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("token", data.token);
+                onLoggedIn(data.user, data.token);
+            } else alert("Invalid username or password");
+        }).catch((e)=>{
+            alert("Something went wrong");
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "login-container",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+            onSubmit: handleSubmit,
+            className: "login-form-flexbox",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    className: "login-heading",
+                    children: "Log In"
+                }, void 0, false, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 41,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "form-labels-container",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            className: "form-label-box",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: "Username"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 44,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    type: "text",
+                                    value: username,
+                                    onChange: (e)=>setUsername(e.target.value),
+                                    placeholder: "Enter your username",
+                                    className: "input-box",
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 45,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 43,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            className: "form-label-box",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: "Password"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 55,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    value: password,
+                                    onChange: (e)=>setPassword(e.target.value),
+                                    placeholder: "Enter your password",
+                                    className: "input-box password-input",
+                                    type: "password",
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 56,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 54,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 42,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "login-button-container",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "login-button",
+                            type: "submit",
+                            children: "Login"
+                        }, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 67,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "login-signup-redirect",
+                            children: [
+                                "Don't have an account? ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    className: "redirect-link",
+                                    to: `/signup`,
+                                    children: "Sign up"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 70,
+                                    columnNumber: 69
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 70,
+                            columnNumber: 9
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 66,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/login-view/login-view.jsx",
+            lineNumber: 40,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/login-view/login-view.jsx",
+        lineNumber: 39,
+        columnNumber: 5
+    }, undefined);
+};
+_s(LoginView, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
+_c = LoginView;
+var _c;
+$RefreshReg$(_c, "LoginView");
+
+  $parcel$ReactRefreshHelpers$9fee.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"4OGiN":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$73d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$73d1.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SignupView", ()=>SignupView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _loginView = require("../login-view/login-view");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const SignupView = ()=>{
+    _s();
+    const [username, setUsername] = (0, _react.useState)("");
+    const [password, setPassword] = (0, _react.useState)("");
+    const [email, setEmail] = (0, _react.useState)("");
+    const [birthday, setBirthday] = (0, _react.useState)("");
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        const data = {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
+        };
+        fetch("https://popcornpal-32d285ffbdf8.herokuapp.com/users", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response)=>{
+            if (response.ok) {
+                alert("Signup successful");
+                window.location.href = "/login";
+            } else alert("Signup failed");
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "login-container",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+            onSubmit: handleSubmit,
+            className: "login-form-flexbox",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                    className: "login-heading",
+                    children: "Sign Up"
+                }, void 0, false, {
+                    fileName: "src/components/signup-view/signup-view.jsx",
+                    lineNumber: 41,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "form-labels-container",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            className: "form-label-box",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: "Username"
+                                }, void 0, false, {
+                                    fileName: "src/components/signup-view/signup-view.jsx",
+                                    lineNumber: 44,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    className: "input-box",
+                                    type: "text",
+                                    value: username,
+                                    onChange: (e)=>setUsername(e.target.value),
+                                    required: true,
+                                    minLength: "3"
+                                }, void 0, false, {
+                                    fileName: "src/components/signup-view/signup-view.jsx",
+                                    lineNumber: 45,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/signup-view/signup-view.jsx",
+                            lineNumber: 43,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            className: "form-label-box",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: "Password"
+                                }, void 0, false, {
+                                    fileName: "src/components/signup-view/signup-view.jsx",
+                                    lineNumber: 55,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    className: "input-box password-input",
+                                    type: "password",
+                                    value: password,
+                                    onChange: (e)=>setPassword(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/signup-view/signup-view.jsx",
+                                    lineNumber: 56,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/signup-view/signup-view.jsx",
+                            lineNumber: 54,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            className: "form-label-box",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: "Email"
+                                }, void 0, false, {
+                                    fileName: "src/components/signup-view/signup-view.jsx",
+                                    lineNumber: 65,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    className: "input-box",
+                                    type: "email",
+                                    value: email,
+                                    onChange: (e)=>setEmail(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/signup-view/signup-view.jsx",
+                                    lineNumber: 66,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/signup-view/signup-view.jsx",
+                            lineNumber: 64,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            className: "form-label-box",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: "Birthday"
+                                }, void 0, false, {
+                                    fileName: "src/components/signup-view/signup-view.jsx",
+                                    lineNumber: 75,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    className: "input-box birthday-input",
+                                    type: "date",
+                                    value: birthday,
+                                    onChange: (e)=>setBirthday(e.target.value),
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "src/components/signup-view/signup-view.jsx",
+                                    lineNumber: 76,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/signup-view/signup-view.jsx",
+                            lineNumber: 74,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/signup-view/signup-view.jsx",
+                    lineNumber: 42,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "login-button-container",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "login-button",
+                            type: "submit",
+                            children: "Sign Up"
+                        }, void 0, false, {
+                            fileName: "src/components/signup-view/signup-view.jsx",
+                            lineNumber: 86,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "login-signup-redirect",
+                            children: [
+                                "Already have an account? ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    className: "redirect-link",
+                                    to: `/login`,
+                                    children: "Log In"
+                                }, void 0, false, {
+                                    fileName: "src/components/signup-view/signup-view.jsx",
+                                    lineNumber: 89,
+                                    columnNumber: 71
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/signup-view/signup-view.jsx",
+                            lineNumber: 89,
+                            columnNumber: 9
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/signup-view/signup-view.jsx",
+                    lineNumber: 85,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/signup-view/signup-view.jsx",
+            lineNumber: 40,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/signup-view/signup-view.jsx",
+        lineNumber: 39,
+        columnNumber: 5
+    }, undefined);
+};
+_s(SignupView, "jsOQN3GC2XlBG9ITlzCdpyJOnso=");
+_c = SignupView;
+var _c;
+$RefreshReg$(_c, "SignupView");
+
+  $parcel$ReactRefreshHelpers$73d1.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../login-view/login-view":"9YtA0","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"2vVqf":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3c12.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProfileView", ()=>ProfileView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo })=>{
+    _s();
+    const { Username } = (0, _reactRouterDom.useParams)();
+    const [newUsername, setNewUsername] = (0, _react.useState)(user.Username);
+    const [newEmail, setNewEmail] = (0, _react.useState)(userInfo?.email || "");
+    const [newBirthday, setNewBirthday] = (0, _react.useState)(userInfo?.birthday || "");
+    const [userAccount, setUserAccount] = (0, _react.useState)(null);
+    const [loading, setLoading] = (0, _react.useState)(true);
+    const [favoriteMovies, setFavoriteMovies] = (0, _react.useState)([]);
+    const bearerToken = localStorage.getItem("token");
+    (0, _react.useEffect)(()=>{
+        const fetchUserData = async ()=>{
+            try {
+                const response = await fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                const data = await response.json();
+                const myUser = {
+                    id: data._id,
+                    username: data.Username,
+                    password: data.Password,
+                    email: data.Email,
+                    birthday: data.Birthday,
+                    favoriteMovies: data.Favorites
+                };
+                setUserAccount(myUser);
+                setFavoriteMovies(myUser.favoriteMovies);
+                setNewEmail(myUser.email);
+            } catch (error) {
+                console.error("Error fetching data", error);
+            } finally{
+                setLoading(false);
+            }
+        };
+        fetchUserData();
+    }, [
+        user.Username,
+        token
+    ]);
+    const handleUpdate = (event)=>{
+        event.preventDefault();
+        const data = {
+            Username: newUsername
+        };
+        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${bearerToken}`
+            }
+        }).then((data)=>{
+            onUpdateUser({
+                user,
+                Username: newUsername
+            });
+            window.location.href = `/users/${newUsername}`;
+        }).catch((error)=>{
+            console.error("Something went wrong");
+        });
+    };
+    const handleEmailUpdate = (event)=>{
+        event.preventDefault();
+        const data = {
+            Email: newEmail
+        };
+        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${bearerToken}`
+            }
+        }).then((data)=>{
+            onUpdateInfo({
+                email: newEmail
+            });
+            window.location.href = `/users/${user.Username}`;
+        }).catch((error)=>{
+            console.error("Something went wrong");
+        });
+    };
+    const handleBirthdayUpdate = (event)=>{
+        event.preventDefault();
+        const data = {
+            Birthday: newBirthday
+        };
+        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${bearerToken}`
+            }
+        }).then((data)=>{
+            onUpdateInfo({
+                birthday: newBirthday
+            });
+            window.location.href = `/users/${user.Username}`;
+        }).catch((error)=>{
+            console.error("Something went wrong");
+        });
+    };
+    const deleteAccount = (event)=>{
+        event.preventDefault();
+        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${bearerToken}`
+            }
+        }).then((data)=>{
+            localStorage.removeItem("token");
+            onUpdateUser(null);
+            window.location.href = `/login`;
+        }).catch((error)=>{
+            console.error("Account could not be deleted");
+        });
+    };
+    const movieDetails = favoriteMovies.map((favoriteprop)=>{
+        const movie = movies.find((m)=>favoriteprop === m.id);
+        return movie ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    children: movie.title
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 155,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    className: "favorites-poster",
+                    src: movie.image
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 156,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: (event)=>removeFavorite(movie.id, event),
+                    children: "Remove Favorite"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 157,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, favoriteprop, true, {
+            fileName: "src/components/profile-view/profile-view.jsx",
+            lineNumber: 154,
+            columnNumber: 7
+        }, undefined) : null;
+    });
+    const removeFavorite = async (movieID, event)=>{
+        event.preventDefault();
+        fetch(`https://popcornpal-32d285ffbdf8.herokuapp.com/users/${user.Username}/movies/${movieID}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${bearerToken}`
+            }
+        }).then((data)=>{
+            setFavoriteMovies((prevFavorites)=>prevFavorites.filter((id)=>id !== movieID));
+        });
+    };
+    const formatDate = (dateData)=>{
+        const date = new Date(dateData);
+        return date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+    };
+    if (Username === user.Username && !loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Username: ",
+                    userAccount.username
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 194,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Email: ",
+                    userAccount.email
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 195,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: [
+                    "Birthday: ",
+                    formatDate(userAccount.birthday)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 196,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    " Favorites:",
+                    movieDetails.length > 0 ? movieDetails : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: "No favorite movies available."
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 201,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 197,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                onSubmit: handleUpdate,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: "Update username: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 206,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        name: "Username",
+                        value: newUsername,
+                        onChange: (e)=>setNewUsername(e.target.value)
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 207,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        type: "submit",
+                        children: "Enter"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 213,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 205,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                onSubmit: handleEmailUpdate,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: "Update email: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 217,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        name: "Email",
+                        value: newEmail,
+                        onChange: (e)=>setNewEmail(e.target.value)
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 218,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        type: "submit",
+                        children: "Enter"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 224,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 216,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                onSubmit: handleBirthdayUpdate,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: "Update birthday: "
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 228,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "date",
+                        name: "Birthday",
+                        value: newBirthday,
+                        onChange: (e)=>setNewBirthday(e.target.value)
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 229,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        type: "submit",
+                        children: "Enter"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 235,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 227,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                onSubmit: deleteAccount,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: "Delete account?"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 239,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        type: "submit",
+                        children: "Confirm"
+                    }, void 0, false, {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 240,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 238,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: `/`,
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    children: "Go Back"
+                }, void 0, false, {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 244,
+                    columnNumber: 11
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 243,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true);
+    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Error: Unauthorized"
+    }, void 0, false, {
+        fileName: "src/components/profile-view/profile-view.jsx",
+        lineNumber: 249,
+        columnNumber: 12
+    }, undefined);
+};
+_s(ProfileView, "bYYsAx8QIravF+oivRyumQb6CXk=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams)
+    ];
+});
+_c = ProfileView;
+var _c;
+$RefreshReg$(_c, "ProfileView");
+
+  $parcel$ReactRefreshHelpers$3c12.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"lJZlQ":[function() {},{}]},["itlOw","fuyGC","d8Dch"], "d8Dch", "parcelRequire1961")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
