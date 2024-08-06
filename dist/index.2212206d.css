@@ -409,8 +409,12 @@ input {
   transition: background-color .2s ease-in;
 }
 
-.genre-button:hover {
+.genre-button:hover, .genre-button.active {
   background-color: #c20505;
+}
+
+.genre-button.not-active {
+  background-color: #242424;
 }
 
 .genres {

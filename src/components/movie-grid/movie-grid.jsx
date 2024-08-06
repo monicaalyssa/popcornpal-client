@@ -1,16 +1,36 @@
-export const MovieGrid = () => {
+import { useState } from "react";
+import { MovieCard } from "../movie-card/movie-card";
+
+export const MovieGrid = ({ movies, genreClick, genreReset }) => {
+  const [activeGenre, setActiveGenre] = useState(null);
+  const genres = ["Horror", "Drama", "Action", "Mystery", "Fantasy", "Documentary"];
+
+  const handleGenreClick = (genrename) => {
+    if (activeGenre === genrename) {
+      setActiveGenre(null);
+      genreReset();
+    } else {
+      setActiveGenre(genrename);
+      genreClick(genrename);
+    }
+  };
+
   return (
     <div id="movies" className="movie-heading-container">
       <h2>Movies</h2>
       <div className="line"></div>
       <div className="genres">
-        <p className="bubble genre-button">Horror</p>
-        <p className="bubble genre-button">Action</p>
-        <p className="bubble genre-button">Drama</p>
-        <p className="bubble genre-button">Mystery</p>
-        <p className="bubble genre-button">Fantasy</p>
-        <p className="bubble genre-button">Documentary</p>
-
+        {genres.map((genre) => (
+          <p
+            key={genre}
+            onClick={() => handleGenreClick(genre)}
+            className={`bubble genre-button ${
+              activeGenre === genre ? "active" : "not-active"
+            }`}
+          >
+            {genre}
+          </p>
+        ))}
       </div>
     </div>
   );

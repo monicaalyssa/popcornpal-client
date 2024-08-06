@@ -429,6 +429,14 @@ input {
   background-color: $main-red;
 }
 
+.genre-button.active {
+  background-color: $main-red;
+}
+
+.genre-button.not-active {
+  background-color: $light-background;
+}
+
 .genres {
   display: flex;
   gap: 10px;

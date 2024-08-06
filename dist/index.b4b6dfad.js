@@ -27250,6 +27250,7 @@ const MainView = ()=>{
     const storedUser = JSON.parse(localStorage.getItem("user"));
     const storedToken = localStorage.getItem("token");
     const [movies, setMovies] = (0, _react.useState)([]);
+    const [filterList, setFilterList] = (0, _react.useState)([]);
     const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
     const [userInfo, setUserInfo] = (0, _react.useState)(null);
@@ -27273,6 +27274,7 @@ const MainView = ()=>{
                 };
             });
             setMovies(moviesFromApi);
+            setFilterList(moviesFromApi);
         });
     }, [
         token
@@ -27313,6 +27315,13 @@ const MainView = ()=>{
     const handleUpdateInfo = (updatedInfo)=>{
         setUserInfo(updatedInfo);
     };
+    const genreClick = (genrename)=>{
+        setFilterList(movies.filter((movies)=>movies.genre === genrename));
+    };
+    const genreReset = ()=>{
+        setFilterList(movies);
+        console.log("genre reset");
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
             children: [
@@ -27322,7 +27331,7 @@ const MainView = ()=>{
                         to: "/"
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 93,
+                        lineNumber: 103,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27331,29 +27340,29 @@ const MainView = ()=>{
                                     children: "PopcornPal: Sign Up"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 94,
+                                    lineNumber: 104,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 94,
+                                lineNumber: 104,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginNavBar.LoginNavBar), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 95,
+                                lineNumber: 105,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 96,
+                                lineNumber: 106,
                                 columnNumber: 7
                             }, void 0)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 92,
+                    lineNumber: 102,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27362,7 +27371,7 @@ const MainView = ()=>{
                         to: "/"
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 101,
+                        lineNumber: 111,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27371,17 +27380,17 @@ const MainView = ()=>{
                                     children: "PopcornPal: Log In"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 102,
+                                    lineNumber: 112,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 102,
+                                lineNumber: 112,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginNavBar.LoginNavBar), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 103,
+                                lineNumber: 113,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
@@ -27391,14 +27400,14 @@ const MainView = ()=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 104,
+                                lineNumber: 114,
                                 columnNumber: 7
                             }, void 0)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 100,
+                    lineNumber: 110,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27408,13 +27417,13 @@ const MainView = ()=>{
                         replace: true
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 112,
+                        lineNumber: 122,
                         columnNumber: 26
                     }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: "Loading..."
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 113,
+                        lineNumber: 123,
                         columnNumber: 33
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27423,7 +27432,7 @@ const MainView = ()=>{
                                 onLogout: handleLogout
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 116,
+                                lineNumber: 126,
                                 columnNumber: 9
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
@@ -27434,14 +27443,14 @@ const MainView = ()=>{
                                 token: token
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 117,
+                                lineNumber: 127,
                                 columnNumber: 9
                             }, void 0)
                         ]
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 111,
+                    lineNumber: 121,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27454,13 +27463,13 @@ const MainView = ()=>{
                                 replace: true
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 122,
+                                lineNumber: 132,
                                 columnNumber: 47
                             }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: "Loading..."
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 123,
+                                lineNumber: 133,
                                 columnNumber: 31
                             }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: [
@@ -27469,12 +27478,12 @@ const MainView = ()=>{
                                             children: "PopcornPal: Your Movie Database - Favorite & Discover Films!"
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 125,
+                                            lineNumber: 135,
                                             columnNumber: 15
                                         }, void 0)
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 125,
+                                        lineNumber: 135,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {
@@ -27482,34 +27491,38 @@ const MainView = ()=>{
                                         onLogout: handleLogout
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 126,
+                                        lineNumber: 136,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _hero.Hero), {}, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 127,
+                                        lineNumber: 137,
                                         columnNumber: 7
                                     }, void 0),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieGrid.MovieGrid), {}, void 0, false, {
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieGrid.MovieGrid), {
+                                        movies: movies,
+                                        genreClick: genreClick,
+                                        genreReset: genreReset
+                                    }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 128,
+                                        lineNumber: 138,
                                         columnNumber: 7
                                     }, void 0),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "grid",
-                                        children: movies.map((movieprop)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                        children: filterList.map((movieprop)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                                 user: user,
                                                 userInfo: userInfo,
                                                 token: token,
                                                 movieprop: movieprop
                                             }, movieprop.id, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 131,
+                                                lineNumber: 141,
                                                 columnNumber: 9
                                             }, void 0))
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 129,
+                                        lineNumber: 139,
                                         columnNumber: 7
                                     }, void 0)
                                 ]
@@ -27519,7 +27532,7 @@ const MainView = ()=>{
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 122,
+                    lineNumber: 132,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27529,7 +27542,7 @@ const MainView = ()=>{
                         replace: true
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 138,
+                        lineNumber: 148,
                         columnNumber: 26
                     }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: [
@@ -27538,12 +27551,12 @@ const MainView = ()=>{
                                     children: "PopcornPal: Manage Your Account Settings"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 140,
+                                    lineNumber: 150,
                                     columnNumber: 15
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 140,
+                                lineNumber: 150,
                                 columnNumber: 7
                             }, void 0),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
@@ -27555,7 +27568,7 @@ const MainView = ()=>{
                                 movies: movies
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 141,
+                                lineNumber: 151,
                                 columnNumber: 7
                             }, void 0),
                             " "
@@ -27563,22 +27576,22 @@ const MainView = ()=>{
                     }, void 0, true)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 137,
+                    lineNumber: 147,
                     columnNumber: 7
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 91,
+            lineNumber: 101,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 90,
+        lineNumber: 100,
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "OFonm8M+dZLzeFOhDHF/u68VVKk=");
+_s(MainView, "rH64eh8/T0ZiIIP21PbxWojZp6k=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -37674,7 +37687,29 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieGrid", ()=>MovieGrid);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const MovieGrid = ()=>{
+var _react = require("react");
+var _movieCard = require("../movie-card/movie-card");
+var _s = $RefreshSig$();
+const MovieGrid = ({ movies, genreClick, genreReset })=>{
+    _s();
+    const [activeGenre, setActiveGenre] = (0, _react.useState)(null);
+    const genres = [
+        "Horror",
+        "Drama",
+        "Action",
+        "Mystery",
+        "Fantasy",
+        "Documentary"
+    ];
+    const handleGenreClick = (genrename)=>{
+        if (activeGenre === genrename) {
+            setActiveGenre(null);
+            genreReset();
+        } else {
+            setActiveGenre(genrename);
+            genreClick(genrename);
+        }
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         id: "movies",
         className: "movie-heading-container",
@@ -37683,80 +37718,40 @@ const MovieGrid = ()=>{
                 children: "Movies"
             }, void 0, false, {
                 fileName: "src/components/movie-grid/movie-grid.jsx",
-                lineNumber: 4,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "line"
             }, void 0, false, {
                 fileName: "src/components/movie-grid/movie-grid.jsx",
-                lineNumber: 5,
+                lineNumber: 21,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "genres",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "bubble genre-button",
-                        children: "Horror"
-                    }, void 0, false, {
+                children: genres.map((genre)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        onClick: ()=>handleGenreClick(genre),
+                        className: `bubble genre-button ${activeGenre === genre ? "active" : "not-active"}`,
+                        children: genre
+                    }, genre, false, {
                         fileName: "src/components/movie-grid/movie-grid.jsx",
-                        lineNumber: 7,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "bubble genre-button",
-                        children: "Action"
-                    }, void 0, false, {
-                        fileName: "src/components/movie-grid/movie-grid.jsx",
-                        lineNumber: 8,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "bubble genre-button",
-                        children: "Drama"
-                    }, void 0, false, {
-                        fileName: "src/components/movie-grid/movie-grid.jsx",
-                        lineNumber: 9,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "bubble genre-button",
-                        children: "Mystery"
-                    }, void 0, false, {
-                        fileName: "src/components/movie-grid/movie-grid.jsx",
-                        lineNumber: 10,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "bubble genre-button",
-                        children: "Fantasy"
-                    }, void 0, false, {
-                        fileName: "src/components/movie-grid/movie-grid.jsx",
-                        lineNumber: 11,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "bubble genre-button",
-                        children: "Documentary"
-                    }, void 0, false, {
-                        fileName: "src/components/movie-grid/movie-grid.jsx",
-                        lineNumber: 12,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
+                        lineNumber: 24,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
                 fileName: "src/components/movie-grid/movie-grid.jsx",
-                lineNumber: 6,
+                lineNumber: 22,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-grid/movie-grid.jsx",
-        lineNumber: 3,
+        lineNumber: 19,
         columnNumber: 5
     }, undefined);
 };
+_s(MovieGrid, "cyd8/vje5zPIHFKExErQWBKUs3E=");
 _c = MovieGrid;
 var _c;
 $RefreshReg$(_c, "MovieGrid");
@@ -37766,7 +37761,7 @@ $RefreshReg$(_c, "MovieGrid");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ"}],"gexPl":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"8phav","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6MisQ","react":"21dqq","../movie-card/movie-card":"bwuIu"}],"gexPl":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3555 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

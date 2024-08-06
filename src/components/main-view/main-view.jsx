@@ -15,6 +15,7 @@ export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
   const [movies, setMovies] = useState([]);
+  const [filterList, setFilterList] = useState([]);
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
   const [userInfo, setUserInfo] = useState(null);
@@ -40,8 +41,8 @@ export const MainView = () => {
             banner: movie.BannerURL,
           };
         });
-
         setMovies(moviesFromApi);
+        setFilterList(moviesFromApi)
       });
   }, [token]);
 
@@ -86,6 +87,15 @@ export const MainView = () => {
     setUserInfo(updatedInfo);
   }
 
+  const genreClick = (genrename) => {
+    setFilterList(movies.filter(movies => movies.genre === genrename));
+  }
+
+  const genreReset = () => {
+    setFilterList(movies);
+    console.log("genre reset")
+  }
+
   return (
     <BrowserRouter>
     <Routes>
@@ -125,9 +135,9 @@ export const MainView = () => {
       <Helmet><title>PopcornPal: Your Movie Database - Favorite & Discover Films!</title></Helmet>
       <NavBar user={user?.Username} onLogout={handleLogout}/>
       <Hero />
-      <MovieGrid />
+      <MovieGrid movies={movies} genreClick={genreClick} genreReset={genreReset}/>
       <div className="grid">
-      {movies.map((movieprop) => (
+      {filterList.map((movieprop) => (
         <MovieCard user={user} userInfo={userInfo} token={token} key={movieprop.id} movieprop={movieprop} />
       ))} 
       </div> 
