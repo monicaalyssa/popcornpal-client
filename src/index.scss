@@ -728,6 +728,18 @@ input {
     padding: 4px 9px;
     margin-right: 8px;
   }
+
+  .user-btn {
+    margin-left: 12px;
+  }
+
+  .nav-bar {
+    padding: 12px 4%;
+  }
+
+  .dropdown-list {
+    top: 3.5rem
+  }
 }
 
 // break for mobile, but not smallest devices
@@ -737,15 +749,14 @@ input {
     object-fit: cover;
   }
 
-  .nav-bar {
-    padding: 15px 4%;
-  }
-
   .logo {
     font-size: 20px;
   }
 
-  .user-btn,
+  .dropdown-list {
+    right: 1%;
+  }
+
   .menu-bar {
     display: none;
   }
@@ -818,6 +829,7 @@ input {
   .poster-favorite-heart {
     top: 32px;
     right: 12px;
+    z-index: 1;
   }
 }
 
@@ -845,6 +857,18 @@ input {
   .right-hero {
     padding: 0 0 10px 0;
   }
+
+  .user-btn {
+    margin-left: 12px;
+  }
+
+  .nav-bar {
+    padding: 15px 4%;
+  }
+
+  .dropdown-list {
+    top: 3.9rem
+  }
 }
 
 @media (min-width: 921px) and (max-width: 1180px) {
@@ -859,6 +883,10 @@ input {
   .poster-favorite-heart {
     top: 34px;
     right: 12px;
+  }
+
+  .user-btn {
+    margin-left: 20px;
   }
 }
 
@@ -912,10 +940,6 @@ input {
 
   .menu-bar .menu-item {
     margin: 10px 5px;
-  }
-
-  .user-btn {
-    margin-left: 20px;
   }
 
   button {

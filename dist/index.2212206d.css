@@ -693,6 +693,18 @@ input {
     margin-right: 8px;
     padding: 4px 9px;
   }
+
+  .user-btn {
+    margin-left: 12px;
+  }
+
+  .nav-bar {
+    padding: 12px 4%;
+  }
+
+  .dropdown-list {
+    top: 3.5rem;
+  }
 }
 
 @media (width >= 0) and (width <= 920px) {
@@ -701,15 +713,15 @@ input {
     height: 440px;
   }
 
-  .nav-bar {
-    padding: 15px 4%;
-  }
-
   .logo {
     font-size: 20px;
   }
 
-  .user-btn, .menu-bar {
+  .dropdown-list {
+    right: 1%;
+  }
+
+  .menu-bar {
     display: none;
   }
 
@@ -779,6 +791,7 @@ input {
   }
 
   .poster-favorite-heart {
+    z-index: 1;
     top: 32px;
     right: 12px;
   }
@@ -808,6 +821,18 @@ input {
   .right-hero {
     padding: 0 0 10px;
   }
+
+  .user-btn {
+    margin-left: 12px;
+  }
+
+  .nav-bar {
+    padding: 15px 4%;
+  }
+
+  .dropdown-list {
+    top: 3.9rem;
+  }
 }
 
 @media (width >= 921px) and (width <= 1180px) {
@@ -822,6 +847,10 @@ input {
   .poster-favorite-heart {
     top: 34px;
     right: 12px;
+  }
+
+  .user-btn {
+    margin-left: 20px;
   }
 }
 
@@ -868,10 +897,6 @@ input {
 
   .menu-bar .menu-item {
     margin: 10px 5px;
-  }
-
-  .user-btn {
-    margin-left: 20px;
   }
 
   button {
