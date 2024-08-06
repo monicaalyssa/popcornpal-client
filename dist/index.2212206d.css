@@ -204,6 +204,7 @@ h2 {
 
 .hover-more-details {
   z-index: 1010;
+  padding: 22px 60px;
 }
 
 .grid-overflow {
@@ -214,7 +215,7 @@ h2 {
 }
 
 .grid {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 1.7% 2%;
   padding: 0 5%;
   display: grid;
@@ -347,7 +348,6 @@ input {
   border: 2px solid #f9f6f9;
   align-items: center;
   gap: 11px;
-  padding: 20px 48px;
   font-weight: 400;
   transition: all .3s;
   display: flex;
@@ -908,6 +908,10 @@ input {
     font-size: 14px;
   }
 
+  .hover-more-details {
+    padding: 18px 45px;
+  }
+
   .user-menu-item {
     gap: 8px;
   }
@@ -979,6 +983,12 @@ input {
   }
 }
 
+@media (width >= 920px) and (width <= 1450px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
 @media (width >= 1500px) and (width <= 30000px) {
   .hero-btns {
     margin-top: 55px;
@@ -995,7 +1005,6 @@ input {
   }
 
   .grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     row-gap: 2.3%;
   }
 }

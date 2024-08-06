@@ -216,6 +216,7 @@ h2 {
 
 .hover-more-details {
   z-index: 1010;
+  padding: 22px 60px;
 }
 
 .grid-overflow {
@@ -229,7 +230,7 @@ h2 {
   padding: 0 5%;
   display: grid;
   column-gap: 2%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   row-gap: 1.7%;
 }
 
@@ -360,7 +361,6 @@ input {
   background-color: transparent;
   font-weight: 400;
   border: 2px solid $main-white;
-  padding: 20px 48px;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
@@ -898,7 +898,6 @@ input {
   }
 }
 
-
 @media (min-width: 600px) and (max-width: 1180px) {
   .red-heart {
     width: 20px;
@@ -953,6 +952,10 @@ input {
   button {
     padding: 18px 45px;
     font-size: 14px;
+  }
+
+  .hover-more-details {
+    padding: 18px 45px;
   }
 
   .user-menu-item {
@@ -1034,6 +1037,12 @@ input {
   }
 }
 
+@media (min-width: 920px) and (max-width: 1450) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
 @media (min-width: 1500px) and (max-width: 30000px) {
   .hero-btns {
     margin-top: 55px;
@@ -1050,7 +1059,6 @@ input {
   }
 
   .grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     row-gap: 2.3%;
   }
 }
