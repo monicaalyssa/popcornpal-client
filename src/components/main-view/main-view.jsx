@@ -10,6 +10,7 @@ import { SignupView } from "../signup-view/signup-view";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { ProfileView } from "../profile-view/profile-view";
 import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
