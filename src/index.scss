@@ -610,6 +610,126 @@ input {
   align-items: flex-end;
 }
 
+.profile-view {
+    padding: 40px 5% 120px 5%;
+    display: flex;
+    gap: 5%;
+}
+
+.account-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.account-menu-title {
+  font-weight: 500;
+  color: $subtle-gray;
+}
+
+.user-description > .account-menu-title {
+  width: 50%;
+  margin-top: 5px;
+}
+
+.user-info-item {
+  display: flex;
+  gap: 10px;
+}
+
+.user-info-item:nth-child(2) {
+  padding-top: 4px;
+}
+
+.account-menu-item {
+  display: flex;
+}
+
+.personal-view {
+  background-color: $light-background;
+  border-radius: 6px;
+  padding: 60px;
+  flex-grow: 1;
+}
+
+.personal-view-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-view-user {
+  display: flex;
+  flex-direction: row;
+  padding: 15px 0 40px;
+  align-items: center;
+}
+
+.user-description {
+  flex-grow: 1;
+}
+
+.user-name {
+  font-size: calc(100% + 2px);
+}
+
+.update-box {
+  padding: 40px;
+  background-color: $background;
+  border-radius: 5px;
+}
+
+.profile-view-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-flexbox {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.save-changes-box {
+  align-self: end;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.save-changes-button {
+  background-color: #248141;
+  border-radius: 5px;
+  padding: 13px 23px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.save-changes-button.save-button:hover {
+  background-color: #1a6030;
+}
+
+.cancel-button {
+  background-color: $light-background;
+}
+
+.account-menu-item {
+  padding: 7px 16px 7px 10px;
+  display: flex;
+  gap: 8px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.account-menu-item:hover {
+    background-color: $light-background;
+}
+
+.account-menu-title.my-account {
+  margin-bottom: 10px;
+}
+
 @media (min-width: 0) and (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr 1fr;

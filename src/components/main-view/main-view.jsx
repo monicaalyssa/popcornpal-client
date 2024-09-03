@@ -151,6 +151,7 @@ export const MainView = () => {
       element={!user ? ( <Navigate to ="/login" replace /> ) : (
       <>
       <Helmet><title>PopcornPal: Manage Your Account Settings</title></Helmet>
+      <NavBar user={user?.Username} onLogout={handleLogout}/>
       <ProfileView user={user} userInfo={userInfo} token ={token} onUpdateUser={handleUpdateUser} onUpdateInfo={handleUpdateInfo} movies={movies}/> </> )}
       />
 
