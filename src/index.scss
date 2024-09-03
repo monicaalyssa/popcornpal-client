@@ -726,6 +726,10 @@ input {
     background-color: $light-background;
 }
 
+.account-menu-item.active {
+  background-color: $light-background;
+}
+
 .account-menu-title.my-account {
   margin-bottom: 10px;
 }

@@ -698,7 +698,7 @@ input {
   display: flex;
 }
 
-.account-menu-item:hover {
+.account-menu-item:hover, .account-menu-item.active {
   background-color: #242424;
 }
 

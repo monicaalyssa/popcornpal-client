@@ -13,6 +13,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
   const [loading, setLoading] = useState(true);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
   const bearerToken = localStorage.getItem("token");
+  const [currentView, setCurrentView] = useState("personal"); 
   
   if (Username === user.Username) {
   useEffect(() => {
@@ -167,7 +168,10 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
         <div className="profile-view">
           <ul className="account-menu">
             <p className="account-menu-title my-account">My Account</p>
-            <li className="account-menu-item">
+            <li
+              className={`account-menu-item ${currentView === 'personal' ? 'active' : ''}`}
+              onClick={() => setCurrentView("personal")}
+            >
               <img
                 className="menu-icon"
                 src={require("../../images/Settings.svg")}
@@ -175,7 +179,10 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
               <p>Personal</p>
             </li>
 
-            <li className="account-menu-item">
+            <li
+              className={`account-menu-item ${currentView === 'favorites' ? 'active' : ''}`}
+              onClick={() => setCurrentView("favorites")}
+            >
               <img
                 className="menu-icon"
                 src={require("../../images/Heart.svg")}
@@ -183,97 +190,128 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
               <p>My Favorites</p>
             </li>
 
-            <li className="account-menu-item">
+            <li
+              className={`account-menu-item ${currentView === 'security' ? 'active' : ''}`}
+              onClick={() => setCurrentView("security")}
+            >
               <img
                 className="menu-icon"
                 src={require("../../images/Settings.svg")}
               />
-              <p>Secuirty</p>
+              <p>Security</p>
             </li>
           </ul>
-          <div className="personal-view">
-            <div className="personal-view-heading">
-              <h2>My Account</h2>
+          {currentView === "personal" && (
+            <>
+              <div className="personal-view">
+                <div className="personal-view-heading">
+                  <h2>My Account</h2>
 
-              <div className="personal-view-user">
-                <div className="user-description">
-                  <p className="user-name">{user.Username}</p>
-                  <p className="account-menu-title">
-                    Manage your personal details including your username, email,
-                    and birthday.
-                  </p>
+                  <div className="personal-view-user">
+                    <div className="user-description">
+                      <p className="user-name">{user.Username}</p>
+                      <p className="account-menu-title">
+                        Manage your personal details including your username,
+                        email, and birthday.
+                      </p>
+                    </div>
+
+                    <div className="user-info">
+                      <div className="user-info-item">
+                        <img
+                          className="menu-icon"
+                          src={require("../../images/Email.png")}
+                        />
+                        <p className="account-menu-title">
+                          {userAccount.email}
+                        </p>
+                      </div>
+
+                      <div className="user-info-item">
+                        <img
+                          className="menu-icon"
+                          src={require("../../images/Birthday-Cake.png")}
+                        />
+                        <p className="account-menu-title">
+                          {formatDateForDisplay(userAccount.birthday)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="user-info">
-                  <div className="user-info-item">
-                    <img
-                      className="menu-icon"
-                      src={require("../../images/Email.png")}
-                    />
-                    <p className="account-menu-title">{userAccount.email}</p>
-                  </div>
-
-                  <div className="user-info-item">
-                    <img
-                      className="menu-icon"
-                      src={require("../../images/Birthday-Cake.png")}
-                    />
-                    <p className="account-menu-title">
-                      {formatDateForDisplay(userAccount.birthday)}
-                    </p>
+                <div className="form-flexbox">
+                  <div className="update-box">
+                    <form className="profile-view-form" onSubmit={handleUpdate}>
+                      <label>Username</label>
+                      <input
+                        type="text"
+                        name="Username"
+                        value={newUsername}
+                        onChange={(e) => setNewUsername(e.target.value)}
+                        className="input-box"
+                      ></input>
+                      <label>Email</label>
+                      <input
+                        type="text"
+                        name="Email"
+                        value={newEmail}
+                        onChange={(e) => setNewEmail(e.target.value)}
+                        className="input-box"
+                      ></input>
+                      <label>Birthday</label>
+                      <input
+                        type="date"
+                        name="Birthday"
+                        value={newBirthday}
+                        onChange={(e) => {
+                          setNewBirthday(e.target.value),
+                            console.log(e.target.value);
+                        }}
+                        className="input-box"
+                      ></input>
+                      <div className="save-changes-box">
+                        <button
+                          className="save-changes-button cancel-button"
+                          type="reset"
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          className="save-changes-button save-button"
+                          type="submit"
+                        >
+                          Save
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
-            </div>
+            </>
+          )}
 
-            <div className="form-flexbox">
-              <div className="update-box">
-                <form className="profile-view-form" onSubmit={handleUpdate}>
-                  <label>Username</label>
-                  <input
-                    type="text"
-                    name="Username"
-                    value={newUsername}
-                    onChange={(e) => setNewUsername(e.target.value)}
-                    className="input-box"
-                  ></input>
-                  <label>Email</label>
-                  <input
-                    type="text"
-                    name="Email"
-                    value={newEmail}
-                    onChange={(e) => setNewEmail(e.target.value)}
-                    className="input-box"
-                  ></input>
-                  <label>Birthday</label>
-                  <input
-                    type="date"
-                    name="Birthday"
-                    value={newBirthday}
-                    onChange={(e) => {
-                      setNewBirthday(e.target.value),
-                        console.log(e.target.value);
-                    }}
-                    className="input-box"
-                  ></input>
-                  <div className="save-changes-box">
-                    <button className="save-changes-button cancel-button" type="reset">Cancel</button>
-                    <button className="save-changes-button save-button" type="submit">Save</button>
-                  </div>
+          {currentView === "security" && (
+            <>
+              <div className="personal-view">
+                <form onSubmit={deleteAccount}>
+                  <label>Delete account?</label>
+                  <button type="submit">Confirm</button>
                 </form>
               </div>
+            </>
+          )}
 
-              <form onSubmit={deleteAccount}>
-                <label>Delete account?</label>
-                <button type="submit">Confirm</button>
-              </form>
+          {currentView === "favorites" && (
+            <div className="personal-view">
+              Favorites:
+              {movieDetails.length > 0 ? (
+                movieDetails
+              ) : (
+                <p>No favorite movies available.</p>
+              )}
             </div>
-
-            <div>
-              Favorites: {movieDetails.length > 0 ? ( movieDetails ) : (
-                <p>No favorite movies available.</p>)}
-            </div>
-          </div>
+          )}
         </div>
       </>
     );
