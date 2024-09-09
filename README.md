@@ -23,17 +23,14 @@ PopcornPal is a full-stack web application for movie enthusiasts who enjoy readi
 ### Database
 <strong>MongoDB:</strong> The database management system for handling the storage and retrieval of data related to movies and users.
 
-### Mongoose
-Interacts with the MongoDB database to define schemas, validate structures of movie and user documents, and employs query methods to locate matching records.
+### Other
+<strong>Mongoose:</strong> Interacts with the MongoDB database to define schemas, validate structures of movie and user documents, and employs query methods to locate matching records.
 
-### JWT/JSON Web Token
-Generates tokens at user login for secure, stateless authorization.
+<strong>JWT/JSON Web Token:</strong> Generates tokens at user login for secure, stateless authorization.
 
-### Passport.js
-Works alongside JWT authentication to handle authentication and authorization between endpoints on the web server.
+<strong>Passport.js:</strong> Works alongside JWT authentication to handle authentication and authorization between endpoints on the web server.
 
-### Bcrypt
-Enables secure login authentication by hashing users' passwords for enhanced security.
+<strong>Bcrypt:</strong> Enables secure login authentication by hashing users' passwords for enhanced security.
 
 ##
 [Back to top](#top)
