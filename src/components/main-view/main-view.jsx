@@ -20,6 +20,7 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
   const [userInfo, setUserInfo] = useState(null);
+  const [isHeroLoaded, setIsHeroLoaded] = useState(false);
 
   useEffect(() => {
     if (!token) {
@@ -96,6 +97,10 @@ export const MainView = () => {
     setFilterList(movies);
     console.log("genre reset")
   }
+  
+  const handleHeroLoad = () => {
+    setIsHeroLoaded(true);
+  }
 
   return (
     <BrowserRouter>
@@ -131,20 +136,24 @@ export const MainView = () => {
       />
 
       <Route path="/" element={ <> {!user ? ( <Navigate to ="/login" replace /> ) :
-      movies.length === 0 ? ( <div>Loading...</div> ) :
+      movies.length === 0 ? ( <div></div> ) :
       ( <> 
       <Helmet><title>PopcornPal: Your Movie Database - Favorite & Discover Films!</title></Helmet>
       <NavBar user={user?.Username} onLogout={handleLogout}/>
-      <Hero />
-      <MovieGrid movies={movies} genreClick={genreClick} genreReset={genreReset}/>
-      <motion.div layout className="grid">
-      <AnimatePresence>
-      {filterList.map((movieprop) => (
-        <MovieCard user={user} userInfo={userInfo} token={token} key={movieprop.id} movieprop={movieprop} />
-      ))}
-      </AnimatePresence> 
-      </motion.div> 
-      </> )} </> } 
+      <Hero onLoad={handleHeroLoad}/>
+        {isHeroLoaded && (
+          <>
+            <MovieGrid movies={movies} genreClick={genreClick} genreReset={genreReset}/>
+            <motion.div layout className="grid">
+            <AnimatePresence>
+            {filterList.map((movieprop) => (
+              <MovieCard user={user} userInfo={userInfo} token={token} key={movieprop.id} movieprop={movieprop} />
+            ))}
+          </AnimatePresence> 
+          </motion.div> 
+          </>
+        )}
+        </> )} </> } 
       />
 
       <Route path="/users/:Username"
