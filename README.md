@@ -1,6 +1,7 @@
 # PopcornPal <a name="top"></a>
 <img align="right" src="images/moviecamera.svg" alt="Movie Camera" width="140"/>
 PopcornPal is a full-stack web application for movie enthusiasts who enjoy reading information about movies. It allows users to explore a diverse collection of movies, learn about movie directors and genres, and manage favorite movies if registered.
+<a href="[https://monicaalyssa.github.io/portfolio/](https://monicaalyssa.github.io/portfolio/static/media/PopcornPal%20Case%20Study.a824b9a9c9ba5081dc47.pdf)" target="_blank">Case Study</a>
 
 ## Features
 
