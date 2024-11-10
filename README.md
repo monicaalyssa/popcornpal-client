@@ -1,7 +1,15 @@
 # PopcornPal <a name="top"></a>
 <img align="right" src="images/moviecamera.svg" alt="Movie Camera" width="140"/>
 PopcornPal is a full-stack web application for movie enthusiasts who enjoy reading information about movies. It allows users to explore a diverse collection of movies, learn about movie directors and genres, and manage favorite movies if registered.
-<a href="[https://monicaalyssa.github.io/portfolio/](https://monicaalyssa.github.io/portfolio/static/media/PopcornPal%20Case%20Study.a824b9a9c9ba5081dc47.pdf)" target="_blank">Case Study</a>
+<br><br>
+
+<a align="left" href="https://monicaalyssa.github.io/portfolio/static/media/PopcornPal%20Case%20Study.a824b9a9c9ba5081dc47.pdf" target="_blank">
+<img src="images/case-study.png" alt="Case Study Button" width="150" height="auto"/>
+</a>
+    
+<a align="left" href="https://popcornpal.netlify.app/" target="_blank">
+<img src="images/live-site.png" alt="Live Website Button" width="150" height="auto"/>
+</a>
 
 ## Features
 
@@ -20,6 +28,8 @@ PopcornPal is a full-stack web application for movie enthusiasts who enjoy readi
 <strong>Node.js:</strong> The runtime environment for the PopcornPal project, handling HTTP requests and routing clients to the appropriate API endpoints.
 
 <strong>Express.js:</strong> Works alongside Node.js to handle HTTP requests, define routes, and implement middleware to manage various aspects of the project.
+
+[View API](https://github.com/monicaalyssa/movie-api)
 
 ### Database
 <strong>MongoDB:</strong> The database management system for handling the storage and retrieval of data related to movies and users.
