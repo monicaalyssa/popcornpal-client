@@ -11,7 +11,7 @@ PopcornPal is a full-stack web application for movie enthusiasts who enjoy readi
 <img src="images/live-site.png" alt="Live Website Button" width="140" height="auto"/>
 </a>
 
-## Features ✨
+## Features
 
 - **Browse Movies:** Browse through a wide collection of movies.
 - ~~Search: Search for specific movies by title or genre.~~ [Under Development]
@@ -20,7 +20,7 @@ PopcornPal is a full-stack web application for movie enthusiasts who enjoy readi
 - **User Profile Management:** Registered users can modify their profile information.
 - **Personalized Experience:** Users can add and remove movies in their "My Favorites" list.
 
-## Technologies & Dependencies 🛠️
+## Technologies & Dependencies
 ### Frontend
 <strong>React:</strong> A JavaScript library for building responsive user interfaces with a component-based approach, optimizing performance through virtual DOM for seamless updates and rendering.
 
