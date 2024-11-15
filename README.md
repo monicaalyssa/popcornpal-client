@@ -4,11 +4,11 @@ PopcornPal is a full-stack web application for movie enthusiasts who enjoy readi
 <br><br>
 
 <a align="left" href="https://monicaalyssa.github.io/portfolio/static/media/PopcornPal%20Case%20Study.a824b9a9c9ba5081dc47.pdf" target="_blank">
-<img src="images/case-study.png" alt="Case Study Button" width="150" height="auto"/>
+<img src="images/case-study.png" alt="Case Study Button" width="140" height="auto"/>
 </a>
     
 <a align="left" href="https://popcornpal.netlify.app/" target="_blank">
-<img src="images/live-site.png" alt="Live Website Button" width="150" height="auto"/>
+<img src="images/live-site.png" alt="Live Website Button" width="140" height="auto"/>
 </a>
 
 ## Features ✨
