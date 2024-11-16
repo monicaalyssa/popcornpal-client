@@ -78,5 +78,11 @@ A full-stack web application for movie enthusiasts who enjoy reading information
 <a href="https://www.postman.com/">Postman</a>: Application for testing API endpoints, including authentication, data retrieval, and data submission.
 
 
+## Demo
+
+https://github.com/user-attachments/assets/a05b3587-cc6c-41c0-8316-005f812503c4
+
+
+
 ##
 [Back to top](#top)
