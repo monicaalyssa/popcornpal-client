@@ -1,15 +1,37 @@
-# PopcornPal <a name="top"></a>
-<img align="right" src="images/moviecamera.svg" alt="Movie Camera" width="140"/>
-PopcornPal is a full-stack web application for movie enthusiasts who enjoy reading information about movies. It allows users to explore a diverse collection of movies, learn about movie directors and genres, and manage favorite movies if registered.
-<br><br>
+<a name="top"></a>
+<div align="center">
 
-<a align="left" href="https://monicaalyssa.github.io/portfolio/static/media/PopcornPal%20Case%20Study.a824b9a9c9ba5081dc47.pdf" target="_blank">
-<img src="images/case-study.png" alt="Case Study Button" width="140" height="auto"/>
-</a>
-    
-<a align="left" href="https://popcornpal.netlify.app/" target="_blank">
-<img src="images/live-site.png" alt="Live Website Button" width="140" height="auto"/>
-</a>
+<img alt="React" height="22" src="https://ziadoua.github.io/m3-Markdown-Badges/badges/React/react2.svg">
+
+<img alt="CSS" height="22" src="https://ziadoua.github.io/m3-Markdown-Badges/badges/CSS/css1.svg">
+
+<img alt="Node.js" height="22" src="https://ziadoua.github.io/m3-Markdown-Badges/badges/NodeJS/nodejs1.svg">
+
+<img alt="Express" height="22" src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Express/express1.svg">
+
+<img alt="MongoDB" height="22" src="https://ziadoua.github.io/m3-Markdown-Badges/badges/MongoDB/mongodb2.svg">
+
+<img alt="JWT" height="22" src="https://ziadoua.github.io/m3-Markdown-Badges/badges/JWT/jwt1.svg">
+
+<img alt="Postman" height="22" src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Postman/postman1.svg">
+
+<br>
+
+<br>
+
+<img src="src/images/favicon.png" alt="Logo" width="80" height="80">
+
+<h3 align="center">PopcornPal</h3>
+
+<p align="center">
+A full-stack web application for movie enthusiasts who enjoy reading information about movies. It allows users to explore a diverse collection of movies, learn about movie directors and genres, and manage favorite movies if registered.
+<br />
+<br />
+<a href="https://popcornpal.netlify.app/">Live Site</a> ·
+<a href="https://monicaalyssa.github.io/portfolio/static/media/PopcornPal%20Case%20Study.a824b9a9c9ba5081dc47.pdf">Case Study</a> ·
+<a href="https://github.com/monicaalyssa/movie-api">API Repository</a> 
+</div>
+
 
 ## Features
 
@@ -22,11 +44,6 @@ PopcornPal is a full-stack web application for movie enthusiasts who enjoy readi
 
 ## Technologies & Dependencies
 
-<br>
-
-[![My Skills](https://skillicons.dev/icons?i=react,nodejs,express,mongodb,css,postman )](https://skillicons.dev)
-
-<br>
 
 ### Frontend
 <a href="https://react.dev/">React</a>: The core framework for building dynamic UI components, managing states for elements like movie lists, user favorites, and profiles.
