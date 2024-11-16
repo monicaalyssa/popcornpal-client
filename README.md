@@ -21,27 +21,46 @@ PopcornPal is a full-stack web application for movie enthusiasts who enjoy readi
 - **Personalized Experience:** Users can add and remove movies in their "My Favorites" list.
 
 ## Technologies & Dependencies
+
+<br>
+<div align="center">
+
+[![My Skills](https://skillicons.dev/icons?i=react,nodejs,express,mongodb,css,postman )](https://skillicons.dev)
+
+</div>
+
 ### Frontend
-<strong>React:</strong> A JavaScript library for building responsive user interfaces with a component-based approach, optimizing performance through virtual DOM for seamless updates and rendering.
+<a href="https://react.dev/">React</a>: The core framework for building dynamic UI components, managing states for elements like movie lists, user favorites, and profiles.
+
+<a href="https://www.w3.org/Style/CSS/">Vanilla CSS</a>: Responsive custom styles created from scratch.
+
+<a href="https://motion.dev/">Framer Motion</a>: React library for engaging animations when navigating through movie genres.
+
 
 ### Backend
-<strong>Node.js:</strong> The runtime environment for the PopcornPal project, handling HTTP requests and routing clients to the appropriate API endpoints.
 
-<strong>Express.js:</strong> Works alongside Node.js to handle HTTP requests, define routes, and implement middleware to manage various aspects of the project.
+<a href="https://nodejs.org/en">Node.js</a>: The runtime environment for handling HTTP requests and managing endpoints.
+
+<a href="https://expressjs.com/">Express.js</a>: A framework for Node.js to handle HTTP requests, define routes, and implement middleware to manage various aspects of the project.
+
 
 [View API](https://github.com/monicaalyssa/movie-api)
 
 ### Database
-<strong>MongoDB:</strong> The database management system for handling the storage and retrieval of data related to movies and users.
 
-### Other
-<strong>Mongoose:</strong> Interacts with the MongoDB database to define schemas, validate structures of movie and user documents, and employs query methods to locate matching records.
+<a href="https://www.mongodb.com/">MongoDB</a>: The database management system for handling the storage and retrieval of data related to movies and users.
 
-<strong>JWT/JSON Web Token:</strong> Generates tokens at user login for secure, stateless authorization.
+<a href="https://mongoosejs.com/">Mongoose</a>: Interacts with the MongoDB database to define schemas, validate structures of movie and user documents, and employ query methods to locate matching records.
 
-<strong>Passport.js:</strong> Works alongside JWT authentication to handle authentication and authorization between endpoints on the web server.
+<a href="https://jwt.io/">JWT</a> (JSON Web Token): Generates tokens at user login for secure, stateless authorization.
 
-<strong>Bcrypt:</strong> Enables secure login authentication by hashing users' passwords for enhanced security.
+<a href="https://www.passportjs.org/">Passport.js</a>: Middleware for user authentication, integrating strategies for verifying credentials and managing sessions.
+
+<a href="https://www.npmjs.com/package/bcrypt">Bcrypt</a>: Library for hashing user passwords before storing them in the database for enhanced user security.
+
+### Testing
+<a href="https://www.postman.com/">Postman</a>: Application for testing API endpoints, including authentication, data retrieval, and data submission.
+
 
 ##
 [Back to top](#top)
