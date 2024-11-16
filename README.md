@@ -29,7 +29,8 @@ A full-stack web application for movie enthusiasts who enjoy reading information
 <br />
 <a href="https://popcornpal.netlify.app/">Live Site</a> ·
 <a href="https://monicaalyssa.github.io/portfolio/static/media/PopcornPal%20Case%20Study.a824b9a9c9ba5081dc47.pdf">Case Study</a> ·
-<a href="https://github.com/monicaalyssa/movie-api">API Repository</a> 
+<a href="https://github.com/monicaalyssa/movie-api">API Repo</a> ·
+<a href="#demo">Demo</a> 
 </div>
 
 
@@ -78,7 +79,7 @@ A full-stack web application for movie enthusiasts who enjoy reading information
 <a href="https://www.postman.com/">Postman</a>: Application for testing API endpoints, including authentication, data retrieval, and data submission.
 
 
-## Demo
+## Demo <a name="demo"></a>
 
 https://github.com/user-attachments/assets/a05b3587-cc6c-41c0-8316-005f812503c4
 
