@@ -23,11 +23,10 @@ PopcornPal is a full-stack web application for movie enthusiasts who enjoy readi
 ## Technologies & Dependencies
 
 <br>
-<div align="center">
 
 [![My Skills](https://skillicons.dev/icons?i=react,nodejs,express,mongodb,css,postman )](https://skillicons.dev)
 
-</div>
+<br>
 
 ### Frontend
 <a href="https://react.dev/">React</a>: The core framework for building dynamic UI components, managing states for elements like movie lists, user favorites, and profiles.
