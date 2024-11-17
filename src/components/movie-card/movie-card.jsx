@@ -57,14 +57,14 @@ export const MovieCard = ({ movieprop, user, token, userInfo }) => {
     <>
     <motion.div layout animate={{ opacity: 5 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }}>
     <Link className="whole-movie-card"to={`/movies/${encodeURIComponent(movieprop.id)}`}>
-    <img
+    <img alt="Favorite Heart"
     onClick={(event) => addFavorite(movieprop.id, event)}
     className="white-heart poster-favorite-heart"
     src={myFavorite ? RedHeart : WhiteHeart } // make a transition effect to fill the heart
     />
     <div layout className="movie-card">
         <div className="grid-overflow">
-        <img className="grid-poster" src={movieprop.image} />
+        <img alt={movieprop.title} className="grid-poster" src={movieprop.image} />
         <div className="hover-container">
           <button className="hover-more-details">More Details</button>
         </div>

@@ -42,7 +42,7 @@ export const GenreItem = ({ genre }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <img className="menu-icon" src={getImageSrc()} />
+      <img alt="Menu Icon" className="menu-icon" src={getImageSrc()} />
       <p>{genre}</p>
     </li>
   );

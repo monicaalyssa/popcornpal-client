@@ -111,7 +111,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
     return movie ? (
       <div key={favoriteprop}>
         <p>{movie.title}</p>
-        <img className="favorites-poster" src={movie.image} />
+        <img alt={movie.title} className="favorites-poster" src={movie.image} />
         <button onClick={(event) => removeFavorite(movie.id, event)}>
           Remove Favorite
         </button>
@@ -172,7 +172,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
               className={`account-menu-item ${currentView === 'personal' ? 'active' : ''}`}
               onClick={() => setCurrentView("personal")}
             >
-              <img
+              <img alt="Settings Icon"
                 className="menu-icon"
                 src={require("../../images/Settings.svg")}
               />
@@ -183,7 +183,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
               className={`account-menu-item ${currentView === 'favorites' ? 'active' : ''}`}
               onClick={() => setCurrentView("favorites")}
             >
-              <img
+              <img alt="Favorite Icon"
                 className="menu-icon"
                 src={require("../../images/Heart.svg")}
               />
@@ -194,7 +194,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
               className={`account-menu-item ${currentView === 'security' ? 'active' : ''}`}
               onClick={() => setCurrentView("security")}
             >
-              <img
+              <img alt="Security Icon"
                 className="menu-icon"
                 src={require("../../images/Settings.svg")}
               />
@@ -218,7 +218,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
 
                     <div className="user-info">
                       <div className="user-info-item">
-                        <img
+                        <img alt="Email Icon"
                           className="menu-icon"
                           src={require("../../images/Email.png")}
                         />
@@ -228,7 +228,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
                       </div>
 
                       <div className="user-info-item">
-                        <img
+                        <img alt="Birthday Cake Icon"
                           className="menu-icon"
                           src={require("../../images/Birthday-Cake.png")}
                         />

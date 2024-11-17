@@ -11,7 +11,7 @@ export const UserMenu = ({ user, onLogout }) => {
         <div className="line menu-line"></div>
         <Link to={`/users/${user}`}>
         <li className="user-menu-item">
-          <img
+          <img alt="Settings Icon"
             className="menu-icon"
             src={require("../../images/Settings.svg")}
           />
@@ -20,12 +20,12 @@ export const UserMenu = ({ user, onLogout }) => {
         </Link>
         <Link to={`/users/${user}`}>
         <li className="user-menu-item">
-          <img className="menu-icon" src={require("../../images/Heart.svg")} />
+          <img alt="Favorite Icon" className="menu-icon" src={require("../../images/Heart.svg")} />
           <p>My Favorites</p>
         </li>
         </Link>
         <li className="user-menu-item">
-          <img
+          <img alt="Sign Out Icon"
             className="menu-icon sign-out-icon"
             src={require("../../images/Sign-Out.svg")}
           />

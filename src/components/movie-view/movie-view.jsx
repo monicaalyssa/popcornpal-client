@@ -74,7 +74,7 @@ export const MovieView = ({ movies, user, onLogout, userInfo, token}) => {
         <div className="movie-heading-flex">
           <h1 className="heading movie-heading-margin">{movie.title}</h1>
           <button className={`favorite-button ${myFavorite ? "my-favorite" : "not-my-favorite" }`} onClick={(event) => addFavorite(movie.id, event)}>
-            <img
+            <img alt="Favorite Heart"
               className="red-heart"
               src={myFavorite ? RedHeartFilled : RedHeart }
             />

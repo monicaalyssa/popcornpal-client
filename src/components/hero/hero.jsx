@@ -39,6 +39,7 @@ export const Hero = ({ onLoad }) => {
                 <button className="read-more-btn">Read More</button>
               </Link>
               <img
+                alt="Empty White Heart"
                 className="white-heart"
                 src={require("../../images/Heart.svg")}
               />

@@ -75,11 +75,11 @@ export const NavBar = ({ user, onLogout }) => {
           </Link>
         </div>
         <div ref={menuRef} className="right-logos">
-          <img
+          <img alt="Search Icon"
             className="search-btn"
             src={require("../../images/Search.svg")}
           />
-          <img
+          <img alt="User Profile Icon"
             onClick={() => setOpen(!open)}
             className="user-btn"
             src={require("../../images/User.svg")}
