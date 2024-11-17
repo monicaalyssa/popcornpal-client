@@ -6,7 +6,7 @@ import { useState } from "react";
 import RedHeartFilled from "../../images/Red-Heart-Filled.svg"
 import RedHeart from "../../images/Red-Heart.svg"
 
-export const MovieView = ({ movies, user, onLogout, userInfo, token}) => {  
+export const MovieView = ({ movies, user, onLogout, onMovieUpdate, userInfo, token}) => {  
   const [favoritesList, setFavoritesList] = useState(user.favoriteMovies || []);
   const [myFavorite, setMyFavorite] = useState(false);
   const { Title } = useParams();
@@ -42,6 +42,7 @@ export const MovieView = ({ movies, user, onLogout, userInfo, token}) => {
       ).then((data) => {
         setFavoritesList((prevList) => [...prevList, movieID]);
         setMyFavorite(true);
+        onMovieUpdate();
       });
     } else {
       fetch(
@@ -55,6 +56,7 @@ export const MovieView = ({ movies, user, onLogout, userInfo, token}) => {
       ).then((data) => {
         setFavoritesList((prevList) => prevList.filter((id) => id !== movieID));
         setMyFavorite(false);
+        onMovieUpdate();
       });
     }
   };
@@ -63,6 +65,7 @@ export const MovieView = ({ movies, user, onLogout, userInfo, token}) => {
     <div>
       <Helmet>
         <title>PopcornPal: {movie.title}</title>
+        <link rel="preload" href={movie.banner} as="image" />
       </Helmet>
       <div
         className="banner-container"

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import React from "react";
 
-export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpdateInfo }) => {
+export const ProfileView = ({ user, token, onMovieUpdate, onUpdateUser, movies, userInfo, onUpdateInfo }) => {
   const { Username } = useParams();
   const [newUsername, setNewUsername] = useState(user.Username);
   const [newEmail, setNewEmail] = useState(userInfo?.email || '');
@@ -133,6 +133,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
       setFavoriteMovies((prevFavorites) =>
         prevFavorites.filter((id) => id !== movieID)
       );
+      onMovieUpdate();
     });
   };
 
@@ -265,8 +266,7 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
                         name="Birthday"
                         value={newBirthday}
                         onChange={(e) => {
-                          setNewBirthday(e.target.value),
-                            console.log(e.target.value);
+                          setNewBirthday(e.target.value)
                         }}
                         className="input-box"
                       ></input>
@@ -314,8 +314,8 @@ export const ProfileView = ({ user, token, onUpdateUser, movies, userInfo, onUpd
           )}
         </div>
       </>
-    );
+    )
   } else {
     return <div>Error: Unauthorized</div>;
   }
-};
+}

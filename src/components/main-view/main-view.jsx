@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { ProfileView } from "../profile-view/profile-view";
 import { Helmet } from "react-helmet";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -21,6 +22,7 @@ export const MainView = () => {
   const [token, setToken] = useState(storedToken? storedToken : null);
   const [userInfo, setUserInfo] = useState(null);
   const [isHeroLoaded, setIsHeroLoaded] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     if (!token) {
@@ -48,7 +50,7 @@ export const MainView = () => {
       });
   }, [token]);
 
-  useEffect(() => {
+
     const fetchUserData = async () => {
       try {
         const response = await fetch(
@@ -71,8 +73,12 @@ export const MainView = () => {
         console.error("Error fetching data", error);
       }
     };
-    fetchUserData();
-  });
+
+  useEffect(() => {
+    if (user && token) {
+      fetchUserData();
+    }
+  }, [location, location.hash, location.pathname, user, token]);
 
   const handleLogout = () => {
     setUser(null); 
@@ -95,15 +101,22 @@ export const MainView = () => {
 
   const genreReset = () => {
     setFilterList(movies);
-    console.log("genre reset")
   }
   
+  useEffect(() => {
+    setIsHeroLoaded(false);
+  }, [location]);
+
   const handleHeroLoad = () => {
     setIsHeroLoaded(true);
   }
 
+  const handleMovieUpdate = () => {
+    fetchUserData();
+  }
+
   return (
-    <BrowserRouter>
+        
     <Routes>
       <Route path="/signup" 
       element={ user ? ( <Navigate to="/" /> ) : <> 
@@ -130,7 +143,7 @@ export const MainView = () => {
         (
         <> 
         <NavBar user={user?.Username} onLogout={handleLogout}/>
-        <MovieView movies={movies} user={user} userInfo={userInfo} onLogout={handleLogout} token={token} />
+        <MovieView onMovieUpdate={handleMovieUpdate} movies={movies} user={user} userInfo={userInfo} onLogout={handleLogout} token={token} />
         </>
          )}
       />
@@ -147,7 +160,7 @@ export const MainView = () => {
             <motion.div layout className="grid">
             <AnimatePresence>
             {filterList.map((movieprop) => (
-              <MovieCard user={user} userInfo={userInfo} token={token} key={movieprop.id} movieprop={movieprop} />
+              <MovieCard onMovieUpdate={handleMovieUpdate} user={user} userInfo={userInfo} token={token} key={movieprop.id} movieprop={movieprop} />
             ))}
           </AnimatePresence> 
           </motion.div> 
@@ -161,10 +174,9 @@ export const MainView = () => {
       <>
       <Helmet><title>PopcornPal: Manage Your Account Settings</title></Helmet>
       <NavBar user={user?.Username} onLogout={handleLogout}/>
-      <ProfileView user={user} userInfo={userInfo} token ={token} onUpdateUser={handleUpdateUser} onUpdateInfo={handleUpdateInfo} movies={movies}/> </> )}
+      <ProfileView user={user} userInfo={userInfo} onMovieUpdate={handleMovieUpdate} token ={token} onUpdateUser={handleUpdateUser} onUpdateInfo={handleUpdateInfo} movies={movies}/> </> )}
       />
 
     </Routes>
-    </BrowserRouter>
   )
 };
