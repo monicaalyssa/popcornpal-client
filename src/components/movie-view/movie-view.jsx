@@ -101,7 +101,7 @@ export const MovieView = ({ movies, user, onLogout, onMovieUpdate, userInfo, tok
         </div>
 
         <div className="back-btn-container">
-          <Link to={`/`}>
+          <Link to={`/#movies`}>
           <button>Go Back</button>
           </Link>
         </div>

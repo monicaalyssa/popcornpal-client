@@ -26,19 +26,16 @@ export const NavBar = ({ user, onLogout }) => {
   });
 
   useEffect(() => {
-    if (location.hash) {
-      lastHash.current = location.hash.slice(1);
-    }
-
-    if (lastHash.current && document.getElementById(lastHash.current)) {
+    if (location.hash === "#movies") {
       setTimeout(() => {
         document
-          .getElementById(lastHash.current)
+          .getElementById("movies")
           ?.scrollIntoView({ behavior: "smooth", block: "start" });
-        lastHash.current = "";
+        location.hash = "";
+        console.log(location.hash);
       }, 100);
     }
-  }, [location]);
+  }, [location, location.hash]);
 
   return (
     <header>
