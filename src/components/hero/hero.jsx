@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import HeroImage from "../../images/avatar-bkg.jpg";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 export const Hero = ({ onLoad }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -12,7 +13,11 @@ export const Hero = ({ onLoad }) => {
   }, [isImageLoaded, onLoad])
 
   return (
+    
     <div className="hero-container">
+      <Helmet>
+        <link rel="preload" href={HeroImage} as="image" />
+      </Helmet>
       <img
         className="hero-img"
         src={HeroImage}
