@@ -128,7 +128,12 @@ export const MainView = () => {
 
       <Route path="/login"
       element={ user ? ( <Navigate to="/" /> ) : <>
-      <Helmet><title>PopcornPal: Log In</title></Helmet>
+      <Helmet><title>PopcornPal: Log In</title>
+      <meta property="og:title" content="PopcornPal: Your Movie Database - Favorite & Discover Films!" />
+      <meta property="og:description" content="Browse a vast collection of movies, explore detailed information about directors and genres, and personalize your experience by managing your favorite films. Sign up to track your favorites and modify your profile—perfect for film enthusiasts." />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="PopcornPal" />
+      </Helmet>
       <LoginNavBar />
       <LoginView onLoggedIn={(user, token) => {
         setUser(user);
