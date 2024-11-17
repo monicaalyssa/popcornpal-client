@@ -46,7 +46,7 @@ export const Hero = ({ onLoad }) => {
             </div>
           </div>
           <div className="right-hero">
-            <img
+            <img alt="Yellow Star"
               className="featured-star"
               src={require("../../images/Star.svg")}
             />
