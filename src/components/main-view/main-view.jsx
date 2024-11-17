@@ -78,7 +78,7 @@ export const MainView = () => {
     if (user && token) {
       fetchUserData();
     }
-  }, [location, location.hash, location.pathname, user, token]);
+  }, [location, location.hash, location.pathname, user, token, userInfo]);
 
   const handleLogout = () => {
     setUser(null); 
