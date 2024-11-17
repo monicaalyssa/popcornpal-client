@@ -1161,6 +1161,16 @@ input {
   }
 }
 
+@media (min-width: 1330px) and (max-width: 30000px) {
+  .favorite-button.not-my-favorite {
+    padding: 20px 42px;
+  }
+
+  .favorite-button.my-favorite {
+    padding: 20px 42px;
+  }
+}
+
 @media (min-width: 920px) and (max-width: 1450) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
