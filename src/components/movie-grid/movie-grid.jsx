@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 
-export const MovieGrid = ({ movies, genreClick, genreReset }) => {
+export const MovieGrid = ({ onMovieUpdate, movies, genreClick, genreReset }) => {
   const [activeGenre, setActiveGenre] = useState(null);
   const genres = ["Horror", "Drama", "Action", "Mystery", "Fantasy", "Documentary"];
 
@@ -9,9 +9,11 @@ export const MovieGrid = ({ movies, genreClick, genreReset }) => {
     if (activeGenre === genrename) {
       setActiveGenre(null);
       genreReset();
+      onMovieUpdate();
     } else {
       setActiveGenre(genrename);
       genreClick(genrename);
+      onMovieUpdate();
     }
   };
 

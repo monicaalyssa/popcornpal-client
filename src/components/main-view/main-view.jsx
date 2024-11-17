@@ -78,7 +78,7 @@ export const MainView = () => {
     if (user && token) {
       fetchUserData();
     }
-  }, [location, location.hash, location.pathname, user, token, userInfo]);
+  }, [location, location.hash, location.pathname, user, token]);
 
   const handleLogout = () => {
     setUser(null); 
@@ -156,7 +156,7 @@ export const MainView = () => {
       <Hero onLoad={handleHeroLoad}/>
         {isHeroLoaded && (
           <>
-            <MovieGrid movies={movies} genreClick={genreClick} genreReset={genreReset}/>
+            <MovieGrid movies={movies} onMovieUpdate={handleMovieUpdate} genreClick={genreClick} genreReset={genreReset}/>
             <motion.div layout className="grid">
             <AnimatePresence>
             {filterList.map((movieprop) => (
