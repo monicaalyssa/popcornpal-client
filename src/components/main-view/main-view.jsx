@@ -156,7 +156,7 @@ export const MainView = () => {
       <Route path="/" element={ <> {!user ? ( <Navigate to ="/login" replace /> ) :
       movies.length === 0 ? ( <div></div> ) :
       ( <> 
-      <Helmet><title>PopcornPal: Your Movie Database - Favorite & Discover Films!</title></Helmet>
+      <Helmet><title>PopcornPal: Favorite & Discover Films!</title></Helmet>
       <NavBar user={user?.Username} onLogout={handleLogout}/>
       <Hero onLoad={handleHeroLoad}/>
         {isHeroLoaded && (
