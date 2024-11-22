@@ -13,8 +13,7 @@ export const UserMenu = ({ user, onLogout }) => {
         <li className="user-menu-item">
           <img alt="Settings Icon"
             className="menu-icon"
-            src={require("../../images/Settings.svg")}
-          />
+            src={require("../../images/Settings.svg")}/>
           <p>Settings</p>
         </li>
         </Link>
