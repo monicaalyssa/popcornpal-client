@@ -19,7 +19,7 @@
 
 <br>
 
-<img src="src/images/favicon.png" alt="Logo" width="80" height="80">
+<img src="public/images/favicon.png" alt="Logo" width="80" height="80">
 
 <h3 align="center">PopcornPal</h3>
 
