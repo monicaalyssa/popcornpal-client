@@ -49,7 +49,7 @@ A full-stack web application for movie enthusiasts who enjoy reading information
 ### Frontend
 <a href="https://react.dev/">React</a>: The core framework for building dynamic UI components, managing states for elements like movie lists, user favorites, and profiles.
 
-<a href="https://www.w3.org/Style/CSS/">Vanilla CSS</a>: Responsive custom styles created from scratch.
+<a href="https://sass-lang.com/">Sass</a>: Responsive custom styles created from scratch.
 
 <a href="https://motion.dev/">Framer Motion</a>: React library for engaging animations when navigating through movie genres.
 
