@@ -81,9 +81,7 @@ A full-stack web application for movie enthusiasts who enjoy reading information
 
 ## Demo <a name="demo"></a>
 
-https://github.com/user-attachments/assets/a05b3587-cc6c-41c0-8316-005f812503c4
-
-
+https://github.com/user-attachments/assets/461f8eeb-25f1-454c-a8c5-2c77e8d6bedf
 
 ##
 [Back to top](#top)
