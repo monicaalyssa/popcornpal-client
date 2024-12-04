@@ -470,7 +470,7 @@ input {
 .dropdown-list { 
   // add responsive padding for smaller and larger sizes
   position: absolute;
-  top: 4rem;
+  top: 6rem;
   right: 5%;
   width: 240px;
   background-color: $background;
@@ -506,8 +506,6 @@ input {
 .menu-icon {
   height: auto;
   width: 18px;
-  max-width: 18px;
-  min-width: 18px;
   transition: all 0.3s ease;
 }
 
@@ -634,6 +632,7 @@ input {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  flex-grow: 1
 }
 
 .account-menu-title {
@@ -653,10 +652,6 @@ input {
 
 .user-info-item:nth-child(2) {
   padding-top: 4px;
-}
-
-.account-menu-item {
-  display: flex;
 }
 
 .personal-view {
@@ -728,6 +723,8 @@ input {
 }
 
 .account-menu-item {
+  align-items: center;
+  justify-content: left;
   padding: 7px 16px 7px 10px;
   display: flex;
   gap: 8px;
@@ -884,7 +881,7 @@ input {
   }
 
   .dropdown-list {
-    top: 3.5rem
+    top: 5.5rem
   }
 }
 
@@ -1034,6 +1031,10 @@ input {
   .user-btn {
     margin-left: 20px;
   }
+
+  .menu-bar {
+    justify-content: space-around;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 1180px) {
@@ -1102,8 +1103,6 @@ input {
 
   .menu-icon {
     width: 17px;
-    max-width: 17px;
-    min-width: 17px;
   }
 
   .sign-out-icon {
