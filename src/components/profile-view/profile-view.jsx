@@ -184,7 +184,7 @@ export const ProfileView = ({ user, token, onMovieUpdate, onUpdateUser, movies, 
               className={`account-menu-item ${currentView === 'favorites' ? 'active' : ''}`}
               onClick={() => setCurrentView("favorites")}
             >
-              <img alt="Favorite Icon"
+              <img alt="Heart Icon"
                 className="menu-icon"
                 src={require("../../images/Heart.svg")}
               />
@@ -195,9 +195,9 @@ export const ProfileView = ({ user, token, onMovieUpdate, onUpdateUser, movies, 
               className={`account-menu-item ${currentView === 'security' ? 'active' : ''}`}
               onClick={() => setCurrentView("security")}
             >
-              <img alt="Security Icon"
+              <img alt="Lock Icon"
                 className="menu-icon"
-                src={require("../../images/Settings.svg")}
+                src={require("../../images/Lock2.svg")}
               />
               <p>Security</p>
             </li>

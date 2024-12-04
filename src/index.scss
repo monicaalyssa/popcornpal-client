@@ -614,7 +614,8 @@ input {
 .profile-view {
     padding: 40px 5% 120px 5%;
     display: flex;
-    gap: 5%;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .account-menu {
