@@ -40,16 +40,18 @@ export const NavBar = ({ user, onLogout }) => {
   return (
     <header>
       <div className="nav-bar">
+        <div class="menu-flex-item">
         <Link to={`/`}>
           <div className="logo">PopcornPal</div>
         </Link>
+        </div>
 
         <div className="menu-bar">
           <Link to={`/#movies`}>
             <p className="menu-item">Movies</p>
           </Link>
 
-          <div className="genre-cursor">
+        {/*  <div className="genre-cursor">
             <p
               className="menu-item genre-menu-item"
               onMouseEnter={() => setOpenDropdown(true)}
@@ -65,12 +67,14 @@ export const NavBar = ({ user, onLogout }) => {
                 <GenreDropdown />
               </div>
             </div>
-          </div>
+          </div> */}
 
           <Link to={`/users/${user}`}>
           <p className="menu-item">My List</p>
           </Link>
         </div>
+
+        <div class="menu-flex-item">
         <div ref={menuRef} className="right-logos">
           <img alt="Search Icon"
             className="search-btn"
@@ -83,6 +87,7 @@ export const NavBar = ({ user, onLogout }) => {
           />
           <div className={`open-profile ${open ? "active" : "inactive"}`}>
             <UserMenu user={user} onLogout={onLogout} />
+          </div>
           </div>
         </div>
       </div>

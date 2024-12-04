@@ -40,6 +40,10 @@ p {
   justify-content: space-between;
 }
 
+.menu-flex-item {
+  flex: 1 1 300px;
+}
+
 .menu-bar .menu-item {
   margin: 10px 50px;
   cursor: pointer;
@@ -62,6 +66,12 @@ a {
 .user-btn {
   width: 32px;
   cursor: pointer;
+}
+
+.right-logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 }
 
 .user-btn {
