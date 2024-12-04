@@ -506,6 +506,8 @@ input {
 .menu-icon {
   height: auto;
   width: 18px;
+  max-width: 18px;
+  min-width: 18px;
   transition: all 0.3s ease;
 }
 
@@ -1100,6 +1102,8 @@ input {
 
   .menu-icon {
     width: 17px;
+    max-width: 17px;
+    min-width: 17px;
   }
 
   .sign-out-icon {
