@@ -23,12 +23,12 @@ export const UserMenu = ({ user, onLogout }) => {
           <p>My Favorites</p>
         </li>
         </Link>
-        <li className="user-menu-item">
+        <li onClick={onLogout} className="user-menu-item">
           <img alt="Sign Out Icon"
             className="menu-icon sign-out-icon"
             src={require("../../images/Sign-Out.svg")}
           />
-          <p onClick={onLogout}>Sign Out</p>
+          <p>Sign Out</p>
         </li>
       </ul>
     </div>
