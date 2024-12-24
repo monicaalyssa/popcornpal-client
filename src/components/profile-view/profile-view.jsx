@@ -110,11 +110,18 @@ export const ProfileView = ({ user, token, onMovieUpdate, onUpdateUser, movies, 
     const movie = movies.find((m) => favoriteprop === m.id);
     return movie ? (
       <div key={favoriteprop}>
-        <p>{movie.title}</p>
+        <div className="favorite-movie-flex">
         <img alt={movie.title} className="favorites-poster" src={movie.image} />
+        <div className="favorite-movie-text">
+        <h3>{movie.title}</h3>
+        <p>{movie.description}</p>
+        <div className="favorites-button-flex">
         <button onClick={(event) => removeFavorite(movie.id, event)}>
           Remove Favorite
         </button>
+        </div>
+        </div>
+        </div>
       </div>
     ) : null;
   });
@@ -304,7 +311,7 @@ export const ProfileView = ({ user, token, onMovieUpdate, onUpdateUser, movies, 
 
           {currentView === "favorites" && (
             <div className="personal-view">
-              Favorites:
+              <h2>Favorites</h2>
               {movieDetails.length > 0 ? (
                 movieDetails
               ) : (

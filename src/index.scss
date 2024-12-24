@@ -606,6 +606,7 @@ input {
 
 .favorites-poster {
   width: 150px;
+  border-radius: 6px;
 }
 
 .poster-favorite-heart {
@@ -743,6 +744,27 @@ input {
 
 .account-menu-title.my-account {
   margin-bottom: 10px;
+}
+
+.favorite-movie-flex {
+  display: flex;
+  margin: 30px 0;
+  gap: 30px;
+  background-color: $background;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.favorite-movie-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.favorites-button-flex {
+  align-self: end;
+  display: flex;
+  margin-top: auto;
 }
 
 @media (min-width: 0) and (max-width: 600px) {
