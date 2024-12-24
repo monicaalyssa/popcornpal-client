@@ -301,9 +301,10 @@ export const ProfileView = ({ user, token, onMovieUpdate, onUpdateUser, movies, 
           {currentView === "security" && (
             <>
               <div className="personal-view">
-                <form onSubmit={deleteAccount}>
-                  <label>Delete account?</label>
-                  <button type="submit">Confirm</button>
+                <form className="delete-account" onSubmit={deleteAccount}>
+                <p className="user-name">Delete account?</p>
+                  <p className="delete-account-desc">This action is permanent!</p>
+                  <button className="delete-account-btn" type="submit">Confirm</button>
                 </form>
               </div>
             </>
