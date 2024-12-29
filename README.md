@@ -28,7 +28,7 @@ A full-stack web application for movie enthusiasts who enjoy reading information
 <br />
 <br />
 <a href="https://popcornpal.netlify.app/">Live Site</a> ·
-<a href="https://monicaalyssa.github.io/portfolio/static/media/PopcornPal%20Case%20Study.a824b9a9c9ba5081dc47.pdf">Case Study</a> ·
+<a href="https://monicaalyssa.tech/static/media/PopcornPal%20Case%20Study.a824b9a9c9ba5081dc47.pdf">Case Study</a> ·
 <a href="https://github.com/monicaalyssa/movie-api">API Repo</a> ·
 <a href="#demo">Demo</a> 
 </div>
