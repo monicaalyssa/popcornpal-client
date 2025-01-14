@@ -37,7 +37,6 @@ A full-stack web application for movie enthusiasts who enjoy reading information
 ## Features
 
 - **Browse Movies:** Browse through a wide collection of movies.
-- ~~Search: Search for specific movies by title or genre.~~ [Under Development]
 - **Movie Details:** Access information on a movie, including the plot summary and details about the directors.
 - **User Registration:** Create an account by providing a username, password, and email address.
 - **User Profile Management:** Registered users can modify their profile information.
